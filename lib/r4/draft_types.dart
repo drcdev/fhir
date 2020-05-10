@@ -2,12 +2,7 @@ import 'package:fhir/primitiveTypes/fhirDateTime.dart';
 import 'package:fhir/primitiveTypes/primitiveTypes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'generalTypes/attachment.dart';
-import 'generalTypes/codeableConcept.dart';
-import 'generalTypes/identifier.dart';
-import 'generalTypes/period.dart';
-import 'generalTypes/quantity.dart';
-import 'generalTypes/range.dart';
+import 'general_types.dart';
 import 'specialTypes/extension.dart';
 
 // If included, Flutter devtool will be able to read these objects

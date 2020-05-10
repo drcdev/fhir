@@ -9,7 +9,7 @@ part of 'address.dart';
 Address _$AddressFromJson(Map<String, dynamic> json) {
   return Address(
     id: json['id'] as String,
-    extension: (json['extension'] as List)
+    fhirExtension: (json['fhirExtension'] as List)
         ?.map((e) => e == null
             ? null
             : FhirExtension.fromJson(e as Map<String, dynamic>))
@@ -41,8 +41,8 @@ Map<String, dynamic> _$AddressToJson(Address instance) {
   }
 
   writeNotNull('id', instance.id);
-  writeNotNull(
-      'extension', instance.extension?.map((e) => e?.toJson())?.toList());
+  writeNotNull('fhirExtension',
+      instance.fhirExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('use', _$AddressUseEnumMap[instance.use]);
   writeNotNull('type', _$AddressTypeEnumMap[instance.type]);
   writeNotNull('text', instance.text);
