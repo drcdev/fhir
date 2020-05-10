@@ -158,9 +158,7 @@ SubstancePolymerStartingMaterial _$SubstancePolymerStartingMaterialFromJson(
         ? null
         : CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
     isDefining: json['isDefining'] as bool,
-    amount: json['amount'] == null
-        ? null
-        : SubstanceAmount.fromJson(json['amount'] as Map<String, dynamic>),
+    amount: json['amount'],
   );
 }
 
@@ -182,7 +180,7 @@ Map<String, dynamic> _$SubstancePolymerStartingMaterialToJson(
   writeNotNull('material', instance.material?.toJson());
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('isDefining', instance.isDefining);
-  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('amount', instance.amount);
   return val;
 }
 
@@ -256,9 +254,7 @@ SubstancePolymerRepeatUnit _$SubstancePolymerRepeatUnitFromJson(
         : CodeableConcept.fromJson(
             json['orientationOfPolymerisation'] as Map<String, dynamic>),
     repeatUnit: json['repeatUnit'] as String,
-    amount: json['amount'] == null
-        ? null
-        : SubstanceAmount.fromJson(json['amount'] as Map<String, dynamic>),
+    amount: json['amount'],
     degreeOfPolymerisation: (json['degreeOfPolymerisation'] as List)
         ?.map((e) => e == null
             ? null
@@ -292,7 +288,7 @@ Map<String, dynamic> _$SubstancePolymerRepeatUnitToJson(
   writeNotNull('orientationOfPolymerisation',
       instance.orientationOfPolymerisation?.toJson());
   writeNotNull('repeatUnit', instance.repeatUnit);
-  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('amount', instance.amount);
   writeNotNull('degreeOfPolymerisation',
       instance.degreeOfPolymerisation?.map((e) => e?.toJson())?.toList());
   writeNotNull('structuralRepresentation',
@@ -318,9 +314,7 @@ SubstancePolymerDegreeOfPolymerisation
     degree: json['degree'] == null
         ? null
         : CodeableConcept.fromJson(json['degree'] as Map<String, dynamic>),
-    amount: json['amount'] == null
-        ? null
-        : SubstanceAmount.fromJson(json['amount'] as Map<String, dynamic>),
+    amount: json['amount'],
   );
 }
 
@@ -340,7 +334,7 @@ Map<String, dynamic> _$SubstancePolymerDegreeOfPolymerisationToJson(
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('degree', instance.degree?.toJson());
-  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('amount', instance.amount);
   return val;
 }
 

@@ -67,11 +67,7 @@ MedicinalProduct _$MedicinalProductFromJson(Map<String, dynamic> json) {
             ? null
             : CodeableConcept.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    marketingStatus: (json['marketingStatus'] as List)
-        ?.map((e) => e == null
-            ? null
-            : MarketingStatus.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    marketingStatus: json['marketingStatus'] as List,
     pharmaceuticalProduct: (json['pharmaceuticalProduct'] as List)
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
@@ -155,8 +151,7 @@ Map<String, dynamic> _$MedicinalProductToJson(MedicinalProduct instance) {
       'paediatricUseIndicator', instance.paediatricUseIndicator?.toJson());
   writeNotNull('productClassification',
       instance.productClassification?.map((e) => e?.toJson())?.toList());
-  writeNotNull('marketingStatus',
-      instance.marketingStatus?.map((e) => e?.toJson())?.toList());
+  writeNotNull('marketingStatus', instance.marketingStatus);
   writeNotNull('pharmaceuticalProduct',
       instance.pharmaceuticalProduct?.map((e) => e?.toJson())?.toList());
   writeNotNull('packagedMedicinalProduct',
