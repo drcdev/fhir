@@ -270,7 +270,7 @@ _$_SubstanceAmount _$_$_SubstanceAmountFromJson(Map<String, dynamic> json) {
     json['amountText'] as String,
     json['referenceRange'] == null
         ? null
-        : SubstanceAmountReferenceRange.fromJson(
+        : _SubstanceAmountReferenceRange.fromJson(
             json['referenceRange'] as Map<String, dynamic>),
   );
 }

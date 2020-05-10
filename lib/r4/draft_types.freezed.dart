@@ -8,14 +8,30 @@ part of 'draft_types.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-MarketingStatus _$MarketingStatusFromJson(Map<String, dynamic> json) {
-  return _MarketingStatus.fromJson(json);
+DraftTypes _$DraftTypesFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType'] as String) {
+    case 'marketingStatus':
+      return _MarketingStatus.fromJson(json);
+    case 'population':
+      return _Population.fromJson(json);
+    case 'prodCharacteristic':
+      return _ProdCharacteristic.fromJson(json);
+    case 'productShelfLife':
+      return _ProductShelfLife.fromJson(json);
+    case 'substanceAmount':
+      return _SubstanceAmount.fromJson(json);
+    case 'substanceAmountReferenceRange':
+      return _SubstanceAmountReferenceRange.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
 }
 
-class _$MarketingStatusTearOff {
-  const _$MarketingStatusTearOff();
+class _$DraftTypesTearOff {
+  const _$DraftTypesTearOff();
 
-  _MarketingStatus call(
+  _MarketingStatus marketingStatus(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -35,59 +51,302 @@ class _$MarketingStatusTearOff {
       restoreDate,
     );
   }
+
+  _Population population(
+      String id,
+      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+      List<FhirExtension> modifierExtension,
+      Range ageRange,
+      CodeableConcept ageCodeableConcept,
+      CodeableConcept gender,
+      CodeableConcept race,
+      CodeableConcept physiologicalCondition) {
+    return _Population(
+      id,
+      fhirExtension,
+      modifierExtension,
+      ageRange,
+      ageCodeableConcept,
+      gender,
+      race,
+      physiologicalCondition,
+    );
+  }
+
+  _ProdCharacteristic prodCharacteristic(
+      String id,
+      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+      List<FhirExtension> modifierExtension,
+      Quantity height,
+      Quantity width,
+      Quantity depth,
+      Quantity weight,
+      Quantity nominalVolume,
+      Quantity externalDiameter,
+      String shape,
+      List<String> color,
+      List<String> imprint,
+      List<Attachment> image,
+      CodeableConcept scoring) {
+    return _ProdCharacteristic(
+      id,
+      fhirExtension,
+      modifierExtension,
+      height,
+      width,
+      depth,
+      weight,
+      nominalVolume,
+      externalDiameter,
+      shape,
+      color,
+      imprint,
+      image,
+      scoring,
+    );
+  }
+
+  _ProductShelfLife productShelfLife(
+      String id,
+      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+      List<FhirExtension> modifierExtension,
+      Identifier identifier,
+      CodeableConcept type,
+      Quantity period,
+      List<CodeableConcept> specialPrecautionsForStorage) {
+    return _ProductShelfLife(
+      id,
+      fhirExtension,
+      modifierExtension,
+      identifier,
+      type,
+      period,
+      specialPrecautionsForStorage,
+    );
+  }
+
+  _SubstanceAmount substanceAmount(
+      String id,
+      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+      List<FhirExtension> modifierExtension,
+      Quantity amountQuantity,
+      Range amountRange,
+      Markdown amountString,
+      CodeableConcept amountType,
+      String amountText,
+      _SubstanceAmountReferenceRange referenceRange) {
+    return _SubstanceAmount(
+      id,
+      fhirExtension,
+      modifierExtension,
+      amountQuantity,
+      amountRange,
+      amountString,
+      amountType,
+      amountText,
+      referenceRange,
+    );
+  }
+
+  _SubstanceAmountReferenceRange substanceAmountReferenceRange(
+      String id,
+      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+      List<FhirExtension> modifierExtension,
+      Quantity lowLimit,
+      Quantity highLimit) {
+    return _SubstanceAmountReferenceRange(
+      id,
+      fhirExtension,
+      modifierExtension,
+      lowLimit,
+      highLimit,
+    );
+  }
 }
 
 // ignore: unused_element
-const $MarketingStatus = _$MarketingStatusTearOff();
+const $DraftTypes = _$DraftTypesTearOff();
 
-mixin _$MarketingStatus {
+mixin _$DraftTypes {
   String get id;
   @JsonKey(name: 'extension')
   List<FhirExtension> get fhirExtension;
   List<FhirExtension> get modifierExtension;
-  CodeableConcept get country;
-  CodeableConcept get jurisdiction;
-  CodeableConcept get status;
-  Period get dateRange;
-  FhirDateTime get restoreDate;
 
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  });
   Map<String, dynamic> toJson();
-  $MarketingStatusCopyWith<MarketingStatus> get copyWith;
+  $DraftTypesCopyWith<DraftTypes> get copyWith;
 }
 
-abstract class $MarketingStatusCopyWith<$Res> {
-  factory $MarketingStatusCopyWith(
-          MarketingStatus value, $Res Function(MarketingStatus) then) =
-      _$MarketingStatusCopyWithImpl<$Res>;
+abstract class $DraftTypesCopyWith<$Res> {
+  factory $DraftTypesCopyWith(
+          DraftTypes value, $Res Function(DraftTypes) then) =
+      _$DraftTypesCopyWithImpl<$Res>;
   $Res call(
       {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      CodeableConcept country,
-      CodeableConcept jurisdiction,
-      CodeableConcept status,
-      Period dateRange,
-      FhirDateTime restoreDate});
+      List<FhirExtension> modifierExtension});
 }
 
-class _$MarketingStatusCopyWithImpl<$Res>
-    implements $MarketingStatusCopyWith<$Res> {
-  _$MarketingStatusCopyWithImpl(this._value, this._then);
+class _$DraftTypesCopyWithImpl<$Res> implements $DraftTypesCopyWith<$Res> {
+  _$DraftTypesCopyWithImpl(this._value, this._then);
 
-  final MarketingStatus _value;
+  final DraftTypes _value;
   // ignore: unused_field
-  final $Res Function(MarketingStatus) _then;
+  final $Res Function(DraftTypes) _then;
 
   @override
   $Res call({
     Object id = freezed,
     Object fhirExtension = freezed,
     Object modifierExtension = freezed,
-    Object country = freezed,
-    Object jurisdiction = freezed,
-    Object status = freezed,
-    Object dateRange = freezed,
-    Object restoreDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -97,21 +356,12 @@ class _$MarketingStatusCopyWithImpl<$Res>
       modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      country: country == freezed ? _value.country : country as CodeableConcept,
-      jurisdiction: jurisdiction == freezed
-          ? _value.jurisdiction
-          : jurisdiction as CodeableConcept,
-      status: status == freezed ? _value.status : status as CodeableConcept,
-      dateRange: dateRange == freezed ? _value.dateRange : dateRange as Period,
-      restoreDate: restoreDate == freezed
-          ? _value.restoreDate
-          : restoreDate as FhirDateTime,
     ));
   }
 }
 
 abstract class _$MarketingStatusCopyWith<$Res>
-    implements $MarketingStatusCopyWith<$Res> {
+    implements $DraftTypesCopyWith<$Res> {
   factory _$MarketingStatusCopyWith(
           _MarketingStatus value, $Res Function(_MarketingStatus) then) =
       __$MarketingStatusCopyWithImpl<$Res>;
@@ -128,7 +378,7 @@ abstract class _$MarketingStatusCopyWith<$Res>
 }
 
 class __$MarketingStatusCopyWithImpl<$Res>
-    extends _$MarketingStatusCopyWithImpl<$Res>
+    extends _$DraftTypesCopyWithImpl<$Res>
     implements _$MarketingStatusCopyWith<$Res> {
   __$MarketingStatusCopyWithImpl(
       _MarketingStatus _value, $Res Function(_MarketingStatus) _then)
@@ -210,7 +460,7 @@ class _$_MarketingStatus implements _MarketingStatus {
 
   @override
   String toString() {
-    return 'MarketingStatus(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, country: $country, jurisdiction: $jurisdiction, status: $status, dateRange: $dateRange, restoreDate: $restoreDate)';
+    return 'DraftTypes.marketingStatus(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, country: $country, jurisdiction: $jurisdiction, status: $status, dateRange: $dateRange, restoreDate: $restoreDate)';
   }
 
   @override
@@ -258,12 +508,199 @@ class _$_MarketingStatus implements _MarketingStatus {
       __$MarketingStatusCopyWithImpl<_MarketingStatus>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return marketingStatus(id, fhirExtension, modifierExtension, country,
+        jurisdiction, status, dateRange, restoreDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (marketingStatus != null) {
+      return marketingStatus(id, fhirExtension, modifierExtension, country,
+          jurisdiction, status, dateRange, restoreDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return marketingStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (marketingStatus != null) {
+      return marketingStatus(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_MarketingStatusToJson(this);
+    return _$_$_MarketingStatusToJson(this)
+      ..['runtimeType'] = 'marketingStatus';
   }
 }
 
-abstract class _MarketingStatus implements MarketingStatus {
+abstract class _MarketingStatus implements DraftTypes {
   const factory _MarketingStatus(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -284,122 +721,16 @@ abstract class _MarketingStatus implements MarketingStatus {
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   CodeableConcept get country;
-  @override
   CodeableConcept get jurisdiction;
-  @override
   CodeableConcept get status;
-  @override
   Period get dateRange;
-  @override
   FhirDateTime get restoreDate;
   @override
   _$MarketingStatusCopyWith<_MarketingStatus> get copyWith;
 }
 
-Population _$PopulationFromJson(Map<String, dynamic> json) {
-  return _Population.fromJson(json);
-}
-
-class _$PopulationTearOff {
-  const _$PopulationTearOff();
-
-  _Population call(
-      String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Range ageRange,
-      CodeableConcept ageCodeableConcept,
-      CodeableConcept gender,
-      CodeableConcept race,
-      CodeableConcept physiologicalCondition) {
-    return _Population(
-      id,
-      fhirExtension,
-      modifierExtension,
-      ageRange,
-      ageCodeableConcept,
-      gender,
-      race,
-      physiologicalCondition,
-    );
-  }
-}
-
-// ignore: unused_element
-const $Population = _$PopulationTearOff();
-
-mixin _$Population {
-  String get id;
-  @JsonKey(name: 'extension')
-  List<FhirExtension> get fhirExtension;
-  List<FhirExtension> get modifierExtension;
-  Range get ageRange;
-  CodeableConcept get ageCodeableConcept;
-  CodeableConcept get gender;
-  CodeableConcept get race;
-  CodeableConcept get physiologicalCondition;
-
-  Map<String, dynamic> toJson();
-  $PopulationCopyWith<Population> get copyWith;
-}
-
-abstract class $PopulationCopyWith<$Res> {
-  factory $PopulationCopyWith(
-          Population value, $Res Function(Population) then) =
-      _$PopulationCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Range ageRange,
-      CodeableConcept ageCodeableConcept,
-      CodeableConcept gender,
-      CodeableConcept race,
-      CodeableConcept physiologicalCondition});
-}
-
-class _$PopulationCopyWithImpl<$Res> implements $PopulationCopyWith<$Res> {
-  _$PopulationCopyWithImpl(this._value, this._then);
-
-  final Population _value;
-  // ignore: unused_field
-  final $Res Function(Population) _then;
-
-  @override
-  $Res call({
-    Object id = freezed,
-    Object fhirExtension = freezed,
-    Object modifierExtension = freezed,
-    Object ageRange = freezed,
-    Object ageCodeableConcept = freezed,
-    Object gender = freezed,
-    Object race = freezed,
-    Object physiologicalCondition = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      fhirExtension: fhirExtension == freezed
-          ? _value.fhirExtension
-          : fhirExtension as List<FhirExtension>,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
-          : modifierExtension as List<FhirExtension>,
-      ageRange: ageRange == freezed ? _value.ageRange : ageRange as Range,
-      ageCodeableConcept: ageCodeableConcept == freezed
-          ? _value.ageCodeableConcept
-          : ageCodeableConcept as CodeableConcept,
-      gender: gender == freezed ? _value.gender : gender as CodeableConcept,
-      race: race == freezed ? _value.race : race as CodeableConcept,
-      physiologicalCondition: physiologicalCondition == freezed
-          ? _value.physiologicalCondition
-          : physiologicalCondition as CodeableConcept,
-    ));
-  }
-}
-
-abstract class _$PopulationCopyWith<$Res> implements $PopulationCopyWith<$Res> {
+abstract class _$PopulationCopyWith<$Res> implements $DraftTypesCopyWith<$Res> {
   factory _$PopulationCopyWith(
           _Population value, $Res Function(_Population) then) =
       __$PopulationCopyWithImpl<$Res>;
@@ -415,7 +746,7 @@ abstract class _$PopulationCopyWith<$Res> implements $PopulationCopyWith<$Res> {
       CodeableConcept physiologicalCondition});
 }
 
-class __$PopulationCopyWithImpl<$Res> extends _$PopulationCopyWithImpl<$Res>
+class __$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
     implements _$PopulationCopyWith<$Res> {
   __$PopulationCopyWithImpl(
       _Population _value, $Res Function(_Population) _then)
@@ -499,7 +830,7 @@ class _$_Population implements _Population {
 
   @override
   String toString() {
-    return 'Population(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, ageRange: $ageRange, ageCodeableConcept: $ageCodeableConcept, gender: $gender, race: $race, physiologicalCondition: $physiologicalCondition)';
+    return 'DraftTypes.population(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, ageRange: $ageRange, ageCodeableConcept: $ageCodeableConcept, gender: $gender, race: $race, physiologicalCondition: $physiologicalCondition)';
   }
 
   @override
@@ -546,12 +877,198 @@ class _$_Population implements _Population {
       __$PopulationCopyWithImpl<_Population>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return population(id, fhirExtension, modifierExtension, ageRange,
+        ageCodeableConcept, gender, race, physiologicalCondition);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (population != null) {
+      return population(id, fhirExtension, modifierExtension, ageRange,
+          ageCodeableConcept, gender, race, physiologicalCondition);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return population(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (population != null) {
+      return population(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_PopulationToJson(this);
+    return _$_$_PopulationToJson(this)..['runtimeType'] = 'population';
   }
 }
 
-abstract class _Population implements Population {
+abstract class _Population implements DraftTypes {
   const factory _Population(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -572,160 +1089,17 @@ abstract class _Population implements Population {
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   Range get ageRange;
-  @override
   CodeableConcept get ageCodeableConcept;
-  @override
   CodeableConcept get gender;
-  @override
   CodeableConcept get race;
-  @override
   CodeableConcept get physiologicalCondition;
   @override
   _$PopulationCopyWith<_Population> get copyWith;
 }
 
-ProdCharacteristic _$ProdCharacteristicFromJson(Map<String, dynamic> json) {
-  return _ProdCharacteristic.fromJson(json);
-}
-
-class _$ProdCharacteristicTearOff {
-  const _$ProdCharacteristicTearOff();
-
-  _ProdCharacteristic call(
-      String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity height,
-      Quantity width,
-      Quantity depth,
-      Quantity weight,
-      Quantity nominalVolume,
-      Quantity externalDiameter,
-      String shape,
-      List<String> color,
-      List<String> imprint,
-      List<Attachment> image,
-      CodeableConcept scoring) {
-    return _ProdCharacteristic(
-      id,
-      fhirExtension,
-      modifierExtension,
-      height,
-      width,
-      depth,
-      weight,
-      nominalVolume,
-      externalDiameter,
-      shape,
-      color,
-      imprint,
-      image,
-      scoring,
-    );
-  }
-}
-
-// ignore: unused_element
-const $ProdCharacteristic = _$ProdCharacteristicTearOff();
-
-mixin _$ProdCharacteristic {
-  String get id;
-  @JsonKey(name: 'extension')
-  List<FhirExtension> get fhirExtension;
-  List<FhirExtension> get modifierExtension;
-  Quantity get height;
-  Quantity get width;
-  Quantity get depth;
-  Quantity get weight;
-  Quantity get nominalVolume;
-  Quantity get externalDiameter;
-  String get shape;
-  List<String> get color;
-  List<String> get imprint;
-  List<Attachment> get image;
-  CodeableConcept get scoring;
-
-  Map<String, dynamic> toJson();
-  $ProdCharacteristicCopyWith<ProdCharacteristic> get copyWith;
-}
-
-abstract class $ProdCharacteristicCopyWith<$Res> {
-  factory $ProdCharacteristicCopyWith(
-          ProdCharacteristic value, $Res Function(ProdCharacteristic) then) =
-      _$ProdCharacteristicCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity height,
-      Quantity width,
-      Quantity depth,
-      Quantity weight,
-      Quantity nominalVolume,
-      Quantity externalDiameter,
-      String shape,
-      List<String> color,
-      List<String> imprint,
-      List<Attachment> image,
-      CodeableConcept scoring});
-}
-
-class _$ProdCharacteristicCopyWithImpl<$Res>
-    implements $ProdCharacteristicCopyWith<$Res> {
-  _$ProdCharacteristicCopyWithImpl(this._value, this._then);
-
-  final ProdCharacteristic _value;
-  // ignore: unused_field
-  final $Res Function(ProdCharacteristic) _then;
-
-  @override
-  $Res call({
-    Object id = freezed,
-    Object fhirExtension = freezed,
-    Object modifierExtension = freezed,
-    Object height = freezed,
-    Object width = freezed,
-    Object depth = freezed,
-    Object weight = freezed,
-    Object nominalVolume = freezed,
-    Object externalDiameter = freezed,
-    Object shape = freezed,
-    Object color = freezed,
-    Object imprint = freezed,
-    Object image = freezed,
-    Object scoring = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      fhirExtension: fhirExtension == freezed
-          ? _value.fhirExtension
-          : fhirExtension as List<FhirExtension>,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
-          : modifierExtension as List<FhirExtension>,
-      height: height == freezed ? _value.height : height as Quantity,
-      width: width == freezed ? _value.width : width as Quantity,
-      depth: depth == freezed ? _value.depth : depth as Quantity,
-      weight: weight == freezed ? _value.weight : weight as Quantity,
-      nominalVolume: nominalVolume == freezed
-          ? _value.nominalVolume
-          : nominalVolume as Quantity,
-      externalDiameter: externalDiameter == freezed
-          ? _value.externalDiameter
-          : externalDiameter as Quantity,
-      shape: shape == freezed ? _value.shape : shape as String,
-      color: color == freezed ? _value.color : color as List<String>,
-      imprint: imprint == freezed ? _value.imprint : imprint as List<String>,
-      image: image == freezed ? _value.image : image as List<Attachment>,
-      scoring: scoring == freezed ? _value.scoring : scoring as CodeableConcept,
-    ));
-  }
-}
-
 abstract class _$ProdCharacteristicCopyWith<$Res>
-    implements $ProdCharacteristicCopyWith<$Res> {
+    implements $DraftTypesCopyWith<$Res> {
   factory _$ProdCharacteristicCopyWith(
           _ProdCharacteristic value, $Res Function(_ProdCharacteristic) then) =
       __$ProdCharacteristicCopyWithImpl<$Res>;
@@ -748,7 +1122,7 @@ abstract class _$ProdCharacteristicCopyWith<$Res>
 }
 
 class __$ProdCharacteristicCopyWithImpl<$Res>
-    extends _$ProdCharacteristicCopyWithImpl<$Res>
+    extends _$DraftTypesCopyWithImpl<$Res>
     implements _$ProdCharacteristicCopyWith<$Res> {
   __$ProdCharacteristicCopyWithImpl(
       _ProdCharacteristic _value, $Res Function(_ProdCharacteristic) _then)
@@ -868,7 +1242,7 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
 
   @override
   String toString() {
-    return 'ProdCharacteristic(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, height: $height, width: $width, depth: $depth, weight: $weight, nominalVolume: $nominalVolume, externalDiameter: $externalDiameter, shape: $shape, color: $color, imprint: $imprint, image: $image, scoring: $scoring)';
+    return 'DraftTypes.prodCharacteristic(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, height: $height, width: $width, depth: $depth, weight: $weight, nominalVolume: $nominalVolume, externalDiameter: $externalDiameter, shape: $shape, color: $color, imprint: $imprint, image: $image, scoring: $scoring)';
   }
 
   @override
@@ -933,12 +1307,225 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
       __$ProdCharacteristicCopyWithImpl<_ProdCharacteristic>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return prodCharacteristic(
+        id,
+        fhirExtension,
+        modifierExtension,
+        height,
+        width,
+        depth,
+        weight,
+        nominalVolume,
+        externalDiameter,
+        shape,
+        color,
+        imprint,
+        image,
+        scoring);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (prodCharacteristic != null) {
+      return prodCharacteristic(
+          id,
+          fhirExtension,
+          modifierExtension,
+          height,
+          width,
+          depth,
+          weight,
+          nominalVolume,
+          externalDiameter,
+          shape,
+          color,
+          imprint,
+          image,
+          scoring);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return prodCharacteristic(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (prodCharacteristic != null) {
+      return prodCharacteristic(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_ProdCharacteristicToJson(this);
+    return _$_$_ProdCharacteristicToJson(this)
+      ..['runtimeType'] = 'prodCharacteristic';
   }
 }
 
-abstract class _ProdCharacteristic implements ProdCharacteristic {
+abstract class _ProdCharacteristic implements DraftTypes {
   const factory _ProdCharacteristic(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -965,129 +1552,23 @@ abstract class _ProdCharacteristic implements ProdCharacteristic {
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   Quantity get height;
-  @override
   Quantity get width;
-  @override
   Quantity get depth;
-  @override
   Quantity get weight;
-  @override
   Quantity get nominalVolume;
-  @override
   Quantity get externalDiameter;
-  @override
   String get shape;
-  @override
   List<String> get color;
-  @override
   List<String> get imprint;
-  @override
   List<Attachment> get image;
-  @override
   CodeableConcept get scoring;
   @override
   _$ProdCharacteristicCopyWith<_ProdCharacteristic> get copyWith;
 }
 
-ProductShelfLife _$ProductShelfLifeFromJson(Map<String, dynamic> json) {
-  return _ProductShelfLife.fromJson(json);
-}
-
-class _$ProductShelfLifeTearOff {
-  const _$ProductShelfLifeTearOff();
-
-  _ProductShelfLife call(
-      String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Identifier identifier,
-      CodeableConcept type,
-      Quantity period,
-      List<CodeableConcept> specialPrecautionsForStorage) {
-    return _ProductShelfLife(
-      id,
-      fhirExtension,
-      modifierExtension,
-      identifier,
-      type,
-      period,
-      specialPrecautionsForStorage,
-    );
-  }
-}
-
-// ignore: unused_element
-const $ProductShelfLife = _$ProductShelfLifeTearOff();
-
-mixin _$ProductShelfLife {
-  String get id;
-  @JsonKey(name: 'extension')
-  List<FhirExtension> get fhirExtension;
-  List<FhirExtension> get modifierExtension;
-  Identifier get identifier;
-  CodeableConcept get type;
-  Quantity get period;
-  List<CodeableConcept> get specialPrecautionsForStorage;
-
-  Map<String, dynamic> toJson();
-  $ProductShelfLifeCopyWith<ProductShelfLife> get copyWith;
-}
-
-abstract class $ProductShelfLifeCopyWith<$Res> {
-  factory $ProductShelfLifeCopyWith(
-          ProductShelfLife value, $Res Function(ProductShelfLife) then) =
-      _$ProductShelfLifeCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Identifier identifier,
-      CodeableConcept type,
-      Quantity period,
-      List<CodeableConcept> specialPrecautionsForStorage});
-}
-
-class _$ProductShelfLifeCopyWithImpl<$Res>
-    implements $ProductShelfLifeCopyWith<$Res> {
-  _$ProductShelfLifeCopyWithImpl(this._value, this._then);
-
-  final ProductShelfLife _value;
-  // ignore: unused_field
-  final $Res Function(ProductShelfLife) _then;
-
-  @override
-  $Res call({
-    Object id = freezed,
-    Object fhirExtension = freezed,
-    Object modifierExtension = freezed,
-    Object identifier = freezed,
-    Object type = freezed,
-    Object period = freezed,
-    Object specialPrecautionsForStorage = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      fhirExtension: fhirExtension == freezed
-          ? _value.fhirExtension
-          : fhirExtension as List<FhirExtension>,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
-          : modifierExtension as List<FhirExtension>,
-      identifier:
-          identifier == freezed ? _value.identifier : identifier as Identifier,
-      type: type == freezed ? _value.type : type as CodeableConcept,
-      period: period == freezed ? _value.period : period as Quantity,
-      specialPrecautionsForStorage: specialPrecautionsForStorage == freezed
-          ? _value.specialPrecautionsForStorage
-          : specialPrecautionsForStorage as List<CodeableConcept>,
-    ));
-  }
-}
-
 abstract class _$ProductShelfLifeCopyWith<$Res>
-    implements $ProductShelfLifeCopyWith<$Res> {
+    implements $DraftTypesCopyWith<$Res> {
   factory _$ProductShelfLifeCopyWith(
           _ProductShelfLife value, $Res Function(_ProductShelfLife) then) =
       __$ProductShelfLifeCopyWithImpl<$Res>;
@@ -1103,7 +1584,7 @@ abstract class _$ProductShelfLifeCopyWith<$Res>
 }
 
 class __$ProductShelfLifeCopyWithImpl<$Res>
-    extends _$ProductShelfLifeCopyWithImpl<$Res>
+    extends _$DraftTypesCopyWithImpl<$Res>
     implements _$ProductShelfLifeCopyWith<$Res> {
   __$ProductShelfLifeCopyWithImpl(
       _ProductShelfLife _value, $Res Function(_ProductShelfLife) _then)
@@ -1179,7 +1660,7 @@ class _$_ProductShelfLife implements _ProductShelfLife {
 
   @override
   String toString() {
-    return 'ProductShelfLife(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, identifier: $identifier, type: $type, period: $period, specialPrecautionsForStorage: $specialPrecautionsForStorage)';
+    return 'DraftTypes.productShelfLife(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, identifier: $identifier, type: $type, period: $period, specialPrecautionsForStorage: $specialPrecautionsForStorage)';
   }
 
   @override
@@ -1224,12 +1705,199 @@ class _$_ProductShelfLife implements _ProductShelfLife {
       __$ProductShelfLifeCopyWithImpl<_ProductShelfLife>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return productShelfLife(id, fhirExtension, modifierExtension, identifier,
+        type, period, specialPrecautionsForStorage);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (productShelfLife != null) {
+      return productShelfLife(id, fhirExtension, modifierExtension, identifier,
+          type, period, specialPrecautionsForStorage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return productShelfLife(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (productShelfLife != null) {
+      return productShelfLife(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_ProductShelfLifeToJson(this);
+    return _$_$_ProductShelfLifeToJson(this)
+      ..['runtimeType'] = 'productShelfLife';
   }
 }
 
-abstract class _ProductShelfLife implements ProductShelfLife {
+abstract class _ProductShelfLife implements DraftTypes {
   const factory _ProductShelfLife(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1249,147 +1917,16 @@ abstract class _ProductShelfLife implements ProductShelfLife {
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   Identifier get identifier;
-  @override
   CodeableConcept get type;
-  @override
   Quantity get period;
-  @override
   List<CodeableConcept> get specialPrecautionsForStorage;
   @override
   _$ProductShelfLifeCopyWith<_ProductShelfLife> get copyWith;
 }
 
-SubstanceAmount _$SubstanceAmountFromJson(Map<String, dynamic> json) {
-  return _SubstanceAmount.fromJson(json);
-}
-
-class _$SubstanceAmountTearOff {
-  const _$SubstanceAmountTearOff();
-
-  _SubstanceAmount call(
-      String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity amountQuantity,
-      Range amountRange,
-      Markdown amountString,
-      CodeableConcept amountType,
-      String amountText,
-      SubstanceAmountReferenceRange referenceRange) {
-    return _SubstanceAmount(
-      id,
-      fhirExtension,
-      modifierExtension,
-      amountQuantity,
-      amountRange,
-      amountString,
-      amountType,
-      amountText,
-      referenceRange,
-    );
-  }
-}
-
-// ignore: unused_element
-const $SubstanceAmount = _$SubstanceAmountTearOff();
-
-mixin _$SubstanceAmount {
-  String get id;
-  @JsonKey(name: 'extension')
-  List<FhirExtension> get fhirExtension;
-  List<FhirExtension> get modifierExtension;
-  Quantity get amountQuantity;
-  Range get amountRange;
-  Markdown get amountString;
-  CodeableConcept get amountType;
-  String get amountText;
-  SubstanceAmountReferenceRange get referenceRange;
-
-  Map<String, dynamic> toJson();
-  $SubstanceAmountCopyWith<SubstanceAmount> get copyWith;
-}
-
-abstract class $SubstanceAmountCopyWith<$Res> {
-  factory $SubstanceAmountCopyWith(
-          SubstanceAmount value, $Res Function(SubstanceAmount) then) =
-      _$SubstanceAmountCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity amountQuantity,
-      Range amountRange,
-      Markdown amountString,
-      CodeableConcept amountType,
-      String amountText,
-      SubstanceAmountReferenceRange referenceRange});
-
-  $SubstanceAmountReferenceRangeCopyWith<$Res> get referenceRange;
-}
-
-class _$SubstanceAmountCopyWithImpl<$Res>
-    implements $SubstanceAmountCopyWith<$Res> {
-  _$SubstanceAmountCopyWithImpl(this._value, this._then);
-
-  final SubstanceAmount _value;
-  // ignore: unused_field
-  final $Res Function(SubstanceAmount) _then;
-
-  @override
-  $Res call({
-    Object id = freezed,
-    Object fhirExtension = freezed,
-    Object modifierExtension = freezed,
-    Object amountQuantity = freezed,
-    Object amountRange = freezed,
-    Object amountString = freezed,
-    Object amountType = freezed,
-    Object amountText = freezed,
-    Object referenceRange = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      fhirExtension: fhirExtension == freezed
-          ? _value.fhirExtension
-          : fhirExtension as List<FhirExtension>,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
-          : modifierExtension as List<FhirExtension>,
-      amountQuantity: amountQuantity == freezed
-          ? _value.amountQuantity
-          : amountQuantity as Quantity,
-      amountRange:
-          amountRange == freezed ? _value.amountRange : amountRange as Range,
-      amountString: amountString == freezed
-          ? _value.amountString
-          : amountString as Markdown,
-      amountType: amountType == freezed
-          ? _value.amountType
-          : amountType as CodeableConcept,
-      amountText:
-          amountText == freezed ? _value.amountText : amountText as String,
-      referenceRange: referenceRange == freezed
-          ? _value.referenceRange
-          : referenceRange as SubstanceAmountReferenceRange,
-    ));
-  }
-
-  @override
-  $SubstanceAmountReferenceRangeCopyWith<$Res> get referenceRange {
-    if (_value.referenceRange == null) {
-      return null;
-    }
-    return $SubstanceAmountReferenceRangeCopyWith<$Res>(_value.referenceRange,
-        (value) {
-      return _then(_value.copyWith(referenceRange: value));
-    });
-  }
-}
-
 abstract class _$SubstanceAmountCopyWith<$Res>
-    implements $SubstanceAmountCopyWith<$Res> {
+    implements $DraftTypesCopyWith<$Res> {
   factory _$SubstanceAmountCopyWith(
           _SubstanceAmount value, $Res Function(_SubstanceAmount) then) =
       __$SubstanceAmountCopyWithImpl<$Res>;
@@ -1403,14 +1940,11 @@ abstract class _$SubstanceAmountCopyWith<$Res>
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      SubstanceAmountReferenceRange referenceRange});
-
-  @override
-  $SubstanceAmountReferenceRangeCopyWith<$Res> get referenceRange;
+      _SubstanceAmountReferenceRange referenceRange});
 }
 
 class __$SubstanceAmountCopyWithImpl<$Res>
-    extends _$SubstanceAmountCopyWithImpl<$Res>
+    extends _$DraftTypesCopyWithImpl<$Res>
     implements _$SubstanceAmountCopyWith<$Res> {
   __$SubstanceAmountCopyWithImpl(
       _SubstanceAmount _value, $Res Function(_SubstanceAmount) _then)
@@ -1448,7 +1982,7 @@ class __$SubstanceAmountCopyWithImpl<$Res>
       amountText == freezed ? _value.amountText : amountText as String,
       referenceRange == freezed
           ? _value.referenceRange
-          : referenceRange as SubstanceAmountReferenceRange,
+          : referenceRange as _SubstanceAmountReferenceRange,
     ));
   }
 }
@@ -1496,11 +2030,11 @@ class _$_SubstanceAmount implements _SubstanceAmount {
   @override
   final String amountText;
   @override
-  final SubstanceAmountReferenceRange referenceRange;
+  final _SubstanceAmountReferenceRange referenceRange;
 
   @override
   String toString() {
-    return 'SubstanceAmount(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, amountQuantity: $amountQuantity, amountRange: $amountRange, amountString: $amountString, amountType: $amountType, amountText: $amountText, referenceRange: $referenceRange)';
+    return 'DraftTypes.substanceAmount(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, amountQuantity: $amountQuantity, amountRange: $amountRange, amountString: $amountString, amountType: $amountType, amountText: $amountText, referenceRange: $referenceRange)';
   }
 
   @override
@@ -1553,12 +2087,207 @@ class _$_SubstanceAmount implements _SubstanceAmount {
       __$SubstanceAmountCopyWithImpl<_SubstanceAmount>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return substanceAmount(id, fhirExtension, modifierExtension, amountQuantity,
+        amountRange, amountString, amountType, amountText, referenceRange);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (substanceAmount != null) {
+      return substanceAmount(
+          id,
+          fhirExtension,
+          modifierExtension,
+          amountQuantity,
+          amountRange,
+          amountString,
+          amountType,
+          amountText,
+          referenceRange);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return substanceAmount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (substanceAmount != null) {
+      return substanceAmount(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubstanceAmountToJson(this);
+    return _$_$_SubstanceAmountToJson(this)
+      ..['runtimeType'] = 'substanceAmount';
   }
 }
 
-abstract class _SubstanceAmount implements SubstanceAmount {
+abstract class _SubstanceAmount implements DraftTypes {
   const factory _SubstanceAmount(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1568,7 +2297,7 @@ abstract class _SubstanceAmount implements SubstanceAmount {
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      SubstanceAmountReferenceRange referenceRange) = _$_SubstanceAmount;
+      _SubstanceAmountReferenceRange referenceRange) = _$_SubstanceAmount;
 
   factory _SubstanceAmount.fromJson(Map<String, dynamic> json) =
       _$_SubstanceAmount.fromJson;
@@ -1580,108 +2309,18 @@ abstract class _SubstanceAmount implements SubstanceAmount {
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   Quantity get amountQuantity;
-  @override
   Range get amountRange;
-  @override
   Markdown get amountString;
-  @override
   CodeableConcept get amountType;
-  @override
   String get amountText;
-  @override
-  SubstanceAmountReferenceRange get referenceRange;
+  _SubstanceAmountReferenceRange get referenceRange;
   @override
   _$SubstanceAmountCopyWith<_SubstanceAmount> get copyWith;
 }
 
-SubstanceAmountReferenceRange _$SubstanceAmountReferenceRangeFromJson(
-    Map<String, dynamic> json) {
-  return _SubstanceAmountReferenceRange.fromJson(json);
-}
-
-class _$SubstanceAmountReferenceRangeTearOff {
-  const _$SubstanceAmountReferenceRangeTearOff();
-
-  _SubstanceAmountReferenceRange call(
-      String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity lowLimit,
-      Quantity highLimit) {
-    return _SubstanceAmountReferenceRange(
-      id,
-      fhirExtension,
-      modifierExtension,
-      lowLimit,
-      highLimit,
-    );
-  }
-}
-
-// ignore: unused_element
-const $SubstanceAmountReferenceRange = _$SubstanceAmountReferenceRangeTearOff();
-
-mixin _$SubstanceAmountReferenceRange {
-  String get id;
-  @JsonKey(name: 'extension')
-  List<FhirExtension> get fhirExtension;
-  List<FhirExtension> get modifierExtension;
-  Quantity get lowLimit;
-  Quantity get highLimit;
-
-  Map<String, dynamic> toJson();
-  $SubstanceAmountReferenceRangeCopyWith<SubstanceAmountReferenceRange>
-      get copyWith;
-}
-
-abstract class $SubstanceAmountReferenceRangeCopyWith<$Res> {
-  factory $SubstanceAmountReferenceRangeCopyWith(
-          SubstanceAmountReferenceRange value,
-          $Res Function(SubstanceAmountReferenceRange) then) =
-      _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
-      List<FhirExtension> modifierExtension,
-      Quantity lowLimit,
-      Quantity highLimit});
-}
-
-class _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
-    implements $SubstanceAmountReferenceRangeCopyWith<$Res> {
-  _$SubstanceAmountReferenceRangeCopyWithImpl(this._value, this._then);
-
-  final SubstanceAmountReferenceRange _value;
-  // ignore: unused_field
-  final $Res Function(SubstanceAmountReferenceRange) _then;
-
-  @override
-  $Res call({
-    Object id = freezed,
-    Object fhirExtension = freezed,
-    Object modifierExtension = freezed,
-    Object lowLimit = freezed,
-    Object highLimit = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      fhirExtension: fhirExtension == freezed
-          ? _value.fhirExtension
-          : fhirExtension as List<FhirExtension>,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
-          : modifierExtension as List<FhirExtension>,
-      lowLimit: lowLimit == freezed ? _value.lowLimit : lowLimit as Quantity,
-      highLimit:
-          highLimit == freezed ? _value.highLimit : highLimit as Quantity,
-    ));
-  }
-}
-
 abstract class _$SubstanceAmountReferenceRangeCopyWith<$Res>
-    implements $SubstanceAmountReferenceRangeCopyWith<$Res> {
+    implements $DraftTypesCopyWith<$Res> {
   factory _$SubstanceAmountReferenceRangeCopyWith(
           _SubstanceAmountReferenceRange value,
           $Res Function(_SubstanceAmountReferenceRange) then) =
@@ -1696,7 +2335,7 @@ abstract class _$SubstanceAmountReferenceRangeCopyWith<$Res>
 }
 
 class __$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
-    extends _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
+    extends _$DraftTypesCopyWithImpl<$Res>
     implements _$SubstanceAmountReferenceRangeCopyWith<$Res> {
   __$SubstanceAmountReferenceRangeCopyWithImpl(
       _SubstanceAmountReferenceRange _value,
@@ -1762,7 +2401,7 @@ class _$_SubstanceAmountReferenceRange
 
   @override
   String toString() {
-    return 'SubstanceAmountReferenceRange(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, lowLimit: $lowLimit, highLimit: $highLimit)';
+    return 'DraftTypes.substanceAmountReferenceRange(id: $id, fhirExtension: $fhirExtension, modifierExtension: $modifierExtension, lowLimit: $lowLimit, highLimit: $highLimit)';
   }
 
   @override
@@ -1800,13 +2439,199 @@ class _$_SubstanceAmountReferenceRange
           _SubstanceAmountReferenceRange>(this, _$identity);
 
   @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result marketingStatus(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            CodeableConcept country,
+            CodeableConcept jurisdiction,
+            CodeableConcept status,
+            Period dateRange,
+            FhirDateTime restoreDate),
+    @required
+        Result population(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Range ageRange,
+            CodeableConcept ageCodeableConcept,
+            CodeableConcept gender,
+            CodeableConcept race,
+            CodeableConcept physiologicalCondition),
+    @required
+        Result prodCharacteristic(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity height,
+            Quantity width,
+            Quantity depth,
+            Quantity weight,
+            Quantity nominalVolume,
+            Quantity externalDiameter,
+            String shape,
+            List<String> color,
+            List<String> imprint,
+            List<Attachment> image,
+            CodeableConcept scoring),
+    @required
+        Result productShelfLife(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Identifier identifier,
+            CodeableConcept type,
+            Quantity period,
+            List<CodeableConcept> specialPrecautionsForStorage),
+    @required
+        Result substanceAmount(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity amountQuantity,
+            Range amountRange,
+            Markdown amountString,
+            CodeableConcept amountType,
+            String amountText,
+            _SubstanceAmountReferenceRange referenceRange),
+    @required
+        Result substanceAmountReferenceRange(
+            String id,
+            @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+            List<FhirExtension> modifierExtension,
+            Quantity lowLimit,
+            Quantity highLimit),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return substanceAmountReferenceRange(
+        id, fhirExtension, modifierExtension, lowLimit, highLimit);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result marketingStatus(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        CodeableConcept country,
+        CodeableConcept jurisdiction,
+        CodeableConcept status,
+        Period dateRange,
+        FhirDateTime restoreDate),
+    Result population(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Range ageRange,
+        CodeableConcept ageCodeableConcept,
+        CodeableConcept gender,
+        CodeableConcept race,
+        CodeableConcept physiologicalCondition),
+    Result prodCharacteristic(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity height,
+        Quantity width,
+        Quantity depth,
+        Quantity weight,
+        Quantity nominalVolume,
+        Quantity externalDiameter,
+        String shape,
+        List<String> color,
+        List<String> imprint,
+        List<Attachment> image,
+        CodeableConcept scoring),
+    Result productShelfLife(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Identifier identifier,
+        CodeableConcept type,
+        Quantity period,
+        List<CodeableConcept> specialPrecautionsForStorage),
+    Result substanceAmount(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity amountQuantity,
+        Range amountRange,
+        Markdown amountString,
+        CodeableConcept amountType,
+        String amountText,
+        _SubstanceAmountReferenceRange referenceRange),
+    Result substanceAmountReferenceRange(
+        String id,
+        @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
+        List<FhirExtension> modifierExtension,
+        Quantity lowLimit,
+        Quantity highLimit),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (substanceAmountReferenceRange != null) {
+      return substanceAmountReferenceRange(
+          id, fhirExtension, modifierExtension, lowLimit, highLimit);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result marketingStatus(_MarketingStatus value),
+    @required Result population(_Population value),
+    @required Result prodCharacteristic(_ProdCharacteristic value),
+    @required Result productShelfLife(_ProductShelfLife value),
+    @required Result substanceAmount(_SubstanceAmount value),
+    @required
+        Result substanceAmountReferenceRange(
+            _SubstanceAmountReferenceRange value),
+  }) {
+    assert(marketingStatus != null);
+    assert(population != null);
+    assert(prodCharacteristic != null);
+    assert(productShelfLife != null);
+    assert(substanceAmount != null);
+    assert(substanceAmountReferenceRange != null);
+    return substanceAmountReferenceRange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result marketingStatus(_MarketingStatus value),
+    Result population(_Population value),
+    Result prodCharacteristic(_ProdCharacteristic value),
+    Result productShelfLife(_ProductShelfLife value),
+    Result substanceAmount(_SubstanceAmount value),
+    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (substanceAmountReferenceRange != null) {
+      return substanceAmountReferenceRange(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubstanceAmountReferenceRangeToJson(this);
+    return _$_$_SubstanceAmountReferenceRangeToJson(this)
+      ..['runtimeType'] = 'substanceAmountReferenceRange';
   }
 }
 
-abstract class _SubstanceAmountReferenceRange
-    implements SubstanceAmountReferenceRange {
+abstract class _SubstanceAmountReferenceRange implements DraftTypes {
   const factory _SubstanceAmountReferenceRange(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1824,9 +2649,7 @@ abstract class _SubstanceAmountReferenceRange
   List<FhirExtension> get fhirExtension;
   @override
   List<FhirExtension> get modifierExtension;
-  @override
   Quantity get lowLimit;
-  @override
   Quantity get highLimit;
   @override
   _$SubstanceAmountReferenceRangeCopyWith<_SubstanceAmountReferenceRange>
