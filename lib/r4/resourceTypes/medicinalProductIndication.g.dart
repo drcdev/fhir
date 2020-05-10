@@ -68,7 +68,10 @@ MedicinalProductIndication _$MedicinalProductIndicationFromJson(
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    population: json['population'] as List,
+    population: (json['population'] as List)
+        ?.map((e) =>
+            e == null ? null : Population.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -105,7 +108,8 @@ Map<String, dynamic> _$MedicinalProductIndicationToJson(
       'otherTherapy', instance.otherTherapy?.map((e) => e?.toJson())?.toList());
   writeNotNull('undesirableEffect',
       instance.undesirableEffect?.map((e) => e?.toJson())?.toList());
-  writeNotNull('population', instance.population);
+  writeNotNull(
+      'population', instance.population?.map((e) => e?.toJson())?.toList());
   return val;
 }
 

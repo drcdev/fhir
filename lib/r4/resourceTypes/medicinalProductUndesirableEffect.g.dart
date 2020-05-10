@@ -50,7 +50,10 @@ MedicinalProductUndesirableEffect _$MedicinalProductUndesirableEffectFromJson(
         ? null
         : CodeableConcept.fromJson(
             json['frequencyOfOccurrence'] as Map<String, dynamic>),
-    population: json['population'] as List,
+    population: (json['population'] as List)
+        ?.map((e) =>
+            e == null ? null : Population.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -81,6 +84,7 @@ Map<String, dynamic> _$MedicinalProductUndesirableEffectToJson(
   writeNotNull('classification', instance.classification?.toJson());
   writeNotNull(
       'frequencyOfOccurrence', instance.frequencyOfOccurrence?.toJson());
-  writeNotNull('population', instance.population);
+  writeNotNull(
+      'population', instance.population?.map((e) => e?.toJson())?.toList());
   return val;
 }

@@ -53,7 +53,10 @@ MedicinalProductManufactured _$MedicinalProductManufacturedFromJson(
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    physicalCharacteristics: json['physicalCharacteristics'],
+    physicalCharacteristics: json['physicalCharacteristics'] == null
+        ? null
+        : ProdCharacteristic.fromJson(
+            json['physicalCharacteristics'] as Map<String, dynamic>),
     otherCharacteristics: (json['otherCharacteristics'] as List)
         ?.map((e) => e == null
             ? null
@@ -90,7 +93,8 @@ Map<String, dynamic> _$MedicinalProductManufacturedToJson(
       'manufacturer', instance.manufacturer?.map((e) => e?.toJson())?.toList());
   writeNotNull(
       'ingredient', instance.ingredient?.map((e) => e?.toJson())?.toList());
-  writeNotNull('physicalCharacteristics', instance.physicalCharacteristics);
+  writeNotNull(
+      'physicalCharacteristics', instance.physicalCharacteristics?.toJson());
   writeNotNull('otherCharacteristics',
       instance.otherCharacteristics?.map((e) => e?.toJson())?.toList());
   return val;

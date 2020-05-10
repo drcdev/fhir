@@ -69,8 +69,15 @@ DeviceDefinition _$DeviceDefinitionFromJson(Map<String, dynamic> json) {
             ? null
             : CodeableConcept.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    shelfLifeStorage: json['shelfLifeStorage'] as List,
-    physicalCharacteristics: json['physicalCharacteristics'],
+    shelfLifeStorage: (json['shelfLifeStorage'] as List)
+        ?.map((e) => e == null
+            ? null
+            : ProductShelfLife.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    physicalCharacteristics: json['physicalCharacteristics'] == null
+        ? null
+        : ProdCharacteristic.fromJson(
+            json['physicalCharacteristics'] as Map<String, dynamic>),
     languageCode: (json['languageCode'] as List)
         ?.map((e) => e == null
             ? null
@@ -150,8 +157,10 @@ Map<String, dynamic> _$DeviceDefinitionToJson(DeviceDefinition instance) {
       instance.specialization?.map((e) => e?.toJson())?.toList());
   writeNotNull('version', instance.version);
   writeNotNull('safety', instance.safety?.map((e) => e?.toJson())?.toList());
-  writeNotNull('shelfLifeStorage', instance.shelfLifeStorage);
-  writeNotNull('physicalCharacteristics', instance.physicalCharacteristics);
+  writeNotNull('shelfLifeStorage',
+      instance.shelfLifeStorage?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'physicalCharacteristics', instance.physicalCharacteristics?.toJson());
   writeNotNull(
       'languageCode', instance.languageCode?.map((e) => e?.toJson())?.toList());
   writeNotNull(

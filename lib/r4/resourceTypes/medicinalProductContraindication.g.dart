@@ -60,7 +60,10 @@ MedicinalProductContraindication _$MedicinalProductContraindicationFromJson(
             : MedicinalProductContraindicationOtherTherapy.fromJson(
                 e as Map<String, dynamic>))
         ?.toList(),
-    population: json['population'] as List,
+    population: (json['population'] as List)
+        ?.map((e) =>
+            e == null ? null : Population.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -94,7 +97,8 @@ Map<String, dynamic> _$MedicinalProductContraindicationToJson(
       instance.therapeuticIndication?.map((e) => e?.toJson())?.toList());
   writeNotNull(
       'otherTherapy', instance.otherTherapy?.map((e) => e?.toJson())?.toList());
-  writeNotNull('population', instance.population);
+  writeNotNull(
+      'population', instance.population?.map((e) => e?.toJson())?.toList());
   return val;
 }
 

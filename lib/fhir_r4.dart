@@ -1,4 +1,4 @@
-export 'r4/draftTypes.dart';
+export 'r4/draft_types.dart';
 export 'r4/generalTypes.dart';
 export 'r4/metadataTypes.dart';
 export 'primitiveTypes/primitiveTypes.dart';

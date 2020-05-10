@@ -1,9 +1,6 @@
-import 'package:dartz/dartz.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../fhir_r4.dart';
-import '../../primitiveTypes/primitiveFailures.dart';
-import '../../primitiveTypes/primitiveObjects.dart';
 
 part 'address.g.dart';
 
@@ -11,7 +8,9 @@ part 'address.g.dart';
 class Address {
   String id;
   List<FhirExtension> extension;
+  @JsonKey(unknownEnumValue: AddressUse.unknown)
   AddressUse use;
+  @JsonKey(unknownEnumValue: AddressType.unknown)
   AddressType type;
   String text;
   List<String> line;
@@ -41,46 +40,30 @@ class Address {
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 
-class AddressUse extends PrimitiveObject<String> {
-  @override
-  final Either<PrimitiveFailure<String>, String> value;
-  factory AddressUse(String value) {
-    assert(value != null);
-    return AddressUse._(
-      validateEnum(
-        value,
-        [
-          'home',
-          'work',
-          'temp',
-          'old',
-          'billing',
-        ],
-      ),
-    );
-  }
-  const AddressUse._(this.value);
-  factory AddressUse.fromJson(String json) => AddressUse(json);
-  String toJson() => result();
+// spec: https://itnext.io/comparing-freezed-to-built-value-3ff978c8647
+
+enum AddressUse {
+  @JsonValue('home')
+  home,
+  @JsonValue('work')
+  work,
+  @JsonValue('temp')
+  temp,
+  @JsonValue('old')
+  old,
+  @JsonValue('billing')
+  billing,
+  @JsonValue('unknown')
+  unknown,
 }
 
-class AddressType extends PrimitiveObject<String> {
-  @override
-  final Either<PrimitiveFailure<String>, String> value;
-  factory AddressType(String value) {
-    assert(value != null);
-    return AddressType._(
-      validateEnum(
-        value,
-        [
-          'postal',
-          'physical',
-          'both',
-        ],
-      ),
-    );
-  }
-  const AddressType._(this.value);
-  factory AddressType.fromJson(String json) => AddressType(json);
-  String toJson() => result();
+enum AddressType {
+  @JsonValue('postal')
+  postal,
+  @JsonValue('physical')
+  physical,
+  @JsonValue('both')
+  both,
+  @JsonValue('unknown')
+  unknown,
 }
