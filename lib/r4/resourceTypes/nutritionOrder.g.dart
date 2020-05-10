@@ -24,12 +24,14 @@ NutritionOrder _$NutritionOrderFromJson(Map<String, dynamic> json) {
         : Narrative.fromJson(json['text'] as Map<String, dynamic>),
     contained: json['contained'] as List,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     identifier: (json['identifier'] as List)
         ?.map((e) =>
@@ -147,12 +149,14 @@ NutritionOrderOralDiet _$NutritionOrderOralDietFromJson(
   return NutritionOrderOralDiet(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     type: (json['type'] as List)
         ?.map((e) => e == null
@@ -214,12 +218,14 @@ NutritionOrderNutrient _$NutritionOrderNutrientFromJson(
   return NutritionOrderNutrient(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifier: json['modifier'] == null
         ? null
@@ -255,12 +261,14 @@ NutritionOrderTexture _$NutritionOrderTextureFromJson(
   return NutritionOrderTexture(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifier: json['modifier'] == null
         ? null
@@ -296,12 +304,14 @@ NutritionOrderSupplement _$NutritionOrderSupplementFromJson(
   return NutritionOrderSupplement(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     type: json['type'] == null
         ? null
@@ -347,12 +357,14 @@ NutritionOrderEnteralFormula _$NutritionOrderEnteralFormulaFromJson(
   return NutritionOrderEnteralFormula(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     baseFormulaType: json['baseFormulaType'] == null
         ? null
@@ -417,12 +429,14 @@ NutritionOrderAdministration _$NutritionOrderAdministrationFromJson(
   return NutritionOrderAdministration(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     schedule: json['schedule'] == null
         ? null

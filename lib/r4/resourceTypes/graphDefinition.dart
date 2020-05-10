@@ -16,8 +16,8 @@ class GraphDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -61,16 +61,15 @@ class GraphDefinition {
     this.link,
   });
 
-  factory GraphDefinition.fromJson(Map<String, dynamic> json) =>
-      _$GraphDefinitionFromJson(json);
+  factory GraphDefinition.fromJson(Map<String, dynamic> json) => _$GraphDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$GraphDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GraphDefinitionLink {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   String sliceName;
   int min;
@@ -90,16 +89,15 @@ class GraphDefinitionLink {
     this.target,
   });
 
-  factory GraphDefinitionLink.fromJson(Map<String, dynamic> json) =>
-      _$GraphDefinitionLinkFromJson(json);
+  factory GraphDefinitionLink.fromJson(Map<String, dynamic> json) => _$GraphDefinitionLinkFromJson(json);
   Map<String, dynamic> toJson() => _$GraphDefinitionLinkToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GraphDefinitionTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code type;
   String params;
   Canonical profile;
@@ -117,16 +115,15 @@ class GraphDefinitionTarget {
     this.link,
   });
 
-  factory GraphDefinitionTarget.fromJson(Map<String, dynamic> json) =>
-      _$GraphDefinitionTargetFromJson(json);
+  factory GraphDefinitionTarget.fromJson(Map<String, dynamic> json) => _$GraphDefinitionTargetFromJson(json);
   Map<String, dynamic> toJson() => _$GraphDefinitionTargetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GraphDefinitionCompartment {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   GraphDefinitionCompartmentUse use;
   Code code;
   GraphDefinitionCompartmentRule rule;
@@ -144,8 +141,7 @@ class GraphDefinitionCompartment {
     this.description,
   });
 
-  factory GraphDefinitionCompartment.fromJson(Map<String, dynamic> json) =>
-      _$GraphDefinitionCompartmentFromJson(json);
+  factory GraphDefinitionCompartment.fromJson(Map<String, dynamic> json) => _$GraphDefinitionCompartmentFromJson(json);
   Map<String, dynamic> toJson() => _$GraphDefinitionCompartmentToJson(this);
 }
 
@@ -167,8 +163,7 @@ class GraphDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const GraphDefinitionStatus._(this.value);
-  factory GraphDefinitionStatus.fromJson(String json) =>
-      GraphDefinitionStatus(json);
+  factory GraphDefinitionStatus.fromJson(String json) => GraphDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -188,8 +183,7 @@ class GraphDefinitionCompartmentUse extends PrimitiveObject<String> {
     );
   }
   const GraphDefinitionCompartmentUse._(this.value);
-  factory GraphDefinitionCompartmentUse.fromJson(String json) =>
-      GraphDefinitionCompartmentUse(json);
+  factory GraphDefinitionCompartmentUse.fromJson(String json) => GraphDefinitionCompartmentUse(json);
   String toJson() => result();
 }
 
@@ -211,7 +205,6 @@ class GraphDefinitionCompartmentRule extends PrimitiveObject<String> {
     );
   }
   const GraphDefinitionCompartmentRule._(this.value);
-  factory GraphDefinitionCompartmentRule.fromJson(String json) =>
-      GraphDefinitionCompartmentRule(json);
+  factory GraphDefinitionCompartmentRule.fromJson(String json) => GraphDefinitionCompartmentRule(json);
   String toJson() => result();
 }

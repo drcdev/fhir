@@ -17,8 +17,8 @@ class ChargeItem {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<FhirUri> definitionUri;
   List<Canonical> definitionCanonical;
@@ -90,16 +90,15 @@ class ChargeItem {
     this.supportingInformation,
   });
 
-  factory ChargeItem.fromJson(Map<String, dynamic> json) =>
-      _$ChargeItemFromJson(json);
+  factory ChargeItem.fromJson(Map<String, dynamic> json) => _$ChargeItemFromJson(json);
   Map<String, dynamic> toJson() => _$ChargeItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ChargeItemPerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
 
@@ -111,8 +110,7 @@ class ChargeItemPerformer {
     @required this.actor,
   });
 
-  factory ChargeItemPerformer.fromJson(Map<String, dynamic> json) =>
-      _$ChargeItemPerformerFromJson(json);
+  factory ChargeItemPerformer.fromJson(Map<String, dynamic> json) => _$ChargeItemPerformerFromJson(json);
   Map<String, dynamic> toJson() => _$ChargeItemPerformerToJson(this);
 }
 

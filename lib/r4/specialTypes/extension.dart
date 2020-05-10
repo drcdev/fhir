@@ -5,9 +5,9 @@ import '../../fhir_r4.dart';
 part 'extension.g.dart';
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
-class Extension {
+class FhirExtension {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> fhirExtension;
   FhirUri url;
   Base64Binary valueBase64Binary;
   bool valueBoolean;
@@ -60,9 +60,9 @@ class Extension {
   Dosage valueDosage;
   Meta valueMeta;
 
-  Extension({
+  FhirExtension({
     this.id,
-    this.extension,
+    this.fhirExtension,
     this.url,
     this.valueBase64Binary,
     this.valueBoolean,
@@ -116,7 +116,6 @@ class Extension {
     this.valueMeta,
   });
 
-  factory Extension.fromJson(Map<String, dynamic> json) =>
-      _$ExtensionFromJson(json);
-  Map<String, dynamic> toJson() => _$ExtensionToJson(this);
+  factory FhirExtension.fromJson(Map<String, dynamic> json) => _$FhirExtensionFromJson(json);
+  Map<String, dynamic> toJson() => _$FhirExtensionToJson(this);
 }

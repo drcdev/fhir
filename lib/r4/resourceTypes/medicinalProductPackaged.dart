@@ -14,8 +14,8 @@ class MedicinalProductPackaged {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> subject;
   String description;
@@ -47,16 +47,15 @@ class MedicinalProductPackaged {
     @required this.packageItem,
   });
 
-  factory MedicinalProductPackaged.fromJson(Map<String, dynamic> json) =>
-      _$MedicinalProductPackagedFromJson(json);
+  factory MedicinalProductPackaged.fromJson(Map<String, dynamic> json) => _$MedicinalProductPackagedFromJson(json);
   Map<String, dynamic> toJson() => _$MedicinalProductPackagedToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPackagedBatchIdentifier {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier outerPackaging;
   Identifier immediatePackaging;
 
@@ -68,18 +67,16 @@ class MedicinalProductPackagedBatchIdentifier {
     this.immediatePackaging,
   });
 
-  factory MedicinalProductPackagedBatchIdentifier.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPackagedBatchIdentifier.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPackagedBatchIdentifierFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPackagedBatchIdentifierToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPackagedBatchIdentifierToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPackagedPackageItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   Quantity quantity;
@@ -111,9 +108,7 @@ class MedicinalProductPackagedPackageItem {
     this.manufacturer,
   });
 
-  factory MedicinalProductPackagedPackageItem.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPackagedPackageItem.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPackagedPackageItemFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPackagedPackageItemToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPackagedPackageItemToJson(this);
 }

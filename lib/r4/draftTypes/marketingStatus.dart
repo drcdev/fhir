@@ -8,8 +8,8 @@ part 'marketingStatus.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MarketingStatus {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept country;
   CodeableConcept jurisdiction;
   CodeableConcept status;
@@ -27,7 +27,6 @@ class MarketingStatus {
     this.restoreDate,
   });
 
-  factory MarketingStatus.fromJson(Map<String, dynamic> json) =>
-      _$MarketingStatusFromJson(json);
+  factory MarketingStatus.fromJson(Map<String, dynamic> json) => _$MarketingStatusFromJson(json);
   Map<String, dynamic> toJson() => _$MarketingStatusToJson(this);
 }

@@ -17,8 +17,8 @@ class Invoice {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   InvoiceStatus status;
   String cancelledReason;
@@ -64,16 +64,15 @@ class Invoice {
     this.note,
   });
 
-  factory Invoice.fromJson(Map<String, dynamic> json) =>
-      _$InvoiceFromJson(json);
+  factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
   Map<String, dynamic> toJson() => _$InvoiceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InvoiceParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept role;
   Reference actor;
 
@@ -85,16 +84,15 @@ class InvoiceParticipant {
     @required this.actor,
   });
 
-  factory InvoiceParticipant.fromJson(Map<String, dynamic> json) =>
-      _$InvoiceParticipantFromJson(json);
+  factory InvoiceParticipant.fromJson(Map<String, dynamic> json) => _$InvoiceParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$InvoiceParticipantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InvoiceLineItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   Reference chargeItemReference;
   CodeableConcept chargeItemCodeableConcept;
@@ -110,16 +108,15 @@ class InvoiceLineItem {
     this.priceComponent,
   });
 
-  factory InvoiceLineItem.fromJson(Map<String, dynamic> json) =>
-      _$InvoiceLineItemFromJson(json);
+  factory InvoiceLineItem.fromJson(Map<String, dynamic> json) => _$InvoiceLineItemFromJson(json);
   Map<String, dynamic> toJson() => _$InvoiceLineItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InvoicePriceComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   InvoicePriceComponentType type;
   CodeableConcept code;
   double factor;
@@ -135,8 +132,7 @@ class InvoicePriceComponent {
     this.amount,
   });
 
-  factory InvoicePriceComponent.fromJson(Map<String, dynamic> json) =>
-      _$InvoicePriceComponentFromJson(json);
+  factory InvoicePriceComponent.fromJson(Map<String, dynamic> json) => _$InvoicePriceComponentFromJson(json);
   Map<String, dynamic> toJson() => _$InvoicePriceComponentToJson(this);
 }
 
@@ -183,7 +179,6 @@ class InvoicePriceComponentType extends PrimitiveObject<String> {
     );
   }
   const InvoicePriceComponentType._(this.value);
-  factory InvoicePriceComponentType.fromJson(String json) =>
-      InvoicePriceComponentType(json);
+  factory InvoicePriceComponentType.fromJson(String json) => InvoicePriceComponentType(json);
   String toJson() => result();
 }

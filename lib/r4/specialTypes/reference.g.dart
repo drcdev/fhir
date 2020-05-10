@@ -10,8 +10,9 @@ Reference _$ReferenceFromJson(Map<String, dynamic> json) {
   return Reference(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     reference: json['reference'] as String,
     type:

@@ -13,8 +13,8 @@ class EnrollmentRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   FhirDateTime created;
@@ -42,7 +42,6 @@ class EnrollmentRequest {
     this.coverage,
   });
 
-  factory EnrollmentRequest.fromJson(Map<String, dynamic> json) =>
-      _$EnrollmentRequestFromJson(json);
+  factory EnrollmentRequest.fromJson(Map<String, dynamic> json) => _$EnrollmentRequestFromJson(json);
   Map<String, dynamic> toJson() => _$EnrollmentRequestToJson(this);
 }

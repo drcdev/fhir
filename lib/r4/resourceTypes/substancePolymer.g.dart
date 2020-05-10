@@ -24,12 +24,14 @@ SubstancePolymer _$SubstancePolymerFromJson(Map<String, dynamic> json) {
         : Narrative.fromJson(json['text'] as Map<String, dynamic>),
     contained: json['contained'] as List,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     clas: json['clas'] == null
         ? null
@@ -93,12 +95,14 @@ SubstancePolymerMonomerSet _$SubstancePolymerMonomerSetFromJson(
   return SubstancePolymerMonomerSet(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     ratioType: json['ratioType'] == null
         ? null
@@ -138,12 +142,14 @@ SubstancePolymerStartingMaterial _$SubstancePolymerStartingMaterialFromJson(
   return SubstancePolymerStartingMaterial(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     material: json['material'] == null
         ? null
@@ -185,12 +191,14 @@ SubstancePolymerRepeat _$SubstancePolymerRepeatFromJson(
   return SubstancePolymerRepeat(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     numberOfUnits: json['numberOfUnits'] as int,
     averageMolecularFormula: json['averageMolecularFormula'] as String,
@@ -234,12 +242,14 @@ SubstancePolymerRepeatUnit _$SubstancePolymerRepeatUnitFromJson(
   return SubstancePolymerRepeatUnit(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     orientationOfPolymerisation: json['orientationOfPolymerisation'] == null
         ? null
@@ -296,12 +306,14 @@ SubstancePolymerDegreeOfPolymerisation
   return SubstancePolymerDegreeOfPolymerisation(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     degree: json['degree'] == null
         ? null
@@ -338,12 +350,14 @@ SubstancePolymerStructuralRepresentation
   return SubstancePolymerStructuralRepresentation(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     type: json['type'] == null
         ? null

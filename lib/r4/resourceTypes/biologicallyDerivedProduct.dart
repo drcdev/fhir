@@ -16,8 +16,8 @@ class BiologicallyDerivedProduct {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   BiologicallyDerivedProductCategory productCategory;
   CodeableConcept productCode;
@@ -53,16 +53,15 @@ class BiologicallyDerivedProduct {
     this.storage,
   });
 
-  factory BiologicallyDerivedProduct.fromJson(Map<String, dynamic> json) =>
-      _$BiologicallyDerivedProductFromJson(json);
+  factory BiologicallyDerivedProduct.fromJson(Map<String, dynamic> json) => _$BiologicallyDerivedProductFromJson(json);
   Map<String, dynamic> toJson() => _$BiologicallyDerivedProductToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BiologicallyDerivedProductCollection {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference collector;
   Reference source;
   FhirDateTime collectedDateTime;
@@ -78,18 +77,16 @@ class BiologicallyDerivedProductCollection {
     this.collectedPeriod,
   });
 
-  factory BiologicallyDerivedProductCollection.fromJson(
-          Map<String, dynamic> json) =>
+  factory BiologicallyDerivedProductCollection.fromJson(Map<String, dynamic> json) =>
       _$BiologicallyDerivedProductCollectionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$BiologicallyDerivedProductCollectionToJson(this);
+  Map<String, dynamic> toJson() => _$BiologicallyDerivedProductCollectionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BiologicallyDerivedProductProcessing {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   CodeableConcept procedure;
   Reference additive;
@@ -107,18 +104,16 @@ class BiologicallyDerivedProductProcessing {
     this.timePeriod,
   });
 
-  factory BiologicallyDerivedProductProcessing.fromJson(
-          Map<String, dynamic> json) =>
+  factory BiologicallyDerivedProductProcessing.fromJson(Map<String, dynamic> json) =>
       _$BiologicallyDerivedProductProcessingFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$BiologicallyDerivedProductProcessingToJson(this);
+  Map<String, dynamic> toJson() => _$BiologicallyDerivedProductProcessingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BiologicallyDerivedProductManipulation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   FhirDateTime timeDateTime;
   Period timePeriod;
@@ -132,18 +127,16 @@ class BiologicallyDerivedProductManipulation {
     this.timePeriod,
   });
 
-  factory BiologicallyDerivedProductManipulation.fromJson(
-          Map<String, dynamic> json) =>
+  factory BiologicallyDerivedProductManipulation.fromJson(Map<String, dynamic> json) =>
       _$BiologicallyDerivedProductManipulationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$BiologicallyDerivedProductManipulationToJson(this);
+  Map<String, dynamic> toJson() => _$BiologicallyDerivedProductManipulationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BiologicallyDerivedProductStorage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   double temperature;
   BiologicallyDerivedProductStorageScale scale;
@@ -159,11 +152,9 @@ class BiologicallyDerivedProductStorage {
     this.duration,
   });
 
-  factory BiologicallyDerivedProductStorage.fromJson(
-          Map<String, dynamic> json) =>
+  factory BiologicallyDerivedProductStorage.fromJson(Map<String, dynamic> json) =>
       _$BiologicallyDerivedProductStorageFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$BiologicallyDerivedProductStorageToJson(this);
+  Map<String, dynamic> toJson() => _$BiologicallyDerivedProductStorageToJson(this);
 }
 
 class BiologicallyDerivedProductCategory extends PrimitiveObject<String> {
@@ -185,8 +176,7 @@ class BiologicallyDerivedProductCategory extends PrimitiveObject<String> {
     );
   }
   const BiologicallyDerivedProductCategory._(this.value);
-  factory BiologicallyDerivedProductCategory.fromJson(String json) =>
-      BiologicallyDerivedProductCategory(json);
+  factory BiologicallyDerivedProductCategory.fromJson(String json) => BiologicallyDerivedProductCategory(json);
   String toJson() => result();
 }
 
@@ -206,8 +196,7 @@ class BiologicallyDerivedProductStatus extends PrimitiveObject<String> {
     );
   }
   const BiologicallyDerivedProductStatus._(this.value);
-  factory BiologicallyDerivedProductStatus.fromJson(String json) =>
-      BiologicallyDerivedProductStatus(json);
+  factory BiologicallyDerivedProductStatus.fromJson(String json) => BiologicallyDerivedProductStatus(json);
   String toJson() => result();
 }
 
@@ -228,7 +217,6 @@ class BiologicallyDerivedProductStorageScale extends PrimitiveObject<String> {
     );
   }
   const BiologicallyDerivedProductStorageScale._(this.value);
-  factory BiologicallyDerivedProductStorageScale.fromJson(String json) =>
-      BiologicallyDerivedProductStorageScale(json);
+  factory BiologicallyDerivedProductStorageScale.fromJson(String json) => BiologicallyDerivedProductStorageScale(json);
   String toJson() => result();
 }

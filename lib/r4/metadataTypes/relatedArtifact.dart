@@ -10,7 +10,7 @@ part 'relatedArtifact.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RelatedArtifact {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   RelatedArtifactType type;
   String label;
   String display;
@@ -31,8 +31,7 @@ class RelatedArtifact {
     this.resource,
   });
 
-  factory RelatedArtifact.fromJson(Map<String, dynamic> json) =>
-      _$RelatedArtifactFromJson(json);
+  factory RelatedArtifact.fromJson(Map<String, dynamic> json) => _$RelatedArtifactFromJson(json);
   Map<String, dynamic> toJson() => _$RelatedArtifactToJson(this);
 }
 
@@ -58,7 +57,6 @@ class RelatedArtifactType extends PrimitiveObject<String> {
     );
   }
   const RelatedArtifactType._(this.value);
-  factory RelatedArtifactType.fromJson(String json) =>
-      RelatedArtifactType(json);
+  factory RelatedArtifactType.fromJson(String json) => RelatedArtifactType(json);
   String toJson() => result();
 }

@@ -16,8 +16,8 @@ class CompartmentDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -59,16 +59,15 @@ class CompartmentDefinition {
     this.resource,
   });
 
-  factory CompartmentDefinition.fromJson(Map<String, dynamic> json) =>
-      _$CompartmentDefinitionFromJson(json);
+  factory CompartmentDefinition.fromJson(Map<String, dynamic> json) => _$CompartmentDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$CompartmentDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CompartmentDefinitionResource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   List<String> param;
   String documentation;
@@ -105,8 +104,7 @@ class CompartmentDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const CompartmentDefinitionStatus._(this.value);
-  factory CompartmentDefinitionStatus.fromJson(String json) =>
-      CompartmentDefinitionStatus(json);
+  factory CompartmentDefinitionStatus.fromJson(String json) => CompartmentDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -129,7 +127,6 @@ class CompartmentDefinitionCode extends PrimitiveObject<String> {
     );
   }
   const CompartmentDefinitionCode._(this.value);
-  factory CompartmentDefinitionCode.fromJson(String json) =>
-      CompartmentDefinitionCode(json);
+  factory CompartmentDefinitionCode.fromJson(String json) => CompartmentDefinitionCode(json);
   String toJson() => result();
 }

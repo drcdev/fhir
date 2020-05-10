@@ -17,8 +17,8 @@ class ResearchElementDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -100,16 +100,15 @@ class ResearchElementDefinition {
     @required this.characteristic,
   });
 
-  factory ResearchElementDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ResearchElementDefinitionFromJson(json);
+  factory ResearchElementDefinition.fromJson(Map<String, dynamic> json) => _$ResearchElementDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchElementDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ResearchElementDefinitionCharacteristic {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept definitionCodeableConcept;
   Canonical definitionCanonical;
   Expression definitionExpression;
@@ -123,16 +122,14 @@ class ResearchElementDefinitionCharacteristic {
   Duration studyEffectiveDuration;
   Timing studyEffectiveTiming;
   Duration studyEffectiveTimeFromStart;
-  ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure
-      studyEffectiveGroupMeasure;
+  ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure studyEffectiveGroupMeasure;
   String participantEffectiveDescription;
   FhirDateTime participantEffectiveDateTime;
   Period participantEffectivePeriod;
   Duration participantEffectiveDuration;
   Timing participantEffectiveTiming;
   Duration participantEffectiveTimeFromStart;
-  ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure
-      participantEffectiveGroupMeasure;
+  ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure participantEffectiveGroupMeasure;
 
   ResearchElementDefinitionCharacteristic({
     this.id,
@@ -161,11 +158,9 @@ class ResearchElementDefinitionCharacteristic {
     this.participantEffectiveGroupMeasure,
   });
 
-  factory ResearchElementDefinitionCharacteristic.fromJson(
-          Map<String, dynamic> json) =>
+  factory ResearchElementDefinitionCharacteristic.fromJson(Map<String, dynamic> json) =>
       _$ResearchElementDefinitionCharacteristicFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ResearchElementDefinitionCharacteristicToJson(this);
+  Map<String, dynamic> toJson() => _$ResearchElementDefinitionCharacteristicToJson(this);
 }
 
 class ResearchElementDefinitionStatus extends PrimitiveObject<String> {
@@ -186,8 +181,7 @@ class ResearchElementDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const ResearchElementDefinitionStatus._(this.value);
-  factory ResearchElementDefinitionStatus.fromJson(String json) =>
-      ResearchElementDefinitionStatus(json);
+  factory ResearchElementDefinitionStatus.fromJson(String json) => ResearchElementDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -208,8 +202,7 @@ class ResearchElementDefinitionType extends PrimitiveObject<String> {
     );
   }
   const ResearchElementDefinitionType._(this.value);
-  factory ResearchElementDefinitionType.fromJson(String json) =>
-      ResearchElementDefinitionType(json);
+  factory ResearchElementDefinitionType.fromJson(String json) => ResearchElementDefinitionType(json);
   String toJson() => result();
 }
 
@@ -230,17 +223,14 @@ class ResearchElementDefinitionVariableType extends PrimitiveObject<String> {
     );
   }
   const ResearchElementDefinitionVariableType._(this.value);
-  factory ResearchElementDefinitionVariableType.fromJson(String json) =>
-      ResearchElementDefinitionVariableType(json);
+  factory ResearchElementDefinitionVariableType.fromJson(String json) => ResearchElementDefinitionVariableType(json);
   String toJson() => result();
 }
 
-class ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure
-    extends PrimitiveObject<String> {
+class ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
-  factory ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure(
-      String value) {
+  factory ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure(String value) {
     assert(value != null);
     return ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure._(
       validateEnum(
@@ -256,23 +246,18 @@ class ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure
       ),
     );
   }
-  const ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure._(
-      this.value);
-  factory ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure.fromJson(
-          String json) =>
+  const ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure._(this.value);
+  factory ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure.fromJson(String json) =>
       ResearchElementDefinitionCharacteristicStudyEffectiveGroupMeasure(json);
   String toJson() => result();
 }
 
-class ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure
-    extends PrimitiveObject<String> {
+class ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
-  factory ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure(
-      String value) {
+  factory ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure(String value) {
     assert(value != null);
-    return ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure
-        ._(
+    return ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure._(
       validateEnum(
         value,
         [
@@ -286,11 +271,8 @@ class ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure
       ),
     );
   }
-  const ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure._(
-      this.value);
-  factory ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure.fromJson(
-          String json) =>
-      ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure(
-          json);
+  const ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure._(this.value);
+  factory ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure.fromJson(String json) =>
+      ResearchElementDefinitionCharacteristicParticipantEffectiveGroupMeasure(json);
   String toJson() => result();
 }

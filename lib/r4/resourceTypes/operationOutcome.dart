@@ -17,8 +17,8 @@ class OperationOutcome {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<OperationOutcomeIssue> issue;
 
   OperationOutcome({
@@ -34,16 +34,15 @@ class OperationOutcome {
     @required this.issue,
   });
 
-  factory OperationOutcome.fromJson(Map<String, dynamic> json) =>
-      _$OperationOutcomeFromJson(json);
+  factory OperationOutcome.fromJson(Map<String, dynamic> json) => _$OperationOutcomeFromJson(json);
   Map<String, dynamic> toJson() => _$OperationOutcomeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OperationOutcomeIssue {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   OperationOutcomeIssueSeverity severity;
   OperationOutcomeIssueCode code;
   CodeableConcept details;
@@ -63,8 +62,7 @@ class OperationOutcomeIssue {
     this.expression,
   });
 
-  factory OperationOutcomeIssue.fromJson(Map<String, dynamic> json) =>
-      _$OperationOutcomeIssueFromJson(json);
+  factory OperationOutcomeIssue.fromJson(Map<String, dynamic> json) => _$OperationOutcomeIssueFromJson(json);
   Map<String, dynamic> toJson() => _$OperationOutcomeIssueToJson(this);
 }
 
@@ -86,8 +84,7 @@ class OperationOutcomeIssueSeverity extends PrimitiveObject<String> {
     );
   }
   const OperationOutcomeIssueSeverity._(this.value);
-  factory OperationOutcomeIssueSeverity.fromJson(String json) =>
-      OperationOutcomeIssueSeverity(json);
+  factory OperationOutcomeIssueSeverity.fromJson(String json) => OperationOutcomeIssueSeverity(json);
   String toJson() => result();
 }
 
@@ -136,7 +133,6 @@ class OperationOutcomeIssueCode extends PrimitiveObject<String> {
     );
   }
   const OperationOutcomeIssueCode._(this.value);
-  factory OperationOutcomeIssueCode.fromJson(String json) =>
-      OperationOutcomeIssueCode(json);
+  factory OperationOutcomeIssueCode.fromJson(String json) => OperationOutcomeIssueCode(json);
   String toJson() => result();
 }

@@ -24,12 +24,14 @@ ExampleScenario _$ExampleScenarioFromJson(Map<String, dynamic> json) {
         : Narrative.fromJson(json['text'] as Map<String, dynamic>),
     contained: json['contained'] as List,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url'] as String),
     identifier: (json['identifier'] as List)
@@ -136,12 +138,14 @@ ExampleScenarioActor _$ExampleScenarioActorFromJson(Map<String, dynamic> json) {
   return ExampleScenarioActor(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     actorId: json['actorId'] as String,
     type: json['type'] == null
@@ -181,12 +185,14 @@ ExampleScenarioInstance _$ExampleScenarioInstanceFromJson(
   return ExampleScenarioInstance(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     resourceId: json['resourceId'] as String,
     resourceType: json['resourceType'] == null
@@ -240,12 +246,14 @@ ExampleScenarioVersion _$ExampleScenarioVersionFromJson(
   return ExampleScenarioVersion(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     versionId: json['versionId'] as String,
     description: json['description'] == null
@@ -279,12 +287,14 @@ ExampleScenarioContainedInstance _$ExampleScenarioContainedInstanceFromJson(
   return ExampleScenarioContainedInstance(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     resourceId: json['resourceId'] as String,
     versionId: json['versionId'] as String,
@@ -316,12 +326,14 @@ ExampleScenarioProcess _$ExampleScenarioProcessFromJson(
   return ExampleScenarioProcess(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     title: json['title'] as String,
     description: json['description'] == null
@@ -368,12 +380,14 @@ ExampleScenarioStep _$ExampleScenarioStepFromJson(Map<String, dynamic> json) {
   return ExampleScenarioStep(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     process: (json['process'] as List)
         ?.map((e) => e == null
@@ -420,12 +434,14 @@ ExampleScenarioOperation _$ExampleScenarioOperationFromJson(
   return ExampleScenarioOperation(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     number: json['number'] as String,
     type: json['type'] as String,
@@ -481,12 +497,14 @@ ExampleScenarioAlternative _$ExampleScenarioAlternativeFromJson(
   return ExampleScenarioAlternative(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     title: json['title'] as String,
     description: json['description'] == null

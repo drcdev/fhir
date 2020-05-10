@@ -7,7 +7,7 @@ part 'contactDetail.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContactDetail {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   String name;
   List<ContactPoint> telecom;
 
@@ -18,7 +18,6 @@ class ContactDetail {
     this.telecom,
   });
 
-  factory ContactDetail.fromJson(Map<String, dynamic> json) =>
-      _$ContactDetailFromJson(json);
+  factory ContactDetail.fromJson(Map<String, dynamic> json) => _$ContactDetailFromJson(json);
   Map<String, dynamic> toJson() => _$ContactDetailToJson(this);
 }

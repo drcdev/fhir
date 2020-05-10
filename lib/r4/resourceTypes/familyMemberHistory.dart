@@ -17,8 +17,8 @@ class FamilyMemberHistory {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -84,16 +84,15 @@ class FamilyMemberHistory {
     this.condition,
   });
 
-  factory FamilyMemberHistory.fromJson(Map<String, dynamic> json) =>
-      _$FamilyMemberHistoryFromJson(json);
+  factory FamilyMemberHistory.fromJson(Map<String, dynamic> json) => _$FamilyMemberHistoryFromJson(json);
   Map<String, dynamic> toJson() => _$FamilyMemberHistoryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class FamilyMemberHistoryCondition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept outcome;
   bool contributedToDeath;
@@ -140,7 +139,6 @@ class FamilyMemberHistoryStatus extends PrimitiveObject<String> {
     );
   }
   const FamilyMemberHistoryStatus._(this.value);
-  factory FamilyMemberHistoryStatus.fromJson(String json) =>
-      FamilyMemberHistoryStatus(json);
+  factory FamilyMemberHistoryStatus.fromJson(String json) => FamilyMemberHistoryStatus(json);
   String toJson() => result();
 }

@@ -7,7 +7,7 @@ part 'parameterDefinition.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ParameterDefinition {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Code name;
   Code use;
   int min;
@@ -28,7 +28,6 @@ class ParameterDefinition {
     this.profile,
   });
 
-  factory ParameterDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ParameterDefinitionFromJson(json);
+  factory ParameterDefinition.fromJson(Map<String, dynamic> json) => _$ParameterDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ParameterDefinitionToJson(this);
 }

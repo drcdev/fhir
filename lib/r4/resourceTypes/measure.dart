@@ -17,8 +17,8 @@ class Measure {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -116,16 +116,15 @@ class Measure {
     this.supplementalData,
   });
 
-  factory Measure.fromJson(Map<String, dynamic> json) =>
-      _$MeasureFromJson(json);
+  factory Measure.fromJson(Map<String, dynamic> json) => _$MeasureFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureGroup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   String description;
   List<MeasurePopulation> population;
@@ -141,16 +140,15 @@ class MeasureGroup {
     this.stratifier,
   });
 
-  factory MeasureGroup.fromJson(Map<String, dynamic> json) =>
-      _$MeasureGroupFromJson(json);
+  factory MeasureGroup.fromJson(Map<String, dynamic> json) => _$MeasureGroupFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasurePopulation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   String description;
   Expression criteria;
@@ -164,16 +162,15 @@ class MeasurePopulation {
     @required this.criteria,
   });
 
-  factory MeasurePopulation.fromJson(Map<String, dynamic> json) =>
-      _$MeasurePopulationFromJson(json);
+  factory MeasurePopulation.fromJson(Map<String, dynamic> json) => _$MeasurePopulationFromJson(json);
   Map<String, dynamic> toJson() => _$MeasurePopulationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureStratifier {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   String description;
   Expression criteria;
@@ -189,16 +186,15 @@ class MeasureStratifier {
     this.component,
   });
 
-  factory MeasureStratifier.fromJson(Map<String, dynamic> json) =>
-      _$MeasureStratifierFromJson(json);
+  factory MeasureStratifier.fromJson(Map<String, dynamic> json) => _$MeasureStratifierFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureStratifierToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   String description;
   Expression criteria;
@@ -212,16 +208,15 @@ class MeasureComponent {
     @required this.criteria,
   });
 
-  factory MeasureComponent.fromJson(Map<String, dynamic> json) =>
-      _$MeasureComponentFromJson(json);
+  factory MeasureComponent.fromJson(Map<String, dynamic> json) => _$MeasureComponentFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureComponentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureSupplementalData {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   List<CodeableConcept> usage;
   String description;
@@ -237,8 +232,7 @@ class MeasureSupplementalData {
     @required this.criteria,
   });
 
-  factory MeasureSupplementalData.fromJson(Map<String, dynamic> json) =>
-      _$MeasureSupplementalDataFromJson(json);
+  factory MeasureSupplementalData.fromJson(Map<String, dynamic> json) => _$MeasureSupplementalDataFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureSupplementalDataToJson(this);
 }
 

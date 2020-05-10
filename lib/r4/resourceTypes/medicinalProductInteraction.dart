@@ -13,8 +13,8 @@ class MedicinalProductInteraction {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> subject;
   String description;
   List<MedicinalProductInteractionInteractant> interactant;
@@ -50,8 +50,8 @@ class MedicinalProductInteraction {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductInteractionInteractant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference itemReference;
   CodeableConcept itemCodeableConcept;
 
@@ -63,9 +63,7 @@ class MedicinalProductInteractionInteractant {
     this.itemCodeableConcept,
   });
 
-  factory MedicinalProductInteractionInteractant.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductInteractionInteractant.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductInteractionInteractantFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductInteractionInteractantToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductInteractionInteractantToJson(this);
 }

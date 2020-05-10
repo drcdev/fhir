@@ -25,12 +25,14 @@ SubstanceReferenceInformation _$SubstanceReferenceInformationFromJson(
         : Narrative.fromJson(json['text'] as Map<String, dynamic>),
     contained: json['contained'] as List,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     comment: json['comment'] as String,
     gene: (json['gene'] as List)
@@ -96,12 +98,14 @@ SubstanceReferenceInformationGene _$SubstanceReferenceInformationGeneFromJson(
   return SubstanceReferenceInformationGene(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     geneSequenceOrigin: json['geneSequenceOrigin'] == null
         ? null
@@ -144,12 +148,14 @@ SubstanceReferenceInformationGeneElement
   return SubstanceReferenceInformationGeneElement(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     type: json['type'] == null
         ? null
@@ -191,12 +197,14 @@ SubstanceReferenceInformationClassification
   return SubstanceReferenceInformationClassification(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     domain: json['domain'] == null
         ? null
@@ -244,12 +252,14 @@ SubstanceReferenceInformationTarget
   return SubstanceReferenceInformationTarget(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     target: json['target'] == null
         ? null

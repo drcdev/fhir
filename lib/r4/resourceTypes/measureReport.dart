@@ -17,8 +17,8 @@ class MeasureReport {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   MeasureReportStatus status;
   MeasureReportType type;
@@ -54,16 +54,15 @@ class MeasureReport {
     this.evaluatedResource,
   });
 
-  factory MeasureReport.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportFromJson(json);
+  factory MeasureReport.fromJson(Map<String, dynamic> json) => _$MeasureReportFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportGroup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   List<MeasureReportPopulation> population;
   Quantity measureScore;
@@ -79,16 +78,15 @@ class MeasureReportGroup {
     this.stratifier,
   });
 
-  factory MeasureReportGroup.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportGroupFromJson(json);
+  factory MeasureReportGroup.fromJson(Map<String, dynamic> json) => _$MeasureReportGroupFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportPopulation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   int count;
   Reference subjectResults;
@@ -102,16 +100,15 @@ class MeasureReportPopulation {
     this.subjectResults,
   });
 
-  factory MeasureReportPopulation.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportPopulationFromJson(json);
+  factory MeasureReportPopulation.fromJson(Map<String, dynamic> json) => _$MeasureReportPopulationFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportPopulationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportStratifier {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> code;
   List<MeasureReportStratum> stratum;
 
@@ -123,16 +120,15 @@ class MeasureReportStratifier {
     this.stratum,
   });
 
-  factory MeasureReportStratifier.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportStratifierFromJson(json);
+  factory MeasureReportStratifier.fromJson(Map<String, dynamic> json) => _$MeasureReportStratifierFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportStratifierToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportStratum {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept value;
   List<MeasureReportComponent> component;
   List<MeasureReportPopulation1> population;
@@ -148,16 +144,15 @@ class MeasureReportStratum {
     this.measureScore,
   });
 
-  factory MeasureReportStratum.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportStratumFromJson(json);
+  factory MeasureReportStratum.fromJson(Map<String, dynamic> json) => _$MeasureReportStratumFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportStratumToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept value;
 
@@ -169,16 +164,15 @@ class MeasureReportComponent {
     @required this.value,
   });
 
-  factory MeasureReportComponent.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportComponentFromJson(json);
+  factory MeasureReportComponent.fromJson(Map<String, dynamic> json) => _$MeasureReportComponentFromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportComponentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MeasureReportPopulation1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   int count;
   Reference subjectResults;
@@ -192,8 +186,7 @@ class MeasureReportPopulation1 {
     this.subjectResults,
   });
 
-  factory MeasureReportPopulation1.fromJson(Map<String, dynamic> json) =>
-      _$MeasureReportPopulation1FromJson(json);
+  factory MeasureReportPopulation1.fromJson(Map<String, dynamic> json) => _$MeasureReportPopulation1FromJson(json);
   Map<String, dynamic> toJson() => _$MeasureReportPopulation1ToJson(this);
 }
 
@@ -214,8 +207,7 @@ class MeasureReportStatus extends PrimitiveObject<String> {
     );
   }
   const MeasureReportStatus._(this.value);
-  factory MeasureReportStatus.fromJson(String json) =>
-      MeasureReportStatus(json);
+  factory MeasureReportStatus.fromJson(String json) => MeasureReportStatus(json);
   String toJson() => result();
 }
 

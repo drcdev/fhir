@@ -7,8 +7,8 @@ part 'population.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Population {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Range ageRange;
   CodeableConcept ageCodeableConcept;
   CodeableConcept gender;
@@ -26,7 +26,6 @@ class Population {
     this.physiologicalCondition,
   });
 
-  factory Population.fromJson(Map<String, dynamic> json) =>
-      _$PopulationFromJson(json);
+  factory Population.fromJson(Map<String, dynamic> json) => _$PopulationFromJson(json);
   Map<String, dynamic> toJson() => _$PopulationToJson(this);
 }

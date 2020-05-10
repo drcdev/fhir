@@ -8,7 +8,7 @@ part 'signature.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Signature {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   List<Coding> type;
   Instant when;
   Reference who;
@@ -29,7 +29,6 @@ class Signature {
     this.data,
   });
 
-  factory Signature.fromJson(Map<String, dynamic> json) =>
-      _$SignatureFromJson(json);
+  factory Signature.fromJson(Map<String, dynamic> json) => _$SignatureFromJson(json);
   Map<String, dynamic> toJson() => _$SignatureToJson(this);
 }

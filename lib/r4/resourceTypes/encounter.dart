@@ -17,8 +17,8 @@ class Encounter {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   EncounterStatus status;
   List<EncounterStatusHistory> statusHistory;
@@ -78,16 +78,15 @@ class Encounter {
     this.partOf,
   });
 
-  factory Encounter.fromJson(Map<String, dynamic> json) =>
-      _$EncounterFromJson(json);
+  factory Encounter.fromJson(Map<String, dynamic> json) => _$EncounterFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterStatusHistory {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   EncounterStatusHistoryStatus status;
   Period period;
 
@@ -99,16 +98,15 @@ class EncounterStatusHistory {
     @required this.period,
   });
 
-  factory EncounterStatusHistory.fromJson(Map<String, dynamic> json) =>
-      _$EncounterStatusHistoryFromJson(json);
+  factory EncounterStatusHistory.fromJson(Map<String, dynamic> json) => _$EncounterStatusHistoryFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterStatusHistoryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterClassHistory {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding clas;
   Period period;
 
@@ -120,16 +118,15 @@ class EncounterClassHistory {
     @required this.period,
   });
 
-  factory EncounterClassHistory.fromJson(Map<String, dynamic> json) =>
-      _$EncounterClassHistoryFromJson(json);
+  factory EncounterClassHistory.fromJson(Map<String, dynamic> json) => _$EncounterClassHistoryFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterClassHistoryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> type;
   Period period;
   Reference individual;
@@ -143,16 +140,15 @@ class EncounterParticipant {
     this.individual,
   });
 
-  factory EncounterParticipant.fromJson(Map<String, dynamic> json) =>
-      _$EncounterParticipantFromJson(json);
+  factory EncounterParticipant.fromJson(Map<String, dynamic> json) => _$EncounterParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterParticipantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterDiagnosis {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference condition;
   CodeableConcept use;
   int rank;
@@ -166,16 +162,15 @@ class EncounterDiagnosis {
     this.rank,
   });
 
-  factory EncounterDiagnosis.fromJson(Map<String, dynamic> json) =>
-      _$EncounterDiagnosisFromJson(json);
+  factory EncounterDiagnosis.fromJson(Map<String, dynamic> json) => _$EncounterDiagnosisFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterDiagnosisToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterHospitalization {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier preAdmissionIdentifier;
   Reference origin;
   CodeableConcept admitSource;
@@ -201,16 +196,15 @@ class EncounterHospitalization {
     this.dischargeDisposition,
   });
 
-  factory EncounterHospitalization.fromJson(Map<String, dynamic> json) =>
-      _$EncounterHospitalizationFromJson(json);
+  factory EncounterHospitalization.fromJson(Map<String, dynamic> json) => _$EncounterHospitalizationFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterHospitalizationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EncounterLocation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference location;
   EncounterLocationStatus status;
   CodeableConcept physicalType;
@@ -226,8 +220,7 @@ class EncounterLocation {
     this.period,
   });
 
-  factory EncounterLocation.fromJson(Map<String, dynamic> json) =>
-      _$EncounterLocationFromJson(json);
+  factory EncounterLocation.fromJson(Map<String, dynamic> json) => _$EncounterLocationFromJson(json);
   Map<String, dynamic> toJson() => _$EncounterLocationToJson(this);
 }
 
@@ -281,8 +274,7 @@ class EncounterStatusHistoryStatus extends PrimitiveObject<String> {
     );
   }
   const EncounterStatusHistoryStatus._(this.value);
-  factory EncounterStatusHistoryStatus.fromJson(String json) =>
-      EncounterStatusHistoryStatus(json);
+  factory EncounterStatusHistoryStatus.fromJson(String json) => EncounterStatusHistoryStatus(json);
   String toJson() => result();
 }
 
@@ -304,7 +296,6 @@ class EncounterLocationStatus extends PrimitiveObject<String> {
     );
   }
   const EncounterLocationStatus._(this.value);
-  factory EncounterLocationStatus.fromJson(String json) =>
-      EncounterLocationStatus(json);
+  factory EncounterLocationStatus.fromJson(String json) => EncounterLocationStatus(json);
   String toJson() => result();
 }

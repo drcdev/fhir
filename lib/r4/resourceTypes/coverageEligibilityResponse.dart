@@ -17,8 +17,8 @@ class CoverageEligibilityResponse {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   List<String> purpose;
@@ -72,8 +72,8 @@ class CoverageEligibilityResponse {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityResponseInsurance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference coverage;
   bool inforce;
   Period benefitPeriod;
@@ -89,18 +89,16 @@ class CoverageEligibilityResponseInsurance {
     this.item,
   });
 
-  factory CoverageEligibilityResponseInsurance.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityResponseInsurance.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityResponseInsuranceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityResponseInsuranceToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityResponseInsuranceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityResponseItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   CodeableConcept productOrService;
   List<CodeableConcept> modifier;
@@ -138,15 +136,14 @@ class CoverageEligibilityResponseItem {
 
   factory CoverageEligibilityResponseItem.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityResponseItemFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityResponseItemToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityResponseItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityResponseBenefit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   int allowedUnsignedInt;
   String allowedString;
@@ -168,18 +165,16 @@ class CoverageEligibilityResponseBenefit {
     this.usedMoney,
   });
 
-  factory CoverageEligibilityResponseBenefit.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityResponseBenefit.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityResponseBenefitFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityResponseBenefitToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityResponseBenefitToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityResponseError {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
 
   CoverageEligibilityResponseError({
@@ -189,11 +184,9 @@ class CoverageEligibilityResponseError {
     @required this.code,
   });
 
-  factory CoverageEligibilityResponseError.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityResponseError.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityResponseErrorFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityResponseErrorToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityResponseErrorToJson(this);
 }
 
 class CoverageEligibilityResponseOutcome extends PrimitiveObject<String> {
@@ -214,7 +207,6 @@ class CoverageEligibilityResponseOutcome extends PrimitiveObject<String> {
     );
   }
   const CoverageEligibilityResponseOutcome._(this.value);
-  factory CoverageEligibilityResponseOutcome.fromJson(String json) =>
-      CoverageEligibilityResponseOutcome(json);
+  factory CoverageEligibilityResponseOutcome.fromJson(String json) => CoverageEligibilityResponseOutcome(json);
   String toJson() => result();
 }

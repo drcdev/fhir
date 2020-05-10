@@ -14,16 +14,15 @@ class MedicinalProductPharmaceutical {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept administrableDoseForm;
   CodeableConcept unitOfPresentation;
   List<Reference> ingredient;
   List<Reference> device;
   List<MedicinalProductPharmaceuticalCharacteristics> characteristics;
-  List<MedicinalProductPharmaceuticalRouteOfAdministration>
-      routeOfAdministration;
+  List<MedicinalProductPharmaceuticalRouteOfAdministration> routeOfAdministration;
 
   MedicinalProductPharmaceutical({
     this.resourceType = 'MedicinalProductPharmaceutical',
@@ -52,8 +51,8 @@ class MedicinalProductPharmaceutical {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPharmaceuticalCharacteristics {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept status;
 
@@ -65,18 +64,16 @@ class MedicinalProductPharmaceuticalCharacteristics {
     this.status,
   });
 
-  factory MedicinalProductPharmaceuticalCharacteristics.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPharmaceuticalCharacteristics.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPharmaceuticalCharacteristicsFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPharmaceuticalCharacteristicsToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPharmaceuticalCharacteristicsToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPharmaceuticalRouteOfAdministration {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   Quantity firstDose;
   Quantity maxSingleDose;
@@ -98,18 +95,16 @@ class MedicinalProductPharmaceuticalRouteOfAdministration {
     this.targetSpecies,
   });
 
-  factory MedicinalProductPharmaceuticalRouteOfAdministration.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPharmaceuticalRouteOfAdministration.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPharmaceuticalRouteOfAdministrationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPharmaceuticalRouteOfAdministrationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPharmaceuticalRouteOfAdministrationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPharmaceuticalTargetSpecies {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   List<MedicinalProductPharmaceuticalWithdrawalPeriod> withdrawalPeriod;
 
@@ -121,18 +116,16 @@ class MedicinalProductPharmaceuticalTargetSpecies {
     this.withdrawalPeriod,
   });
 
-  factory MedicinalProductPharmaceuticalTargetSpecies.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPharmaceuticalTargetSpecies.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPharmaceuticalTargetSpeciesFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPharmaceuticalTargetSpeciesToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPharmaceuticalTargetSpeciesToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductPharmaceuticalWithdrawalPeriod {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept tissue;
   Quantity value;
   String supportingInformation;
@@ -146,9 +139,7 @@ class MedicinalProductPharmaceuticalWithdrawalPeriod {
     this.supportingInformation,
   });
 
-  factory MedicinalProductPharmaceuticalWithdrawalPeriod.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductPharmaceuticalWithdrawalPeriod.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductPharmaceuticalWithdrawalPeriodFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductPharmaceuticalWithdrawalPeriodToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductPharmaceuticalWithdrawalPeriodToJson(this);
 }

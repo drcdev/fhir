@@ -10,7 +10,7 @@ part 'duration.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Duration {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   DurationComparator comparator;
   String unit;
@@ -27,8 +27,7 @@ class Duration {
     this.code,
   });
 
-  factory Duration.fromJson(Map<String, dynamic> json) =>
-      _$DurationFromJson(json);
+  factory Duration.fromJson(Map<String, dynamic> json) => _$DurationFromJson(json);
   Map<String, dynamic> toJson() => _$DurationToJson(this);
 }
 

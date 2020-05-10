@@ -13,8 +13,8 @@ class SubstancePolymer {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept clas;
   CodeableConcept geometry;
   List<CodeableConcept> copolymerConnectivity;
@@ -40,16 +40,15 @@ class SubstancePolymer {
     this.repeat,
   });
 
-  factory SubstancePolymer.fromJson(Map<String, dynamic> json) =>
-      _$SubstancePolymerFromJson(json);
+  factory SubstancePolymer.fromJson(Map<String, dynamic> json) => _$SubstancePolymerFromJson(json);
   Map<String, dynamic> toJson() => _$SubstancePolymerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerMonomerSet {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept ratioType;
   List<SubstancePolymerStartingMaterial> startingMaterial;
 
@@ -61,16 +60,15 @@ class SubstancePolymerMonomerSet {
     this.startingMaterial,
   });
 
-  factory SubstancePolymerMonomerSet.fromJson(Map<String, dynamic> json) =>
-      _$SubstancePolymerMonomerSetFromJson(json);
+  factory SubstancePolymerMonomerSet.fromJson(Map<String, dynamic> json) => _$SubstancePolymerMonomerSetFromJson(json);
   Map<String, dynamic> toJson() => _$SubstancePolymerMonomerSetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerStartingMaterial {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept material;
   CodeableConcept type;
   bool isDefining;
@@ -86,18 +84,16 @@ class SubstancePolymerStartingMaterial {
     this.amount,
   });
 
-  factory SubstancePolymerStartingMaterial.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstancePolymerStartingMaterial.fromJson(Map<String, dynamic> json) =>
       _$SubstancePolymerStartingMaterialFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstancePolymerStartingMaterialToJson(this);
+  Map<String, dynamic> toJson() => _$SubstancePolymerStartingMaterialToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerRepeat {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int numberOfUnits;
   String averageMolecularFormula;
   CodeableConcept repeatUnitAmountType;
@@ -113,16 +109,15 @@ class SubstancePolymerRepeat {
     this.repeatUnit,
   });
 
-  factory SubstancePolymerRepeat.fromJson(Map<String, dynamic> json) =>
-      _$SubstancePolymerRepeatFromJson(json);
+  factory SubstancePolymerRepeat.fromJson(Map<String, dynamic> json) => _$SubstancePolymerRepeatFromJson(json);
   Map<String, dynamic> toJson() => _$SubstancePolymerRepeatToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerRepeatUnit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept orientationOfPolymerisation;
   String repeatUnit;
   SubstanceAmount amount;
@@ -140,16 +135,15 @@ class SubstancePolymerRepeatUnit {
     this.structuralRepresentation,
   });
 
-  factory SubstancePolymerRepeatUnit.fromJson(Map<String, dynamic> json) =>
-      _$SubstancePolymerRepeatUnitFromJson(json);
+  factory SubstancePolymerRepeatUnit.fromJson(Map<String, dynamic> json) => _$SubstancePolymerRepeatUnitFromJson(json);
   Map<String, dynamic> toJson() => _$SubstancePolymerRepeatUnitToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerDegreeOfPolymerisation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept degree;
   SubstanceAmount amount;
 
@@ -161,18 +155,16 @@ class SubstancePolymerDegreeOfPolymerisation {
     this.amount,
   });
 
-  factory SubstancePolymerDegreeOfPolymerisation.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstancePolymerDegreeOfPolymerisation.fromJson(Map<String, dynamic> json) =>
       _$SubstancePolymerDegreeOfPolymerisationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstancePolymerDegreeOfPolymerisationToJson(this);
+  Map<String, dynamic> toJson() => _$SubstancePolymerDegreeOfPolymerisationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstancePolymerStructuralRepresentation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String representation;
   Attachment attachment;
@@ -186,9 +178,7 @@ class SubstancePolymerStructuralRepresentation {
     this.attachment,
   });
 
-  factory SubstancePolymerStructuralRepresentation.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstancePolymerStructuralRepresentation.fromJson(Map<String, dynamic> json) =>
       _$SubstancePolymerStructuralRepresentationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstancePolymerStructuralRepresentationToJson(this);
+  Map<String, dynamic> toJson() => _$SubstancePolymerStructuralRepresentationToJson(this);
 }

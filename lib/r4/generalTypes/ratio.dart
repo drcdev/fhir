@@ -7,7 +7,7 @@ part 'ratio.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Ratio {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Quantity numerator;
   Quantity denominator;
 

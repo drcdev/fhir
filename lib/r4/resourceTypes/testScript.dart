@@ -17,8 +17,8 @@ class TestScript {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   Identifier identifier;
   String version;
@@ -80,16 +80,15 @@ class TestScript {
     this.teardown,
   });
 
-  factory TestScript.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptFromJson(json);
+  factory TestScript.fromJson(Map<String, dynamic> json) => _$TestScriptFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptOrigin {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int index;
   Coding profile;
 
@@ -101,16 +100,15 @@ class TestScriptOrigin {
     @required this.profile,
   });
 
-  factory TestScriptOrigin.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptOriginFromJson(json);
+  factory TestScriptOrigin.fromJson(Map<String, dynamic> json) => _$TestScriptOriginFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptOriginToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptDestination {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int index;
   Coding profile;
 
@@ -122,16 +120,15 @@ class TestScriptDestination {
     @required this.profile,
   });
 
-  factory TestScriptDestination.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptDestinationFromJson(json);
+  factory TestScriptDestination.fromJson(Map<String, dynamic> json) => _$TestScriptDestinationFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptDestinationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptMetadata {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<TestScriptLink> link;
   List<TestScriptCapability> capability;
 
@@ -143,16 +140,15 @@ class TestScriptMetadata {
     @required this.capability,
   });
 
-  factory TestScriptMetadata.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptMetadataFromJson(json);
+  factory TestScriptMetadata.fromJson(Map<String, dynamic> json) => _$TestScriptMetadataFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptMetadataToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptLink {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String description;
 
@@ -164,16 +160,15 @@ class TestScriptLink {
     this.description,
   });
 
-  factory TestScriptLink.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptLinkFromJson(json);
+  factory TestScriptLink.fromJson(Map<String, dynamic> json) => _$TestScriptLinkFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptLinkToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptCapability {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool require;
   bool validated;
   String description;
@@ -195,16 +190,15 @@ class TestScriptCapability {
     @required this.capabilities,
   });
 
-  factory TestScriptCapability.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptCapabilityFromJson(json);
+  factory TestScriptCapability.fromJson(Map<String, dynamic> json) => _$TestScriptCapabilityFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptCapabilityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptFixture {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool autocreate;
   bool autodelete;
   Reference resource;
@@ -218,16 +212,15 @@ class TestScriptFixture {
     this.resource,
   });
 
-  factory TestScriptFixture.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptFixtureFromJson(json);
+  factory TestScriptFixture.fromJson(Map<String, dynamic> json) => _$TestScriptFixtureFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptFixtureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptVariable {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String defaultValue;
   String description;
@@ -251,16 +244,15 @@ class TestScriptVariable {
     this.sourceId,
   });
 
-  factory TestScriptVariable.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptVariableFromJson(json);
+  factory TestScriptVariable.fromJson(Map<String, dynamic> json) => _$TestScriptVariableFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptVariableToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptSetup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<TestScriptAction> action;
 
   TestScriptSetup({
@@ -270,16 +262,15 @@ class TestScriptSetup {
     @required this.action,
   });
 
-  factory TestScriptSetup.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptSetupFromJson(json);
+  factory TestScriptSetup.fromJson(Map<String, dynamic> json) => _$TestScriptSetupFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptSetupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestScriptOperation operation;
   TestScriptAssert asserts;
 
@@ -291,16 +282,15 @@ class TestScriptAction {
     this.asserts,
   });
 
-  factory TestScriptAction.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptActionFromJson(json);
+  factory TestScriptAction.fromJson(Map<String, dynamic> json) => _$TestScriptActionFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptActionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding type;
   Code resource;
   String label;
@@ -342,16 +332,15 @@ class TestScriptOperation {
     this.url,
   });
 
-  factory TestScriptOperation.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptOperationFromJson(json);
+  factory TestScriptOperation.fromJson(Map<String, dynamic> json) => _$TestScriptOperationFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptOperationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptRequestHeader {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String field;
   String value;
 
@@ -363,16 +352,15 @@ class TestScriptRequestHeader {
     this.value,
   });
 
-  factory TestScriptRequestHeader.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptRequestHeaderFromJson(json);
+  factory TestScriptRequestHeader.fromJson(Map<String, dynamic> json) => _$TestScriptRequestHeaderFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptRequestHeaderToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptAssert {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String label;
   String description;
   TestScriptAssertDirection direction;
@@ -424,16 +412,15 @@ class TestScriptAssert {
     this.warningOnly,
   });
 
-  factory TestScriptAssert.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptAssertFromJson(json);
+  factory TestScriptAssert.fromJson(Map<String, dynamic> json) => _$TestScriptAssertFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptAssertToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptTest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String description;
   List<TestScriptAction1> action;
@@ -447,16 +434,15 @@ class TestScriptTest {
     @required this.action,
   });
 
-  factory TestScriptTest.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptTestFromJson(json);
+  factory TestScriptTest.fromJson(Map<String, dynamic> json) => _$TestScriptTestFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptTestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptAction1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestScriptOperation operation;
   TestScriptAssert asserts;
 
@@ -468,16 +454,15 @@ class TestScriptAction1 {
     this.asserts,
   });
 
-  factory TestScriptAction1.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptAction1FromJson(json);
+  factory TestScriptAction1.fromJson(Map<String, dynamic> json) => _$TestScriptAction1FromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptAction1ToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptTeardown {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<TestScriptAction2> action;
 
   TestScriptTeardown({
@@ -487,16 +472,15 @@ class TestScriptTeardown {
     @required this.action,
   });
 
-  factory TestScriptTeardown.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptTeardownFromJson(json);
+  factory TestScriptTeardown.fromJson(Map<String, dynamic> json) => _$TestScriptTeardownFromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptTeardownToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestScriptAction2 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestScriptOperation operation;
 
   TestScriptAction2({
@@ -506,8 +490,7 @@ class TestScriptAction2 {
     @required this.operation,
   });
 
-  factory TestScriptAction2.fromJson(Map<String, dynamic> json) =>
-      _$TestScriptAction2FromJson(json);
+  factory TestScriptAction2.fromJson(Map<String, dynamic> json) => _$TestScriptAction2FromJson(json);
   Map<String, dynamic> toJson() => _$TestScriptAction2ToJson(this);
 }
 
@@ -554,8 +537,7 @@ class TestScriptOperationMethod extends PrimitiveObject<String> {
     );
   }
   const TestScriptOperationMethod._(this.value);
-  factory TestScriptOperationMethod.fromJson(String json) =>
-      TestScriptOperationMethod(json);
+  factory TestScriptOperationMethod.fromJson(String json) => TestScriptOperationMethod(json);
   String toJson() => result();
 }
 
@@ -575,8 +557,7 @@ class TestScriptAssertDirection extends PrimitiveObject<String> {
     );
   }
   const TestScriptAssertDirection._(this.value);
-  factory TestScriptAssertDirection.fromJson(String json) =>
-      TestScriptAssertDirection(json);
+  factory TestScriptAssertDirection.fromJson(String json) => TestScriptAssertDirection(json);
   String toJson() => result();
 }
 
@@ -605,8 +586,7 @@ class TestScriptAssertOperator extends PrimitiveObject<String> {
     );
   }
   const TestScriptAssertOperator._(this.value);
-  factory TestScriptAssertOperator.fromJson(String json) =>
-      TestScriptAssertOperator(json);
+  factory TestScriptAssertOperator.fromJson(String json) => TestScriptAssertOperator(json);
   String toJson() => result();
 }
 
@@ -631,8 +611,7 @@ class TestScriptAssertRequestMethod extends PrimitiveObject<String> {
     );
   }
   const TestScriptAssertRequestMethod._(this.value);
-  factory TestScriptAssertRequestMethod.fromJson(String json) =>
-      TestScriptAssertRequestMethod(json);
+  factory TestScriptAssertRequestMethod.fromJson(String json) => TestScriptAssertRequestMethod(json);
   String toJson() => result();
 }
 
@@ -662,7 +641,6 @@ class TestScriptAssertResponse extends PrimitiveObject<String> {
     );
   }
   const TestScriptAssertResponse._(this.value);
-  factory TestScriptAssertResponse.fromJson(String json) =>
-      TestScriptAssertResponse(json);
+  factory TestScriptAssertResponse.fromJson(String json) => TestScriptAssertResponse(json);
   String toJson() => result();
 }

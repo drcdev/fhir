@@ -17,8 +17,8 @@ class ConceptMap {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   Identifier identifier;
   String version;
@@ -72,16 +72,15 @@ class ConceptMap {
     this.group,
   });
 
-  factory ConceptMap.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapFromJson(json);
+  factory ConceptMap.fromJson(Map<String, dynamic> json) => _$ConceptMapFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConceptMapGroup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri source;
   String sourceVersion;
   FhirUri target;
@@ -101,16 +100,15 @@ class ConceptMapGroup {
     this.unmapped,
   });
 
-  factory ConceptMapGroup.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapGroupFromJson(json);
+  factory ConceptMapGroup.fromJson(Map<String, dynamic> json) => _$ConceptMapGroupFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConceptMapElement {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String display;
   List<ConceptMapTarget> target;
@@ -124,16 +122,15 @@ class ConceptMapElement {
     this.target,
   });
 
-  factory ConceptMapElement.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapElementFromJson(json);
+  factory ConceptMapElement.fromJson(Map<String, dynamic> json) => _$ConceptMapElementFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapElementToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConceptMapTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String display;
   ConceptMapTargetEquivalence equivalence;
@@ -153,16 +150,15 @@ class ConceptMapTarget {
     this.product,
   });
 
-  factory ConceptMapTarget.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapTargetFromJson(json);
+  factory ConceptMapTarget.fromJson(Map<String, dynamic> json) => _$ConceptMapTargetFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapTargetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConceptMapDependsOn {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri property;
   Canonical system;
   String value;
@@ -178,16 +174,15 @@ class ConceptMapDependsOn {
     this.display,
   });
 
-  factory ConceptMapDependsOn.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapDependsOnFromJson(json);
+  factory ConceptMapDependsOn.fromJson(Map<String, dynamic> json) => _$ConceptMapDependsOnFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapDependsOnToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConceptMapUnmapped {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ConceptMapUnmappedMode mode;
   Code code;
   String display;
@@ -203,8 +198,7 @@ class ConceptMapUnmapped {
     this.url,
   });
 
-  factory ConceptMapUnmapped.fromJson(Map<String, dynamic> json) =>
-      _$ConceptMapUnmappedFromJson(json);
+  factory ConceptMapUnmapped.fromJson(Map<String, dynamic> json) => _$ConceptMapUnmappedFromJson(json);
   Map<String, dynamic> toJson() => _$ConceptMapUnmappedToJson(this);
 }
 
@@ -254,8 +248,7 @@ class ConceptMapTargetEquivalence extends PrimitiveObject<String> {
     );
   }
   const ConceptMapTargetEquivalence._(this.value);
-  factory ConceptMapTargetEquivalence.fromJson(String json) =>
-      ConceptMapTargetEquivalence(json);
+  factory ConceptMapTargetEquivalence.fromJson(String json) => ConceptMapTargetEquivalence(json);
   String toJson() => result();
 }
 
@@ -276,7 +269,6 @@ class ConceptMapUnmappedMode extends PrimitiveObject<String> {
     );
   }
   const ConceptMapUnmappedMode._(this.value);
-  factory ConceptMapUnmappedMode.fromJson(String json) =>
-      ConceptMapUnmappedMode(json);
+  factory ConceptMapUnmappedMode.fromJson(String json) => ConceptMapUnmappedMode(json);
   String toJson() => result();
 }

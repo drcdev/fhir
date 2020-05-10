@@ -17,8 +17,8 @@ class StructureDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -86,16 +86,15 @@ class StructureDefinition {
     this.differential,
   });
 
-  factory StructureDefinition.fromJson(Map<String, dynamic> json) =>
-      _$StructureDefinitionFromJson(json);
+  factory StructureDefinition.fromJson(Map<String, dynamic> json) => _$StructureDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$StructureDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureDefinitionMapping {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id identity;
   FhirUri uri;
   String name;
@@ -111,16 +110,15 @@ class StructureDefinitionMapping {
     this.comment,
   });
 
-  factory StructureDefinitionMapping.fromJson(Map<String, dynamic> json) =>
-      _$StructureDefinitionMappingFromJson(json);
+  factory StructureDefinitionMapping.fromJson(Map<String, dynamic> json) => _$StructureDefinitionMappingFromJson(json);
   Map<String, dynamic> toJson() => _$StructureDefinitionMappingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureDefinitionContext {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   StructureDefinitionContextType type;
   String expression;
 
@@ -132,16 +130,15 @@ class StructureDefinitionContext {
     this.expression,
   });
 
-  factory StructureDefinitionContext.fromJson(Map<String, dynamic> json) =>
-      _$StructureDefinitionContextFromJson(json);
+  factory StructureDefinitionContext.fromJson(Map<String, dynamic> json) => _$StructureDefinitionContextFromJson(json);
   Map<String, dynamic> toJson() => _$StructureDefinitionContextToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureDefinitionSnapshot {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ElementDefinition> element;
 
   StructureDefinitionSnapshot({
@@ -159,8 +156,8 @@ class StructureDefinitionSnapshot {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureDefinitionDifferential {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ElementDefinition> element;
 
   StructureDefinitionDifferential({
@@ -172,8 +169,7 @@ class StructureDefinitionDifferential {
 
   factory StructureDefinitionDifferential.fromJson(Map<String, dynamic> json) =>
       _$StructureDefinitionDifferentialFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$StructureDefinitionDifferentialToJson(this);
+  Map<String, dynamic> toJson() => _$StructureDefinitionDifferentialToJson(this);
 }
 
 class StructureDefinitionStatus extends PrimitiveObject<String> {
@@ -194,8 +190,7 @@ class StructureDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const StructureDefinitionStatus._(this.value);
-  factory StructureDefinitionStatus.fromJson(String json) =>
-      StructureDefinitionStatus(json);
+  factory StructureDefinitionStatus.fromJson(String json) => StructureDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -235,8 +230,7 @@ class StructureDefinitionFhirVersion extends PrimitiveObject<String> {
     );
   }
   const StructureDefinitionFhirVersion._(this.value);
-  factory StructureDefinitionFhirVersion.fromJson(String json) =>
-      StructureDefinitionFhirVersion(json);
+  factory StructureDefinitionFhirVersion.fromJson(String json) => StructureDefinitionFhirVersion(json);
   String toJson() => result();
 }
 
@@ -258,8 +252,7 @@ class StructureDefinitionKind extends PrimitiveObject<String> {
     );
   }
   const StructureDefinitionKind._(this.value);
-  factory StructureDefinitionKind.fromJson(String json) =>
-      StructureDefinitionKind(json);
+  factory StructureDefinitionKind.fromJson(String json) => StructureDefinitionKind(json);
   String toJson() => result();
 }
 
@@ -279,8 +272,7 @@ class StructureDefinitionDerivation extends PrimitiveObject<String> {
     );
   }
   const StructureDefinitionDerivation._(this.value);
-  factory StructureDefinitionDerivation.fromJson(String json) =>
-      StructureDefinitionDerivation(json);
+  factory StructureDefinitionDerivation.fromJson(String json) => StructureDefinitionDerivation(json);
   String toJson() => result();
 }
 
@@ -301,7 +293,6 @@ class StructureDefinitionContextType extends PrimitiveObject<String> {
     );
   }
   const StructureDefinitionContextType._(this.value);
-  factory StructureDefinitionContextType.fromJson(String json) =>
-      StructureDefinitionContextType(json);
+  factory StructureDefinitionContextType.fromJson(String json) => StructureDefinitionContextType(json);
   String toJson() => result();
 }

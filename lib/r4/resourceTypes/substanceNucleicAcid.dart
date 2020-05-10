@@ -13,8 +13,8 @@ class SubstanceNucleicAcid {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept sequenceType;
   int numberOfSubunits;
   String areaOfHybridisation;
@@ -38,16 +38,15 @@ class SubstanceNucleicAcid {
     this.subunit,
   });
 
-  factory SubstanceNucleicAcid.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceNucleicAcidFromJson(json);
+  factory SubstanceNucleicAcid.fromJson(Map<String, dynamic> json) => _$SubstanceNucleicAcidFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceNucleicAcidToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceNucleicAcidSubunit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int subunit;
   String sequence;
   int length;
@@ -79,8 +78,8 @@ class SubstanceNucleicAcidSubunit {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceNucleicAcidLinkage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String connectivity;
   Identifier identifier;
   String name;
@@ -104,8 +103,8 @@ class SubstanceNucleicAcidLinkage {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceNucleicAcidSugar {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   String name;
   String residueSite;
@@ -119,7 +118,6 @@ class SubstanceNucleicAcidSugar {
     this.residueSite,
   });
 
-  factory SubstanceNucleicAcidSugar.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceNucleicAcidSugarFromJson(json);
+  factory SubstanceNucleicAcidSugar.fromJson(Map<String, dynamic> json) => _$SubstanceNucleicAcidSugarFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceNucleicAcidSugarToJson(this);
 }

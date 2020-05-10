@@ -17,8 +17,8 @@ class Lists {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   ListStatus status;
   ListMode mode;
@@ -65,8 +65,8 @@ class Lists {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ListEntry {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept flag;
   bool deleted;
   FhirDateTime date;
@@ -82,8 +82,7 @@ class ListEntry {
     @required this.item,
   });
 
-  factory ListEntry.fromJson(Map<String, dynamic> json) =>
-      _$ListEntryFromJson(json);
+  factory ListEntry.fromJson(Map<String, dynamic> json) => _$ListEntryFromJson(json);
   Map<String, dynamic> toJson() => _$ListEntryToJson(this);
 }
 

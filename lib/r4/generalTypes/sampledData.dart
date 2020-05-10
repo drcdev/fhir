@@ -8,7 +8,7 @@ part 'sampledData.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SampledData {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Quantity origin;
   double period;
   double factor;
@@ -29,7 +29,6 @@ class SampledData {
     this.data,
   });
 
-  factory SampledData.fromJson(Map<String, dynamic> json) =>
-      _$SampledDataFromJson(json);
+  factory SampledData.fromJson(Map<String, dynamic> json) => _$SampledDataFromJson(json);
   Map<String, dynamic> toJson() => _$SampledDataToJson(this);
 }

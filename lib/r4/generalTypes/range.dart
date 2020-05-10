@@ -7,7 +7,7 @@ part 'range.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Range {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Quantity low;
   Quantity high;
 

@@ -16,8 +16,8 @@ class CodeSystem {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -83,16 +83,15 @@ class CodeSystem {
     this.concept,
   });
 
-  factory CodeSystem.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemFromJson(json);
+  factory CodeSystem.fromJson(Map<String, dynamic> json) => _$CodeSystemFromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeSystemFilter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String description;
   List<Code> operator;
@@ -108,16 +107,15 @@ class CodeSystemFilter {
     this.value,
   });
 
-  factory CodeSystemFilter.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemFilterFromJson(json);
+  factory CodeSystemFilter.fromJson(Map<String, dynamic> json) => _$CodeSystemFilterFromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemFilterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeSystemProperty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   FhirUri uri;
   String description;
@@ -133,16 +131,15 @@ class CodeSystemProperty {
     this.type,
   });
 
-  factory CodeSystemProperty.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemPropertyFromJson(json);
+  factory CodeSystemProperty.fromJson(Map<String, dynamic> json) => _$CodeSystemPropertyFromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemPropertyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeSystemConcept {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String display;
   String definition;
@@ -162,16 +159,15 @@ class CodeSystemConcept {
     this.concept,
   });
 
-  factory CodeSystemConcept.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemConceptFromJson(json);
+  factory CodeSystemConcept.fromJson(Map<String, dynamic> json) => _$CodeSystemConceptFromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemConceptToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeSystemDesignation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code language;
   Coding use;
   String value;
@@ -185,16 +181,15 @@ class CodeSystemDesignation {
     this.value,
   });
 
-  factory CodeSystemDesignation.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemDesignationFromJson(json);
+  factory CodeSystemDesignation.fromJson(Map<String, dynamic> json) => _$CodeSystemDesignationFromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemDesignationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeSystemProperty1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   Code valueCode;
   Coding valueCoding;
@@ -218,8 +213,7 @@ class CodeSystemProperty1 {
     this.valueDecimal,
   });
 
-  factory CodeSystemProperty1.fromJson(Map<String, dynamic> json) =>
-      _$CodeSystemProperty1FromJson(json);
+  factory CodeSystemProperty1.fromJson(Map<String, dynamic> json) => _$CodeSystemProperty1FromJson(json);
   Map<String, dynamic> toJson() => _$CodeSystemProperty1ToJson(this);
 }
 
@@ -264,8 +258,7 @@ class CodeSystemHierarchyMeaning extends PrimitiveObject<String> {
     );
   }
   const CodeSystemHierarchyMeaning._(this.value);
-  factory CodeSystemHierarchyMeaning.fromJson(String json) =>
-      CodeSystemHierarchyMeaning(json);
+  factory CodeSystemHierarchyMeaning.fromJson(String json) => CodeSystemHierarchyMeaning(json);
   String toJson() => result();
 }
 
@@ -313,7 +306,6 @@ class CodeSystemPropertyType extends PrimitiveObject<String> {
     );
   }
   const CodeSystemPropertyType._(this.value);
-  factory CodeSystemPropertyType.fromJson(String json) =>
-      CodeSystemPropertyType(json);
+  factory CodeSystemPropertyType.fromJson(String json) => CodeSystemPropertyType(json);
   String toJson() => result();
 }

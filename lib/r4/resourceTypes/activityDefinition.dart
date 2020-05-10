@@ -17,8 +17,8 @@ class ActivityDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -138,16 +138,15 @@ class ActivityDefinition {
     this.dynamicValue,
   });
 
-  factory ActivityDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ActivityDefinitionFromJson(json);
+  factory ActivityDefinition.fromJson(Map<String, dynamic> json) => _$ActivityDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ActivityDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ActivityDefinitionParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code type;
   CodeableConcept role;
 
@@ -167,8 +166,8 @@ class ActivityDefinitionParticipant {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ActivityDefinitionDynamicValue {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   Expression expression;
 
@@ -203,7 +202,6 @@ class ActivityDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const ActivityDefinitionStatus._(this.value);
-  factory ActivityDefinitionStatus.fromJson(String json) =>
-      ActivityDefinitionStatus(json);
+  factory ActivityDefinitionStatus.fromJson(String json) => ActivityDefinitionStatus(json);
   String toJson() => result();
 }

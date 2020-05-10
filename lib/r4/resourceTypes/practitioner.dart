@@ -17,8 +17,8 @@ class Practitioner {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   List<HumanName> name;
@@ -52,16 +52,15 @@ class Practitioner {
     this.communication,
   });
 
-  factory Practitioner.fromJson(Map<String, dynamic> json) =>
-      _$PractitionerFromJson(json);
+  factory Practitioner.fromJson(Map<String, dynamic> json) => _$PractitionerFromJson(json);
   Map<String, dynamic> toJson() => _$PractitionerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PractitionerQualification {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept code;
   Period period;
@@ -77,8 +76,7 @@ class PractitionerQualification {
     this.issuer,
   });
 
-  factory PractitionerQualification.fromJson(Map<String, dynamic> json) =>
-      _$PractitionerQualificationFromJson(json);
+  factory PractitionerQualification.fromJson(Map<String, dynamic> json) => _$PractitionerQualificationFromJson(json);
   Map<String, dynamic> toJson() => _$PractitionerQualificationToJson(this);
 }
 

@@ -10,7 +10,7 @@ part 'quantity.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Quantity {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   QuantityComparator comparator;
   String unit;
@@ -27,8 +27,7 @@ class Quantity {
     this.code,
   });
 
-  factory Quantity.fromJson(Map<String, dynamic> json) =>
-      _$QuantityFromJson(json);
+  factory Quantity.fromJson(Map<String, dynamic> json) => _$QuantityFromJson(json);
   Map<String, dynamic> toJson() => _$QuantityToJson(this);
 }
 

@@ -17,8 +17,8 @@ class ResearchSubject {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   ResearchSubjectStatus status;
   Period period;
@@ -48,8 +48,7 @@ class ResearchSubject {
     this.consent,
   });
 
-  factory ResearchSubject.fromJson(Map<String, dynamic> json) =>
-      _$ResearchSubjectFromJson(json);
+  factory ResearchSubject.fromJson(Map<String, dynamic> json) => _$ResearchSubjectFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchSubjectToJson(this);
 }
 
@@ -80,7 +79,6 @@ class ResearchSubjectStatus extends PrimitiveObject<String> {
     );
   }
   const ResearchSubjectStatus._(this.value);
-  factory ResearchSubjectStatus.fromJson(String json) =>
-      ResearchSubjectStatus(json);
+  factory ResearchSubjectStatus.fromJson(String json) => ResearchSubjectStatus(json);
   String toJson() => result();
 }

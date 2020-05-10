@@ -17,8 +17,8 @@ class Person {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<HumanName> name;
   List<ContactPoint> telecom;
@@ -58,8 +58,8 @@ class Person {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PersonLink {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference target;
   PersonLinkAssurance assurance;
 
@@ -71,8 +71,7 @@ class PersonLink {
     this.assurance,
   });
 
-  factory PersonLink.fromJson(Map<String, dynamic> json) =>
-      _$PersonLinkFromJson(json);
+  factory PersonLink.fromJson(Map<String, dynamic> json) => _$PersonLinkFromJson(json);
   Map<String, dynamic> toJson() => _$PersonLinkToJson(this);
 }
 
@@ -116,7 +115,6 @@ class PersonLinkAssurance extends PrimitiveObject<String> {
     );
   }
   const PersonLinkAssurance._(this.value);
-  factory PersonLinkAssurance.fromJson(String json) =>
-      PersonLinkAssurance(json);
+  factory PersonLinkAssurance.fromJson(String json) => PersonLinkAssurance(json);
   String toJson() => result();
 }

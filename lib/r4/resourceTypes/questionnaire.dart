@@ -16,8 +16,8 @@ class Questionnaire {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -75,16 +75,15 @@ class Questionnaire {
     this.item,
   });
 
-  factory Questionnaire.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireFromJson(json);
+  factory Questionnaire.fromJson(Map<String, dynamic> json) => _$QuestionnaireFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String linkId;
   FhirUri definition;
   List<Coding> code;
@@ -124,16 +123,15 @@ class QuestionnaireItem {
     this.item,
   });
 
-  factory QuestionnaireItem.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireItemFromJson(json);
+  factory QuestionnaireItem.fromJson(Map<String, dynamic> json) => _$QuestionnaireItemFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireEnableWhen {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String question;
   QuestionnaireEnableWhenOperator operator;
   bool answerBoolean;
@@ -165,16 +163,15 @@ class QuestionnaireEnableWhen {
     this.answerReference,
   });
 
-  factory QuestionnaireEnableWhen.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireEnableWhenFromJson(json);
+  factory QuestionnaireEnableWhen.fromJson(Map<String, dynamic> json) => _$QuestionnaireEnableWhenFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireEnableWhenToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireAnswerOption {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int valueInteger;
   Date valueDate;
   Time valueTime;
@@ -196,16 +193,15 @@ class QuestionnaireAnswerOption {
     this.initialSelected,
   });
 
-  factory QuestionnaireAnswerOption.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireAnswerOptionFromJson(json);
+  factory QuestionnaireAnswerOption.fromJson(Map<String, dynamic> json) => _$QuestionnaireAnswerOptionFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireAnswerOptionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireInitial {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool valueBoolean;
   double valueDecimal;
   int valueInteger;
@@ -237,8 +233,7 @@ class QuestionnaireInitial {
     this.valueReference,
   });
 
-  factory QuestionnaireInitial.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireInitialFromJson(json);
+  factory QuestionnaireInitial.fromJson(Map<String, dynamic> json) => _$QuestionnaireInitialFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireInitialToJson(this);
 }
 
@@ -260,8 +255,7 @@ class QuestionnaireStatus extends PrimitiveObject<String> {
     );
   }
   const QuestionnaireStatus._(this.value);
-  factory QuestionnaireStatus.fromJson(String json) =>
-      QuestionnaireStatus(json);
+  factory QuestionnaireStatus.fromJson(String json) => QuestionnaireStatus(json);
   String toJson() => result();
 }
 
@@ -295,8 +289,7 @@ class QuestionnaireItemType extends PrimitiveObject<String> {
     );
   }
   const QuestionnaireItemType._(this.value);
-  factory QuestionnaireItemType.fromJson(String json) =>
-      QuestionnaireItemType(json);
+  factory QuestionnaireItemType.fromJson(String json) => QuestionnaireItemType(json);
   String toJson() => result();
 }
 
@@ -316,8 +309,7 @@ class QuestionnaireItemEnableBehavior extends PrimitiveObject<String> {
     );
   }
   const QuestionnaireItemEnableBehavior._(this.value);
-  factory QuestionnaireItemEnableBehavior.fromJson(String json) =>
-      QuestionnaireItemEnableBehavior(json);
+  factory QuestionnaireItemEnableBehavior.fromJson(String json) => QuestionnaireItemEnableBehavior(json);
   String toJson() => result();
 }
 
@@ -342,7 +334,6 @@ class QuestionnaireEnableWhenOperator extends PrimitiveObject<String> {
     );
   }
   const QuestionnaireEnableWhenOperator._(this.value);
-  factory QuestionnaireEnableWhenOperator.fromJson(String json) =>
-      QuestionnaireEnableWhenOperator(json);
+  factory QuestionnaireEnableWhenOperator.fromJson(String json) => QuestionnaireEnableWhenOperator(json);
   String toJson() => result();
 }

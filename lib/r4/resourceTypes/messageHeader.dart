@@ -17,8 +17,8 @@ class MessageHeader {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding eventCoding;
   FhirUri eventUri;
   List<MessageHeaderDestination> destination;
@@ -56,16 +56,15 @@ class MessageHeader {
     this.definition,
   });
 
-  factory MessageHeader.fromJson(Map<String, dynamic> json) =>
-      _$MessageHeaderFromJson(json);
+  factory MessageHeader.fromJson(Map<String, dynamic> json) => _$MessageHeaderFromJson(json);
   Map<String, dynamic> toJson() => _$MessageHeaderToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MessageHeaderDestination {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   Reference target;
   FhirUrl endpoint;
@@ -81,16 +80,15 @@ class MessageHeaderDestination {
     this.receiver,
   });
 
-  factory MessageHeaderDestination.fromJson(Map<String, dynamic> json) =>
-      _$MessageHeaderDestinationFromJson(json);
+  factory MessageHeaderDestination.fromJson(Map<String, dynamic> json) => _$MessageHeaderDestinationFromJson(json);
   Map<String, dynamic> toJson() => _$MessageHeaderDestinationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MessageHeaderSource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String software;
   String version;
@@ -108,16 +106,15 @@ class MessageHeaderSource {
     this.endpoint,
   });
 
-  factory MessageHeaderSource.fromJson(Map<String, dynamic> json) =>
-      _$MessageHeaderSourceFromJson(json);
+  factory MessageHeaderSource.fromJson(Map<String, dynamic> json) => _$MessageHeaderSourceFromJson(json);
   Map<String, dynamic> toJson() => _$MessageHeaderSourceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MessageHeaderResponse {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id identifier;
   MessageHeaderResponseCode code;
   Reference details;
@@ -131,8 +128,7 @@ class MessageHeaderResponse {
     this.details,
   });
 
-  factory MessageHeaderResponse.fromJson(Map<String, dynamic> json) =>
-      _$MessageHeaderResponseFromJson(json);
+  factory MessageHeaderResponse.fromJson(Map<String, dynamic> json) => _$MessageHeaderResponseFromJson(json);
   Map<String, dynamic> toJson() => _$MessageHeaderResponseToJson(this);
 }
 
@@ -153,7 +149,6 @@ class MessageHeaderResponseCode extends PrimitiveObject<String> {
     );
   }
   const MessageHeaderResponseCode._(this.value);
-  factory MessageHeaderResponseCode.fromJson(String json) =>
-      MessageHeaderResponseCode(json);
+  factory MessageHeaderResponseCode.fromJson(String json) => MessageHeaderResponseCode(json);
   String toJson() => result();
 }

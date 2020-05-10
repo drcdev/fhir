@@ -14,8 +14,8 @@ class VerificationResult {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> target;
   List<String> targetLocation;
   CodeableConcept need;
@@ -57,16 +57,15 @@ class VerificationResult {
     this.validator,
   });
 
-  factory VerificationResult.fromJson(Map<String, dynamic> json) =>
-      _$VerificationResultFromJson(json);
+  factory VerificationResult.fromJson(Map<String, dynamic> json) => _$VerificationResultFromJson(json);
   Map<String, dynamic> toJson() => _$VerificationResultToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class VerificationResultPrimarySource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference who;
   List<CodeableConcept> type;
   List<CodeableConcept> communicationMethod;
@@ -90,15 +89,14 @@ class VerificationResultPrimarySource {
 
   factory VerificationResultPrimarySource.fromJson(Map<String, dynamic> json) =>
       _$VerificationResultPrimarySourceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$VerificationResultPrimarySourceToJson(this);
+  Map<String, dynamic> toJson() => _$VerificationResultPrimarySourceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class VerificationResultAttestation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference who;
   Reference onBehalfOf;
   CodeableConcept communicationMethod;
@@ -130,8 +128,8 @@ class VerificationResultAttestation {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class VerificationResultValidator {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference organization;
   String identityCertificate;
   Signature attestationSignature;

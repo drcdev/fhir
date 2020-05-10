@@ -10,8 +10,8 @@ part 'elementDefinition.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   List<ElementDefinitionRepresentation> representation;
   String sliceName;
@@ -413,16 +413,15 @@ class ElementDefinition {
     this.mapping,
   });
 
-  factory ElementDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionFromJson(json);
+  factory ElementDefinition.fromJson(Map<String, dynamic> json) => _$ElementDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionSlicing {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ElementDefinitionDiscriminator> discriminator;
   String description;
   bool ordered;
@@ -438,16 +437,15 @@ class ElementDefinitionSlicing {
     this.rules,
   });
 
-  factory ElementDefinitionSlicing.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionSlicingFromJson(json);
+  factory ElementDefinitionSlicing.fromJson(Map<String, dynamic> json) => _$ElementDefinitionSlicingFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionSlicingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionDiscriminator {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ElementDefinitionDiscriminatorType type;
   String path;
 
@@ -467,8 +465,8 @@ class ElementDefinitionDiscriminator {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionBase {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   int min;
   String max;
@@ -482,16 +480,15 @@ class ElementDefinitionBase {
     this.max,
   });
 
-  factory ElementDefinitionBase.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionBaseFromJson(json);
+  factory ElementDefinitionBase.fromJson(Map<String, dynamic> json) => _$ElementDefinitionBaseFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionBaseToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionType {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri code;
   List<Canonical> profile;
   List<Canonical> targetProfile;
@@ -509,16 +506,15 @@ class ElementDefinitionType {
     this.versioning,
   });
 
-  factory ElementDefinitionType.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionTypeFromJson(json);
+  factory ElementDefinitionType.fromJson(Map<String, dynamic> json) => _$ElementDefinitionTypeFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionTypeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionExample {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String label;
   Base64Binary valueBase64Binary;
   bool valueBoolean;
@@ -628,16 +624,15 @@ class ElementDefinitionExample {
     this.valueMeta,
   });
 
-  factory ElementDefinitionExample.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionExampleFromJson(json);
+  factory ElementDefinitionExample.fromJson(Map<String, dynamic> json) => _$ElementDefinitionExampleFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionExampleToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionConstraint {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id key;
   String requirements;
   ElementDefinitionConstraintSeverity severity;
@@ -667,8 +662,8 @@ class ElementDefinitionConstraint {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionBinding {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ElementDefinitionBindingStrength strength;
   String description;
   Canonical valueSet;
@@ -682,16 +677,15 @@ class ElementDefinitionBinding {
     this.valueSet,
   });
 
-  factory ElementDefinitionBinding.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionBindingFromJson(json);
+  factory ElementDefinitionBinding.fromJson(Map<String, dynamic> json) => _$ElementDefinitionBindingFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionBindingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ElementDefinitionMapping {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id identity;
   Code language;
   String map;
@@ -707,8 +701,7 @@ class ElementDefinitionMapping {
     this.comment,
   });
 
-  factory ElementDefinitionMapping.fromJson(Map<String, dynamic> json) =>
-      _$ElementDefinitionMappingFromJson(json);
+  factory ElementDefinitionMapping.fromJson(Map<String, dynamic> json) => _$ElementDefinitionMappingFromJson(json);
   Map<String, dynamic> toJson() => _$ElementDefinitionMappingToJson(this);
 }
 
@@ -731,8 +724,7 @@ class ElementDefinitionRepresentation extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionRepresentation._(this.value);
-  factory ElementDefinitionRepresentation.fromJson(String json) =>
-      ElementDefinitionRepresentation(json);
+  factory ElementDefinitionRepresentation.fromJson(String json) => ElementDefinitionRepresentation(json);
   String toJson() => result();
 }
 
@@ -753,8 +745,7 @@ class ElementDefinitionTypeAggregation extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionTypeAggregation._(this.value);
-  factory ElementDefinitionTypeAggregation.fromJson(String json) =>
-      ElementDefinitionTypeAggregation(json);
+  factory ElementDefinitionTypeAggregation.fromJson(String json) => ElementDefinitionTypeAggregation(json);
   String toJson() => result();
 }
 
@@ -775,8 +766,7 @@ class ElementDefinitionSlicingRules extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionSlicingRules._(this.value);
-  factory ElementDefinitionSlicingRules.fromJson(String json) =>
-      ElementDefinitionSlicingRules(json);
+  factory ElementDefinitionSlicingRules.fromJson(String json) => ElementDefinitionSlicingRules(json);
   String toJson() => result();
 }
 
@@ -799,8 +789,7 @@ class ElementDefinitionDiscriminatorType extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionDiscriminatorType._(this.value);
-  factory ElementDefinitionDiscriminatorType.fromJson(String json) =>
-      ElementDefinitionDiscriminatorType(json);
+  factory ElementDefinitionDiscriminatorType.fromJson(String json) => ElementDefinitionDiscriminatorType(json);
   String toJson() => result();
 }
 
@@ -821,8 +810,7 @@ class ElementDefinitionTypeVersioning extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionTypeVersioning._(this.value);
-  factory ElementDefinitionTypeVersioning.fromJson(String json) =>
-      ElementDefinitionTypeVersioning(json);
+  factory ElementDefinitionTypeVersioning.fromJson(String json) => ElementDefinitionTypeVersioning(json);
   String toJson() => result();
 }
 
@@ -842,8 +830,7 @@ class ElementDefinitionConstraintSeverity extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionConstraintSeverity._(this.value);
-  factory ElementDefinitionConstraintSeverity.fromJson(String json) =>
-      ElementDefinitionConstraintSeverity(json);
+  factory ElementDefinitionConstraintSeverity.fromJson(String json) => ElementDefinitionConstraintSeverity(json);
   String toJson() => result();
 }
 
@@ -865,7 +852,6 @@ class ElementDefinitionBindingStrength extends PrimitiveObject<String> {
     );
   }
   const ElementDefinitionBindingStrength._(this.value);
-  factory ElementDefinitionBindingStrength.fromJson(String json) =>
-      ElementDefinitionBindingStrength(json);
+  factory ElementDefinitionBindingStrength.fromJson(String json) => ElementDefinitionBindingStrength(json);
   String toJson() => result();
 }

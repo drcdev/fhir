@@ -45,8 +45,8 @@ class Bundle {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BundleLink {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String relation;
   FhirUri url;
 
@@ -58,16 +58,15 @@ class BundleLink {
     this.url,
   });
 
-  factory BundleLink.fromJson(Map<String, dynamic> json) =>
-      _$BundleLinkFromJson(json);
+  factory BundleLink.fromJson(Map<String, dynamic> json) => _$BundleLinkFromJson(json);
   Map<String, dynamic> toJson() => _$BundleLinkToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BundleEntry {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<BundleLink> link;
   FhirUri fullUrl;
   dynamic resource;
@@ -87,16 +86,15 @@ class BundleEntry {
     this.response,
   });
 
-  factory BundleEntry.fromJson(Map<String, dynamic> json) =>
-      _$BundleEntryFromJson(json);
+  factory BundleEntry.fromJson(Map<String, dynamic> json) => _$BundleEntryFromJson(json);
   Map<String, dynamic> toJson() => _$BundleEntryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BundleSearch {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   BundleSearchMode mode;
   double score;
 
@@ -108,16 +106,15 @@ class BundleSearch {
     this.score,
   });
 
-  factory BundleSearch.fromJson(Map<String, dynamic> json) =>
-      _$BundleSearchFromJson(json);
+  factory BundleSearch.fromJson(Map<String, dynamic> json) => _$BundleSearchFromJson(json);
   Map<String, dynamic> toJson() => _$BundleSearchToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BundleRequest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   BundleRequestMethod method;
   FhirUri url;
   String ifNoneMatch;
@@ -137,16 +134,15 @@ class BundleRequest {
     this.ifNoneExist,
   });
 
-  factory BundleRequest.fromJson(Map<String, dynamic> json) =>
-      _$BundleRequestFromJson(json);
+  factory BundleRequest.fromJson(Map<String, dynamic> json) => _$BundleRequestFromJson(json);
   Map<String, dynamic> toJson() => _$BundleRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class BundleResponse {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String status;
   FhirUri location;
   String etag;
@@ -164,8 +160,7 @@ class BundleResponse {
     this.outcome,
   });
 
-  factory BundleResponse.fromJson(Map<String, dynamic> json) =>
-      _$BundleResponseFromJson(json);
+  factory BundleResponse.fromJson(Map<String, dynamic> json) => _$BundleResponseFromJson(json);
   Map<String, dynamic> toJson() => _$BundleResponseToJson(this);
 }
 
@@ -237,7 +232,6 @@ class BundleRequestMethod extends PrimitiveObject<String> {
     );
   }
   const BundleRequestMethod._(this.value);
-  factory BundleRequestMethod.fromJson(String json) =>
-      BundleRequestMethod(json);
+  factory BundleRequestMethod.fromJson(String json) => BundleRequestMethod(json);
   String toJson() => result();
 }

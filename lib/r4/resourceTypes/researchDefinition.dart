@@ -17,8 +17,8 @@ class ResearchDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -102,8 +102,7 @@ class ResearchDefinition {
     this.outcome,
   });
 
-  factory ResearchDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ResearchDefinitionFromJson(json);
+  factory ResearchDefinition.fromJson(Map<String, dynamic> json) => _$ResearchDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchDefinitionToJson(this);
 }
 
@@ -125,7 +124,6 @@ class ResearchDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const ResearchDefinitionStatus._(this.value);
-  factory ResearchDefinitionStatus.fromJson(String json) =>
-      ResearchDefinitionStatus(json);
+  factory ResearchDefinitionStatus.fromJson(String json) => ResearchDefinitionStatus(json);
   String toJson() => result();
 }

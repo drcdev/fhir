@@ -17,8 +17,8 @@ class ObservationDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> category;
   CodeableConcept code;
   List<Identifier> identifier;
@@ -58,16 +58,15 @@ class ObservationDefinition {
     this.criticalCodedValueSet,
   });
 
-  factory ObservationDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ObservationDefinitionFromJson(json);
+  factory ObservationDefinition.fromJson(Map<String, dynamic> json) => _$ObservationDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ObservationDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ObservationDefinitionQuantitativeDetails {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept customaryUnit;
   CodeableConcept unit;
   double conversionFactor;
@@ -83,18 +82,16 @@ class ObservationDefinitionQuantitativeDetails {
     this.decimalPrecision,
   });
 
-  factory ObservationDefinitionQuantitativeDetails.fromJson(
-          Map<String, dynamic> json) =>
+  factory ObservationDefinitionQuantitativeDetails.fromJson(Map<String, dynamic> json) =>
       _$ObservationDefinitionQuantitativeDetailsFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ObservationDefinitionQuantitativeDetailsToJson(this);
+  Map<String, dynamic> toJson() => _$ObservationDefinitionQuantitativeDetailsToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ObservationDefinitionQualifiedInterval {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ObservationDefinitionQualifiedIntervalCategory category;
   Range range;
   CodeableConcept context;
@@ -118,15 +115,12 @@ class ObservationDefinitionQualifiedInterval {
     this.condition,
   });
 
-  factory ObservationDefinitionQualifiedInterval.fromJson(
-          Map<String, dynamic> json) =>
+  factory ObservationDefinitionQualifiedInterval.fromJson(Map<String, dynamic> json) =>
       _$ObservationDefinitionQualifiedIntervalFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ObservationDefinitionQualifiedIntervalToJson(this);
+  Map<String, dynamic> toJson() => _$ObservationDefinitionQualifiedIntervalToJson(this);
 }
 
-class ObservationDefinitionQualifiedIntervalCategory
-    extends PrimitiveObject<String> {
+class ObservationDefinitionQualifiedIntervalCategory extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory ObservationDefinitionQualifiedIntervalCategory(String value) {
@@ -143,14 +137,12 @@ class ObservationDefinitionQualifiedIntervalCategory
     );
   }
   const ObservationDefinitionQualifiedIntervalCategory._(this.value);
-  factory ObservationDefinitionQualifiedIntervalCategory.fromJson(
-          String json) =>
+  factory ObservationDefinitionQualifiedIntervalCategory.fromJson(String json) =>
       ObservationDefinitionQualifiedIntervalCategory(json);
   String toJson() => result();
 }
 
-class ObservationDefinitionQualifiedIntervalGender
-    extends PrimitiveObject<String> {
+class ObservationDefinitionQualifiedIntervalGender extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory ObservationDefinitionQualifiedIntervalGender(String value) {

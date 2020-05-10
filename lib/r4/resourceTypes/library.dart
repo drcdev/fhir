@@ -17,8 +17,8 @@ class Library {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -96,8 +96,7 @@ class Library {
     this.content,
   });
 
-  factory Library.fromJson(Map<String, dynamic> json) =>
-      _$LibraryFromJson(json);
+  factory Library.fromJson(Map<String, dynamic> json) => _$LibraryFromJson(json);
   Map<String, dynamic> toJson() => _$LibraryToJson(this);
 }
 

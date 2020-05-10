@@ -17,8 +17,8 @@ class SupplyRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   SupplyRequestStatus status;
   CodeableConcept category;
@@ -68,16 +68,15 @@ class SupplyRequest {
     this.deliverTo,
   });
 
-  factory SupplyRequest.fromJson(Map<String, dynamic> json) =>
-      _$SupplyRequestFromJson(json);
+  factory SupplyRequest.fromJson(Map<String, dynamic> json) => _$SupplyRequestFromJson(json);
   Map<String, dynamic> toJson() => _$SupplyRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SupplyRequestParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept valueCodeableConcept;
   Quantity valueQuantity;
@@ -95,8 +94,7 @@ class SupplyRequestParameter {
     this.valueBoolean,
   });
 
-  factory SupplyRequestParameter.fromJson(Map<String, dynamic> json) =>
-      _$SupplyRequestParameterFromJson(json);
+  factory SupplyRequestParameter.fromJson(Map<String, dynamic> json) => _$SupplyRequestParameterFromJson(json);
   Map<String, dynamic> toJson() => _$SupplyRequestParameterToJson(this);
 }
 
@@ -121,7 +119,6 @@ class SupplyRequestStatus extends PrimitiveObject<String> {
     );
   }
   const SupplyRequestStatus._(this.value);
-  factory SupplyRequestStatus.fromJson(String json) =>
-      SupplyRequestStatus(json);
+  factory SupplyRequestStatus.fromJson(String json) => SupplyRequestStatus(json);
   String toJson() => result();
 }

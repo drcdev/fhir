@@ -7,8 +7,8 @@ part 'prodCharacteristic.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ProdCharacteristic {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity height;
   Quantity width;
   Quantity depth;
@@ -38,7 +38,6 @@ class ProdCharacteristic {
     this.scoring,
   });
 
-  factory ProdCharacteristic.fromJson(Map<String, dynamic> json) =>
-      _$ProdCharacteristicFromJson(json);
+  factory ProdCharacteristic.fromJson(Map<String, dynamic> json) => _$ProdCharacteristicFromJson(json);
   Map<String, dynamic> toJson() => _$ProdCharacteristicToJson(this);
 }

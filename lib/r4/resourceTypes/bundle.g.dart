@@ -71,12 +71,14 @@ BundleLink _$BundleLinkFromJson(Map<String, dynamic> json) {
   return BundleLink(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     relation: json['relation'] as String,
     url: json['url'] == null ? null : FhirUri.fromJson(json['url'] as String),
@@ -106,12 +108,14 @@ BundleEntry _$BundleEntryFromJson(Map<String, dynamic> json) {
   return BundleEntry(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     link: (json['link'] as List)
         ?.map((e) =>
@@ -120,7 +124,7 @@ BundleEntry _$BundleEntryFromJson(Map<String, dynamic> json) {
     fullUrl: json['fullUrl'] == null
         ? null
         : FhirUri.fromJson(json['fullUrl'] as String),
-    resource: json['resource'] == null ? null : resourceList(json['resource']),
+    resource: json['resource'],
     search: json['search'] == null
         ? null
         : BundleSearch.fromJson(json['search'] as Map<String, dynamic>),
@@ -149,7 +153,7 @@ Map<String, dynamic> _$BundleEntryToJson(BundleEntry instance) {
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('link', instance.link?.map((e) => e?.toJson())?.toList());
   writeNotNull('fullUrl', instance.fullUrl?.toJson());
-  writeNotNull('resource', instance.resource?.toJson());
+  writeNotNull('resource', instance.resource);
   writeNotNull('search', instance.search?.toJson());
   writeNotNull('request', instance.request?.toJson());
   writeNotNull('response', instance.response?.toJson());
@@ -160,12 +164,14 @@ BundleSearch _$BundleSearchFromJson(Map<String, dynamic> json) {
   return BundleSearch(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     mode: json['mode'] == null
         ? null
@@ -197,12 +203,14 @@ BundleRequest _$BundleRequestFromJson(Map<String, dynamic> json) {
   return BundleRequest(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     method: json['method'] == null
         ? null
@@ -244,12 +252,14 @@ BundleResponse _$BundleResponseFromJson(Map<String, dynamic> json) {
   return BundleResponse(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     modifierExtension: (json['modifierExtension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     status: json['status'] as String,
     location: json['location'] == null
@@ -259,7 +269,7 @@ BundleResponse _$BundleResponseFromJson(Map<String, dynamic> json) {
     lastModified: json['lastModified'] == null
         ? null
         : Instant.fromJson(json['lastModified'] as String),
-    outcome: json['outcome'] == null ? null : resourceList(json['outcome']),
+    outcome: json['outcome'],
   );
 }
 
@@ -281,6 +291,6 @@ Map<String, dynamic> _$BundleResponseToJson(BundleResponse instance) {
   writeNotNull('location', instance.location?.toJson());
   writeNotNull('etag', instance.etag);
   writeNotNull('lastModified', instance.lastModified?.toJson());
-  writeNotNull('outcome', instance.outcome?.toJson());
+  writeNotNull('outcome', instance.outcome);
   return val;
 }

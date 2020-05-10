@@ -17,8 +17,8 @@ class CarePlan {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -78,16 +78,15 @@ class CarePlan {
     this.note,
   });
 
-  factory CarePlan.fromJson(Map<String, dynamic> json) =>
-      _$CarePlanFromJson(json);
+  factory CarePlan.fromJson(Map<String, dynamic> json) => _$CarePlanFromJson(json);
   Map<String, dynamic> toJson() => _$CarePlanToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CarePlanActivity {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> outcomeCodeableConcept;
   List<Reference> outcomeReference;
   List<Annotation> progress;
@@ -105,16 +104,15 @@ class CarePlanActivity {
     this.detail,
   });
 
-  factory CarePlanActivity.fromJson(Map<String, dynamic> json) =>
-      _$CarePlanActivityFromJson(json);
+  factory CarePlanActivity.fromJson(Map<String, dynamic> json) => _$CarePlanActivityFromJson(json);
   Map<String, dynamic> toJson() => _$CarePlanActivityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CarePlanDetail {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code kind;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -162,8 +160,7 @@ class CarePlanDetail {
     this.description,
   });
 
-  factory CarePlanDetail.fromJson(Map<String, dynamic> json) =>
-      _$CarePlanDetailFromJson(json);
+  factory CarePlanDetail.fromJson(Map<String, dynamic> json) => _$CarePlanDetailFromJson(json);
   Map<String, dynamic> toJson() => _$CarePlanDetailToJson(this);
 }
 
@@ -190,7 +187,6 @@ class CarePlanDetailStatus extends PrimitiveObject<String> {
     );
   }
   const CarePlanDetailStatus._(this.value);
-  factory CarePlanDetailStatus.fromJson(String json) =>
-      CarePlanDetailStatus(json);
+  factory CarePlanDetailStatus.fromJson(String json) => CarePlanDetailStatus(json);
   String toJson() => result();
 }

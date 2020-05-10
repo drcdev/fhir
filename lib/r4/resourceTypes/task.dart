@@ -17,8 +17,8 @@ class Task {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Canonical instantiatesCanonical;
   FhirUri instantiatesUri;
@@ -101,8 +101,8 @@ class Task {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TaskRestriction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int repetitions;
   Period period;
   List<Reference> recipient;
@@ -116,16 +116,15 @@ class TaskRestriction {
     this.recipient,
   });
 
-  factory TaskRestriction.fromJson(Map<String, dynamic> json) =>
-      _$TaskRestrictionFromJson(json);
+  factory TaskRestriction.fromJson(Map<String, dynamic> json) => _$TaskRestrictionFromJson(json);
   Map<String, dynamic> toJson() => _$TaskRestrictionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TaskInput {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Base64Binary valueBase64Binary;
   bool valueBoolean;
@@ -235,16 +234,15 @@ class TaskInput {
     this.valueMeta,
   });
 
-  factory TaskInput.fromJson(Map<String, dynamic> json) =>
-      _$TaskInputFromJson(json);
+  factory TaskInput.fromJson(Map<String, dynamic> json) => _$TaskInputFromJson(json);
   Map<String, dynamic> toJson() => _$TaskInputToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TaskOutput {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Base64Binary valueBase64Binary;
   bool valueBoolean;
@@ -354,8 +352,7 @@ class TaskOutput {
     this.valueMeta,
   });
 
-  factory TaskOutput.fromJson(Map<String, dynamic> json) =>
-      _$TaskOutputFromJson(json);
+  factory TaskOutput.fromJson(Map<String, dynamic> json) => _$TaskOutputFromJson(json);
   Map<String, dynamic> toJson() => _$TaskOutputToJson(this);
 }
 

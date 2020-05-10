@@ -14,8 +14,8 @@ class PaymentNotice {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   Reference request;
@@ -53,7 +53,6 @@ class PaymentNotice {
     this.paymentStatus,
   });
 
-  factory PaymentNotice.fromJson(Map<String, dynamic> json) =>
-      _$PaymentNoticeFromJson(json);
+  factory PaymentNotice.fromJson(Map<String, dynamic> json) => _$PaymentNoticeFromJson(json);
   Map<String, dynamic> toJson() => _$PaymentNoticeToJson(this);
 }

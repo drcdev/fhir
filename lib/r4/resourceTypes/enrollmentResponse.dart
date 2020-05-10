@@ -16,8 +16,8 @@ class EnrollmentResponse {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   Reference request;
@@ -47,8 +47,7 @@ class EnrollmentResponse {
     this.requestProvider,
   });
 
-  factory EnrollmentResponse.fromJson(Map<String, dynamic> json) =>
-      _$EnrollmentResponseFromJson(json);
+  factory EnrollmentResponse.fromJson(Map<String, dynamic> json) => _$EnrollmentResponseFromJson(json);
   Map<String, dynamic> toJson() => _$EnrollmentResponseToJson(this);
 }
 
@@ -70,7 +69,6 @@ class EnrollmentResponseOutcome extends PrimitiveObject<String> {
     );
   }
   const EnrollmentResponseOutcome._(this.value);
-  factory EnrollmentResponseOutcome.fromJson(String json) =>
-      EnrollmentResponseOutcome(json);
+  factory EnrollmentResponseOutcome.fromJson(String json) => EnrollmentResponseOutcome(json);
   String toJson() => result();
 }

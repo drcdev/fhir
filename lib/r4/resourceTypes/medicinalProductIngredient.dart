@@ -14,8 +14,8 @@ class MedicinalProductIngredient {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CodeableConcept role;
   bool allergenicIndicator;
@@ -41,16 +41,15 @@ class MedicinalProductIngredient {
     this.substance,
   });
 
-  factory MedicinalProductIngredient.fromJson(Map<String, dynamic> json) =>
-      _$MedicinalProductIngredientFromJson(json);
+  factory MedicinalProductIngredient.fromJson(Map<String, dynamic> json) => _$MedicinalProductIngredientFromJson(json);
   Map<String, dynamic> toJson() => _$MedicinalProductIngredientToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductIngredientSpecifiedSubstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept group;
   CodeableConcept confidentiality;
@@ -66,18 +65,16 @@ class MedicinalProductIngredientSpecifiedSubstance {
     this.strength,
   });
 
-  factory MedicinalProductIngredientSpecifiedSubstance.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductIngredientSpecifiedSubstance.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductIngredientSpecifiedSubstanceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductIngredientSpecifiedSubstanceToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductIngredientSpecifiedSubstanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductIngredientStrength {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Ratio presentation;
   Ratio presentationLowLimit;
   Ratio concentration;
@@ -99,18 +96,16 @@ class MedicinalProductIngredientStrength {
     this.referenceStrength,
   });
 
-  factory MedicinalProductIngredientStrength.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductIngredientStrength.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductIngredientStrengthFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductIngredientStrengthToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductIngredientStrengthToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductIngredientReferenceStrength {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept substance;
   Ratio strength;
   Ratio strengthLowLimit;
@@ -128,18 +123,16 @@ class MedicinalProductIngredientReferenceStrength {
     this.country,
   });
 
-  factory MedicinalProductIngredientReferenceStrength.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductIngredientReferenceStrength.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductIngredientReferenceStrengthFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductIngredientReferenceStrengthToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductIngredientReferenceStrengthToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductIngredientSubstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   List<MedicinalProductIngredientStrength> strength;
 
@@ -151,9 +144,7 @@ class MedicinalProductIngredientSubstance {
     this.strength,
   });
 
-  factory MedicinalProductIngredientSubstance.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductIngredientSubstance.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductIngredientSubstanceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductIngredientSubstanceToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductIngredientSubstanceToJson(this);
 }

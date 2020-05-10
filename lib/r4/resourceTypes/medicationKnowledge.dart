@@ -14,16 +14,15 @@ class MedicationKnowledge {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   Code status;
   Reference manufacturer;
   CodeableConcept doseForm;
   Quantity amount;
   List<String> synonym;
-  List<MedicationKnowledgeRelatedMedicationKnowledge>
-      relatedMedicationKnowledge;
+  List<MedicationKnowledgeRelatedMedicationKnowledge> relatedMedicationKnowledge;
   List<Reference> associatedMedication;
   List<CodeableConcept> productType;
   List<MedicationKnowledgeMonograph> monograph;
@@ -74,16 +73,15 @@ class MedicationKnowledge {
     this.kinetics,
   });
 
-  factory MedicationKnowledge.fromJson(Map<String, dynamic> json) =>
-      _$MedicationKnowledgeFromJson(json);
+  factory MedicationKnowledge.fromJson(Map<String, dynamic> json) => _$MedicationKnowledgeFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationKnowledgeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeRelatedMedicationKnowledge {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<Reference> reference;
 
@@ -95,18 +93,16 @@ class MedicationKnowledgeRelatedMedicationKnowledge {
     @required this.reference,
   });
 
-  factory MedicationKnowledgeRelatedMedicationKnowledge.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgeRelatedMedicationKnowledge.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeRelatedMedicationKnowledgeFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeRelatedMedicationKnowledgeToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeRelatedMedicationKnowledgeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeMonograph {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Reference source;
 
@@ -126,8 +122,8 @@ class MedicationKnowledgeMonograph {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeIngredient {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept itemCodeableConcept;
   Reference itemReference;
   bool isActive;
@@ -151,8 +147,8 @@ class MedicationKnowledgeIngredient {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeCost {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String source;
   Money cost;
@@ -166,16 +162,15 @@ class MedicationKnowledgeCost {
     @required this.cost,
   });
 
-  factory MedicationKnowledgeCost.fromJson(Map<String, dynamic> json) =>
-      _$MedicationKnowledgeCostFromJson(json);
+  factory MedicationKnowledgeCost.fromJson(Map<String, dynamic> json) => _$MedicationKnowledgeCostFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationKnowledgeCostToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeMonitoringProgram {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String name;
 
@@ -187,18 +182,16 @@ class MedicationKnowledgeMonitoringProgram {
     this.name,
   });
 
-  factory MedicationKnowledgeMonitoringProgram.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgeMonitoringProgram.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeMonitoringProgramFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeMonitoringProgramToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeMonitoringProgramToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeAdministrationGuidelines {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<MedicationKnowledgeDosage> dosage;
   CodeableConcept indicationCodeableConcept;
   Reference indicationReference;
@@ -214,18 +207,16 @@ class MedicationKnowledgeAdministrationGuidelines {
     this.patientCharacteristics,
   });
 
-  factory MedicationKnowledgeAdministrationGuidelines.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgeAdministrationGuidelines.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeAdministrationGuidelinesFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeAdministrationGuidelinesToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeAdministrationGuidelinesToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeDosage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<Dosage> dosage;
 
@@ -237,16 +228,15 @@ class MedicationKnowledgeDosage {
     @required this.dosage,
   });
 
-  factory MedicationKnowledgeDosage.fromJson(Map<String, dynamic> json) =>
-      _$MedicationKnowledgeDosageFromJson(json);
+  factory MedicationKnowledgeDosage.fromJson(Map<String, dynamic> json) => _$MedicationKnowledgeDosageFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationKnowledgeDosageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgePatientCharacteristics {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept characteristicCodeableConcept;
   Quantity characteristicQuantity;
   List<String> value;
@@ -260,18 +250,16 @@ class MedicationKnowledgePatientCharacteristics {
     this.value,
   });
 
-  factory MedicationKnowledgePatientCharacteristics.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgePatientCharacteristics.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgePatientCharacteristicsFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgePatientCharacteristicsToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgePatientCharacteristicsToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeMedicineClassification {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> classification;
 
@@ -283,18 +271,16 @@ class MedicationKnowledgeMedicineClassification {
     this.classification,
   });
 
-  factory MedicationKnowledgeMedicineClassification.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgeMedicineClassification.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeMedicineClassificationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeMedicineClassificationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeMedicineClassificationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgePackaging {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Quantity quantity;
 
@@ -314,8 +300,8 @@ class MedicationKnowledgePackaging {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeDrugCharacteristic {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   CodeableConcept valueCodeableConcept;
   String valueString;
@@ -333,18 +319,16 @@ class MedicationKnowledgeDrugCharacteristic {
     this.valueBase64Binary,
   });
 
-  factory MedicationKnowledgeDrugCharacteristic.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationKnowledgeDrugCharacteristic.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeDrugCharacteristicFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeDrugCharacteristicToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeDrugCharacteristicToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeRegulatory {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference regulatoryAuthority;
   List<MedicationKnowledgeSubstitution> substitution;
   List<MedicationKnowledgeSchedule> schedule;
@@ -368,8 +352,8 @@ class MedicationKnowledgeRegulatory {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeSubstitution {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   bool allowed;
 
@@ -383,15 +367,14 @@ class MedicationKnowledgeSubstitution {
 
   factory MedicationKnowledgeSubstitution.fromJson(Map<String, dynamic> json) =>
       _$MedicationKnowledgeSubstitutionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationKnowledgeSubstitutionToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationKnowledgeSubstitutionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeSchedule {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept schedule;
 
   MedicationKnowledgeSchedule({
@@ -409,8 +392,8 @@ class MedicationKnowledgeSchedule {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeMaxDispense {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity quantity;
   Duration period;
 
@@ -430,8 +413,8 @@ class MedicationKnowledgeMaxDispense {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationKnowledgeKinetics {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Quantity> areaUnderCurve;
   List<Quantity> lethalDose50;
   Duration halfLifePeriod;

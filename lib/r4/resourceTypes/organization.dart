@@ -13,8 +13,8 @@ class Organization {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   List<CodeableConcept> type;
@@ -48,16 +48,15 @@ class Organization {
     this.endpoint,
   });
 
-  factory Organization.fromJson(Map<String, dynamic> json) =>
-      _$OrganizationFromJson(json);
+  factory Organization.fromJson(Map<String, dynamic> json) => _$OrganizationFromJson(json);
   Map<String, dynamic> toJson() => _$OrganizationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OrganizationContact {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept purpose;
   HumanName name;
   List<ContactPoint> telecom;
@@ -73,7 +72,6 @@ class OrganizationContact {
     this.address,
   });
 
-  factory OrganizationContact.fromJson(Map<String, dynamic> json) =>
-      _$OrganizationContactFromJson(json);
+  factory OrganizationContact.fromJson(Map<String, dynamic> json) => _$OrganizationContactFromJson(json);
   Map<String, dynamic> toJson() => _$OrganizationContactToJson(this);
 }

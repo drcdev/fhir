@@ -1,4 +1,4 @@
- import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
@@ -17,8 +17,8 @@ class StructureMap {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -68,16 +68,15 @@ class StructureMap {
     @required this.group,
   });
 
-  factory StructureMap.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapFromJson(json);
+  factory StructureMap.fromJson(Map<String, dynamic> json) => _$StructureMapFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapStructure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Canonical url;
   StructureMapStructureMode mode;
   String alias;
@@ -93,16 +92,15 @@ class StructureMapStructure {
     this.documentation,
   });
 
-  factory StructureMapStructure.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapStructureFromJson(json);
+  factory StructureMapStructure.fromJson(Map<String, dynamic> json) => _$StructureMapStructureFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapStructureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapGroup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id name;
   Id extend;
   StructureMapGroupTypeMode typeMode;
@@ -122,16 +120,15 @@ class StructureMapGroup {
     @required this.rule,
   });
 
-  factory StructureMapGroup.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapGroupFromJson(json);
+  factory StructureMapGroup.fromJson(Map<String, dynamic> json) => _$StructureMapGroupFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapInput {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id name;
   String type;
   StructureMapInputMode mode;
@@ -147,16 +144,15 @@ class StructureMapInput {
     this.documentation,
   });
 
-  factory StructureMapInput.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapInputFromJson(json);
+  factory StructureMapInput.fromJson(Map<String, dynamic> json) => _$StructureMapInputFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapInputToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapRule {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id name;
   List<StructureMapSource> source;
   List<StructureMapTarget> target;
@@ -176,16 +172,15 @@ class StructureMapRule {
     this.documentation,
   });
 
-  factory StructureMapRule.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapRuleFromJson(json);
+  factory StructureMapRule.fromJson(Map<String, dynamic> json) => _$StructureMapRuleFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapRuleToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapSource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id context;
   int min;
   String max;
@@ -313,16 +308,15 @@ class StructureMapSource {
     this.logMessage,
   });
 
-  factory StructureMapSource.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapSourceFromJson(json);
+  factory StructureMapSource.fromJson(Map<String, dynamic> json) => _$StructureMapSourceFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapSourceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id context;
   StructureMapTargetContextType contextType;
   String element;
@@ -346,16 +340,15 @@ class StructureMapTarget {
     this.parameter,
   });
 
-  factory StructureMapTarget.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapTargetFromJson(json);
+  factory StructureMapTarget.fromJson(Map<String, dynamic> json) => _$StructureMapTargetFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapTargetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id valueId;
   String valueString;
   bool valueBoolean;
@@ -373,16 +366,15 @@ class StructureMapParameter {
     this.valueDecimal,
   });
 
-  factory StructureMapParameter.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapParameterFromJson(json);
+  factory StructureMapParameter.fromJson(Map<String, dynamic> json) => _$StructureMapParameterFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapParameterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class StructureMapDependent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id name;
   List<String> variable;
 
@@ -394,8 +386,7 @@ class StructureMapDependent {
     this.variable,
   });
 
-  factory StructureMapDependent.fromJson(Map<String, dynamic> json) =>
-      _$StructureMapDependentFromJson(json);
+  factory StructureMapDependent.fromJson(Map<String, dynamic> json) => _$StructureMapDependentFromJson(json);
   Map<String, dynamic> toJson() => _$StructureMapDependentToJson(this);
 }
 
@@ -439,8 +430,7 @@ class StructureMapStructureMode extends PrimitiveObject<String> {
     );
   }
   const StructureMapStructureMode._(this.value);
-  factory StructureMapStructureMode.fromJson(String json) =>
-      StructureMapStructureMode(json);
+  factory StructureMapStructureMode.fromJson(String json) => StructureMapStructureMode(json);
   String toJson() => result();
 }
 
@@ -461,8 +451,7 @@ class StructureMapGroupTypeMode extends PrimitiveObject<String> {
     );
   }
   const StructureMapGroupTypeMode._(this.value);
-  factory StructureMapGroupTypeMode.fromJson(String json) =>
-      StructureMapGroupTypeMode(json);
+  factory StructureMapGroupTypeMode.fromJson(String json) => StructureMapGroupTypeMode(json);
   String toJson() => result();
 }
 
@@ -482,8 +471,7 @@ class StructureMapInputMode extends PrimitiveObject<String> {
     );
   }
   const StructureMapInputMode._(this.value);
-  factory StructureMapInputMode.fromJson(String json) =>
-      StructureMapInputMode(json);
+  factory StructureMapInputMode.fromJson(String json) => StructureMapInputMode(json);
   String toJson() => result();
 }
 
@@ -506,8 +494,7 @@ class StructureMapSourceListMode extends PrimitiveObject<String> {
     );
   }
   const StructureMapSourceListMode._(this.value);
-  factory StructureMapSourceListMode.fromJson(String json) =>
-      StructureMapSourceListMode(json);
+  factory StructureMapSourceListMode.fromJson(String json) => StructureMapSourceListMode(json);
   String toJson() => result();
 }
 
@@ -527,8 +514,7 @@ class StructureMapTargetContextType extends PrimitiveObject<String> {
     );
   }
   const StructureMapTargetContextType._(this.value);
-  factory StructureMapTargetContextType.fromJson(String json) =>
-      StructureMapTargetContextType(json);
+  factory StructureMapTargetContextType.fromJson(String json) => StructureMapTargetContextType(json);
   String toJson() => result();
 }
 
@@ -563,7 +549,6 @@ class StructureMapTargetTransform extends PrimitiveObject<String> {
     );
   }
   const StructureMapTargetTransform._(this.value);
-  factory StructureMapTargetTransform.fromJson(String json) =>
-      StructureMapTargetTransform(json);
+  factory StructureMapTargetTransform.fromJson(String json) => StructureMapTargetTransform(json);
   String toJson() => result();
 }

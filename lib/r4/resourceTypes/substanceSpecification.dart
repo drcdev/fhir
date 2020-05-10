@@ -13,8 +13,8 @@ class SubstanceSpecification {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CodeableConcept type;
   CodeableConcept status;
@@ -66,16 +66,15 @@ class SubstanceSpecification {
     this.sourceMaterial,
   });
 
-  factory SubstanceSpecification.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceSpecificationFromJson(json);
+  factory SubstanceSpecification.fromJson(Map<String, dynamic> json) => _$SubstanceSpecificationFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceSpecificationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationMoiety {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept role;
   Identifier identifier;
   String name;
@@ -107,8 +106,8 @@ class SubstanceSpecificationMoiety {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationProperty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   CodeableConcept code;
   String parameters;
@@ -138,8 +137,8 @@ class SubstanceSpecificationProperty {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationStructure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept stereochemistry;
   CodeableConcept opticalActivity;
   String molecularFormula;
@@ -165,15 +164,14 @@ class SubstanceSpecificationStructure {
 
   factory SubstanceSpecificationStructure.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSpecificationStructureFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSpecificationStructureToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSpecificationStructureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationIsotope {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CodeableConcept name;
   CodeableConcept substitution;
@@ -199,8 +197,8 @@ class SubstanceSpecificationIsotope {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationMolecularWeight {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept method;
   CodeableConcept type;
   Quantity amount;
@@ -214,18 +212,16 @@ class SubstanceSpecificationMolecularWeight {
     this.amount,
   });
 
-  factory SubstanceSpecificationMolecularWeight.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSpecificationMolecularWeight.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSpecificationMolecularWeightFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSpecificationMolecularWeightToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSpecificationMolecularWeightToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationRepresentation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String representation;
   Attachment attachment;
@@ -239,18 +235,16 @@ class SubstanceSpecificationRepresentation {
     this.attachment,
   });
 
-  factory SubstanceSpecificationRepresentation.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSpecificationRepresentation.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSpecificationRepresentationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSpecificationRepresentationToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSpecificationRepresentationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationCode {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept status;
   FhirDateTime statusDate;
@@ -268,16 +262,15 @@ class SubstanceSpecificationCode {
     this.source,
   });
 
-  factory SubstanceSpecificationCode.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceSpecificationCodeFromJson(json);
+  factory SubstanceSpecificationCode.fromJson(Map<String, dynamic> json) => _$SubstanceSpecificationCodeFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceSpecificationCodeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationName {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   CodeableConcept type;
   CodeableConcept status;
@@ -307,16 +300,15 @@ class SubstanceSpecificationName {
     this.source,
   });
 
-  factory SubstanceSpecificationName.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceSpecificationNameFromJson(json);
+  factory SubstanceSpecificationName.fromJson(Map<String, dynamic> json) => _$SubstanceSpecificationNameFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceSpecificationNameToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationOfficial {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept authority;
   CodeableConcept status;
   FhirDateTime date;
@@ -338,8 +330,8 @@ class SubstanceSpecificationOfficial {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSpecificationRelationship {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference substanceReference;
   CodeableConcept substanceCodeableConcept;
   CodeableConcept relationship;
@@ -369,9 +361,7 @@ class SubstanceSpecificationRelationship {
     this.source,
   });
 
-  factory SubstanceSpecificationRelationship.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSpecificationRelationship.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSpecificationRelationshipFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSpecificationRelationshipToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSpecificationRelationshipToJson(this);
 }

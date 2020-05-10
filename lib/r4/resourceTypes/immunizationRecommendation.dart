@@ -14,8 +14,8 @@ class ImmunizationRecommendation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Reference patient;
   FhirDateTime date;
@@ -39,16 +39,15 @@ class ImmunizationRecommendation {
     @required this.recommendation,
   });
 
-  factory ImmunizationRecommendation.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationRecommendationFromJson(json);
+  factory ImmunizationRecommendation.fromJson(Map<String, dynamic> json) => _$ImmunizationRecommendationFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationRecommendationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationRecommendationRecommendation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> vaccineCode;
   CodeableConcept targetDisease;
   List<CodeableConcept> contraindicatedVaccineCode;
@@ -84,18 +83,16 @@ class ImmunizationRecommendationRecommendation {
     this.supportingPatientInformation,
   });
 
-  factory ImmunizationRecommendationRecommendation.fromJson(
-          Map<String, dynamic> json) =>
+  factory ImmunizationRecommendationRecommendation.fromJson(Map<String, dynamic> json) =>
       _$ImmunizationRecommendationRecommendationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ImmunizationRecommendationRecommendationToJson(this);
+  Map<String, dynamic> toJson() => _$ImmunizationRecommendationRecommendationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationRecommendationDateCriterion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   FhirDateTime value;
 
@@ -107,9 +104,7 @@ class ImmunizationRecommendationDateCriterion {
     this.value,
   });
 
-  factory ImmunizationRecommendationDateCriterion.fromJson(
-          Map<String, dynamic> json) =>
+  factory ImmunizationRecommendationDateCriterion.fromJson(Map<String, dynamic> json) =>
       _$ImmunizationRecommendationDateCriterionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ImmunizationRecommendationDateCriterionToJson(this);
+  Map<String, dynamic> toJson() => _$ImmunizationRecommendationDateCriterionToJson(this);
 }

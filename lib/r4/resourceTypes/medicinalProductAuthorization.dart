@@ -14,8 +14,8 @@ class MedicinalProductAuthorization {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Reference subject;
   List<CodeableConcept> country;
@@ -28,8 +28,7 @@ class MedicinalProductAuthorization {
   FhirDateTime dateOfFirstAuthorization;
   FhirDateTime internationalBirthDate;
   CodeableConcept legalBasis;
-  List<MedicinalProductAuthorizationJurisdictionalAuthorization>
-      jurisdictionalAuthorization;
+  List<MedicinalProductAuthorizationJurisdictionalAuthorization> jurisdictionalAuthorization;
   Reference holder;
   Reference regulator;
   MedicinalProductAuthorizationProcedure procedure;
@@ -70,8 +69,8 @@ class MedicinalProductAuthorization {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductAuthorizationJurisdictionalAuthorization {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept country;
   List<CodeableConcept> jurisdiction;
@@ -89,18 +88,16 @@ class MedicinalProductAuthorizationJurisdictionalAuthorization {
     this.validityPeriod,
   });
 
-  factory MedicinalProductAuthorizationJurisdictionalAuthorization.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductAuthorizationJurisdictionalAuthorization.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductAuthorizationJurisdictionalAuthorizationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductAuthorizationJurisdictionalAuthorizationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductAuthorizationJurisdictionalAuthorizationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductAuthorizationProcedure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CodeableConcept type;
   Period datePeriod;
@@ -118,9 +115,7 @@ class MedicinalProductAuthorizationProcedure {
     this.application,
   });
 
-  factory MedicinalProductAuthorizationProcedure.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductAuthorizationProcedure.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductAuthorizationProcedureFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductAuthorizationProcedureToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductAuthorizationProcedureToJson(this);
 }

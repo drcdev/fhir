@@ -10,8 +10,8 @@ part 'timing.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Timing {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<DateTime> event;
   TimingRepeat repeat;
   CodeableConcept code;
@@ -32,8 +32,8 @@ class Timing {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TimingRepeat {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Duration boundsDuration;
   Range boundsRange;
   Period boundsPeriod;
@@ -75,8 +75,7 @@ class TimingRepeat {
     this.offset,
   });
 
-  factory TimingRepeat.fromJson(Map<String, dynamic> json) =>
-      _$TimingRepeatFromJson(json);
+  factory TimingRepeat.fromJson(Map<String, dynamic> json) => _$TimingRepeatFromJson(json);
   Map<String, dynamic> toJson() => _$TimingRepeatToJson(this);
 }
 

@@ -10,7 +10,7 @@ part 'identifier.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Identifier {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   IdentifierUse use;
   CodeableConcept type;
   FhirUri system;
@@ -29,8 +29,7 @@ class Identifier {
     this.assigner,
   });
 
-  factory Identifier.fromJson(Map<String, dynamic> json) =>
-      _$IdentifierFromJson(json);
+  factory Identifier.fromJson(Map<String, dynamic> json) => _$IdentifierFromJson(json);
   Map<String, dynamic> toJson() => _$IdentifierToJson(this);
 }
 

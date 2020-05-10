@@ -17,8 +17,8 @@ class Linkage {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool active;
   Reference author;
   List<LinkageItem> item;
@@ -38,16 +38,15 @@ class Linkage {
     @required this.item,
   });
 
-  factory Linkage.fromJson(Map<String, dynamic> json) =>
-      _$LinkageFromJson(json);
+  factory Linkage.fromJson(Map<String, dynamic> json) => _$LinkageFromJson(json);
   Map<String, dynamic> toJson() => _$LinkageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class LinkageItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   LinkageItemType type;
   Reference resource;
 
@@ -59,8 +58,7 @@ class LinkageItem {
     @required this.resource,
   });
 
-  factory LinkageItem.fromJson(Map<String, dynamic> json) =>
-      _$LinkageItemFromJson(json);
+  factory LinkageItem.fromJson(Map<String, dynamic> json) => _$LinkageItemFromJson(json);
   Map<String, dynamic> toJson() => _$LinkageItemToJson(this);
 }
 

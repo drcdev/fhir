@@ -14,8 +14,8 @@ class ServiceRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -105,7 +105,6 @@ class ServiceRequest {
     this.relevantHistory,
   });
 
-  factory ServiceRequest.fromJson(Map<String, dynamic> json) =>
-      _$ServiceRequestFromJson(json);
+  factory ServiceRequest.fromJson(Map<String, dynamic> json) => _$ServiceRequestFromJson(json);
   Map<String, dynamic> toJson() => _$ServiceRequestToJson(this);
 }

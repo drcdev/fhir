@@ -16,8 +16,8 @@ class ResearchStudy {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   String title;
   List<Reference> protocol;
@@ -79,16 +79,15 @@ class ResearchStudy {
     this.objective,
   });
 
-  factory ResearchStudy.fromJson(Map<String, dynamic> json) =>
-      _$ResearchStudyFromJson(json);
+  factory ResearchStudy.fromJson(Map<String, dynamic> json) => _$ResearchStudyFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchStudyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ResearchStudyArm {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   CodeableConcept type;
   String description;
@@ -102,16 +101,15 @@ class ResearchStudyArm {
     this.description,
   });
 
-  factory ResearchStudyArm.fromJson(Map<String, dynamic> json) =>
-      _$ResearchStudyArmFromJson(json);
+  factory ResearchStudyArm.fromJson(Map<String, dynamic> json) => _$ResearchStudyArmFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchStudyArmToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ResearchStudyObjective {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   CodeableConcept type;
 
@@ -123,8 +121,7 @@ class ResearchStudyObjective {
     this.type,
   });
 
-  factory ResearchStudyObjective.fromJson(Map<String, dynamic> json) =>
-      _$ResearchStudyObjectiveFromJson(json);
+  factory ResearchStudyObjective.fromJson(Map<String, dynamic> json) => _$ResearchStudyObjectiveFromJson(json);
   Map<String, dynamic> toJson() => _$ResearchStudyObjectiveToJson(this);
 }
 
@@ -153,7 +150,6 @@ class ResearchStudyStatus extends PrimitiveObject<String> {
     );
   }
   const ResearchStudyStatus._(this.value);
-  factory ResearchStudyStatus.fromJson(String json) =>
-      ResearchStudyStatus(json);
+  factory ResearchStudyStatus.fromJson(String json) => ResearchStudyStatus(json);
   String toJson() => result();
 }

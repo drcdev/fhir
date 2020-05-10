@@ -17,8 +17,8 @@ class DeviceDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<DeviceDefinitionUdiDeviceIdentifier> udiDeviceIdentifier;
   String manufacturerString;
@@ -78,16 +78,15 @@ class DeviceDefinition {
     this.material,
   });
 
-  factory DeviceDefinition.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDefinitionFromJson(json);
+  factory DeviceDefinition.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionUdiDeviceIdentifier {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String deviceIdentifier;
   FhirUri issuer;
   FhirUri jurisdiction;
@@ -101,18 +100,16 @@ class DeviceDefinitionUdiDeviceIdentifier {
     this.jurisdiction,
   });
 
-  factory DeviceDefinitionUdiDeviceIdentifier.fromJson(
-          Map<String, dynamic> json) =>
+  factory DeviceDefinitionUdiDeviceIdentifier.fromJson(Map<String, dynamic> json) =>
       _$DeviceDefinitionUdiDeviceIdentifierFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$DeviceDefinitionUdiDeviceIdentifierToJson(this);
+  Map<String, dynamic> toJson() => _$DeviceDefinitionUdiDeviceIdentifierToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionDeviceName {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   DeviceDefinitionDeviceNameType type;
 
@@ -124,16 +121,15 @@ class DeviceDefinitionDeviceName {
     this.type,
   });
 
-  factory DeviceDefinitionDeviceName.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDefinitionDeviceNameFromJson(json);
+  factory DeviceDefinitionDeviceName.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionDeviceNameFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDefinitionDeviceNameToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionSpecialization {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String systemType;
   String version;
 
@@ -153,8 +149,8 @@ class DeviceDefinitionSpecialization {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionCapability {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> description;
 
@@ -166,16 +162,15 @@ class DeviceDefinitionCapability {
     this.description,
   });
 
-  factory DeviceDefinitionCapability.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDefinitionCapabilityFromJson(json);
+  factory DeviceDefinitionCapability.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionCapabilityFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDefinitionCapabilityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionProperty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<Quantity> valueQuantity;
   List<CodeableConcept> valueCode;
@@ -189,16 +184,15 @@ class DeviceDefinitionProperty {
     this.valueCode,
   });
 
-  factory DeviceDefinitionProperty.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDefinitionPropertyFromJson(json);
+  factory DeviceDefinitionProperty.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionPropertyFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDefinitionPropertyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDefinitionMaterial {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept substance;
   bool alternate;
   bool allergenicIndicator;
@@ -212,8 +206,7 @@ class DeviceDefinitionMaterial {
     this.allergenicIndicator,
   });
 
-  factory DeviceDefinitionMaterial.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDefinitionMaterialFromJson(json);
+  factory DeviceDefinitionMaterial.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionMaterialFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDefinitionMaterialToJson(this);
 }
 
@@ -237,7 +230,6 @@ class DeviceDefinitionDeviceNameType extends PrimitiveObject<String> {
     );
   }
   const DeviceDefinitionDeviceNameType._(this.value);
-  factory DeviceDefinitionDeviceNameType.fromJson(String json) =>
-      DeviceDefinitionDeviceNameType(json);
+  factory DeviceDefinitionDeviceNameType.fromJson(String json) => DeviceDefinitionDeviceNameType(json);
   String toJson() => result();
 }

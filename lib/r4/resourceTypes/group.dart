@@ -17,8 +17,8 @@ class Group {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   GroupType type;
@@ -59,8 +59,8 @@ class Group {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GroupCharacteristic {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept valueCodeableConcept;
   bool valueBoolean;
@@ -84,16 +84,15 @@ class GroupCharacteristic {
     this.period,
   });
 
-  factory GroupCharacteristic.fromJson(Map<String, dynamic> json) =>
-      _$GroupCharacteristicFromJson(json);
+  factory GroupCharacteristic.fromJson(Map<String, dynamic> json) => _$GroupCharacteristicFromJson(json);
   Map<String, dynamic> toJson() => _$GroupCharacteristicToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GroupMember {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference entity;
   Period period;
   bool inactive;
@@ -107,8 +106,7 @@ class GroupMember {
     this.inactive,
   });
 
-  factory GroupMember.fromJson(Map<String, dynamic> json) =>
-      _$GroupMemberFromJson(json);
+  factory GroupMember.fromJson(Map<String, dynamic> json) => _$GroupMemberFromJson(json);
   Map<String, dynamic> toJson() => _$GroupMemberToJson(this);
 }
 

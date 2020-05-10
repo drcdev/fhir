@@ -14,8 +14,8 @@ class Contract {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   FhirUri url;
   String version;
@@ -99,16 +99,15 @@ class Contract {
     this.legallyBindingReference,
   });
 
-  factory Contract.fromJson(Map<String, dynamic> json) =>
-      _$ContractFromJson(json);
+  factory Contract.fromJson(Map<String, dynamic> json) => _$ContractFromJson(json);
   Map<String, dynamic> toJson() => _$ContractToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractContentDefinition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   CodeableConcept subType;
   Reference publisher;
@@ -128,16 +127,15 @@ class ContractContentDefinition {
     this.copyright,
   });
 
-  factory ContractContentDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ContractContentDefinitionFromJson(json);
+  factory ContractContentDefinition.fromJson(Map<String, dynamic> json) => _$ContractContentDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ContractContentDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractTerm {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   FhirDateTime issued;
   Period applies;
@@ -171,16 +169,15 @@ class ContractTerm {
     this.group,
   });
 
-  factory ContractTerm.fromJson(Map<String, dynamic> json) =>
-      _$ContractTermFromJson(json);
+  factory ContractTerm.fromJson(Map<String, dynamic> json) => _$ContractTermFromJson(json);
   Map<String, dynamic> toJson() => _$ContractTermToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractSecurityLabel {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<int> number;
   Coding classification;
   List<Coding> category;
@@ -196,16 +193,15 @@ class ContractSecurityLabel {
     this.control,
   });
 
-  factory ContractSecurityLabel.fromJson(Map<String, dynamic> json) =>
-      _$ContractSecurityLabelFromJson(json);
+  factory ContractSecurityLabel.fromJson(Map<String, dynamic> json) => _$ContractSecurityLabelFromJson(json);
   Map<String, dynamic> toJson() => _$ContractSecurityLabelToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractOffer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<ContractParty> party;
   Reference topic;
@@ -233,16 +229,15 @@ class ContractOffer {
     this.securityLabelNumber,
   });
 
-  factory ContractOffer.fromJson(Map<String, dynamic> json) =>
-      _$ContractOfferFromJson(json);
+  factory ContractOffer.fromJson(Map<String, dynamic> json) => _$ContractOfferFromJson(json);
   Map<String, dynamic> toJson() => _$ContractOfferToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractParty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> reference;
   CodeableConcept role;
 
@@ -254,16 +249,15 @@ class ContractParty {
     @required this.role,
   });
 
-  factory ContractParty.fromJson(Map<String, dynamic> json) =>
-      _$ContractPartyFromJson(json);
+  factory ContractParty.fromJson(Map<String, dynamic> json) => _$ContractPartyFromJson(json);
   Map<String, dynamic> toJson() => _$ContractPartyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractAnswer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool valueBoolean;
   double valueDecimal;
   int valueInteger;
@@ -295,16 +289,15 @@ class ContractAnswer {
     this.valueReference,
   });
 
-  factory ContractAnswer.fromJson(Map<String, dynamic> json) =>
-      _$ContractAnswerFromJson(json);
+  factory ContractAnswer.fromJson(Map<String, dynamic> json) => _$ContractAnswerFromJson(json);
   Map<String, dynamic> toJson() => _$ContractAnswerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractAsset {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept scope;
   List<CodeableConcept> type;
   List<Reference> typeReference;
@@ -342,16 +335,15 @@ class ContractAsset {
     this.valuedItem,
   });
 
-  factory ContractAsset.fromJson(Map<String, dynamic> json) =>
-      _$ContractAssetFromJson(json);
+  factory ContractAsset.fromJson(Map<String, dynamic> json) => _$ContractAssetFromJson(json);
   Map<String, dynamic> toJson() => _$ContractAssetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractContext {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference reference;
   List<CodeableConcept> code;
   String text;
@@ -365,16 +357,15 @@ class ContractContext {
     this.text,
   });
 
-  factory ContractContext.fromJson(Map<String, dynamic> json) =>
-      _$ContractContextFromJson(json);
+  factory ContractContext.fromJson(Map<String, dynamic> json) => _$ContractContextFromJson(json);
   Map<String, dynamic> toJson() => _$ContractContextToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractValuedItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept entityCodeableConcept;
   Reference entityReference;
   Identifier identifier;
@@ -412,16 +403,15 @@ class ContractValuedItem {
     this.securityLabelNumber,
   });
 
-  factory ContractValuedItem.fromJson(Map<String, dynamic> json) =>
-      _$ContractValuedItemFromJson(json);
+  factory ContractValuedItem.fromJson(Map<String, dynamic> json) => _$ContractValuedItemFromJson(json);
   Map<String, dynamic> toJson() => _$ContractValuedItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool doNotPerform;
   CodeableConcept type;
   List<ContractSubject> subject;
@@ -475,16 +465,15 @@ class ContractAction {
     this.securityLabelNumber,
   });
 
-  factory ContractAction.fromJson(Map<String, dynamic> json) =>
-      _$ContractActionFromJson(json);
+  factory ContractAction.fromJson(Map<String, dynamic> json) => _$ContractActionFromJson(json);
   Map<String, dynamic> toJson() => _$ContractActionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractSubject {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> reference;
   CodeableConcept role;
 
@@ -496,16 +485,15 @@ class ContractSubject {
     this.role,
   });
 
-  factory ContractSubject.fromJson(Map<String, dynamic> json) =>
-      _$ContractSubjectFromJson(json);
+  factory ContractSubject.fromJson(Map<String, dynamic> json) => _$ContractSubjectFromJson(json);
   Map<String, dynamic> toJson() => _$ContractSubjectToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractSigner {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding type;
   Reference party;
   List<Signature> signature;
@@ -519,16 +507,15 @@ class ContractSigner {
     @required this.signature,
   });
 
-  factory ContractSigner.fromJson(Map<String, dynamic> json) =>
-      _$ContractSignerFromJson(json);
+  factory ContractSigner.fromJson(Map<String, dynamic> json) => _$ContractSignerFromJson(json);
   Map<String, dynamic> toJson() => _$ContractSignerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractFriendly {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Attachment contentAttachment;
   Reference contentReference;
 
@@ -540,16 +527,15 @@ class ContractFriendly {
     this.contentReference,
   });
 
-  factory ContractFriendly.fromJson(Map<String, dynamic> json) =>
-      _$ContractFriendlyFromJson(json);
+  factory ContractFriendly.fromJson(Map<String, dynamic> json) => _$ContractFriendlyFromJson(json);
   Map<String, dynamic> toJson() => _$ContractFriendlyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractLegal {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Attachment contentAttachment;
   Reference contentReference;
 
@@ -561,16 +547,15 @@ class ContractLegal {
     this.contentReference,
   });
 
-  factory ContractLegal.fromJson(Map<String, dynamic> json) =>
-      _$ContractLegalFromJson(json);
+  factory ContractLegal.fromJson(Map<String, dynamic> json) => _$ContractLegalFromJson(json);
   Map<String, dynamic> toJson() => _$ContractLegalToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContractRule {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Attachment contentAttachment;
   Reference contentReference;
 
@@ -582,7 +567,6 @@ class ContractRule {
     this.contentReference,
   });
 
-  factory ContractRule.fromJson(Map<String, dynamic> json) =>
-      _$ContractRuleFromJson(json);
+  factory ContractRule.fromJson(Map<String, dynamic> json) => _$ContractRuleFromJson(json);
   Map<String, dynamic> toJson() => _$ContractRuleToJson(this);
 }

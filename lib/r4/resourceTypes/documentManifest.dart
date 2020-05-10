@@ -17,8 +17,8 @@ class DocumentManifest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier masterIdentifier;
   List<Identifier> identifier;
   DocumentManifestStatus status;
@@ -56,16 +56,15 @@ class DocumentManifest {
     this.related,
   });
 
-  factory DocumentManifest.fromJson(Map<String, dynamic> json) =>
-      _$DocumentManifestFromJson(json);
+  factory DocumentManifest.fromJson(Map<String, dynamic> json) => _$DocumentManifestFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentManifestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DocumentManifestRelated {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   Reference ref;
 
@@ -77,8 +76,7 @@ class DocumentManifestRelated {
     this.ref,
   });
 
-  factory DocumentManifestRelated.fromJson(Map<String, dynamic> json) =>
-      _$DocumentManifestRelatedFromJson(json);
+  factory DocumentManifestRelated.fromJson(Map<String, dynamic> json) => _$DocumentManifestRelatedFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentManifestRelatedToJson(this);
 }
 
@@ -99,7 +97,6 @@ class DocumentManifestStatus extends PrimitiveObject<String> {
     );
   }
   const DocumentManifestStatus._(this.value);
-  factory DocumentManifestStatus.fromJson(String json) =>
-      DocumentManifestStatus(json);
+  factory DocumentManifestStatus.fromJson(String json) => DocumentManifestStatus(json);
   String toJson() => result();
 }

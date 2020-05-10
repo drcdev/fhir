@@ -17,8 +17,8 @@ class Account {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   AccountStatus status;
   CodeableConcept type;
@@ -54,16 +54,15 @@ class Account {
     this.partOf,
   });
 
-  factory Account.fromJson(Map<String, dynamic> json) =>
-      _$AccountFromJson(json);
+  factory Account.fromJson(Map<String, dynamic> json) => _$AccountFromJson(json);
   Map<String, dynamic> toJson() => _$AccountToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AccountCoverage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference coverage;
   int priority;
 
@@ -75,16 +74,15 @@ class AccountCoverage {
     this.priority,
   });
 
-  factory AccountCoverage.fromJson(Map<String, dynamic> json) =>
-      _$AccountCoverageFromJson(json);
+  factory AccountCoverage.fromJson(Map<String, dynamic> json) => _$AccountCoverageFromJson(json);
   Map<String, dynamic> toJson() => _$AccountCoverageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AccountGuarantor {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference party;
   bool onHold;
   Period period;
@@ -98,8 +96,7 @@ class AccountGuarantor {
     this.period,
   });
 
-  factory AccountGuarantor.fromJson(Map<String, dynamic> json) =>
-      _$AccountGuarantorFromJson(json);
+  factory AccountGuarantor.fromJson(Map<String, dynamic> json) => _$AccountGuarantorFromJson(json);
   Map<String, dynamic> toJson() => _$AccountGuarantorToJson(this);
 }
 

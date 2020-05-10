@@ -17,8 +17,8 @@ class ValueSet {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -68,16 +68,15 @@ class ValueSet {
     this.expansion,
   });
 
-  factory ValueSet.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetFromJson(json);
+  factory ValueSet.fromJson(Map<String, dynamic> json) => _$ValueSetFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetCompose {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Date lockedDate;
   bool inactive;
   List<ValueSetInclude> include;
@@ -93,16 +92,15 @@ class ValueSetCompose {
     this.exclude,
   });
 
-  factory ValueSetCompose.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetComposeFromJson(json);
+  factory ValueSetCompose.fromJson(Map<String, dynamic> json) => _$ValueSetComposeFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetComposeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetInclude {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri system;
   String version;
   List<ValueSetConcept> concept;
@@ -120,16 +118,15 @@ class ValueSetInclude {
     this.valueSet,
   });
 
-  factory ValueSetInclude.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetIncludeFromJson(json);
+  factory ValueSetInclude.fromJson(Map<String, dynamic> json) => _$ValueSetIncludeFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetIncludeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetConcept {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String display;
   List<ValueSetDesignation> designation;
@@ -143,16 +140,15 @@ class ValueSetConcept {
     this.designation,
   });
 
-  factory ValueSetConcept.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetConceptFromJson(json);
+  factory ValueSetConcept.fromJson(Map<String, dynamic> json) => _$ValueSetConceptFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetConceptToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetDesignation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code language;
   Coding use;
   String value;
@@ -166,16 +162,15 @@ class ValueSetDesignation {
     this.value,
   });
 
-  factory ValueSetDesignation.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetDesignationFromJson(json);
+  factory ValueSetDesignation.fromJson(Map<String, dynamic> json) => _$ValueSetDesignationFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetDesignationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetFilter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code property;
   ValueSetFilterOp op;
   String value;
@@ -189,16 +184,15 @@ class ValueSetFilter {
     this.value,
   });
 
-  factory ValueSetFilter.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetFilterFromJson(json);
+  factory ValueSetFilter.fromJson(Map<String, dynamic> json) => _$ValueSetFilterFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetFilterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetExpansion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri identifier;
   FhirDateTime timestamp;
   int total;
@@ -218,16 +212,15 @@ class ValueSetExpansion {
     this.contains,
   });
 
-  factory ValueSetExpansion.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetExpansionFromJson(json);
+  factory ValueSetExpansion.fromJson(Map<String, dynamic> json) => _$ValueSetExpansionFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetExpansionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String valueString;
   bool valueBoolean;
@@ -251,16 +244,15 @@ class ValueSetParameter {
     this.valueDateTime,
   });
 
-  factory ValueSetParameter.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetParameterFromJson(json);
+  factory ValueSetParameter.fromJson(Map<String, dynamic> json) => _$ValueSetParameterFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetParameterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ValueSetContains {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri system;
   bool abstract;
   bool inactive;
@@ -284,8 +276,7 @@ class ValueSetContains {
     this.contains,
   });
 
-  factory ValueSetContains.fromJson(Map<String, dynamic> json) =>
-      _$ValueSetContainsFromJson(json);
+  factory ValueSetContains.fromJson(Map<String, dynamic> json) => _$ValueSetContainsFromJson(json);
   Map<String, dynamic> toJson() => _$ValueSetContainsToJson(this);
 }
 

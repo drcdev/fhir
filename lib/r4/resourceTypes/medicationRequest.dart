@@ -14,8 +14,8 @@ class MedicationRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept statusReason;
@@ -97,16 +97,15 @@ class MedicationRequest {
     this.eventHistory,
   });
 
-  factory MedicationRequest.fromJson(Map<String, dynamic> json) =>
-      _$MedicationRequestFromJson(json);
+  factory MedicationRequest.fromJson(Map<String, dynamic> json) => _$MedicationRequestFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationRequestDispenseRequest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   MedicationRequestInitialFill initialFill;
   Duration dispenseInterval;
   Period validityPeriod;
@@ -128,18 +127,16 @@ class MedicationRequestDispenseRequest {
     this.performer,
   });
 
-  factory MedicationRequestDispenseRequest.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationRequestDispenseRequest.fromJson(Map<String, dynamic> json) =>
       _$MedicationRequestDispenseRequestFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationRequestDispenseRequestToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationRequestDispenseRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationRequestInitialFill {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity quantity;
   Duration duration;
 
@@ -159,8 +156,8 @@ class MedicationRequestInitialFill {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationRequestSubstitution {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool allowedBoolean;
   CodeableConcept allowedCodeableConcept;
   CodeableConcept reason;

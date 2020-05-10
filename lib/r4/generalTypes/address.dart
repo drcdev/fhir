@@ -10,7 +10,7 @@ part 'address.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Address {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   AddressUse use;
   AddressType type;
   String text;
@@ -37,8 +37,7 @@ class Address {
     this.period,
   });
 
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 

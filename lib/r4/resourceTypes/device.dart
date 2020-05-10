@@ -17,8 +17,8 @@ class Device {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Reference definition;
   List<DeviceUdiCarrier> udiCarrier;
@@ -91,8 +91,8 @@ class Device {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceUdiCarrier {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String deviceIdentifier;
   FhirUri issuer;
   FhirUri jurisdiction;
@@ -112,16 +112,15 @@ class DeviceUdiCarrier {
     this.entryType,
   });
 
-  factory DeviceUdiCarrier.fromJson(Map<String, dynamic> json) =>
-      _$DeviceUdiCarrierFromJson(json);
+  factory DeviceUdiCarrier.fromJson(Map<String, dynamic> json) => _$DeviceUdiCarrierFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceUdiCarrierToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceDeviceName {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   DeviceDeviceNameType type;
 
@@ -133,16 +132,15 @@ class DeviceDeviceName {
     this.type,
   });
 
-  factory DeviceDeviceName.fromJson(Map<String, dynamic> json) =>
-      _$DeviceDeviceNameFromJson(json);
+  factory DeviceDeviceName.fromJson(Map<String, dynamic> json) => _$DeviceDeviceNameFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceDeviceNameToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceSpecialization {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept systemType;
   String version;
 
@@ -154,16 +152,15 @@ class DeviceSpecialization {
     this.version,
   });
 
-  factory DeviceSpecialization.fromJson(Map<String, dynamic> json) =>
-      _$DeviceSpecializationFromJson(json);
+  factory DeviceSpecialization.fromJson(Map<String, dynamic> json) => _$DeviceSpecializationFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceSpecializationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceVersion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Identifier component;
   String value;
@@ -177,16 +174,15 @@ class DeviceVersion {
     this.value,
   });
 
-  factory DeviceVersion.fromJson(Map<String, dynamic> json) =>
-      _$DeviceVersionFromJson(json);
+  factory DeviceVersion.fromJson(Map<String, dynamic> json) => _$DeviceVersionFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceVersionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceProperty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<Quantity> valueQuantity;
   List<CodeableConcept> valueCode;
@@ -200,8 +196,7 @@ class DeviceProperty {
     this.valueCode,
   });
 
-  factory DeviceProperty.fromJson(Map<String, dynamic> json) =>
-      _$DevicePropertyFromJson(json);
+  factory DeviceProperty.fromJson(Map<String, dynamic> json) => _$DevicePropertyFromJson(json);
   Map<String, dynamic> toJson() => _$DevicePropertyToJson(this);
 }
 
@@ -247,8 +242,7 @@ class DeviceUdiCarrierEntryType extends PrimitiveObject<String> {
     );
   }
   const DeviceUdiCarrierEntryType._(this.value);
-  factory DeviceUdiCarrierEntryType.fromJson(String json) =>
-      DeviceUdiCarrierEntryType(json);
+  factory DeviceUdiCarrierEntryType.fromJson(String json) => DeviceUdiCarrierEntryType(json);
   String toJson() => result();
 }
 
@@ -272,7 +266,6 @@ class DeviceDeviceNameType extends PrimitiveObject<String> {
     );
   }
   const DeviceDeviceNameType._(this.value);
-  factory DeviceDeviceNameType.fromJson(String json) =>
-      DeviceDeviceNameType(json);
+  factory DeviceDeviceNameType.fromJson(String json) => DeviceDeviceNameType(json);
   String toJson() => result();
 }

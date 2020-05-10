@@ -14,8 +14,8 @@ class Immunization {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept statusReason;
@@ -87,16 +87,15 @@ class Immunization {
     this.protocolApplied,
   });
 
-  factory Immunization.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationFromJson(json);
+  factory Immunization.fromJson(Map<String, dynamic> json) => _$ImmunizationFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationPerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
 
@@ -108,16 +107,15 @@ class ImmunizationPerformer {
     @required this.actor,
   });
 
-  factory ImmunizationPerformer.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationPerformerFromJson(json);
+  factory ImmunizationPerformer.fromJson(Map<String, dynamic> json) => _$ImmunizationPerformerFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationPerformerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationEducation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String documentType;
   FhirUri reference;
   FhirDateTime publicationDate;
@@ -133,16 +131,15 @@ class ImmunizationEducation {
     this.presentationDate,
   });
 
-  factory ImmunizationEducation.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationEducationFromJson(json);
+  factory ImmunizationEducation.fromJson(Map<String, dynamic> json) => _$ImmunizationEducationFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationEducationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationReaction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirDateTime date;
   Reference detail;
   bool reported;
@@ -156,16 +153,15 @@ class ImmunizationReaction {
     this.reported,
   });
 
-  factory ImmunizationReaction.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationReactionFromJson(json);
+  factory ImmunizationReaction.fromJson(Map<String, dynamic> json) => _$ImmunizationReactionFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationReactionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImmunizationProtocolApplied {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String series;
   Reference authority;
   List<CodeableConcept> targetDisease;

@@ -6,12 +6,13 @@ part of 'extension.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Extension _$ExtensionFromJson(Map<String, dynamic> json) {
-  return Extension(
+FhirExtension _$FhirExtensionFromJson(Map<String, dynamic> json) {
+  return FhirExtension(
     id: json['id'] as String,
-    extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+    fhirExtension: (json['fhirExtension'] as List)
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url'] as String),
     valueBase64Binary: json['valueBase64Binary'] == null
@@ -164,7 +165,7 @@ Extension _$ExtensionFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$ExtensionToJson(Extension instance) {
+Map<String, dynamic> _$FhirExtensionToJson(FhirExtension instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -174,8 +175,8 @@ Map<String, dynamic> _$ExtensionToJson(Extension instance) {
   }
 
   writeNotNull('id', instance.id);
-  writeNotNull(
-      'extension', instance.extension?.map((e) => e?.toJson())?.toList());
+  writeNotNull('fhirExtension',
+      instance.fhirExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('url', instance.url?.toJson());
   writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
   writeNotNull('valueBoolean', instance.valueBoolean);

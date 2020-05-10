@@ -17,8 +17,8 @@ class DocumentReference {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier masterIdentifier;
   List<Identifier> identifier;
   DocumentReferenceStatus status;
@@ -64,16 +64,15 @@ class DocumentReference {
     this.context,
   });
 
-  factory DocumentReference.fromJson(Map<String, dynamic> json) =>
-      _$DocumentReferenceFromJson(json);
+  factory DocumentReference.fromJson(Map<String, dynamic> json) => _$DocumentReferenceFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentReferenceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DocumentReferenceRelatesTo {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   DocumentReferenceRelatesToCode code;
   Reference target;
 
@@ -85,16 +84,15 @@ class DocumentReferenceRelatesTo {
     @required this.target,
   });
 
-  factory DocumentReferenceRelatesTo.fromJson(Map<String, dynamic> json) =>
-      _$DocumentReferenceRelatesToFromJson(json);
+  factory DocumentReferenceRelatesTo.fromJson(Map<String, dynamic> json) => _$DocumentReferenceRelatesToFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentReferenceRelatesToToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DocumentReferenceContent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Attachment attachment;
   Coding format;
 
@@ -106,16 +104,15 @@ class DocumentReferenceContent {
     this.format,
   });
 
-  factory DocumentReferenceContent.fromJson(Map<String, dynamic> json) =>
-      _$DocumentReferenceContentFromJson(json);
+  factory DocumentReferenceContent.fromJson(Map<String, dynamic> json) => _$DocumentReferenceContentFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentReferenceContentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DocumentReferenceContext {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> encounter;
   List<CodeableConcept> event;
   Period period;
@@ -137,8 +134,7 @@ class DocumentReferenceContext {
     this.related,
   });
 
-  factory DocumentReferenceContext.fromJson(Map<String, dynamic> json) =>
-      _$DocumentReferenceContextFromJson(json);
+  factory DocumentReferenceContext.fromJson(Map<String, dynamic> json) => _$DocumentReferenceContextFromJson(json);
   Map<String, dynamic> toJson() => _$DocumentReferenceContextToJson(this);
 }
 
@@ -159,8 +155,7 @@ class DocumentReferenceStatus extends PrimitiveObject<String> {
     );
   }
   const DocumentReferenceStatus._(this.value);
-  factory DocumentReferenceStatus.fromJson(String json) =>
-      DocumentReferenceStatus(json);
+  factory DocumentReferenceStatus.fromJson(String json) => DocumentReferenceStatus(json);
   String toJson() => result();
 }
 
@@ -182,7 +177,6 @@ class DocumentReferenceRelatesToCode extends PrimitiveObject<String> {
     );
   }
   const DocumentReferenceRelatesToCode._(this.value);
-  factory DocumentReferenceRelatesToCode.fromJson(String json) =>
-      DocumentReferenceRelatesToCode(json);
+  factory DocumentReferenceRelatesToCode.fromJson(String json) => DocumentReferenceRelatesToCode(json);
   String toJson() => result();
 }

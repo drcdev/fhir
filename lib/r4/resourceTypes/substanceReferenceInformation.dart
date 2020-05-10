@@ -13,8 +13,8 @@ class SubstanceReferenceInformation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String comment;
   List<SubstanceReferenceInformationGene> gene;
   List<SubstanceReferenceInformationGeneElement> geneElement;
@@ -46,8 +46,8 @@ class SubstanceReferenceInformation {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceReferenceInformationGene {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept geneSequenceOrigin;
   CodeableConcept gene;
   List<Reference> source;
@@ -61,18 +61,16 @@ class SubstanceReferenceInformationGene {
     this.source,
   });
 
-  factory SubstanceReferenceInformationGene.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceReferenceInformationGene.fromJson(Map<String, dynamic> json) =>
       _$SubstanceReferenceInformationGeneFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceReferenceInformationGeneToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceReferenceInformationGeneToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceReferenceInformationGeneElement {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Identifier element;
   List<Reference> source;
@@ -86,18 +84,16 @@ class SubstanceReferenceInformationGeneElement {
     this.source,
   });
 
-  factory SubstanceReferenceInformationGeneElement.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceReferenceInformationGeneElement.fromJson(Map<String, dynamic> json) =>
       _$SubstanceReferenceInformationGeneElementFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceReferenceInformationGeneElementToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceReferenceInformationGeneElementToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceReferenceInformationClassification {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept domain;
   CodeableConcept classification;
   List<CodeableConcept> subtype;
@@ -113,18 +109,16 @@ class SubstanceReferenceInformationClassification {
     this.source,
   });
 
-  factory SubstanceReferenceInformationClassification.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceReferenceInformationClassification.fromJson(Map<String, dynamic> json) =>
       _$SubstanceReferenceInformationClassificationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceReferenceInformationClassificationToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceReferenceInformationClassificationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceReferenceInformationTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier target;
   CodeableConcept type;
   CodeableConcept interaction;
@@ -152,9 +146,7 @@ class SubstanceReferenceInformationTarget {
     this.source,
   });
 
-  factory SubstanceReferenceInformationTarget.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceReferenceInformationTarget.fromJson(Map<String, dynamic> json) =>
       _$SubstanceReferenceInformationTargetFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceReferenceInformationTargetToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceReferenceInformationTargetToJson(this);
 }

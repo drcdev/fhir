@@ -13,8 +13,8 @@ class CommunicationRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   List<Reference> replaces;
@@ -74,16 +74,15 @@ class CommunicationRequest {
     this.note,
   });
 
-  factory CommunicationRequest.fromJson(Map<String, dynamic> json) =>
-      _$CommunicationRequestFromJson(json);
+  factory CommunicationRequest.fromJson(Map<String, dynamic> json) => _$CommunicationRequestFromJson(json);
   Map<String, dynamic> toJson() => _$CommunicationRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CommunicationRequestPayload {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String contentString;
   Attachment contentAttachment;
   Reference contentReference;

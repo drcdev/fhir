@@ -14,8 +14,8 @@ class MedicinalProductManufactured {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept manufacturedDoseForm;
   CodeableConcept unitOfPresentation;
   Quantity quantity;

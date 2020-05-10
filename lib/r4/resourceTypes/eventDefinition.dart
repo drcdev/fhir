@@ -17,8 +17,8 @@ class EventDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -90,8 +90,7 @@ class EventDefinition {
     @required this.trigger,
   });
 
-  factory EventDefinition.fromJson(Map<String, dynamic> json) =>
-      _$EventDefinitionFromJson(json);
+  factory EventDefinition.fromJson(Map<String, dynamic> json) => _$EventDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$EventDefinitionToJson(this);
 }
 
@@ -113,7 +112,6 @@ class EventDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const EventDefinitionStatus._(this.value);
-  factory EventDefinitionStatus.fromJson(String json) =>
-      EventDefinitionStatus(json);
+  factory EventDefinitionStatus.fromJson(String json) => EventDefinitionStatus(json);
   String toJson() => result();
 }

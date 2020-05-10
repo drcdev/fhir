@@ -16,8 +16,8 @@ class GuidanceResponse {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier requestIdentifier;
   List<Identifier> identifier;
   FhirUri moduleUri;
@@ -65,8 +65,7 @@ class GuidanceResponse {
     this.dataRequirement,
   });
 
-  factory GuidanceResponse.fromJson(Map<String, dynamic> json) =>
-      _$GuidanceResponseFromJson(json);
+  factory GuidanceResponse.fromJson(Map<String, dynamic> json) => _$GuidanceResponseFromJson(json);
   Map<String, dynamic> toJson() => _$GuidanceResponseToJson(this);
 }
 
@@ -90,7 +89,6 @@ class GuidanceResponseStatus extends PrimitiveObject<String> {
     );
   }
   const GuidanceResponseStatus._(this.value);
-  factory GuidanceResponseStatus.fromJson(String json) =>
-      GuidanceResponseStatus(json);
+  factory GuidanceResponseStatus.fromJson(String json) => GuidanceResponseStatus(json);
   String toJson() => result();
 }

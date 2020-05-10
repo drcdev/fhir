@@ -17,8 +17,8 @@ class InsurancePlan {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   InsurancePlanStatus status;
   List<CodeableConcept> type;
@@ -60,16 +60,15 @@ class InsurancePlan {
     this.plan,
   });
 
-  factory InsurancePlan.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanFromJson(json);
+  factory InsurancePlan.fromJson(Map<String, dynamic> json) => _$InsurancePlanFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanContact {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept purpose;
   HumanName name;
   List<ContactPoint> telecom;
@@ -85,16 +84,15 @@ class InsurancePlanContact {
     this.address,
   });
 
-  factory InsurancePlanContact.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanContactFromJson(json);
+  factory InsurancePlanContact.fromJson(Map<String, dynamic> json) => _$InsurancePlanContactFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanContactToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanCoverage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<Reference> network;
   List<InsurancePlanBenefit> benefit;
@@ -108,16 +106,15 @@ class InsurancePlanCoverage {
     @required this.benefit,
   });
 
-  factory InsurancePlanCoverage.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanCoverageFromJson(json);
+  factory InsurancePlanCoverage.fromJson(Map<String, dynamic> json) => _$InsurancePlanCoverageFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanCoverageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanBenefit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String requirement;
   List<InsurancePlanLimit> limit;
@@ -131,16 +128,15 @@ class InsurancePlanBenefit {
     this.limit,
   });
 
-  factory InsurancePlanBenefit.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanBenefitFromJson(json);
+  factory InsurancePlanBenefit.fromJson(Map<String, dynamic> json) => _$InsurancePlanBenefitFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanBenefitToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanLimit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity value;
   CodeableConcept code;
 
@@ -152,16 +148,15 @@ class InsurancePlanLimit {
     this.code,
   });
 
-  factory InsurancePlanLimit.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanLimitFromJson(json);
+  factory InsurancePlanLimit.fromJson(Map<String, dynamic> json) => _$InsurancePlanLimitFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanLimitToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanPlan {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   List<Reference> coverageArea;
@@ -181,16 +176,15 @@ class InsurancePlanPlan {
     this.specificCost,
   });
 
-  factory InsurancePlanPlan.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanPlanFromJson(json);
+  factory InsurancePlanPlan.fromJson(Map<String, dynamic> json) => _$InsurancePlanPlanFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanPlanToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanGeneralCost {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   int groupSize;
   Money cost;
@@ -206,16 +200,15 @@ class InsurancePlanGeneralCost {
     this.comment,
   });
 
-  factory InsurancePlanGeneralCost.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanGeneralCostFromJson(json);
+  factory InsurancePlanGeneralCost.fromJson(Map<String, dynamic> json) => _$InsurancePlanGeneralCostFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanGeneralCostToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanSpecificCost {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   List<InsurancePlanBenefit1> benefit;
 
@@ -227,16 +220,15 @@ class InsurancePlanSpecificCost {
     this.benefit,
   });
 
-  factory InsurancePlanSpecificCost.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanSpecificCostFromJson(json);
+  factory InsurancePlanSpecificCost.fromJson(Map<String, dynamic> json) => _$InsurancePlanSpecificCostFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanSpecificCostToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanBenefit1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<InsurancePlanCost> cost;
 
@@ -248,16 +240,15 @@ class InsurancePlanBenefit1 {
     this.cost,
   });
 
-  factory InsurancePlanBenefit1.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanBenefit1FromJson(json);
+  factory InsurancePlanBenefit1.fromJson(Map<String, dynamic> json) => _$InsurancePlanBenefit1FromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanBenefit1ToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class InsurancePlanCost {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   CodeableConcept applicability;
   List<CodeableConcept> qualifiers;
@@ -273,8 +264,7 @@ class InsurancePlanCost {
     this.value,
   });
 
-  factory InsurancePlanCost.fromJson(Map<String, dynamic> json) =>
-      _$InsurancePlanCostFromJson(json);
+  factory InsurancePlanCost.fromJson(Map<String, dynamic> json) => _$InsurancePlanCostFromJson(json);
   Map<String, dynamic> toJson() => _$InsurancePlanCostToJson(this);
 }
 
@@ -296,7 +286,6 @@ class InsurancePlanStatus extends PrimitiveObject<String> {
     );
   }
   const InsurancePlanStatus._(this.value);
-  factory InsurancePlanStatus.fromJson(String json) =>
-      InsurancePlanStatus(json);
+  factory InsurancePlanStatus.fromJson(String json) => InsurancePlanStatus(json);
   String toJson() => result();
 }

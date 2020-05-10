@@ -17,8 +17,8 @@ class RelatedPerson {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   Reference patient;
@@ -56,16 +56,15 @@ class RelatedPerson {
     this.communication,
   });
 
-  factory RelatedPerson.fromJson(Map<String, dynamic> json) =>
-      _$RelatedPersonFromJson(json);
+  factory RelatedPerson.fromJson(Map<String, dynamic> json) => _$RelatedPersonFromJson(json);
   Map<String, dynamic> toJson() => _$RelatedPersonToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RelatedPersonCommunication {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept language;
   bool preferred;
 
@@ -77,8 +76,7 @@ class RelatedPersonCommunication {
     this.preferred,
   });
 
-  factory RelatedPersonCommunication.fromJson(Map<String, dynamic> json) =>
-      _$RelatedPersonCommunicationFromJson(json);
+  factory RelatedPersonCommunication.fromJson(Map<String, dynamic> json) => _$RelatedPersonCommunicationFromJson(json);
   Map<String, dynamic> toJson() => _$RelatedPersonCommunicationToJson(this);
 }
 
@@ -100,7 +98,6 @@ class RelatedPersonGender extends PrimitiveObject<String> {
     );
   }
   const RelatedPersonGender._(this.value);
-  factory RelatedPersonGender.fromJson(String json) =>
-      RelatedPersonGender(json);
+  factory RelatedPersonGender.fromJson(String json) => RelatedPersonGender(json);
   String toJson() => result();
 }

@@ -17,8 +17,8 @@ class AllergyIntolerance {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept clinicalStatus;
   CodeableConcept verificationStatus;
@@ -72,16 +72,15 @@ class AllergyIntolerance {
     this.reaction,
   });
 
-  factory AllergyIntolerance.fromJson(Map<String, dynamic> json) =>
-      _$AllergyIntoleranceFromJson(json);
+  factory AllergyIntolerance.fromJson(Map<String, dynamic> json) => _$AllergyIntoleranceFromJson(json);
   Map<String, dynamic> toJson() => _$AllergyIntoleranceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AllergyIntoleranceReaction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept substance;
   List<CodeableConcept> manifestation;
   String description;
@@ -103,8 +102,7 @@ class AllergyIntoleranceReaction {
     this.note,
   });
 
-  factory AllergyIntoleranceReaction.fromJson(Map<String, dynamic> json) =>
-      _$AllergyIntoleranceReactionFromJson(json);
+  factory AllergyIntoleranceReaction.fromJson(Map<String, dynamic> json) => _$AllergyIntoleranceReactionFromJson(json);
   Map<String, dynamic> toJson() => _$AllergyIntoleranceReactionToJson(this);
 }
 
@@ -126,8 +124,7 @@ class AllergyIntoleranceCategory extends PrimitiveObject<String> {
     );
   }
   const AllergyIntoleranceCategory._(this.value);
-  factory AllergyIntoleranceCategory.fromJson(String json) =>
-      AllergyIntoleranceCategory(json);
+  factory AllergyIntoleranceCategory.fromJson(String json) => AllergyIntoleranceCategory(json);
   String toJson() => result();
 }
 
@@ -147,8 +144,7 @@ class AllergyIntoleranceType extends PrimitiveObject<String> {
     );
   }
   const AllergyIntoleranceType._(this.value);
-  factory AllergyIntoleranceType.fromJson(String json) =>
-      AllergyIntoleranceType(json);
+  factory AllergyIntoleranceType.fromJson(String json) => AllergyIntoleranceType(json);
   String toJson() => result();
 }
 
@@ -169,8 +165,7 @@ class AllergyIntoleranceCriticality extends PrimitiveObject<String> {
     );
   }
   const AllergyIntoleranceCriticality._(this.value);
-  factory AllergyIntoleranceCriticality.fromJson(String json) =>
-      AllergyIntoleranceCriticality(json);
+  factory AllergyIntoleranceCriticality.fromJson(String json) => AllergyIntoleranceCriticality(json);
   String toJson() => result();
 }
 
@@ -191,7 +186,6 @@ class AllergyIntoleranceReactionSeverity extends PrimitiveObject<String> {
     );
   }
   const AllergyIntoleranceReactionSeverity._(this.value);
-  factory AllergyIntoleranceReactionSeverity.fromJson(String json) =>
-      AllergyIntoleranceReactionSeverity(json);
+  factory AllergyIntoleranceReactionSeverity.fromJson(String json) => AllergyIntoleranceReactionSeverity(json);
   String toJson() => result();
 }

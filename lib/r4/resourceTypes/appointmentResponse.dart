@@ -14,8 +14,8 @@ class AppointmentResponse {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Reference appointment;
   Instant start;
@@ -45,7 +45,6 @@ class AppointmentResponse {
     this.comment,
   });
 
-  factory AppointmentResponse.fromJson(Map<String, dynamic> json) =>
-      _$AppointmentResponseFromJson(json);
+  factory AppointmentResponse.fromJson(Map<String, dynamic> json) => _$AppointmentResponseFromJson(json);
   Map<String, dynamic> toJson() => _$AppointmentResponseToJson(this);
 }

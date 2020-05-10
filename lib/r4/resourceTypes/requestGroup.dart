@@ -13,8 +13,8 @@ class RequestGroup {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -64,16 +64,15 @@ class RequestGroup {
     this.action,
   });
 
-  factory RequestGroup.fromJson(Map<String, dynamic> json) =>
-      _$RequestGroupFromJson(json);
+  factory RequestGroup.fromJson(Map<String, dynamic> json) => _$RequestGroupFromJson(json);
   Map<String, dynamic> toJson() => _$RequestGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RequestGroupAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String prefix;
   String title;
   String description;
@@ -129,16 +128,15 @@ class RequestGroupAction {
     this.action,
   });
 
-  factory RequestGroupAction.fromJson(Map<String, dynamic> json) =>
-      _$RequestGroupActionFromJson(json);
+  factory RequestGroupAction.fromJson(Map<String, dynamic> json) => _$RequestGroupActionFromJson(json);
   Map<String, dynamic> toJson() => _$RequestGroupActionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RequestGroupCondition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code kind;
   Expression expression;
 
@@ -150,16 +148,15 @@ class RequestGroupCondition {
     this.expression,
   });
 
-  factory RequestGroupCondition.fromJson(Map<String, dynamic> json) =>
-      _$RequestGroupConditionFromJson(json);
+  factory RequestGroupCondition.fromJson(Map<String, dynamic> json) => _$RequestGroupConditionFromJson(json);
   Map<String, dynamic> toJson() => _$RequestGroupConditionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RequestGroupRelatedAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id actionId;
   Code relationship;
   Duration offsetDuration;
@@ -175,7 +172,6 @@ class RequestGroupRelatedAction {
     this.offsetRange,
   });
 
-  factory RequestGroupRelatedAction.fromJson(Map<String, dynamic> json) =>
-      _$RequestGroupRelatedActionFromJson(json);
+  factory RequestGroupRelatedAction.fromJson(Map<String, dynamic> json) => _$RequestGroupRelatedActionFromJson(json);
   Map<String, dynamic> toJson() => _$RequestGroupRelatedActionToJson(this);
 }

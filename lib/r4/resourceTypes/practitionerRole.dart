@@ -13,8 +13,8 @@ class PractitionerRole {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   Period period;
@@ -56,16 +56,15 @@ class PractitionerRole {
     this.endpoint,
   });
 
-  factory PractitionerRole.fromJson(Map<String, dynamic> json) =>
-      _$PractitionerRoleFromJson(json);
+  factory PractitionerRole.fromJson(Map<String, dynamic> json) => _$PractitionerRoleFromJson(json);
   Map<String, dynamic> toJson() => _$PractitionerRoleToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PractitionerRoleAvailableTime {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Code> daysOfWeek;
   bool allDay;
   Time availableStartTime;
@@ -89,8 +88,8 @@ class PractitionerRoleAvailableTime {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PractitionerRoleNotAvailable {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   Period during;
 

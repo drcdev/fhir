@@ -17,8 +17,8 @@ class CapabilityStatement {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -84,16 +84,15 @@ class CapabilityStatement {
     this.document,
   });
 
-  factory CapabilityStatement.fromJson(Map<String, dynamic> json) =>
-      _$CapabilityStatementFromJson(json);
+  factory CapabilityStatement.fromJson(Map<String, dynamic> json) => _$CapabilityStatementFromJson(json);
   Map<String, dynamic> toJson() => _$CapabilityStatementToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementSoftware {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String version;
   FhirDateTime releaseDate;
@@ -115,8 +114,8 @@ class CapabilityStatementSoftware {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementImplementation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   FhirUrl url;
   Reference custodian;
@@ -130,18 +129,16 @@ class CapabilityStatementImplementation {
     this.custodian,
   });
 
-  factory CapabilityStatementImplementation.fromJson(
-          Map<String, dynamic> json) =>
+  factory CapabilityStatementImplementation.fromJson(Map<String, dynamic> json) =>
       _$CapabilityStatementImplementationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CapabilityStatementImplementationToJson(this);
+  Map<String, dynamic> toJson() => _$CapabilityStatementImplementationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementRest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CapabilityStatementRestMode mode;
   Markdown documentation;
   CapabilityStatementSecurity security;
@@ -165,16 +162,15 @@ class CapabilityStatementRest {
     this.compartment,
   });
 
-  factory CapabilityStatementRest.fromJson(Map<String, dynamic> json) =>
-      _$CapabilityStatementRestFromJson(json);
+  factory CapabilityStatementRest.fromJson(Map<String, dynamic> json) => _$CapabilityStatementRestFromJson(json);
   Map<String, dynamic> toJson() => _$CapabilityStatementRestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementSecurity {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool cors;
   List<CodeableConcept> service;
   Markdown description;
@@ -196,8 +192,8 @@ class CapabilityStatementSecurity {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementResource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code type;
   Canonical profile;
   List<Canonical> supportedProfile;
@@ -247,8 +243,8 @@ class CapabilityStatementResource {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementInteraction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CapabilityStatementInteractionCode code;
   Markdown documentation;
 
@@ -268,8 +264,8 @@ class CapabilityStatementInteraction {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementSearchParam {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   Canonical definition;
   String type;
@@ -293,8 +289,8 @@ class CapabilityStatementSearchParam {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   Canonical definition;
   Markdown documentation;
@@ -316,8 +312,8 @@ class CapabilityStatementOperation {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementInteraction1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String code;
   Markdown documentation;
 
@@ -331,15 +327,14 @@ class CapabilityStatementInteraction1 {
 
   factory CapabilityStatementInteraction1.fromJson(Map<String, dynamic> json) =>
       _$CapabilityStatementInteraction1FromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CapabilityStatementInteraction1ToJson(this);
+  Map<String, dynamic> toJson() => _$CapabilityStatementInteraction1ToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementMessaging {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CapabilityStatementEndpoint> endpoint;
   int reliableCache;
   Markdown documentation;
@@ -363,8 +358,8 @@ class CapabilityStatementMessaging {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementEndpoint {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding protocol;
   FhirUrl address;
 
@@ -384,8 +379,8 @@ class CapabilityStatementEndpoint {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementSupportedMessage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CapabilityStatementSupportedMessageMode mode;
   Canonical definition;
 
@@ -397,18 +392,16 @@ class CapabilityStatementSupportedMessage {
     @required this.definition,
   });
 
-  factory CapabilityStatementSupportedMessage.fromJson(
-          Map<String, dynamic> json) =>
+  factory CapabilityStatementSupportedMessage.fromJson(Map<String, dynamic> json) =>
       _$CapabilityStatementSupportedMessageFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CapabilityStatementSupportedMessageToJson(this);
+  Map<String, dynamic> toJson() => _$CapabilityStatementSupportedMessageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CapabilityStatementDocument {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CapabilityStatementDocumentMode mode;
   Markdown documentation;
   Canonical profile;
@@ -445,8 +438,7 @@ class CapabilityStatementStatus extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementStatus._(this.value);
-  factory CapabilityStatementStatus.fromJson(String json) =>
-      CapabilityStatementStatus(json);
+  factory CapabilityStatementStatus.fromJson(String json) => CapabilityStatementStatus(json);
   String toJson() => result();
 }
 
@@ -467,8 +459,7 @@ class CapabilityStatementKind extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementKind._(this.value);
-  factory CapabilityStatementKind.fromJson(String json) =>
-      CapabilityStatementKind(json);
+  factory CapabilityStatementKind.fromJson(String json) => CapabilityStatementKind(json);
   String toJson() => result();
 }
 
@@ -508,8 +499,7 @@ class CapabilityStatementFhirVersion extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementFhirVersion._(this.value);
-  factory CapabilityStatementFhirVersion.fromJson(String json) =>
-      CapabilityStatementFhirVersion(json);
+  factory CapabilityStatementFhirVersion.fromJson(String json) => CapabilityStatementFhirVersion(json);
   String toJson() => result();
 }
 
@@ -529,8 +519,7 @@ class CapabilityStatementRestMode extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementRestMode._(this.value);
-  factory CapabilityStatementRestMode.fromJson(String json) =>
-      CapabilityStatementRestMode(json);
+  factory CapabilityStatementRestMode.fromJson(String json) => CapabilityStatementRestMode(json);
   String toJson() => result();
 }
 
@@ -551,13 +540,11 @@ class CapabilityStatementResourceVersioning extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementResourceVersioning._(this.value);
-  factory CapabilityStatementResourceVersioning.fromJson(String json) =>
-      CapabilityStatementResourceVersioning(json);
+  factory CapabilityStatementResourceVersioning.fromJson(String json) => CapabilityStatementResourceVersioning(json);
   String toJson() => result();
 }
 
-class CapabilityStatementResourceConditionalRead
-    extends PrimitiveObject<String> {
+class CapabilityStatementResourceConditionalRead extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory CapabilityStatementResourceConditionalRead(String value) {
@@ -580,8 +567,7 @@ class CapabilityStatementResourceConditionalRead
   String toJson() => result();
 }
 
-class CapabilityStatementResourceConditionalDelete
-    extends PrimitiveObject<String> {
+class CapabilityStatementResourceConditionalDelete extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory CapabilityStatementResourceConditionalDelete(String value) {
@@ -626,8 +612,7 @@ class CapabilityStatementInteractionCode extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementInteractionCode._(this.value);
-  factory CapabilityStatementInteractionCode.fromJson(String json) =>
-      CapabilityStatementInteractionCode(json);
+  factory CapabilityStatementInteractionCode.fromJson(String json) => CapabilityStatementInteractionCode(json);
   String toJson() => result();
 }
 
@@ -654,8 +639,7 @@ class CapabilityStatementSearchParamType extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementSearchParamType._(this.value);
-  factory CapabilityStatementSearchParamType.fromJson(String json) =>
-      CapabilityStatementSearchParamType(json);
+  factory CapabilityStatementSearchParamType.fromJson(String json) => CapabilityStatementSearchParamType(json);
   String toJson() => result();
 }
 
@@ -677,8 +661,7 @@ class CapabilityStatementInteraction1Code extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementInteraction1Code._(this.value);
-  factory CapabilityStatementInteraction1Code.fromJson(String json) =>
-      CapabilityStatementInteraction1Code(json);
+  factory CapabilityStatementInteraction1Code.fromJson(String json) => CapabilityStatementInteraction1Code(json);
   String toJson() => result();
 }
 
@@ -719,7 +702,6 @@ class CapabilityStatementDocumentMode extends PrimitiveObject<String> {
     );
   }
   const CapabilityStatementDocumentMode._(this.value);
-  factory CapabilityStatementDocumentMode.fromJson(String json) =>
-      CapabilityStatementDocumentMode(json);
+  factory CapabilityStatementDocumentMode.fromJson(String json) => CapabilityStatementDocumentMode(json);
   String toJson() => result();
 }

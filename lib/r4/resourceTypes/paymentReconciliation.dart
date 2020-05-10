@@ -17,8 +17,8 @@ class PaymentReconciliation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   Period period;
@@ -62,16 +62,15 @@ class PaymentReconciliation {
     this.processNote,
   });
 
-  factory PaymentReconciliation.fromJson(Map<String, dynamic> json) =>
-      _$PaymentReconciliationFromJson(json);
+  factory PaymentReconciliation.fromJson(Map<String, dynamic> json) => _$PaymentReconciliationFromJson(json);
   Map<String, dynamic> toJson() => _$PaymentReconciliationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PaymentReconciliationDetail {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   Identifier predecessor;
   CodeableConcept type;
@@ -107,8 +106,8 @@ class PaymentReconciliationDetail {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PaymentReconciliationProcessNote {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   PaymentReconciliationProcessNoteType type;
   String text;
 
@@ -120,11 +119,9 @@ class PaymentReconciliationProcessNote {
     this.text,
   });
 
-  factory PaymentReconciliationProcessNote.fromJson(
-          Map<String, dynamic> json) =>
+  factory PaymentReconciliationProcessNote.fromJson(Map<String, dynamic> json) =>
       _$PaymentReconciliationProcessNoteFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$PaymentReconciliationProcessNoteToJson(this);
+  Map<String, dynamic> toJson() => _$PaymentReconciliationProcessNoteToJson(this);
 }
 
 class PaymentReconciliationOutcome extends PrimitiveObject<String> {
@@ -145,8 +142,7 @@ class PaymentReconciliationOutcome extends PrimitiveObject<String> {
     );
   }
   const PaymentReconciliationOutcome._(this.value);
-  factory PaymentReconciliationOutcome.fromJson(String json) =>
-      PaymentReconciliationOutcome(json);
+  factory PaymentReconciliationOutcome.fromJson(String json) => PaymentReconciliationOutcome(json);
   String toJson() => result();
 }
 
@@ -167,7 +163,6 @@ class PaymentReconciliationProcessNoteType extends PrimitiveObject<String> {
     );
   }
   const PaymentReconciliationProcessNoteType._(this.value);
-  factory PaymentReconciliationProcessNoteType.fromJson(String json) =>
-      PaymentReconciliationProcessNoteType(json);
+  factory PaymentReconciliationProcessNoteType.fromJson(String json) => PaymentReconciliationProcessNoteType(json);
   String toJson() => result();
 }

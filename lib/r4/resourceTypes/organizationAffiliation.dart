@@ -13,8 +13,8 @@ class OrganizationAffiliation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   Period period;
@@ -52,7 +52,6 @@ class OrganizationAffiliation {
     this.endpoint,
   });
 
-  factory OrganizationAffiliation.fromJson(Map<String, dynamic> json) =>
-      _$OrganizationAffiliationFromJson(json);
+  factory OrganizationAffiliation.fromJson(Map<String, dynamic> json) => _$OrganizationAffiliationFromJson(json);
   Map<String, dynamic> toJson() => _$OrganizationAffiliationToJson(this);
 }

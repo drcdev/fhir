@@ -14,8 +14,8 @@ class RiskAssessment {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Reference basedOn;
   Reference parent;
@@ -65,16 +65,15 @@ class RiskAssessment {
     this.note,
   });
 
-  factory RiskAssessment.fromJson(Map<String, dynamic> json) =>
-      _$RiskAssessmentFromJson(json);
+  factory RiskAssessment.fromJson(Map<String, dynamic> json) => _$RiskAssessmentFromJson(json);
   Map<String, dynamic> toJson() => _$RiskAssessmentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskAssessmentPrediction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept outcome;
   double probabilityDecimal;
   Range probabilityRange;
@@ -98,7 +97,6 @@ class RiskAssessmentPrediction {
     this.rationale,
   });
 
-  factory RiskAssessmentPrediction.fromJson(Map<String, dynamic> json) =>
-      _$RiskAssessmentPredictionFromJson(json);
+  factory RiskAssessmentPrediction.fromJson(Map<String, dynamic> json) => _$RiskAssessmentPredictionFromJson(json);
   Map<String, dynamic> toJson() => _$RiskAssessmentPredictionToJson(this);
 }

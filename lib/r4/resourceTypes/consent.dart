@@ -17,8 +17,8 @@ class Consent {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   ConsentStatus status;
   CodeableConcept scope;
@@ -60,16 +60,15 @@ class Consent {
     this.provision,
   });
 
-  factory Consent.fromJson(Map<String, dynamic> json) =>
-      _$ConsentFromJson(json);
+  factory Consent.fromJson(Map<String, dynamic> json) => _$ConsentFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConsentPolicy {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri authority;
   FhirUri uri;
 
@@ -81,16 +80,15 @@ class ConsentPolicy {
     this.uri,
   });
 
-  factory ConsentPolicy.fromJson(Map<String, dynamic> json) =>
-      _$ConsentPolicyFromJson(json);
+  factory ConsentPolicy.fromJson(Map<String, dynamic> json) => _$ConsentPolicyFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentPolicyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConsentVerification {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool verified;
   Reference verifiedWith;
   FhirDateTime verificationDate;
@@ -104,16 +102,15 @@ class ConsentVerification {
     this.verificationDate,
   });
 
-  factory ConsentVerification.fromJson(Map<String, dynamic> json) =>
-      _$ConsentVerificationFromJson(json);
+  factory ConsentVerification.fromJson(Map<String, dynamic> json) => _$ConsentVerificationFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentVerificationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConsentProvision {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ConsentProvisionType type;
   Period period;
   List<ConsentActor> actor;
@@ -143,16 +140,15 @@ class ConsentProvision {
     this.provision,
   });
 
-  factory ConsentProvision.fromJson(Map<String, dynamic> json) =>
-      _$ConsentProvisionFromJson(json);
+  factory ConsentProvision.fromJson(Map<String, dynamic> json) => _$ConsentProvisionFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentProvisionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConsentActor {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept role;
   Reference reference;
 
@@ -164,16 +160,15 @@ class ConsentActor {
     @required this.reference,
   });
 
-  factory ConsentActor.fromJson(Map<String, dynamic> json) =>
-      _$ConsentActorFromJson(json);
+  factory ConsentActor.fromJson(Map<String, dynamic> json) => _$ConsentActorFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentActorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConsentData {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ConsentDataMeaning meaning;
   Reference reference;
 
@@ -185,8 +180,7 @@ class ConsentData {
     @required this.reference,
   });
 
-  factory ConsentData.fromJson(Map<String, dynamic> json) =>
-      _$ConsentDataFromJson(json);
+  factory ConsentData.fromJson(Map<String, dynamic> json) => _$ConsentDataFromJson(json);
   Map<String, dynamic> toJson() => _$ConsentDataToJson(this);
 }
 
@@ -230,8 +224,7 @@ class ConsentProvisionType extends PrimitiveObject<String> {
     );
   }
   const ConsentProvisionType._(this.value);
-  factory ConsentProvisionType.fromJson(String json) =>
-      ConsentProvisionType(json);
+  factory ConsentProvisionType.fromJson(String json) => ConsentProvisionType(json);
   String toJson() => result();
 }
 

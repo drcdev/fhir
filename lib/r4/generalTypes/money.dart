@@ -7,7 +7,7 @@ part 'money.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Money {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   Code currency;
 

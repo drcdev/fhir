@@ -13,8 +13,8 @@ class Medication {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept code;
   Code status;
@@ -44,16 +44,15 @@ class Medication {
     this.batch,
   });
 
-  factory Medication.fromJson(Map<String, dynamic> json) =>
-      _$MedicationFromJson(json);
+  factory Medication.fromJson(Map<String, dynamic> json) => _$MedicationFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationIngredient {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept itemCodeableConcept;
   Reference itemReference;
   bool isActive;
@@ -69,16 +68,15 @@ class MedicationIngredient {
     this.strength,
   });
 
-  factory MedicationIngredient.fromJson(Map<String, dynamic> json) =>
-      _$MedicationIngredientFromJson(json);
+  factory MedicationIngredient.fromJson(Map<String, dynamic> json) => _$MedicationIngredientFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationIngredientToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationBatch {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String lotNumber;
   FhirDateTime expirationDate;
 
@@ -90,7 +88,6 @@ class MedicationBatch {
     this.expirationDate,
   });
 
-  factory MedicationBatch.fromJson(Map<String, dynamic> json) =>
-      _$MedicationBatchFromJson(json);
+  factory MedicationBatch.fromJson(Map<String, dynamic> json) => _$MedicationBatchFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationBatchToJson(this);
 }

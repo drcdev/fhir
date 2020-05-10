@@ -17,8 +17,8 @@ class DeviceUseStatement {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   DeviceUseStatementStatus status;
@@ -62,8 +62,7 @@ class DeviceUseStatement {
     this.note,
   });
 
-  factory DeviceUseStatement.fromJson(Map<String, dynamic> json) =>
-      _$DeviceUseStatementFromJson(json);
+  factory DeviceUseStatement.fromJson(Map<String, dynamic> json) => _$DeviceUseStatementFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceUseStatementToJson(this);
 }
 
@@ -87,7 +86,6 @@ class DeviceUseStatementStatus extends PrimitiveObject<String> {
     );
   }
   const DeviceUseStatementStatus._(this.value);
-  factory DeviceUseStatementStatus.fromJson(String json) =>
-      DeviceUseStatementStatus(json);
+  factory DeviceUseStatementStatus.fromJson(String json) => DeviceUseStatementStatus(json);
   String toJson() => result();
 }

@@ -10,7 +10,7 @@ part 'contributor.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Contributor {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   ContributorType type;
   String name;
   List<ContactDetail> contact;
@@ -23,8 +23,7 @@ class Contributor {
     this.contact,
   });
 
-  factory Contributor.fromJson(Map<String, dynamic> json) =>
-      _$ContributorFromJson(json);
+  factory Contributor.fromJson(Map<String, dynamic> json) => _$ContributorFromJson(json);
   Map<String, dynamic> toJson() => _$ContributorToJson(this);
 }
 

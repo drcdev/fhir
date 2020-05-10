@@ -14,8 +14,8 @@ class Condition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept clinicalStatus;
   CodeableConcept verificationStatus;
@@ -79,16 +79,15 @@ class Condition {
     this.note,
   });
 
-  factory Condition.fromJson(Map<String, dynamic> json) =>
-      _$ConditionFromJson(json);
+  factory Condition.fromJson(Map<String, dynamic> json) => _$ConditionFromJson(json);
   Map<String, dynamic> toJson() => _$ConditionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConditionStage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept summary;
   List<Reference> assessment;
   CodeableConcept type;
@@ -102,16 +101,15 @@ class ConditionStage {
     this.type,
   });
 
-  factory ConditionStage.fromJson(Map<String, dynamic> json) =>
-      _$ConditionStageFromJson(json);
+  factory ConditionStage.fromJson(Map<String, dynamic> json) => _$ConditionStageFromJson(json);
   Map<String, dynamic> toJson() => _$ConditionStageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ConditionEvidence {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> code;
   List<Reference> detail;
 
@@ -123,7 +121,6 @@ class ConditionEvidence {
     this.detail,
   });
 
-  factory ConditionEvidence.fromJson(Map<String, dynamic> json) =>
-      _$ConditionEvidenceFromJson(json);
+  factory ConditionEvidence.fromJson(Map<String, dynamic> json) => _$ConditionEvidenceFromJson(json);
   Map<String, dynamic> toJson() => _$ConditionEvidenceToJson(this);
 }

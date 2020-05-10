@@ -14,8 +14,8 @@ class MedicinalProductContraindication {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> subject;
   CodeableConcept disease;
   CodeableConcept diseaseStatus;
@@ -43,18 +43,16 @@ class MedicinalProductContraindication {
     this.population,
   });
 
-  factory MedicinalProductContraindication.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductContraindication.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductContraindicationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductContraindicationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductContraindicationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductContraindicationOtherTherapy {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept therapyRelationshipType;
   CodeableConcept medicationCodeableConcept;
   Reference medicationReference;
@@ -68,9 +66,7 @@ class MedicinalProductContraindicationOtherTherapy {
     this.medicationReference,
   });
 
-  factory MedicinalProductContraindicationOtherTherapy.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductContraindicationOtherTherapy.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductContraindicationOtherTherapyFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductContraindicationOtherTherapyToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductContraindicationOtherTherapyToJson(this);
 }

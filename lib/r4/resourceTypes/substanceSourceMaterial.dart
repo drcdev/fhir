@@ -13,8 +13,8 @@ class SubstanceSourceMaterial {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept sourceMaterialClass;
   CodeableConcept sourceMaterialType;
   CodeableConcept sourceMaterialState;
@@ -54,16 +54,15 @@ class SubstanceSourceMaterial {
     this.partDescription,
   });
 
-  factory SubstanceSourceMaterial.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceSourceMaterialFromJson(json);
+  factory SubstanceSourceMaterial.fromJson(Map<String, dynamic> json) => _$SubstanceSourceMaterialFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceSourceMaterialToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialFractionDescription {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String fraction;
   CodeableConcept materialType;
 
@@ -75,18 +74,16 @@ class SubstanceSourceMaterialFractionDescription {
     this.materialType,
   });
 
-  factory SubstanceSourceMaterialFractionDescription.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSourceMaterialFractionDescription.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSourceMaterialFractionDescriptionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSourceMaterialFractionDescriptionToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSourceMaterialFractionDescriptionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialOrganism {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept family;
   CodeableConcept genus;
   CodeableConcept species;
@@ -112,15 +109,14 @@ class SubstanceSourceMaterialOrganism {
 
   factory SubstanceSourceMaterialOrganism.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSourceMaterialOrganismFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSourceMaterialOrganismToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSourceMaterialOrganismToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialAuthor {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept authorType;
   String authorDescription;
 
@@ -140,8 +136,8 @@ class SubstanceSourceMaterialAuthor {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialHybrid {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String maternalOrganismId;
   String maternalOrganismName;
   String paternalOrganismId;
@@ -167,8 +163,8 @@ class SubstanceSourceMaterialHybrid {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialOrganismGeneral {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept kingdom;
   CodeableConcept phylum;
   CodeableConcept clas;
@@ -184,18 +180,16 @@ class SubstanceSourceMaterialOrganismGeneral {
     this.order,
   });
 
-  factory SubstanceSourceMaterialOrganismGeneral.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSourceMaterialOrganismGeneral.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSourceMaterialOrganismGeneralFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSourceMaterialOrganismGeneralToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSourceMaterialOrganismGeneralToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceSourceMaterialPartDescription {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept part;
   CodeableConcept partLocation;
 
@@ -207,9 +201,7 @@ class SubstanceSourceMaterialPartDescription {
     this.partLocation,
   });
 
-  factory SubstanceSourceMaterialPartDescription.fromJson(
-          Map<String, dynamic> json) =>
+  factory SubstanceSourceMaterialPartDescription.fromJson(Map<String, dynamic> json) =>
       _$SubstanceSourceMaterialPartDescriptionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$SubstanceSourceMaterialPartDescriptionToJson(this);
+  Map<String, dynamic> toJson() => _$SubstanceSourceMaterialPartDescriptionToJson(this);
 }

@@ -7,8 +7,8 @@ part 'substanceAmount.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceAmount {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity amountQuantity;
   Range amountRange;
   Markdown amountString;
@@ -28,16 +28,15 @@ class SubstanceAmount {
     this.referenceRange,
   });
 
-  factory SubstanceAmount.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceAmountFromJson(json);
+  factory SubstanceAmount.fromJson(Map<String, dynamic> json) => _$SubstanceAmountFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceAmountToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceAmountReferenceRange {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity lowLimit;
   Quantity highLimit;
 

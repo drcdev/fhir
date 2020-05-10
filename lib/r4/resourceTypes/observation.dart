@@ -17,8 +17,8 @@ class Observation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   List<Reference> partOf;
@@ -106,16 +106,15 @@ class Observation {
     this.component,
   });
 
-  factory Observation.fromJson(Map<String, dynamic> json) =>
-      _$ObservationFromJson(json);
+  factory Observation.fromJson(Map<String, dynamic> json) => _$ObservationFromJson(json);
   Map<String, dynamic> toJson() => _$ObservationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ObservationReferenceRange {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity low;
   Quantity high;
   CodeableConcept type;
@@ -135,16 +134,15 @@ class ObservationReferenceRange {
     this.text,
   });
 
-  factory ObservationReferenceRange.fromJson(Map<String, dynamic> json) =>
-      _$ObservationReferenceRangeFromJson(json);
+  factory ObservationReferenceRange.fromJson(Map<String, dynamic> json) => _$ObservationReferenceRangeFromJson(json);
   Map<String, dynamic> toJson() => _$ObservationReferenceRangeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ObservationComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   Quantity valueQuantity;
   CodeableConcept valueCodeableConcept;
@@ -182,8 +180,7 @@ class ObservationComponent {
     this.referenceRange,
   });
 
-  factory ObservationComponent.fromJson(Map<String, dynamic> json) =>
-      _$ObservationComponentFromJson(json);
+  factory ObservationComponent.fromJson(Map<String, dynamic> json) => _$ObservationComponentFromJson(json);
   Map<String, dynamic> toJson() => _$ObservationComponentToJson(this);
 }
 

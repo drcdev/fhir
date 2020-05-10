@@ -10,7 +10,7 @@ part 'triggerDefinition.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TriggerDefinition {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   TriggerDefinitionType type;
   String name;
   Timing timingTiming;
@@ -33,8 +33,7 @@ class TriggerDefinition {
     this.condition,
   });
 
-  factory TriggerDefinition.fromJson(Map<String, dynamic> json) =>
-      _$TriggerDefinitionFromJson(json);
+  factory TriggerDefinition.fromJson(Map<String, dynamic> json) => _$TriggerDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$TriggerDefinitionToJson(this);
 }
 
@@ -60,7 +59,6 @@ class TriggerDefinitionType extends PrimitiveObject<String> {
     );
   }
   const TriggerDefinitionType._(this.value);
-  factory TriggerDefinitionType.fromJson(String json) =>
-      TriggerDefinitionType(json);
+  factory TriggerDefinitionType.fromJson(String json) => TriggerDefinitionType(json);
   String toJson() => result();
 }

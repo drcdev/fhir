@@ -17,8 +17,8 @@ class SearchParameter {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -84,16 +84,15 @@ class SearchParameter {
     this.component,
   });
 
-  factory SearchParameter.fromJson(Map<String, dynamic> json) =>
-      _$SearchParameterFromJson(json);
+  factory SearchParameter.fromJson(Map<String, dynamic> json) => _$SearchParameterFromJson(json);
   Map<String, dynamic> toJson() => _$SearchParameterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SearchParameterComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Canonical definition;
   String expression;
 
@@ -105,8 +104,7 @@ class SearchParameterComponent {
     this.expression,
   });
 
-  factory SearchParameterComponent.fromJson(Map<String, dynamic> json) =>
-      _$SearchParameterComponentFromJson(json);
+  factory SearchParameterComponent.fromJson(Map<String, dynamic> json) => _$SearchParameterComponentFromJson(json);
   Map<String, dynamic> toJson() => _$SearchParameterComponentToJson(this);
 }
 
@@ -128,8 +126,7 @@ class SearchParameterStatus extends PrimitiveObject<String> {
     );
   }
   const SearchParameterStatus._(this.value);
-  factory SearchParameterStatus.fromJson(String json) =>
-      SearchParameterStatus(json);
+  factory SearchParameterStatus.fromJson(String json) => SearchParameterStatus(json);
   String toJson() => result();
 }
 
@@ -156,8 +153,7 @@ class SearchParameterType extends PrimitiveObject<String> {
     );
   }
   const SearchParameterType._(this.value);
-  factory SearchParameterType.fromJson(String json) =>
-      SearchParameterType(json);
+  factory SearchParameterType.fromJson(String json) => SearchParameterType(json);
   String toJson() => result();
 }
 
@@ -180,7 +176,6 @@ class SearchParameterXpathUsage extends PrimitiveObject<String> {
     );
   }
   const SearchParameterXpathUsage._(this.value);
-  factory SearchParameterXpathUsage.fromJson(String json) =>
-      SearchParameterXpathUsage(json);
+  factory SearchParameterXpathUsage.fromJson(String json) => SearchParameterXpathUsage(json);
   String toJson() => result();
 }

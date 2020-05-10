@@ -17,8 +17,8 @@ class Patient {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   List<HumanName> name;
@@ -68,16 +68,15 @@ class Patient {
     this.link,
   });
 
-  factory Patient.fromJson(Map<String, dynamic> json) =>
-      _$PatientFromJson(json);
+  factory Patient.fromJson(Map<String, dynamic> json) => _$PatientFromJson(json);
   Map<String, dynamic> toJson() => _$PatientToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PatientContact {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> relationship;
   HumanName name;
   List<ContactPoint> telecom;
@@ -99,16 +98,15 @@ class PatientContact {
     this.period,
   });
 
-  factory PatientContact.fromJson(Map<String, dynamic> json) =>
-      _$PatientContactFromJson(json);
+  factory PatientContact.fromJson(Map<String, dynamic> json) => _$PatientContactFromJson(json);
   Map<String, dynamic> toJson() => _$PatientContactToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PatientCommunication {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept language;
   bool preferred;
 
@@ -120,16 +118,15 @@ class PatientCommunication {
     this.preferred,
   });
 
-  factory PatientCommunication.fromJson(Map<String, dynamic> json) =>
-      _$PatientCommunicationFromJson(json);
+  factory PatientCommunication.fromJson(Map<String, dynamic> json) => _$PatientCommunicationFromJson(json);
   Map<String, dynamic> toJson() => _$PatientCommunicationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PatientLink {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference other;
   PatientLinkType type;
 
@@ -141,8 +138,7 @@ class PatientLink {
     this.type,
   });
 
-  factory PatientLink.fromJson(Map<String, dynamic> json) =>
-      _$PatientLinkFromJson(json);
+  factory PatientLink.fromJson(Map<String, dynamic> json) => _$PatientLinkFromJson(json);
   Map<String, dynamic> toJson() => _$PatientLinkToJson(this);
 }
 
@@ -186,8 +182,7 @@ class PatientContactGender extends PrimitiveObject<String> {
     );
   }
   const PatientContactGender._(this.value);
-  factory PatientContactGender.fromJson(String json) =>
-      PatientContactGender(json);
+  factory PatientContactGender.fromJson(String json) => PatientContactGender(json);
   String toJson() => result();
 }
 

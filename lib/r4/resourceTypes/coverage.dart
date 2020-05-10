@@ -14,8 +14,8 @@ class Coverage {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept type;
@@ -63,16 +63,15 @@ class Coverage {
     this.contract,
   });
 
-  factory Coverage.fromJson(Map<String, dynamic> json) =>
-      _$CoverageFromJson(json);
+  factory Coverage.fromJson(Map<String, dynamic> json) => _$CoverageFromJson(json);
   Map<String, dynamic> toJson() => _$CoverageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageClass {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String value;
   String name;
@@ -86,16 +85,15 @@ class CoverageClass {
     this.name,
   });
 
-  factory CoverageClass.fromJson(Map<String, dynamic> json) =>
-      _$CoverageClassFromJson(json);
+  factory CoverageClass.fromJson(Map<String, dynamic> json) => _$CoverageClassFromJson(json);
   Map<String, dynamic> toJson() => _$CoverageClassToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageCostToBeneficiary {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Quantity valueQuantity;
   Money valueMoney;
@@ -111,16 +109,15 @@ class CoverageCostToBeneficiary {
     this.exception,
   });
 
-  factory CoverageCostToBeneficiary.fromJson(Map<String, dynamic> json) =>
-      _$CoverageCostToBeneficiaryFromJson(json);
+  factory CoverageCostToBeneficiary.fromJson(Map<String, dynamic> json) => _$CoverageCostToBeneficiaryFromJson(json);
   Map<String, dynamic> toJson() => _$CoverageCostToBeneficiaryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageException {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Period period;
 
@@ -132,7 +129,6 @@ class CoverageException {
     this.period,
   });
 
-  factory CoverageException.fromJson(Map<String, dynamic> json) =>
-      _$CoverageExceptionFromJson(json);
+  factory CoverageException.fromJson(Map<String, dynamic> json) => _$CoverageExceptionFromJson(json);
   Map<String, dynamic> toJson() => _$CoverageExceptionToJson(this);
 }

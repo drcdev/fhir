@@ -7,7 +7,7 @@ part 'codeableConcept.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CodeableConcept {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   List<Coding> coding;
   String text;
 
@@ -18,7 +18,6 @@ class CodeableConcept {
     this.text,
   });
 
-  factory CodeableConcept.fromJson(Map<String, dynamic> json) =>
-      _$CodeableConceptFromJson(json);
+  factory CodeableConcept.fromJson(Map<String, dynamic> json) => _$CodeableConceptFromJson(json);
   Map<String, dynamic> toJson() => _$CodeableConceptToJson(this);
 }

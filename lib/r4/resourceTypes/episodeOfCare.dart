@@ -17,8 +17,8 @@ class EpisodeOfCare {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   EpisodeOfCareStatus status;
   List<EpisodeOfCareStatusHistory> statusHistory;
@@ -56,16 +56,15 @@ class EpisodeOfCare {
     this.account,
   });
 
-  factory EpisodeOfCare.fromJson(Map<String, dynamic> json) =>
-      _$EpisodeOfCareFromJson(json);
+  factory EpisodeOfCare.fromJson(Map<String, dynamic> json) => _$EpisodeOfCareFromJson(json);
   Map<String, dynamic> toJson() => _$EpisodeOfCareToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EpisodeOfCareStatusHistory {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   EpisodeOfCareStatusHistoryStatus status;
   Period period;
 
@@ -77,16 +76,15 @@ class EpisodeOfCareStatusHistory {
     @required this.period,
   });
 
-  factory EpisodeOfCareStatusHistory.fromJson(Map<String, dynamic> json) =>
-      _$EpisodeOfCareStatusHistoryFromJson(json);
+  factory EpisodeOfCareStatusHistory.fromJson(Map<String, dynamic> json) => _$EpisodeOfCareStatusHistoryFromJson(json);
   Map<String, dynamic> toJson() => _$EpisodeOfCareStatusHistoryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EpisodeOfCareDiagnosis {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference condition;
   CodeableConcept role;
   int rank;
@@ -100,8 +98,7 @@ class EpisodeOfCareDiagnosis {
     this.rank,
   });
 
-  factory EpisodeOfCareDiagnosis.fromJson(Map<String, dynamic> json) =>
-      _$EpisodeOfCareDiagnosisFromJson(json);
+  factory EpisodeOfCareDiagnosis.fromJson(Map<String, dynamic> json) => _$EpisodeOfCareDiagnosisFromJson(json);
   Map<String, dynamic> toJson() => _$EpisodeOfCareDiagnosisToJson(this);
 }
 
@@ -126,8 +123,7 @@ class EpisodeOfCareStatus extends PrimitiveObject<String> {
     );
   }
   const EpisodeOfCareStatus._(this.value);
-  factory EpisodeOfCareStatus.fromJson(String json) =>
-      EpisodeOfCareStatus(json);
+  factory EpisodeOfCareStatus.fromJson(String json) => EpisodeOfCareStatus(json);
   String toJson() => result();
 }
 
@@ -152,7 +148,6 @@ class EpisodeOfCareStatusHistoryStatus extends PrimitiveObject<String> {
     );
   }
   const EpisodeOfCareStatusHistoryStatus._(this.value);
-  factory EpisodeOfCareStatusHistoryStatus.fromJson(String json) =>
-      EpisodeOfCareStatusHistoryStatus(json);
+  factory EpisodeOfCareStatusHistoryStatus.fromJson(String json) => EpisodeOfCareStatusHistoryStatus(json);
   String toJson() => result();
 }

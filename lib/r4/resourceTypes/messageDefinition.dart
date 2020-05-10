@@ -17,8 +17,8 @@ class MessageDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -82,16 +82,15 @@ class MessageDefinition {
     this.graph,
   });
 
-  factory MessageDefinition.fromJson(Map<String, dynamic> json) =>
-      _$MessageDefinitionFromJson(json);
+  factory MessageDefinition.fromJson(Map<String, dynamic> json) => _$MessageDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$MessageDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MessageDefinitionFocus {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   Canonical profile;
   int min;
@@ -107,16 +106,15 @@ class MessageDefinitionFocus {
     this.max,
   });
 
-  factory MessageDefinitionFocus.fromJson(Map<String, dynamic> json) =>
-      _$MessageDefinitionFocusFromJson(json);
+  factory MessageDefinitionFocus.fromJson(Map<String, dynamic> json) => _$MessageDefinitionFocusFromJson(json);
   Map<String, dynamic> toJson() => _$MessageDefinitionFocusToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MessageDefinitionAllowedResponse {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Canonical message;
   Markdown situation;
 
@@ -128,11 +126,9 @@ class MessageDefinitionAllowedResponse {
     this.situation,
   });
 
-  factory MessageDefinitionAllowedResponse.fromJson(
-          Map<String, dynamic> json) =>
+  factory MessageDefinitionAllowedResponse.fromJson(Map<String, dynamic> json) =>
       _$MessageDefinitionAllowedResponseFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MessageDefinitionAllowedResponseToJson(this);
+  Map<String, dynamic> toJson() => _$MessageDefinitionAllowedResponseToJson(this);
 }
 
 class MessageDefinitionStatus extends PrimitiveObject<String> {
@@ -153,8 +149,7 @@ class MessageDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const MessageDefinitionStatus._(this.value);
-  factory MessageDefinitionStatus.fromJson(String json) =>
-      MessageDefinitionStatus(json);
+  factory MessageDefinitionStatus.fromJson(String json) => MessageDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -175,8 +170,7 @@ class MessageDefinitionCategory extends PrimitiveObject<String> {
     );
   }
   const MessageDefinitionCategory._(this.value);
-  factory MessageDefinitionCategory.fromJson(String json) =>
-      MessageDefinitionCategory(json);
+  factory MessageDefinitionCategory.fromJson(String json) => MessageDefinitionCategory(json);
   String toJson() => result();
 }
 
@@ -198,7 +192,6 @@ class MessageDefinitionResponseRequired extends PrimitiveObject<String> {
     );
   }
   const MessageDefinitionResponseRequired._(this.value);
-  factory MessageDefinitionResponseRequired.fromJson(String json) =>
-      MessageDefinitionResponseRequired(json);
+  factory MessageDefinitionResponseRequired.fromJson(String json) => MessageDefinitionResponseRequired(json);
   String toJson() => result();
 }

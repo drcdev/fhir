@@ -14,8 +14,8 @@ class MedicationAdministration {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<FhirUri> instantiates;
   List<Reference> partOf;
@@ -71,16 +71,15 @@ class MedicationAdministration {
     this.eventHistory,
   });
 
-  factory MedicationAdministration.fromJson(Map<String, dynamic> json) =>
-      _$MedicationAdministrationFromJson(json);
+  factory MedicationAdministration.fromJson(Map<String, dynamic> json) => _$MedicationAdministrationFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationAdministrationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationAdministrationPerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
 
@@ -92,18 +91,16 @@ class MedicationAdministrationPerformer {
     @required this.actor,
   });
 
-  factory MedicationAdministrationPerformer.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicationAdministrationPerformer.fromJson(Map<String, dynamic> json) =>
       _$MedicationAdministrationPerformerFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicationAdministrationPerformerToJson(this);
+  Map<String, dynamic> toJson() => _$MedicationAdministrationPerformerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationAdministrationDosage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String text;
   CodeableConcept site;
   CodeableConcept route;

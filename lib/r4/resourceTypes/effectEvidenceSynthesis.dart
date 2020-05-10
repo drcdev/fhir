@@ -17,8 +17,8 @@ class EffectEvidenceSynthesis {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -98,16 +98,15 @@ class EffectEvidenceSynthesis {
     this.certainty,
   });
 
-  factory EffectEvidenceSynthesis.fromJson(Map<String, dynamic> json) =>
-      _$EffectEvidenceSynthesisFromJson(json);
+  factory EffectEvidenceSynthesis.fromJson(Map<String, dynamic> json) => _$EffectEvidenceSynthesisFromJson(json);
   Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisSampleSize {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   int numberOfStudies;
   int numberOfParticipants;
@@ -121,18 +120,16 @@ class EffectEvidenceSynthesisSampleSize {
     this.numberOfParticipants,
   });
 
-  factory EffectEvidenceSynthesisSampleSize.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisSampleSize.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisSampleSizeFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisSampleSizeToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisSampleSizeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisResultsByExposure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   EffectEvidenceSynthesisResultsByExposureState exposureState;
   CodeableConcept variantState;
@@ -148,18 +145,16 @@ class EffectEvidenceSynthesisResultsByExposure {
     @required this.riskEvidenceSynthesis,
   });
 
-  factory EffectEvidenceSynthesisResultsByExposure.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisResultsByExposure.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisResultsByExposureFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisResultsByExposureToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisResultsByExposureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisEffectEstimate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   CodeableConcept type;
   CodeableConcept variantState;
@@ -179,18 +174,16 @@ class EffectEvidenceSynthesisEffectEstimate {
     this.precisionEstimate,
   });
 
-  factory EffectEvidenceSynthesisEffectEstimate.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisEffectEstimate.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisEffectEstimateFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisEffectEstimateToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisEffectEstimateToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisPrecisionEstimate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   double level;
   double from;
@@ -206,18 +199,16 @@ class EffectEvidenceSynthesisPrecisionEstimate {
     this.to,
   });
 
-  factory EffectEvidenceSynthesisPrecisionEstimate.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisPrecisionEstimate.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisPrecisionEstimateFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisPrecisionEstimateToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisPrecisionEstimateToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisCertainty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> rating;
   List<Annotation> note;
   List<EffectEvidenceSynthesisCertaintySubcomponent> certaintySubcomponent;
@@ -231,18 +222,16 @@ class EffectEvidenceSynthesisCertainty {
     this.certaintySubcomponent,
   });
 
-  factory EffectEvidenceSynthesisCertainty.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisCertainty.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisCertaintyFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisCertaintyToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisCertaintyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EffectEvidenceSynthesisCertaintySubcomponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> rating;
   List<Annotation> note;
@@ -256,11 +245,9 @@ class EffectEvidenceSynthesisCertaintySubcomponent {
     this.note,
   });
 
-  factory EffectEvidenceSynthesisCertaintySubcomponent.fromJson(
-          Map<String, dynamic> json) =>
+  factory EffectEvidenceSynthesisCertaintySubcomponent.fromJson(Map<String, dynamic> json) =>
       _$EffectEvidenceSynthesisCertaintySubcomponentFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$EffectEvidenceSynthesisCertaintySubcomponentToJson(this);
+  Map<String, dynamic> toJson() => _$EffectEvidenceSynthesisCertaintySubcomponentToJson(this);
 }
 
 class EffectEvidenceSynthesisStatus extends PrimitiveObject<String> {
@@ -281,13 +268,11 @@ class EffectEvidenceSynthesisStatus extends PrimitiveObject<String> {
     );
   }
   const EffectEvidenceSynthesisStatus._(this.value);
-  factory EffectEvidenceSynthesisStatus.fromJson(String json) =>
-      EffectEvidenceSynthesisStatus(json);
+  factory EffectEvidenceSynthesisStatus.fromJson(String json) => EffectEvidenceSynthesisStatus(json);
   String toJson() => result();
 }
 
-class EffectEvidenceSynthesisResultsByExposureState
-    extends PrimitiveObject<String> {
+class EffectEvidenceSynthesisResultsByExposureState extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory EffectEvidenceSynthesisResultsByExposureState(String value) {

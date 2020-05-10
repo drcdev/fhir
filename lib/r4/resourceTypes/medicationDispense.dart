@@ -14,8 +14,8 @@ class MedicationDispense {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> partOf;
   Code status;
@@ -81,16 +81,15 @@ class MedicationDispense {
     this.eventHistory,
   });
 
-  factory MedicationDispense.fromJson(Map<String, dynamic> json) =>
-      _$MedicationDispenseFromJson(json);
+  factory MedicationDispense.fromJson(Map<String, dynamic> json) => _$MedicationDispenseFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationDispenseToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationDispensePerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
 
@@ -110,8 +109,8 @@ class MedicationDispensePerformer {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicationDispenseSubstitution {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool wasSubstituted;
   CodeableConcept type;
   List<CodeableConcept> reason;

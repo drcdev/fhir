@@ -17,8 +17,8 @@ class Substance {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   SubstanceStatus status;
   List<CodeableConcept> category;
@@ -46,16 +46,15 @@ class Substance {
     this.ingredient,
   });
 
-  factory Substance.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceFromJson(json);
+  factory Substance.fromJson(Map<String, dynamic> json) => _$SubstanceFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceInstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   FhirDateTime expiry;
   Quantity quantity;
@@ -69,16 +68,15 @@ class SubstanceInstance {
     this.quantity,
   });
 
-  factory SubstanceInstance.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceInstanceFromJson(json);
+  factory SubstanceInstance.fromJson(Map<String, dynamic> json) => _$SubstanceInstanceFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceInstanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceIngredient {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Ratio quantity;
   CodeableConcept substanceCodeableConcept;
   Reference substanceReference;
@@ -92,8 +90,7 @@ class SubstanceIngredient {
     this.substanceReference,
   });
 
-  factory SubstanceIngredient.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceIngredientFromJson(json);
+  factory SubstanceIngredient.fromJson(Map<String, dynamic> json) => _$SubstanceIngredientFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceIngredientToJson(this);
 }
 

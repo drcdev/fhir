@@ -17,8 +17,8 @@ class OperationDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -84,16 +84,15 @@ class OperationDefinition {
     this.overload,
   });
 
-  factory OperationDefinition.fromJson(Map<String, dynamic> json) =>
-      _$OperationDefinitionFromJson(json);
+  factory OperationDefinition.fromJson(Map<String, dynamic> json) => _$OperationDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$OperationDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OperationDefinitionParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code name;
   OperationDefinitionParameterUse use;
   int min;
@@ -131,8 +130,8 @@ class OperationDefinitionParameter {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OperationDefinitionBinding {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   OperationDefinitionBindingStrength strength;
   Canonical valueSet;
 
@@ -144,16 +143,15 @@ class OperationDefinitionBinding {
     @required this.valueSet,
   });
 
-  factory OperationDefinitionBinding.fromJson(Map<String, dynamic> json) =>
-      _$OperationDefinitionBindingFromJson(json);
+  factory OperationDefinitionBinding.fromJson(Map<String, dynamic> json) => _$OperationDefinitionBindingFromJson(json);
   Map<String, dynamic> toJson() => _$OperationDefinitionBindingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OperationDefinitionReferencedFrom {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String source;
   String sourceId;
 
@@ -165,18 +163,16 @@ class OperationDefinitionReferencedFrom {
     this.sourceId,
   });
 
-  factory OperationDefinitionReferencedFrom.fromJson(
-          Map<String, dynamic> json) =>
+  factory OperationDefinitionReferencedFrom.fromJson(Map<String, dynamic> json) =>
       _$OperationDefinitionReferencedFromFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$OperationDefinitionReferencedFromToJson(this);
+  Map<String, dynamic> toJson() => _$OperationDefinitionReferencedFromToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class OperationDefinitionOverload {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<String> parameterName;
   String comment;
 
@@ -211,8 +207,7 @@ class OperationDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const OperationDefinitionStatus._(this.value);
-  factory OperationDefinitionStatus.fromJson(String json) =>
-      OperationDefinitionStatus(json);
+  factory OperationDefinitionStatus.fromJson(String json) => OperationDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -232,8 +227,7 @@ class OperationDefinitionKind extends PrimitiveObject<String> {
     );
   }
   const OperationDefinitionKind._(this.value);
-  factory OperationDefinitionKind.fromJson(String json) =>
-      OperationDefinitionKind(json);
+  factory OperationDefinitionKind.fromJson(String json) => OperationDefinitionKind(json);
   String toJson() => result();
 }
 
@@ -253,8 +247,7 @@ class OperationDefinitionParameterUse extends PrimitiveObject<String> {
     );
   }
   const OperationDefinitionParameterUse._(this.value);
-  factory OperationDefinitionParameterUse.fromJson(String json) =>
-      OperationDefinitionParameterUse(json);
+  factory OperationDefinitionParameterUse.fromJson(String json) => OperationDefinitionParameterUse(json);
   String toJson() => result();
 }
 
@@ -281,8 +274,7 @@ class OperationDefinitionParameterSearchType extends PrimitiveObject<String> {
     );
   }
   const OperationDefinitionParameterSearchType._(this.value);
-  factory OperationDefinitionParameterSearchType.fromJson(String json) =>
-      OperationDefinitionParameterSearchType(json);
+  factory OperationDefinitionParameterSearchType.fromJson(String json) => OperationDefinitionParameterSearchType(json);
   String toJson() => result();
 }
 
@@ -304,7 +296,6 @@ class OperationDefinitionBindingStrength extends PrimitiveObject<String> {
     );
   }
   const OperationDefinitionBindingStrength._(this.value);
-  factory OperationDefinitionBindingStrength.fromJson(String json) =>
-      OperationDefinitionBindingStrength(json);
+  factory OperationDefinitionBindingStrength.fromJson(String json) => OperationDefinitionBindingStrength(json);
   String toJson() => result();
 }

@@ -10,7 +10,7 @@ part 'humanName.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class HumanName {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   HumanNameUse use;
   String text;
   String family;
@@ -31,8 +31,7 @@ class HumanName {
     this.period,
   });
 
-  factory HumanName.fromJson(Map<String, dynamic> json) =>
-      _$HumanNameFromJson(json);
+  factory HumanName.fromJson(Map<String, dynamic> json) => _$HumanNameFromJson(json);
   Map<String, dynamic> toJson() => _$HumanNameToJson(this);
 }
 

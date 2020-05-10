@@ -14,8 +14,8 @@ class BodyStructure {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   CodeableConcept morphology;
@@ -45,7 +45,6 @@ class BodyStructure {
     @required this.patient,
   });
 
-  factory BodyStructure.fromJson(Map<String, dynamic> json) =>
-      _$BodyStructureFromJson(json);
+  factory BodyStructure.fromJson(Map<String, dynamic> json) => _$BodyStructureFromJson(json);
   Map<String, dynamic> toJson() => _$BodyStructureToJson(this);
 }

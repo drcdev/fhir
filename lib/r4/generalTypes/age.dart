@@ -10,7 +10,7 @@ part 'age.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Age {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   AgeComparator comparator;
   String unit;

@@ -10,8 +10,9 @@ SampledData _$SampledDataFromJson(Map<String, dynamic> json) {
   return SampledData(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     origin: json['origin'] == null
         ? null

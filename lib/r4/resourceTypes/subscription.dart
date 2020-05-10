@@ -17,8 +17,8 @@ class Subscription {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   SubscriptionStatus status;
   List<ContactPoint> contact;
   Instant end;
@@ -46,16 +46,15 @@ class Subscription {
     @required this.channel,
   });
 
-  factory Subscription.fromJson(Map<String, dynamic> json) =>
-      _$SubscriptionFromJson(json);
+  factory Subscription.fromJson(Map<String, dynamic> json) => _$SubscriptionFromJson(json);
   Map<String, dynamic> toJson() => _$SubscriptionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubscriptionChannel {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   SubscriptionChannelType type;
   FhirUrl endpoint;
   Code payload;
@@ -71,8 +70,7 @@ class SubscriptionChannel {
     this.header,
   });
 
-  factory SubscriptionChannel.fromJson(Map<String, dynamic> json) =>
-      _$SubscriptionChannelFromJson(json);
+  factory SubscriptionChannel.fromJson(Map<String, dynamic> json) => _$SubscriptionChannelFromJson(json);
   Map<String, dynamic> toJson() => _$SubscriptionChannelToJson(this);
 }
 
@@ -117,7 +115,6 @@ class SubscriptionChannelType extends PrimitiveObject<String> {
     );
   }
   const SubscriptionChannelType._(this.value);
-  factory SubscriptionChannelType.fromJson(String json) =>
-      SubscriptionChannelType(json);
+  factory SubscriptionChannelType.fromJson(String json) => SubscriptionChannelType(json);
   String toJson() => result();
 }

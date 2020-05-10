@@ -7,7 +7,7 @@ part 'coding.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Coding {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   FhirUri system;
   String version;
   Code code;

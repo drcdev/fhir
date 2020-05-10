@@ -17,8 +17,8 @@ class DeviceMetric {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   CodeableConcept unit;
@@ -52,16 +52,15 @@ class DeviceMetric {
     this.calibration,
   });
 
-  factory DeviceMetric.fromJson(Map<String, dynamic> json) =>
-      _$DeviceMetricFromJson(json);
+  factory DeviceMetric.fromJson(Map<String, dynamic> json) => _$DeviceMetricFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceMetricToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceMetricCalibration {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   DeviceMetricCalibrationType type;
   DeviceMetricCalibrationState state;
   Instant time;
@@ -75,8 +74,7 @@ class DeviceMetricCalibration {
     this.time,
   });
 
-  factory DeviceMetricCalibration.fromJson(Map<String, dynamic> json) =>
-      _$DeviceMetricCalibrationFromJson(json);
+  factory DeviceMetricCalibration.fromJson(Map<String, dynamic> json) => _$DeviceMetricCalibrationFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceMetricCalibrationToJson(this);
 }
 
@@ -98,8 +96,7 @@ class DeviceMetricOperationalStatus extends PrimitiveObject<String> {
     );
   }
   const DeviceMetricOperationalStatus._(this.value);
-  factory DeviceMetricOperationalStatus.fromJson(String json) =>
-      DeviceMetricOperationalStatus(json);
+  factory DeviceMetricOperationalStatus.fromJson(String json) => DeviceMetricOperationalStatus(json);
   String toJson() => result();
 }
 
@@ -147,8 +144,7 @@ class DeviceMetricCategory extends PrimitiveObject<String> {
     );
   }
   const DeviceMetricCategory._(this.value);
-  factory DeviceMetricCategory.fromJson(String json) =>
-      DeviceMetricCategory(json);
+  factory DeviceMetricCategory.fromJson(String json) => DeviceMetricCategory(json);
   String toJson() => result();
 }
 
@@ -170,8 +166,7 @@ class DeviceMetricCalibrationType extends PrimitiveObject<String> {
     );
   }
   const DeviceMetricCalibrationType._(this.value);
-  factory DeviceMetricCalibrationType.fromJson(String json) =>
-      DeviceMetricCalibrationType(json);
+  factory DeviceMetricCalibrationType.fromJson(String json) => DeviceMetricCalibrationType(json);
   String toJson() => result();
 }
 
@@ -193,7 +188,6 @@ class DeviceMetricCalibrationState extends PrimitiveObject<String> {
     );
   }
   const DeviceMetricCalibrationState._(this.value);
-  factory DeviceMetricCalibrationState.fromJson(String json) =>
-      DeviceMetricCalibrationState(json);
+  factory DeviceMetricCalibrationState.fromJson(String json) => DeviceMetricCalibrationState(json);
   String toJson() => result();
 }

@@ -16,8 +16,8 @@ class CareTeam {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CareTeamStatus status;
   List<CodeableConcept> category;
@@ -57,16 +57,15 @@ class CareTeam {
     this.note,
   });
 
-  factory CareTeam.fromJson(Map<String, dynamic> json) =>
-      _$CareTeamFromJson(json);
+  factory CareTeam.fromJson(Map<String, dynamic> json) => _$CareTeamFromJson(json);
   Map<String, dynamic> toJson() => _$CareTeamToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CareTeamParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> role;
   Reference member;
   Reference onBehalfOf;
@@ -82,8 +81,7 @@ class CareTeamParticipant {
     this.period,
   });
 
-  factory CareTeamParticipant.fromJson(Map<String, dynamic> json) =>
-      _$CareTeamParticipantFromJson(json);
+  factory CareTeamParticipant.fromJson(Map<String, dynamic> json) => _$CareTeamParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$CareTeamParticipantToJson(this);
 }
 

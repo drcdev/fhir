@@ -13,8 +13,8 @@ class HealthcareService {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   bool active;
   Reference providedBy;
@@ -76,16 +76,15 @@ class HealthcareService {
     this.endpoint,
   });
 
-  factory HealthcareService.fromJson(Map<String, dynamic> json) =>
-      _$HealthcareServiceFromJson(json);
+  factory HealthcareService.fromJson(Map<String, dynamic> json) => _$HealthcareServiceFromJson(json);
   Map<String, dynamic> toJson() => _$HealthcareServiceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class HealthcareServiceEligibility {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   Markdown comment;
 
@@ -105,8 +104,8 @@ class HealthcareServiceEligibility {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class HealthcareServiceAvailableTime {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<String> daysOfWeek;
   bool allDay;
   Time availableStartTime;
@@ -130,8 +129,8 @@ class HealthcareServiceAvailableTime {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class HealthcareServiceNotAvailable {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   Period during;
 

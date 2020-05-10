@@ -16,8 +16,8 @@ class MolecularSequence {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   MolecularSequenceType type;
   int coordinateSystem;
@@ -63,16 +63,15 @@ class MolecularSequence {
     this.structureVariant,
   });
 
-  factory MolecularSequence.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceFromJson(json);
+  factory MolecularSequence.fromJson(Map<String, dynamic> json) => _$MolecularSequenceFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceReferenceSeq {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept chromosome;
   String genomeBuild;
   MolecularSequenceReferenceSeqOrientation orientation;
@@ -106,8 +105,8 @@ class MolecularSequenceReferenceSeq {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceVariant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int start;
   int end;
   String observedAllele;
@@ -127,16 +126,15 @@ class MolecularSequenceVariant {
     this.variantPointer,
   });
 
-  factory MolecularSequenceVariant.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceVariantFromJson(json);
+  factory MolecularSequenceVariant.fromJson(Map<String, dynamic> json) => _$MolecularSequenceVariantFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceVariantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceQuality {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   MolecularSequenceQualityType type;
   CodeableConcept standardSequence;
   int start;
@@ -174,16 +172,15 @@ class MolecularSequenceQuality {
     this.roc,
   });
 
-  factory MolecularSequenceQuality.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceQualityFromJson(json);
+  factory MolecularSequenceQuality.fromJson(Map<String, dynamic> json) => _$MolecularSequenceQualityFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceQualityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceRoc {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<int> score;
   List<int> numTP;
   List<int> numFP;
@@ -205,16 +202,15 @@ class MolecularSequenceRoc {
     this.fMeasure,
   });
 
-  factory MolecularSequenceRoc.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceRocFromJson(json);
+  factory MolecularSequenceRoc.fromJson(Map<String, dynamic> json) => _$MolecularSequenceRocFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceRocToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceRepository {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   MolecularSequenceRepositoryType type;
   FhirUri url;
   String name;
@@ -242,8 +238,8 @@ class MolecularSequenceRepository {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceStructureVariant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept variantType;
   bool exact;
   int length;
@@ -261,18 +257,16 @@ class MolecularSequenceStructureVariant {
     this.inner,
   });
 
-  factory MolecularSequenceStructureVariant.fromJson(
-          Map<String, dynamic> json) =>
+  factory MolecularSequenceStructureVariant.fromJson(Map<String, dynamic> json) =>
       _$MolecularSequenceStructureVariantFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MolecularSequenceStructureVariantToJson(this);
+  Map<String, dynamic> toJson() => _$MolecularSequenceStructureVariantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceOuter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int start;
   int end;
 
@@ -284,16 +278,15 @@ class MolecularSequenceOuter {
     this.end,
   });
 
-  factory MolecularSequenceOuter.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceOuterFromJson(json);
+  factory MolecularSequenceOuter.fromJson(Map<String, dynamic> json) => _$MolecularSequenceOuterFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceOuterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MolecularSequenceInner {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int start;
   int end;
 
@@ -305,8 +298,7 @@ class MolecularSequenceInner {
     this.end,
   });
 
-  factory MolecularSequenceInner.fromJson(Map<String, dynamic> json) =>
-      _$MolecularSequenceInnerFromJson(json);
+  factory MolecularSequenceInner.fromJson(Map<String, dynamic> json) => _$MolecularSequenceInnerFromJson(json);
   Map<String, dynamic> toJson() => _$MolecularSequenceInnerToJson(this);
 }
 
@@ -327,8 +319,7 @@ class MolecularSequenceType extends PrimitiveObject<String> {
     );
   }
   const MolecularSequenceType._(this.value);
-  factory MolecularSequenceType.fromJson(String json) =>
-      MolecularSequenceType(json);
+  factory MolecularSequenceType.fromJson(String json) => MolecularSequenceType(json);
   String toJson() => result();
 }
 
@@ -369,8 +360,7 @@ class MolecularSequenceReferenceSeqStrand extends PrimitiveObject<String> {
     );
   }
   const MolecularSequenceReferenceSeqStrand._(this.value);
-  factory MolecularSequenceReferenceSeqStrand.fromJson(String json) =>
-      MolecularSequenceReferenceSeqStrand(json);
+  factory MolecularSequenceReferenceSeqStrand.fromJson(String json) => MolecularSequenceReferenceSeqStrand(json);
   String toJson() => result();
 }
 
@@ -391,8 +381,7 @@ class MolecularSequenceQualityType extends PrimitiveObject<String> {
     );
   }
   const MolecularSequenceQualityType._(this.value);
-  factory MolecularSequenceQualityType.fromJson(String json) =>
-      MolecularSequenceQualityType(json);
+  factory MolecularSequenceQualityType.fromJson(String json) => MolecularSequenceQualityType(json);
   String toJson() => result();
 }
 
@@ -415,7 +404,6 @@ class MolecularSequenceRepositoryType extends PrimitiveObject<String> {
     );
   }
   const MolecularSequenceRepositoryType._(this.value);
-  factory MolecularSequenceRepositoryType.fromJson(String json) =>
-      MolecularSequenceRepositoryType(json);
+  factory MolecularSequenceRepositoryType.fromJson(String json) => MolecularSequenceRepositoryType(json);
   String toJson() => result();
 }

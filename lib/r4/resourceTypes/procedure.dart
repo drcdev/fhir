@@ -14,8 +14,8 @@ class Procedure {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -93,16 +93,15 @@ class Procedure {
     this.usedCode,
   });
 
-  factory Procedure.fromJson(Map<String, dynamic> json) =>
-      _$ProcedureFromJson(json);
+  factory Procedure.fromJson(Map<String, dynamic> json) => _$ProcedureFromJson(json);
   Map<String, dynamic> toJson() => _$ProcedureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ProcedurePerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
   Reference onBehalfOf;
@@ -116,16 +115,15 @@ class ProcedurePerformer {
     this.onBehalfOf,
   });
 
-  factory ProcedurePerformer.fromJson(Map<String, dynamic> json) =>
-      _$ProcedurePerformerFromJson(json);
+  factory ProcedurePerformer.fromJson(Map<String, dynamic> json) => _$ProcedurePerformerFromJson(json);
   Map<String, dynamic> toJson() => _$ProcedurePerformerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ProcedureFocalDevice {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept action;
   Reference manipulated;
 
@@ -137,7 +135,6 @@ class ProcedureFocalDevice {
     @required this.manipulated,
   });
 
-  factory ProcedureFocalDevice.fromJson(Map<String, dynamic> json) =>
-      _$ProcedureFocalDeviceFromJson(json);
+  factory ProcedureFocalDevice.fromJson(Map<String, dynamic> json) => _$ProcedureFocalDeviceFromJson(json);
   Map<String, dynamic> toJson() => _$ProcedureFocalDeviceToJson(this);
 }

@@ -16,8 +16,8 @@ class ChargeItemDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -77,16 +77,15 @@ class ChargeItemDefinition {
     this.propertyGroup,
   });
 
-  factory ChargeItemDefinition.fromJson(Map<String, dynamic> json) =>
-      _$ChargeItemDefinitionFromJson(json);
+  factory ChargeItemDefinition.fromJson(Map<String, dynamic> json) => _$ChargeItemDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$ChargeItemDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ChargeItemDefinitionApplicability {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   String language;
   String expression;
@@ -100,18 +99,16 @@ class ChargeItemDefinitionApplicability {
     this.expression,
   });
 
-  factory ChargeItemDefinitionApplicability.fromJson(
-          Map<String, dynamic> json) =>
+  factory ChargeItemDefinitionApplicability.fromJson(Map<String, dynamic> json) =>
       _$ChargeItemDefinitionApplicabilityFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ChargeItemDefinitionApplicabilityToJson(this);
+  Map<String, dynamic> toJson() => _$ChargeItemDefinitionApplicabilityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ChargeItemDefinitionPropertyGroup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ChargeItemDefinitionApplicability> applicability;
   List<ChargeItemDefinitionPriceComponent> priceComponent;
 
@@ -123,18 +120,16 @@ class ChargeItemDefinitionPropertyGroup {
     this.priceComponent,
   });
 
-  factory ChargeItemDefinitionPropertyGroup.fromJson(
-          Map<String, dynamic> json) =>
+  factory ChargeItemDefinitionPropertyGroup.fromJson(Map<String, dynamic> json) =>
       _$ChargeItemDefinitionPropertyGroupFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ChargeItemDefinitionPropertyGroupToJson(this);
+  Map<String, dynamic> toJson() => _$ChargeItemDefinitionPropertyGroupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ChargeItemDefinitionPriceComponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code type;
   CodeableConcept code;
   double factor;
@@ -150,11 +145,9 @@ class ChargeItemDefinitionPriceComponent {
     this.amount,
   });
 
-  factory ChargeItemDefinitionPriceComponent.fromJson(
-          Map<String, dynamic> json) =>
+  factory ChargeItemDefinitionPriceComponent.fromJson(Map<String, dynamic> json) =>
       _$ChargeItemDefinitionPriceComponentFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ChargeItemDefinitionPriceComponentToJson(this);
+  Map<String, dynamic> toJson() => _$ChargeItemDefinitionPriceComponentToJson(this);
 }
 
 class ChargeItemDefinitionStatus extends PrimitiveObject<String> {
@@ -175,7 +168,6 @@ class ChargeItemDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const ChargeItemDefinitionStatus._(this.value);
-  factory ChargeItemDefinitionStatus.fromJson(String json) =>
-      ChargeItemDefinitionStatus(json);
+  factory ChargeItemDefinitionStatus.fromJson(String json) => ChargeItemDefinitionStatus(json);
   String toJson() => result();
 }

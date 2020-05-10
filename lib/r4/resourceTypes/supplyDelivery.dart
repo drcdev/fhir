@@ -16,8 +16,8 @@ class SupplyDelivery {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   List<Reference> partOf;
@@ -57,16 +57,15 @@ class SupplyDelivery {
     this.receiver,
   });
 
-  factory SupplyDelivery.fromJson(Map<String, dynamic> json) =>
-      _$SupplyDeliveryFromJson(json);
+  factory SupplyDelivery.fromJson(Map<String, dynamic> json) => _$SupplyDeliveryFromJson(json);
   Map<String, dynamic> toJson() => _$SupplyDeliveryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SupplyDeliverySuppliedItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Quantity quantity;
   CodeableConcept itemCodeableConcept;
   Reference itemReference;
@@ -80,8 +79,7 @@ class SupplyDeliverySuppliedItem {
     this.itemReference,
   });
 
-  factory SupplyDeliverySuppliedItem.fromJson(Map<String, dynamic> json) =>
-      _$SupplyDeliverySuppliedItemFromJson(json);
+  factory SupplyDeliverySuppliedItem.fromJson(Map<String, dynamic> json) => _$SupplyDeliverySuppliedItemFromJson(json);
   Map<String, dynamic> toJson() => _$SupplyDeliverySuppliedItemToJson(this);
 }
 
@@ -103,7 +101,6 @@ class SupplyDeliveryStatus extends PrimitiveObject<String> {
     );
   }
   const SupplyDeliveryStatus._(this.value);
-  factory SupplyDeliveryStatus.fromJson(String json) =>
-      SupplyDeliveryStatus(json);
+  factory SupplyDeliveryStatus.fromJson(String json) => SupplyDeliveryStatus(json);
   String toJson() => result();
 }

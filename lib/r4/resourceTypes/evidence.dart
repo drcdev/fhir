@@ -17,8 +17,8 @@ class Evidence {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -87,8 +87,7 @@ class Evidence {
     this.outcome,
   });
 
-  factory Evidence.fromJson(Map<String, dynamic> json) =>
-      _$EvidenceFromJson(json);
+  factory Evidence.fromJson(Map<String, dynamic> json) => _$EvidenceFromJson(json);
   Map<String, dynamic> toJson() => _$EvidenceToJson(this);
 }
 

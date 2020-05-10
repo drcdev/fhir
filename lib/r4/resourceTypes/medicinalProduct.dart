@@ -14,8 +14,8 @@ class MedicinalProduct {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   Coding domain;
@@ -34,8 +34,7 @@ class MedicinalProduct {
   List<Reference> clinicalTrial;
   List<MedicinalProductName> name;
   List<Identifier> crossReference;
-  List<MedicinalProductManufacturingBusinessOperation>
-      manufacturingBusinessOperation;
+  List<MedicinalProductManufacturingBusinessOperation> manufacturingBusinessOperation;
   List<MedicinalProductSpecialDesignation> specialDesignation;
 
   MedicinalProduct({
@@ -70,16 +69,15 @@ class MedicinalProduct {
     this.specialDesignation,
   });
 
-  factory MedicinalProduct.fromJson(Map<String, dynamic> json) =>
-      _$MedicinalProductFromJson(json);
+  factory MedicinalProduct.fromJson(Map<String, dynamic> json) => _$MedicinalProductFromJson(json);
   Map<String, dynamic> toJson() => _$MedicinalProductToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductName {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String productName;
   List<MedicinalProductNamePart> namePart;
   List<MedicinalProductCountryLanguage> countryLanguage;
@@ -93,16 +91,15 @@ class MedicinalProductName {
     this.countryLanguage,
   });
 
-  factory MedicinalProductName.fromJson(Map<String, dynamic> json) =>
-      _$MedicinalProductNameFromJson(json);
+  factory MedicinalProductName.fromJson(Map<String, dynamic> json) => _$MedicinalProductNameFromJson(json);
   Map<String, dynamic> toJson() => _$MedicinalProductNameToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductNamePart {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String part;
   Coding type;
 
@@ -114,16 +111,15 @@ class MedicinalProductNamePart {
     @required this.type,
   });
 
-  factory MedicinalProductNamePart.fromJson(Map<String, dynamic> json) =>
-      _$MedicinalProductNamePartFromJson(json);
+  factory MedicinalProductNamePart.fromJson(Map<String, dynamic> json) => _$MedicinalProductNamePartFromJson(json);
   Map<String, dynamic> toJson() => _$MedicinalProductNamePartToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductCountryLanguage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept country;
   CodeableConcept jurisdiction;
   CodeableConcept language;
@@ -139,15 +135,14 @@ class MedicinalProductCountryLanguage {
 
   factory MedicinalProductCountryLanguage.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductCountryLanguageFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductCountryLanguageToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductCountryLanguageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductManufacturingBusinessOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept operationType;
   Identifier authorisationReferenceNumber;
   FhirDateTime effectiveDate;
@@ -167,18 +162,16 @@ class MedicinalProductManufacturingBusinessOperation {
     this.regulator,
   });
 
-  factory MedicinalProductManufacturingBusinessOperation.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductManufacturingBusinessOperation.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductManufacturingBusinessOperationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductManufacturingBusinessOperationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductManufacturingBusinessOperationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class MedicinalProductSpecialDesignation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   CodeableConcept intendedUse;
@@ -202,9 +195,7 @@ class MedicinalProductSpecialDesignation {
     this.species,
   });
 
-  factory MedicinalProductSpecialDesignation.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductSpecialDesignation.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductSpecialDesignationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductSpecialDesignationToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductSpecialDesignationToJson(this);
 }

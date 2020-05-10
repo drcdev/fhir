@@ -17,8 +17,8 @@ class DetectedIssue {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept code;
@@ -58,16 +58,15 @@ class DetectedIssue {
     this.mitigation,
   });
 
-  factory DetectedIssue.fromJson(Map<String, dynamic> json) =>
-      _$DetectedIssueFromJson(json);
+  factory DetectedIssue.fromJson(Map<String, dynamic> json) => _$DetectedIssueFromJson(json);
   Map<String, dynamic> toJson() => _$DetectedIssueToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DetectedIssueEvidence {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> code;
   List<Reference> detail;
 
@@ -79,16 +78,15 @@ class DetectedIssueEvidence {
     this.detail,
   });
 
-  factory DetectedIssueEvidence.fromJson(Map<String, dynamic> json) =>
-      _$DetectedIssueEvidenceFromJson(json);
+  factory DetectedIssueEvidence.fromJson(Map<String, dynamic> json) => _$DetectedIssueEvidenceFromJson(json);
   Map<String, dynamic> toJson() => _$DetectedIssueEvidenceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DetectedIssueMitigation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept action;
   FhirDateTime date;
   Reference author;
@@ -102,8 +100,7 @@ class DetectedIssueMitigation {
     this.author,
   });
 
-  factory DetectedIssueMitigation.fromJson(Map<String, dynamic> json) =>
-      _$DetectedIssueMitigationFromJson(json);
+  factory DetectedIssueMitigation.fromJson(Map<String, dynamic> json) => _$DetectedIssueMitigationFromJson(json);
   Map<String, dynamic> toJson() => _$DetectedIssueMitigationToJson(this);
 }
 
@@ -124,7 +121,6 @@ class DetectedIssueSeverity extends PrimitiveObject<String> {
     );
   }
   const DetectedIssueSeverity._(this.value);
-  factory DetectedIssueSeverity.fromJson(String json) =>
-      DetectedIssueSeverity(json);
+  factory DetectedIssueSeverity.fromJson(String json) => DetectedIssueSeverity(json);
   String toJson() => result();
 }

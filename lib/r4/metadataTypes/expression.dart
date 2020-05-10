@@ -10,7 +10,7 @@ part 'expression.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Expression {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   String description;
   Id name;
   ExpressionLanguage language;
@@ -27,8 +27,7 @@ class Expression {
     this.reference,
   });
 
-  factory Expression.fromJson(Map<String, dynamic> json) =>
-      _$ExpressionFromJson(json);
+  factory Expression.fromJson(Map<String, dynamic> json) => _$ExpressionFromJson(json);
   Map<String, dynamic> toJson() => _$ExpressionToJson(this);
 }
 

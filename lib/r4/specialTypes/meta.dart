@@ -7,7 +7,7 @@ part 'meta.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Meta {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Id versionId;
   Instant lastUpdated;
   Uri source;

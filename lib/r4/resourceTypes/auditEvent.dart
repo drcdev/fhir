@@ -17,8 +17,8 @@ class AuditEvent {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Coding type;
   List<Coding> subtype;
   AuditEventAction action;
@@ -54,16 +54,15 @@ class AuditEvent {
     this.entity,
   });
 
-  factory AuditEvent.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventFromJson(json);
+  factory AuditEvent.fromJson(Map<String, dynamic> json) => _$AuditEventFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AuditEventAgent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> role;
   Reference who;
@@ -93,16 +92,15 @@ class AuditEventAgent {
     this.purposeOfUse,
   });
 
-  factory AuditEventAgent.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventAgentFromJson(json);
+  factory AuditEventAgent.fromJson(Map<String, dynamic> json) => _$AuditEventAgentFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventAgentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AuditEventNetwork {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String address;
   AuditEventNetworkType type;
 
@@ -114,16 +112,15 @@ class AuditEventNetwork {
     this.type,
   });
 
-  factory AuditEventNetwork.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventNetworkFromJson(json);
+  factory AuditEventNetwork.fromJson(Map<String, dynamic> json) => _$AuditEventNetworkFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventNetworkToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AuditEventSource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String site;
   Reference observer;
   List<Coding> type;
@@ -137,16 +134,15 @@ class AuditEventSource {
     this.type,
   });
 
-  factory AuditEventSource.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventSourceFromJson(json);
+  factory AuditEventSource.fromJson(Map<String, dynamic> json) => _$AuditEventSourceFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventSourceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AuditEventEntity {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference what;
   Coding type;
   Coding role;
@@ -172,16 +168,15 @@ class AuditEventEntity {
     this.detail,
   });
 
-  factory AuditEventEntity.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventEntityFromJson(json);
+  factory AuditEventEntity.fromJson(Map<String, dynamic> json) => _$AuditEventEntityFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventEntityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AuditEventDetail {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String type;
   Markdown valueString;
   Base64Binary valueBase64Binary;
@@ -195,8 +190,7 @@ class AuditEventDetail {
     this.valueBase64Binary,
   });
 
-  factory AuditEventDetail.fromJson(Map<String, dynamic> json) =>
-      _$AuditEventDetailFromJson(json);
+  factory AuditEventDetail.fromJson(Map<String, dynamic> json) => _$AuditEventDetailFromJson(json);
   Map<String, dynamic> toJson() => _$AuditEventDetailToJson(this);
 }
 
@@ -264,7 +258,6 @@ class AuditEventNetworkType extends PrimitiveObject<String> {
     );
   }
   const AuditEventNetworkType._(this.value);
-  factory AuditEventNetworkType.fromJson(String json) =>
-      AuditEventNetworkType(json);
+  factory AuditEventNetworkType.fromJson(String json) => AuditEventNetworkType(json);
   String toJson() => result();
 }

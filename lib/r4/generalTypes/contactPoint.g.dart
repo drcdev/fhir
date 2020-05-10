@@ -10,8 +10,9 @@ ContactPoint _$ContactPointFromJson(Map<String, dynamic> json) {
   return ContactPoint(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     system: json['system'] == null
         ? null

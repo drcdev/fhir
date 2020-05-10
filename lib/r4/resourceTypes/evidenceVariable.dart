@@ -17,8 +17,8 @@ class EvidenceVariable {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -86,16 +86,15 @@ class EvidenceVariable {
     @required this.characteristic,
   });
 
-  factory EvidenceVariable.fromJson(Map<String, dynamic> json) =>
-      _$EvidenceVariableFromJson(json);
+  factory EvidenceVariable.fromJson(Map<String, dynamic> json) => _$EvidenceVariableFromJson(json);
   Map<String, dynamic> toJson() => _$EvidenceVariableToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class EvidenceVariableCharacteristic {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   Reference definitionReference;
   Canonical definitionCanonical;
@@ -156,8 +155,7 @@ class EvidenceVariableStatus extends PrimitiveObject<String> {
     );
   }
   const EvidenceVariableStatus._(this.value);
-  factory EvidenceVariableStatus.fromJson(String json) =>
-      EvidenceVariableStatus(json);
+  factory EvidenceVariableStatus.fromJson(String json) => EvidenceVariableStatus(json);
   String toJson() => result();
 }
 
@@ -178,13 +176,11 @@ class EvidenceVariableType extends PrimitiveObject<String> {
     );
   }
   const EvidenceVariableType._(this.value);
-  factory EvidenceVariableType.fromJson(String json) =>
-      EvidenceVariableType(json);
+  factory EvidenceVariableType.fromJson(String json) => EvidenceVariableType(json);
   String toJson() => result();
 }
 
-class EvidenceVariableCharacteristicGroupMeasure
-    extends PrimitiveObject<String> {
+class EvidenceVariableCharacteristicGroupMeasure extends PrimitiveObject<String> {
   @override
   final Either<PrimitiveFailure<String>, String> value;
   factory EvidenceVariableCharacteristicGroupMeasure(String value) {

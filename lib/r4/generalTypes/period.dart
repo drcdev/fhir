@@ -7,7 +7,7 @@ part 'period.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Period {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   FhirDateTime start;
   FhirDateTime end;
 

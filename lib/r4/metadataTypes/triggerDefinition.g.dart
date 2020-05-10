@@ -10,8 +10,9 @@ TriggerDefinition _$TriggerDefinitionFromJson(Map<String, dynamic> json) {
   return TriggerDefinition(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     type: json['type'] == null
         ? null

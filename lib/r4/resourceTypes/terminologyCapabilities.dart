@@ -16,8 +16,8 @@ class TerminologyCapabilities {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -79,16 +79,15 @@ class TerminologyCapabilities {
     this.closure,
   });
 
-  factory TerminologyCapabilities.fromJson(Map<String, dynamic> json) =>
-      _$TerminologyCapabilitiesFromJson(json);
+  factory TerminologyCapabilities.fromJson(Map<String, dynamic> json) => _$TerminologyCapabilitiesFromJson(json);
   Map<String, dynamic> toJson() => _$TerminologyCapabilitiesToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesSoftware {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String version;
 
@@ -102,15 +101,14 @@ class TerminologyCapabilitiesSoftware {
 
   factory TerminologyCapabilitiesSoftware.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesSoftwareFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesSoftwareToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesSoftwareToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesImplementation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   FhirUrl url;
 
@@ -122,18 +120,16 @@ class TerminologyCapabilitiesImplementation {
     this.url,
   });
 
-  factory TerminologyCapabilitiesImplementation.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesImplementation.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesImplementationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesImplementationToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesImplementationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesCodeSystem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Canonical uri;
   List<TerminologyCapabilitiesVersion> version;
   bool subsumption;
@@ -147,18 +143,16 @@ class TerminologyCapabilitiesCodeSystem {
     this.subsumption,
   });
 
-  factory TerminologyCapabilitiesCodeSystem.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesCodeSystem.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesCodeSystemFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesCodeSystemToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesCodeSystemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesVersion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String code;
   bool isDefault;
   bool compositional;
@@ -186,8 +180,8 @@ class TerminologyCapabilitiesVersion {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesFilter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   List<Code> op;
 
@@ -207,8 +201,8 @@ class TerminologyCapabilitiesFilter {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesExpansion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool hierarchical;
   bool paging;
   bool incomplete;
@@ -226,18 +220,16 @@ class TerminologyCapabilitiesExpansion {
     this.textFilter,
   });
 
-  factory TerminologyCapabilitiesExpansion.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesExpansion.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesExpansionFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesExpansionToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesExpansionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code name;
   String documentation;
 
@@ -249,18 +241,16 @@ class TerminologyCapabilitiesParameter {
     this.documentation,
   });
 
-  factory TerminologyCapabilitiesParameter.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesParameter.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesParameterFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesParameterToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesParameterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesValidateCode {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool translations;
 
   TerminologyCapabilitiesValidateCode({
@@ -270,18 +260,16 @@ class TerminologyCapabilitiesValidateCode {
     this.translations,
   });
 
-  factory TerminologyCapabilitiesValidateCode.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesValidateCode.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesValidateCodeFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesValidateCodeToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesValidateCodeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesTranslation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool needsMap;
 
   TerminologyCapabilitiesTranslation({
@@ -291,18 +279,16 @@ class TerminologyCapabilitiesTranslation {
     this.needsMap,
   });
 
-  factory TerminologyCapabilitiesTranslation.fromJson(
-          Map<String, dynamic> json) =>
+  factory TerminologyCapabilitiesTranslation.fromJson(Map<String, dynamic> json) =>
       _$TerminologyCapabilitiesTranslationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$TerminologyCapabilitiesTranslationToJson(this);
+  Map<String, dynamic> toJson() => _$TerminologyCapabilitiesTranslationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TerminologyCapabilitiesClosure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool translation;
 
   TerminologyCapabilitiesClosure({
@@ -335,8 +321,7 @@ class TerminologyCapabilitiesStatus extends PrimitiveObject<String> {
     );
   }
   const TerminologyCapabilitiesStatus._(this.value);
-  factory TerminologyCapabilitiesStatus.fromJson(String json) =>
-      TerminologyCapabilitiesStatus(json);
+  factory TerminologyCapabilitiesStatus.fromJson(String json) => TerminologyCapabilitiesStatus(json);
   String toJson() => result();
 }
 
@@ -356,7 +341,6 @@ class TerminologyCapabilitiesCodeSearch extends PrimitiveObject<String> {
     );
   }
   const TerminologyCapabilitiesCodeSearch._(this.value);
-  factory TerminologyCapabilitiesCodeSearch.fromJson(String json) =>
-      TerminologyCapabilitiesCodeSearch(json);
+  factory TerminologyCapabilitiesCodeSearch.fromJson(String json) => TerminologyCapabilitiesCodeSearch(json);
   String toJson() => result();
 }

@@ -17,8 +17,8 @@ class Provenance {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> target;
   Period occurredPeriod;
   FhirDateTime occurredDateTime;
@@ -54,16 +54,15 @@ class Provenance {
     this.signature,
   });
 
-  factory Provenance.fromJson(Map<String, dynamic> json) =>
-      _$ProvenanceFromJson(json);
+  factory Provenance.fromJson(Map<String, dynamic> json) => _$ProvenanceFromJson(json);
   Map<String, dynamic> toJson() => _$ProvenanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ProvenanceAgent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> role;
   Reference who;
@@ -79,16 +78,15 @@ class ProvenanceAgent {
     this.onBehalfOf,
   });
 
-  factory ProvenanceAgent.fromJson(Map<String, dynamic> json) =>
-      _$ProvenanceAgentFromJson(json);
+  factory ProvenanceAgent.fromJson(Map<String, dynamic> json) => _$ProvenanceAgentFromJson(json);
   Map<String, dynamic> toJson() => _$ProvenanceAgentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ProvenanceEntity {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ProvenanceEntityRole role;
   Reference what;
   List<ProvenanceAgent> agent;
@@ -102,8 +100,7 @@ class ProvenanceEntity {
     this.agent,
   });
 
-  factory ProvenanceEntity.fromJson(Map<String, dynamic> json) =>
-      _$ProvenanceEntityFromJson(json);
+  factory ProvenanceEntity.fromJson(Map<String, dynamic> json) => _$ProvenanceEntityFromJson(json);
   Map<String, dynamic> toJson() => _$ProvenanceEntityToJson(this);
 }
 
@@ -126,7 +123,6 @@ class ProvenanceEntityRole extends PrimitiveObject<String> {
     );
   }
   const ProvenanceEntityRole._(this.value);
-  factory ProvenanceEntityRole.fromJson(String json) =>
-      ProvenanceEntityRole(json);
+  factory ProvenanceEntityRole.fromJson(String json) => ProvenanceEntityRole(json);
   String toJson() => result();
 }

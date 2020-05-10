@@ -17,8 +17,8 @@ class NamingSystem {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   NamingSystemStatus status;
   NamingSystemKind kind;
@@ -58,16 +58,15 @@ class NamingSystem {
     @required this.uniqueId,
   });
 
-  factory NamingSystem.fromJson(Map<String, dynamic> json) =>
-      _$NamingSystemFromJson(json);
+  factory NamingSystem.fromJson(Map<String, dynamic> json) => _$NamingSystemFromJson(json);
   Map<String, dynamic> toJson() => _$NamingSystemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NamingSystemUniqueId {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   NamingSystemUniqueIdType type;
   String value;
   bool preferred;
@@ -85,8 +84,7 @@ class NamingSystemUniqueId {
     this.period,
   });
 
-  factory NamingSystemUniqueId.fromJson(Map<String, dynamic> json) =>
-      _$NamingSystemUniqueIdFromJson(json);
+  factory NamingSystemUniqueId.fromJson(Map<String, dynamic> json) => _$NamingSystemUniqueIdFromJson(json);
   Map<String, dynamic> toJson() => _$NamingSystemUniqueIdToJson(this);
 }
 
@@ -151,7 +149,6 @@ class NamingSystemUniqueIdType extends PrimitiveObject<String> {
     );
   }
   const NamingSystemUniqueIdType._(this.value);
-  factory NamingSystemUniqueIdType.fromJson(String json) =>
-      NamingSystemUniqueIdType(json);
+  factory NamingSystemUniqueIdType.fromJson(String json) => NamingSystemUniqueIdType(json);
   String toJson() => result();
 }

@@ -17,8 +17,8 @@ class DiagnosticReport {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   DiagnosticReportStatus status;
@@ -70,16 +70,15 @@ class DiagnosticReport {
     this.presentedForm,
   });
 
-  factory DiagnosticReport.fromJson(Map<String, dynamic> json) =>
-      _$DiagnosticReportFromJson(json);
+  factory DiagnosticReport.fromJson(Map<String, dynamic> json) => _$DiagnosticReportFromJson(json);
   Map<String, dynamic> toJson() => _$DiagnosticReportToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DiagnosticReportMedia {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String comment;
   Reference link;
 
@@ -91,8 +90,7 @@ class DiagnosticReportMedia {
     @required this.link,
   });
 
-  factory DiagnosticReportMedia.fromJson(Map<String, dynamic> json) =>
-      _$DiagnosticReportMediaFromJson(json);
+  factory DiagnosticReportMedia.fromJson(Map<String, dynamic> json) => _$DiagnosticReportMediaFromJson(json);
   Map<String, dynamic> toJson() => _$DiagnosticReportMediaToJson(this);
 }
 
@@ -120,7 +118,6 @@ class DiagnosticReportStatus extends PrimitiveObject<String> {
     );
   }
   const DiagnosticReportStatus._(this.value);
-  factory DiagnosticReportStatus.fromJson(String json) =>
-      DiagnosticReportStatus(json);
+  factory DiagnosticReportStatus.fromJson(String json) => DiagnosticReportStatus(json);
   String toJson() => result();
 }

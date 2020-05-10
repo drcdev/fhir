@@ -22,16 +22,15 @@ class Parameters {
     this.parameter,
   });
 
-  factory Parameters.fromJson(Map<String, dynamic> json) =>
-      _$ParametersFromJson(json);
+  factory Parameters.fromJson(Map<String, dynamic> json) => _$ParametersFromJson(json);
   Map<String, dynamic> toJson() => _$ParametersToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ParametersParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   Base64Binary valueBase64Binary;
   bool valueBoolean;
@@ -145,7 +144,6 @@ class ParametersParameter {
     this.part,
   });
 
-  factory ParametersParameter.fromJson(Map<String, dynamic> json) =>
-      _$ParametersParameterFromJson(json);
+  factory ParametersParameter.fromJson(Map<String, dynamic> json) => _$ParametersParameterFromJson(json);
   Map<String, dynamic> toJson() => _$ParametersParameterToJson(this);
 }

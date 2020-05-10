@@ -14,8 +14,8 @@ class NutritionOrder {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -63,16 +63,15 @@ class NutritionOrder {
     this.note,
   });
 
-  factory NutritionOrder.fromJson(Map<String, dynamic> json) =>
-      _$NutritionOrderFromJson(json);
+  factory NutritionOrder.fromJson(Map<String, dynamic> json) => _$NutritionOrderFromJson(json);
   Map<String, dynamic> toJson() => _$NutritionOrderToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderOralDiet {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> type;
   List<Timing> schedule;
   List<NutritionOrderNutrient> nutrient;
@@ -92,16 +91,15 @@ class NutritionOrderOralDiet {
     this.instruction,
   });
 
-  factory NutritionOrderOralDiet.fromJson(Map<String, dynamic> json) =>
-      _$NutritionOrderOralDietFromJson(json);
+  factory NutritionOrderOralDiet.fromJson(Map<String, dynamic> json) => _$NutritionOrderOralDietFromJson(json);
   Map<String, dynamic> toJson() => _$NutritionOrderOralDietToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderNutrient {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept modifier;
   Quantity amount;
 
@@ -113,16 +111,15 @@ class NutritionOrderNutrient {
     this.amount,
   });
 
-  factory NutritionOrderNutrient.fromJson(Map<String, dynamic> json) =>
-      _$NutritionOrderNutrientFromJson(json);
+  factory NutritionOrderNutrient.fromJson(Map<String, dynamic> json) => _$NutritionOrderNutrientFromJson(json);
   Map<String, dynamic> toJson() => _$NutritionOrderNutrientToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderTexture {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept modifier;
   CodeableConcept foodType;
 
@@ -134,16 +131,15 @@ class NutritionOrderTexture {
     this.foodType,
   });
 
-  factory NutritionOrderTexture.fromJson(Map<String, dynamic> json) =>
-      _$NutritionOrderTextureFromJson(json);
+  factory NutritionOrderTexture.fromJson(Map<String, dynamic> json) => _$NutritionOrderTextureFromJson(json);
   Map<String, dynamic> toJson() => _$NutritionOrderTextureToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderSupplement {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   String productName;
   List<Timing> schedule;
@@ -161,16 +157,15 @@ class NutritionOrderSupplement {
     this.instruction,
   });
 
-  factory NutritionOrderSupplement.fromJson(Map<String, dynamic> json) =>
-      _$NutritionOrderSupplementFromJson(json);
+  factory NutritionOrderSupplement.fromJson(Map<String, dynamic> json) => _$NutritionOrderSupplementFromJson(json);
   Map<String, dynamic> toJson() => _$NutritionOrderSupplementToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderEnteralFormula {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept baseFormulaType;
   String baseFormulaProductName;
   CodeableConcept additiveType;
@@ -204,8 +199,8 @@ class NutritionOrderEnteralFormula {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class NutritionOrderAdministration {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Timing schedule;
   Quantity quantity;
   Quantity rateQuantity;

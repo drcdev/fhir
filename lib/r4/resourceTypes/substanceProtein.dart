@@ -13,8 +13,8 @@ class SubstanceProtein {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept sequenceType;
   int numberOfSubunits;
   List<String> disulfideLinkage;
@@ -36,16 +36,15 @@ class SubstanceProtein {
     this.subunit,
   });
 
-  factory SubstanceProtein.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceProteinFromJson(json);
+  factory SubstanceProtein.fromJson(Map<String, dynamic> json) => _$SubstanceProteinFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceProteinToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SubstanceProteinSubunit {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int subunit;
   String sequence;
   int length;
@@ -69,7 +68,6 @@ class SubstanceProteinSubunit {
     this.cTerminalModification,
   });
 
-  factory SubstanceProteinSubunit.fromJson(Map<String, dynamic> json) =>
-      _$SubstanceProteinSubunitFromJson(json);
+  factory SubstanceProteinSubunit.fromJson(Map<String, dynamic> json) => _$SubstanceProteinSubunitFromJson(json);
   Map<String, dynamic> toJson() => _$SubstanceProteinSubunitToJson(this);
 }

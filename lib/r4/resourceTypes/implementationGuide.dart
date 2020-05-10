@@ -17,8 +17,8 @@ class ImplementationGuide {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   String version;
   String name;
@@ -72,16 +72,15 @@ class ImplementationGuide {
     this.manifest,
   });
 
-  factory ImplementationGuide.fromJson(Map<String, dynamic> json) =>
-      _$ImplementationGuideFromJson(json);
+  factory ImplementationGuide.fromJson(Map<String, dynamic> json) => _$ImplementationGuideFromJson(json);
   Map<String, dynamic> toJson() => _$ImplementationGuideToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideDependsOn {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Canonical uri;
   Id packageId;
   String version;
@@ -103,8 +102,8 @@ class ImplementationGuideDependsOn {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideGlobal {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code type;
   Canonical profile;
 
@@ -116,16 +115,15 @@ class ImplementationGuideGlobal {
     @required this.profile,
   });
 
-  factory ImplementationGuideGlobal.fromJson(Map<String, dynamic> json) =>
-      _$ImplementationGuideGlobalFromJson(json);
+  factory ImplementationGuideGlobal.fromJson(Map<String, dynamic> json) => _$ImplementationGuideGlobalFromJson(json);
   Map<String, dynamic> toJson() => _$ImplementationGuideGlobalToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideDefinition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ImplementationGuideGrouping> grouping;
   List<ImplementationGuideResource> resource;
   ImplementationGuidePage page;
@@ -151,8 +149,8 @@ class ImplementationGuideDefinition {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideGrouping {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String description;
 
@@ -172,8 +170,8 @@ class ImplementationGuideGrouping {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideResource {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference reference;
   List<String> fhirVersion;
   String name;
@@ -203,8 +201,8 @@ class ImplementationGuideResource {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuidePage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUrl nameUrl;
   Reference nameReference;
   String title;
@@ -222,16 +220,15 @@ class ImplementationGuidePage {
     this.page,
   });
 
-  factory ImplementationGuidePage.fromJson(Map<String, dynamic> json) =>
-      _$ImplementationGuidePageFromJson(json);
+  factory ImplementationGuidePage.fromJson(Map<String, dynamic> json) => _$ImplementationGuidePageFromJson(json);
   Map<String, dynamic> toJson() => _$ImplementationGuidePageToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   ImplementationGuideParameterCode code;
   String value;
 
@@ -251,8 +248,8 @@ class ImplementationGuideParameter {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideTemplate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   String source;
   String scope;
@@ -274,8 +271,8 @@ class ImplementationGuideTemplate {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideManifest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUrl rendering;
   List<ImplementationGuideResource1> resource;
   List<ImplementationGuidePage1> page;
@@ -301,8 +298,8 @@ class ImplementationGuideManifest {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuideResource1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference reference;
   bool exampleBoolean;
   Canonical exampleCanonical;
@@ -326,8 +323,8 @@ class ImplementationGuideResource1 {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImplementationGuidePage1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String title;
   List<String> anchor;
@@ -341,8 +338,7 @@ class ImplementationGuidePage1 {
     this.anchor,
   });
 
-  factory ImplementationGuidePage1.fromJson(Map<String, dynamic> json) =>
-      _$ImplementationGuidePage1FromJson(json);
+  factory ImplementationGuidePage1.fromJson(Map<String, dynamic> json) => _$ImplementationGuidePage1FromJson(json);
   Map<String, dynamic> toJson() => _$ImplementationGuidePage1ToJson(this);
 }
 
@@ -364,8 +360,7 @@ class ImplementationGuideStatus extends PrimitiveObject<String> {
     );
   }
   const ImplementationGuideStatus._(this.value);
-  factory ImplementationGuideStatus.fromJson(String json) =>
-      ImplementationGuideStatus(json);
+  factory ImplementationGuideStatus.fromJson(String json) => ImplementationGuideStatus(json);
   String toJson() => result();
 }
 
@@ -729,8 +724,7 @@ class ImplementationGuideLicense extends PrimitiveObject<String> {
     );
   }
   const ImplementationGuideLicense._(this.value);
-  factory ImplementationGuideLicense.fromJson(String json) =>
-      ImplementationGuideLicense(json);
+  factory ImplementationGuideLicense.fromJson(String json) => ImplementationGuideLicense(json);
   String toJson() => result();
 }
 
@@ -752,8 +746,7 @@ class ImplementationGuidePageGeneration extends PrimitiveObject<String> {
     );
   }
   const ImplementationGuidePageGeneration._(this.value);
-  factory ImplementationGuidePageGeneration.fromJson(String json) =>
-      ImplementationGuidePageGeneration(json);
+  factory ImplementationGuidePageGeneration.fromJson(String json) => ImplementationGuidePageGeneration(json);
   String toJson() => result();
 }
 
@@ -781,7 +774,6 @@ class ImplementationGuideParameterCode extends PrimitiveObject<String> {
     );
   }
   const ImplementationGuideParameterCode._(this.value);
-  factory ImplementationGuideParameterCode.fromJson(String json) =>
-      ImplementationGuideParameterCode(json);
+  factory ImplementationGuideParameterCode.fromJson(String json) => ImplementationGuideParameterCode(json);
   String toJson() => result();
 }

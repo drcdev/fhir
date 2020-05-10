@@ -10,7 +10,7 @@ part 'contactPoint.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ContactPoint {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   ContactPointSystem system;
   String value;
   ContactPointUse use;
@@ -27,8 +27,7 @@ class ContactPoint {
     this.period,
   });
 
-  factory ContactPoint.fromJson(Map<String, dynamic> json) =>
-      _$ContactPointFromJson(json);
+  factory ContactPoint.fromJson(Map<String, dynamic> json) => _$ContactPointFromJson(json);
   Map<String, dynamic> toJson() => _$ContactPointToJson(this);
 }
 

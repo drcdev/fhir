@@ -17,8 +17,8 @@ class Composition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CompositionStatus status;
   CodeableConcept type;
@@ -62,16 +62,15 @@ class Composition {
     this.section,
   });
 
-  factory Composition.fromJson(Map<String, dynamic> json) =>
-      _$CompositionFromJson(json);
+  factory Composition.fromJson(Map<String, dynamic> json) => _$CompositionFromJson(json);
   Map<String, dynamic> toJson() => _$CompositionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CompositionAttester {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CompositionAttesterMode mode;
   FhirDateTime time;
   Reference party;
@@ -85,16 +84,15 @@ class CompositionAttester {
     this.party,
   });
 
-  factory CompositionAttester.fromJson(Map<String, dynamic> json) =>
-      _$CompositionAttesterFromJson(json);
+  factory CompositionAttester.fromJson(Map<String, dynamic> json) => _$CompositionAttesterFromJson(json);
   Map<String, dynamic> toJson() => _$CompositionAttesterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CompositionRelatesTo {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Code code;
   Identifier targetIdentifier;
   Reference targetReference;
@@ -108,16 +106,15 @@ class CompositionRelatesTo {
     this.targetReference,
   });
 
-  factory CompositionRelatesTo.fromJson(Map<String, dynamic> json) =>
-      _$CompositionRelatesToFromJson(json);
+  factory CompositionRelatesTo.fromJson(Map<String, dynamic> json) => _$CompositionRelatesToFromJson(json);
   Map<String, dynamic> toJson() => _$CompositionRelatesToToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CompositionEvent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> code;
   Period period;
   List<Reference> detail;
@@ -131,16 +128,15 @@ class CompositionEvent {
     this.detail,
   });
 
-  factory CompositionEvent.fromJson(Map<String, dynamic> json) =>
-      _$CompositionEventFromJson(json);
+  factory CompositionEvent.fromJson(Map<String, dynamic> json) => _$CompositionEventFromJson(json);
   Map<String, dynamic> toJson() => _$CompositionEventToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CompositionSection {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String title;
   CodeableConcept code;
   List<Reference> author;
@@ -168,8 +164,7 @@ class CompositionSection {
     this.section,
   });
 
-  factory CompositionSection.fromJson(Map<String, dynamic> json) =>
-      _$CompositionSectionFromJson(json);
+  factory CompositionSection.fromJson(Map<String, dynamic> json) => _$CompositionSectionFromJson(json);
   Map<String, dynamic> toJson() => _$CompositionSectionToJson(this);
 }
 
@@ -213,7 +208,6 @@ class CompositionAttesterMode extends PrimitiveObject<String> {
     );
   }
   const CompositionAttesterMode._(this.value);
-  factory CompositionAttesterMode.fromJson(String json) =>
-      CompositionAttesterMode(json);
+  factory CompositionAttesterMode.fromJson(String json) => CompositionAttesterMode(json);
   String toJson() => result();
 }

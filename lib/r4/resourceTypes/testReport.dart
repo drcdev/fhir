@@ -17,8 +17,8 @@ class TestReport {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   String name;
   TestReportStatus status;
@@ -56,16 +56,15 @@ class TestReport {
     this.teardown,
   });
 
-  factory TestReport.fromJson(Map<String, dynamic> json) =>
-      _$TestReportFromJson(json);
+  factory TestReport.fromJson(Map<String, dynamic> json) => _$TestReportFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportParticipantType type;
   FhirUri uri;
   String display;
@@ -79,16 +78,15 @@ class TestReportParticipant {
     this.display,
   });
 
-  factory TestReportParticipant.fromJson(Map<String, dynamic> json) =>
-      _$TestReportParticipantFromJson(json);
+  factory TestReportParticipant.fromJson(Map<String, dynamic> json) => _$TestReportParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportParticipantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportSetup {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<TestReportAction> action;
 
   TestReportSetup({
@@ -98,16 +96,15 @@ class TestReportSetup {
     @required this.action,
   });
 
-  factory TestReportSetup.fromJson(Map<String, dynamic> json) =>
-      _$TestReportSetupFromJson(json);
+  factory TestReportSetup.fromJson(Map<String, dynamic> json) => _$TestReportSetupFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportSetupToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportOperation operation;
   TestReportAssert asserts;
 
@@ -119,16 +116,15 @@ class TestReportAction {
     this.asserts,
   });
 
-  factory TestReportAction.fromJson(Map<String, dynamic> json) =>
-      _$TestReportActionFromJson(json);
+  factory TestReportAction.fromJson(Map<String, dynamic> json) => _$TestReportActionFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportActionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportOperationResult result;
   Markdown message;
   FhirUri detail;
@@ -142,16 +138,15 @@ class TestReportOperation {
     this.detail,
   });
 
-  factory TestReportOperation.fromJson(Map<String, dynamic> json) =>
-      _$TestReportOperationFromJson(json);
+  factory TestReportOperation.fromJson(Map<String, dynamic> json) => _$TestReportOperationFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportOperationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportAssert {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportAssertResult result;
   Markdown message;
   String detail;
@@ -165,16 +160,15 @@ class TestReportAssert {
     this.detail,
   });
 
-  factory TestReportAssert.fromJson(Map<String, dynamic> json) =>
-      _$TestReportAssertFromJson(json);
+  factory TestReportAssert.fromJson(Map<String, dynamic> json) => _$TestReportAssertFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportAssertToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportTest {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String name;
   String description;
   List<TestReportAction1> action;
@@ -188,16 +182,15 @@ class TestReportTest {
     @required this.action,
   });
 
-  factory TestReportTest.fromJson(Map<String, dynamic> json) =>
-      _$TestReportTestFromJson(json);
+  factory TestReportTest.fromJson(Map<String, dynamic> json) => _$TestReportTestFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportTestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportAction1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportOperation operation;
   TestReportAssert asserts;
 
@@ -209,16 +202,15 @@ class TestReportAction1 {
     this.asserts,
   });
 
-  factory TestReportAction1.fromJson(Map<String, dynamic> json) =>
-      _$TestReportAction1FromJson(json);
+  factory TestReportAction1.fromJson(Map<String, dynamic> json) => _$TestReportAction1FromJson(json);
   Map<String, dynamic> toJson() => _$TestReportAction1ToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportTeardown {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<TestReportAction2> action;
 
   TestReportTeardown({
@@ -228,16 +220,15 @@ class TestReportTeardown {
     @required this.action,
   });
 
-  factory TestReportTeardown.fromJson(Map<String, dynamic> json) =>
-      _$TestReportTeardownFromJson(json);
+  factory TestReportTeardown.fromJson(Map<String, dynamic> json) => _$TestReportTeardownFromJson(json);
   Map<String, dynamic> toJson() => _$TestReportTeardownToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class TestReportAction2 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   TestReportOperation operation;
 
   TestReportAction2({
@@ -247,8 +238,7 @@ class TestReportAction2 {
     @required this.operation,
   });
 
-  factory TestReportAction2.fromJson(Map<String, dynamic> json) =>
-      _$TestReportAction2FromJson(json);
+  factory TestReportAction2.fromJson(Map<String, dynamic> json) => _$TestReportAction2FromJson(json);
   Map<String, dynamic> toJson() => _$TestReportAction2ToJson(this);
 }
 
@@ -313,8 +303,7 @@ class TestReportParticipantType extends PrimitiveObject<String> {
     );
   }
   const TestReportParticipantType._(this.value);
-  factory TestReportParticipantType.fromJson(String json) =>
-      TestReportParticipantType(json);
+  factory TestReportParticipantType.fromJson(String json) => TestReportParticipantType(json);
   String toJson() => result();
 }
 
@@ -337,8 +326,7 @@ class TestReportOperationResult extends PrimitiveObject<String> {
     );
   }
   const TestReportOperationResult._(this.value);
-  factory TestReportOperationResult.fromJson(String json) =>
-      TestReportOperationResult(json);
+  factory TestReportOperationResult.fromJson(String json) => TestReportOperationResult(json);
   String toJson() => result();
 }
 
@@ -361,7 +349,6 @@ class TestReportAssertResult extends PrimitiveObject<String> {
     );
   }
   const TestReportAssertResult._(this.value);
-  factory TestReportAssertResult.fromJson(String json) =>
-      TestReportAssertResult(json);
+  factory TestReportAssertResult.fromJson(String json) => TestReportAssertResult(json);
   String toJson() => result();
 }

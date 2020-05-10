@@ -10,7 +10,7 @@ part 'dataRequirement.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DataRequirement {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Code type;
   List<Canonical> profile;
   CodeableConcept subjectCodeableConcept;
@@ -35,16 +35,15 @@ class DataRequirement {
     this.sort,
   });
 
-  factory DataRequirement.fromJson(Map<String, dynamic> json) =>
-      _$DataRequirementFromJson(json);
+  factory DataRequirement.fromJson(Map<String, dynamic> json) => _$DataRequirementFromJson(json);
   Map<String, dynamic> toJson() => _$DataRequirementToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DataRequirementCodeFilter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   String searchParam;
   Canonical valueSet;
@@ -60,16 +59,15 @@ class DataRequirementCodeFilter {
     this.code,
   });
 
-  factory DataRequirementCodeFilter.fromJson(Map<String, dynamic> json) =>
-      _$DataRequirementCodeFilterFromJson(json);
+  factory DataRequirementCodeFilter.fromJson(Map<String, dynamic> json) => _$DataRequirementCodeFilterFromJson(json);
   Map<String, dynamic> toJson() => _$DataRequirementCodeFilterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DataRequirementDateFilter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   String searchParam;
   FhirDateTime valueDateTime;
@@ -87,16 +85,15 @@ class DataRequirementDateFilter {
     this.valueDuration,
   });
 
-  factory DataRequirementDateFilter.fromJson(Map<String, dynamic> json) =>
-      _$DataRequirementDateFilterFromJson(json);
+  factory DataRequirementDateFilter.fromJson(Map<String, dynamic> json) => _$DataRequirementDateFilterFromJson(json);
   Map<String, dynamic> toJson() => _$DataRequirementDateFilterToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DataRequirementSort {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   DataRequirementSortDirection direction;
 
@@ -108,8 +105,7 @@ class DataRequirementSort {
     this.direction,
   });
 
-  factory DataRequirementSort.fromJson(Map<String, dynamic> json) =>
-      _$DataRequirementSortFromJson(json);
+  factory DataRequirementSort.fromJson(Map<String, dynamic> json) => _$DataRequirementSortFromJson(json);
   Map<String, dynamic> toJson() => _$DataRequirementSortToJson(this);
 }
 
@@ -129,7 +125,6 @@ class DataRequirementSortDirection extends PrimitiveObject<String> {
     );
   }
   const DataRequirementSortDirection._(this.value);
-  factory DataRequirementSortDirection.fromJson(String json) =>
-      DataRequirementSortDirection(json);
+  factory DataRequirementSortDirection.fromJson(String json) => DataRequirementSortDirection(json);
   String toJson() => result();
 }

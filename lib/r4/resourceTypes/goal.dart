@@ -17,8 +17,8 @@ class Goal {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   GoalLifecycleStatus lifecycleStatus;
   CodeableConcept achievementStatus;
@@ -73,8 +73,8 @@ class Goal {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class GoalTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept measure;
   Quantity detailQuantity;
   Range detailRange;
@@ -102,8 +102,7 @@ class GoalTarget {
     this.dueDuration,
   });
 
-  factory GoalTarget.fromJson(Map<String, dynamic> json) =>
-      _$GoalTargetFromJson(json);
+  factory GoalTarget.fromJson(Map<String, dynamic> json) => _$GoalTargetFromJson(json);
   Map<String, dynamic> toJson() => _$GoalTargetToJson(this);
 }
 
@@ -130,7 +129,6 @@ class GoalLifecycleStatus extends PrimitiveObject<String> {
     );
   }
   const GoalLifecycleStatus._(this.value);
-  factory GoalLifecycleStatus.fromJson(String json) =>
-      GoalLifecycleStatus(json);
+  factory GoalLifecycleStatus.fromJson(String json) => GoalLifecycleStatus(json);
   String toJson() => result();
 }

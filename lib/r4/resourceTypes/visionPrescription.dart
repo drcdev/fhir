@@ -17,8 +17,8 @@ class VisionPrescription {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   FhirDateTime created;
@@ -48,16 +48,15 @@ class VisionPrescription {
     @required this.lensSpecification,
   });
 
-  factory VisionPrescription.fromJson(Map<String, dynamic> json) =>
-      _$VisionPrescriptionFromJson(json);
+  factory VisionPrescription.fromJson(Map<String, dynamic> json) => _$VisionPrescriptionFromJson(json);
   Map<String, dynamic> toJson() => _$VisionPrescriptionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class VisionPrescriptionLensSpecification {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept product;
   VisionPrescriptionLensSpecificationEye eye;
   double sphere;
@@ -93,18 +92,16 @@ class VisionPrescriptionLensSpecification {
     this.note,
   });
 
-  factory VisionPrescriptionLensSpecification.fromJson(
-          Map<String, dynamic> json) =>
+  factory VisionPrescriptionLensSpecification.fromJson(Map<String, dynamic> json) =>
       _$VisionPrescriptionLensSpecificationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$VisionPrescriptionLensSpecificationToJson(this);
+  Map<String, dynamic> toJson() => _$VisionPrescriptionLensSpecificationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class VisionPrescriptionPrism {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   double amount;
   VisionPrescriptionPrismBase base;
 
@@ -116,8 +113,7 @@ class VisionPrescriptionPrism {
     this.base,
   });
 
-  factory VisionPrescriptionPrism.fromJson(Map<String, dynamic> json) =>
-      _$VisionPrescriptionPrismFromJson(json);
+  factory VisionPrescriptionPrism.fromJson(Map<String, dynamic> json) => _$VisionPrescriptionPrismFromJson(json);
   Map<String, dynamic> toJson() => _$VisionPrescriptionPrismToJson(this);
 }
 
@@ -141,8 +137,7 @@ class VisionPrescriptionPrismBase extends PrimitiveObject<String> {
   }
   const VisionPrescriptionPrismBase._(this.value);
 
-  factory VisionPrescriptionPrismBase.fromJson(String json) =>
-      VisionPrescriptionPrismBase(json);
+  factory VisionPrescriptionPrismBase.fromJson(String json) => VisionPrescriptionPrismBase(json);
   String toJson() => result();
 }
 
@@ -162,7 +157,6 @@ class VisionPrescriptionLensSpecificationEye extends PrimitiveObject<String> {
     );
   }
   const VisionPrescriptionLensSpecificationEye._(this.value);
-  factory VisionPrescriptionLensSpecificationEye.fromJson(String json) =>
-      VisionPrescriptionLensSpecificationEye(json);
+  factory VisionPrescriptionLensSpecificationEye.fromJson(String json) => VisionPrescriptionLensSpecificationEye(json);
   String toJson() => result();
 }

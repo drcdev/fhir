@@ -14,8 +14,8 @@ class ImmunizationEvaluation {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   Reference patient;
@@ -59,7 +59,6 @@ class ImmunizationEvaluation {
     this.seriesDosesString,
   });
 
-  factory ImmunizationEvaluation.fromJson(Map<String, dynamic> json) =>
-      _$ImmunizationEvaluationFromJson(json);
+  factory ImmunizationEvaluation.fromJson(Map<String, dynamic> json) => _$ImmunizationEvaluationFromJson(json);
   Map<String, dynamic> toJson() => _$ImmunizationEvaluationToJson(this);
 }

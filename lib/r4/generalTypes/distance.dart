@@ -10,7 +10,7 @@ part 'distance.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Distance {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   DistanceComparator comparator;
   String unit;
@@ -27,8 +27,7 @@ class Distance {
     this.code,
   });
 
-  factory Distance.fromJson(Map<String, dynamic> json) =>
-      _$DistanceFromJson(json);
+  factory Distance.fromJson(Map<String, dynamic> json) => _$DistanceFromJson(json);
   Map<String, dynamic> toJson() => _$DistanceToJson(this);
 }
 

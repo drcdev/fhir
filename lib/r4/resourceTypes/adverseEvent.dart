@@ -17,8 +17,8 @@ class AdverseEvent {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   AdverseEventActuality actuality;
   List<CodeableConcept> category;
@@ -72,16 +72,15 @@ class AdverseEvent {
     this.study,
   });
 
-  factory AdverseEvent.fromJson(Map<String, dynamic> json) =>
-      _$AdverseEventFromJson(json);
+  factory AdverseEvent.fromJson(Map<String, dynamic> json) => _$AdverseEventFromJson(json);
   Map<String, dynamic> toJson() => _$AdverseEventToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AdverseEventSuspectEntity {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference instance;
   List<AdverseEventCausality> causality;
 
@@ -93,16 +92,15 @@ class AdverseEventSuspectEntity {
     this.causality,
   });
 
-  factory AdverseEventSuspectEntity.fromJson(Map<String, dynamic> json) =>
-      _$AdverseEventSuspectEntityFromJson(json);
+  factory AdverseEventSuspectEntity.fromJson(Map<String, dynamic> json) => _$AdverseEventSuspectEntityFromJson(json);
   Map<String, dynamic> toJson() => _$AdverseEventSuspectEntityToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AdverseEventCausality {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept assessment;
   String productRelatedness;
   Reference author;
@@ -118,8 +116,7 @@ class AdverseEventCausality {
     this.method,
   });
 
-  factory AdverseEventCausality.fromJson(Map<String, dynamic> json) =>
-      _$AdverseEventCausalityFromJson(json);
+  factory AdverseEventCausality.fromJson(Map<String, dynamic> json) => _$AdverseEventCausalityFromJson(json);
   Map<String, dynamic> toJson() => _$AdverseEventCausalityToJson(this);
 }
 
@@ -139,7 +136,6 @@ class AdverseEventActuality extends PrimitiveObject<String> {
     );
   }
   const AdverseEventActuality._(this.value);
-  factory AdverseEventActuality.fromJson(String json) =>
-      AdverseEventActuality(json);
+  factory AdverseEventActuality.fromJson(String json) => AdverseEventActuality(json);
   String toJson() => result();
 }

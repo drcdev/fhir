@@ -17,8 +17,8 @@ class ExplanationOfBenefit {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   ExplanationOfBenefitStatus status;
   CodeableConcept type;
@@ -118,16 +118,15 @@ class ExplanationOfBenefit {
     this.benefitBalance,
   });
 
-  factory ExplanationOfBenefit.fromJson(Map<String, dynamic> json) =>
-      _$ExplanationOfBenefitFromJson(json);
+  factory ExplanationOfBenefit.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitFromJson(json);
   Map<String, dynamic> toJson() => _$ExplanationOfBenefitToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitRelated {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference claim;
   CodeableConcept relationship;
   Identifier reference;
@@ -149,8 +148,8 @@ class ExplanationOfBenefitRelated {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitPayee {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Reference party;
 
@@ -162,16 +161,15 @@ class ExplanationOfBenefitPayee {
     this.party,
   });
 
-  factory ExplanationOfBenefitPayee.fromJson(Map<String, dynamic> json) =>
-      _$ExplanationOfBenefitPayeeFromJson(json);
+  factory ExplanationOfBenefitPayee.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitPayeeFromJson(json);
   Map<String, dynamic> toJson() => _$ExplanationOfBenefitPayeeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitCareTeam {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   Reference provider;
   bool responsible;
@@ -197,8 +195,8 @@ class ExplanationOfBenefitCareTeam {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitSupportingInfo {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   CodeableConcept category;
   CodeableConcept code;
@@ -228,18 +226,16 @@ class ExplanationOfBenefitSupportingInfo {
     this.reason,
   });
 
-  factory ExplanationOfBenefitSupportingInfo.fromJson(
-          Map<String, dynamic> json) =>
+  factory ExplanationOfBenefitSupportingInfo.fromJson(Map<String, dynamic> json) =>
       _$ExplanationOfBenefitSupportingInfoFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ExplanationOfBenefitSupportingInfoToJson(this);
+  Map<String, dynamic> toJson() => _$ExplanationOfBenefitSupportingInfoToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitDiagnosis {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   CodeableConcept diagnosisCodeableConcept;
   Reference diagnosisReference;
@@ -267,8 +263,8 @@ class ExplanationOfBenefitDiagnosis {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitProcedure {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   List<CodeableConcept> type;
   FhirDateTime date;
@@ -296,8 +292,8 @@ class ExplanationOfBenefitProcedure {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitInsurance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool focal;
   Reference coverage;
   List<String> preAuthRef;
@@ -319,8 +315,8 @@ class ExplanationOfBenefitInsurance {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitAccident {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Date date;
   CodeableConcept type;
   Address locationAddress;
@@ -344,8 +340,8 @@ class ExplanationOfBenefitAccident {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   List<int> careTeamSequence;
   List<int> diagnosisSequence;
@@ -405,16 +401,15 @@ class ExplanationOfBenefitItem {
     this.detail,
   });
 
-  factory ExplanationOfBenefitItem.fromJson(Map<String, dynamic> json) =>
-      _$ExplanationOfBenefitItemFromJson(json);
+  factory ExplanationOfBenefitItem.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitItemFromJson(json);
   Map<String, dynamic> toJson() => _$ExplanationOfBenefitItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitAdjudication {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   CodeableConcept reason;
   Money amount;
@@ -430,18 +425,16 @@ class ExplanationOfBenefitAdjudication {
     this.value,
   });
 
-  factory ExplanationOfBenefitAdjudication.fromJson(
-          Map<String, dynamic> json) =>
+  factory ExplanationOfBenefitAdjudication.fromJson(Map<String, dynamic> json) =>
       _$ExplanationOfBenefitAdjudicationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ExplanationOfBenefitAdjudicationToJson(this);
+  Map<String, dynamic> toJson() => _$ExplanationOfBenefitAdjudicationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitDetail {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   CodeableConcept revenue;
   CodeableConcept category;
@@ -477,16 +470,15 @@ class ExplanationOfBenefitDetail {
     this.subDetail,
   });
 
-  factory ExplanationOfBenefitDetail.fromJson(Map<String, dynamic> json) =>
-      _$ExplanationOfBenefitDetailFromJson(json);
+  factory ExplanationOfBenefitDetail.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitDetailFromJson(json);
   Map<String, dynamic> toJson() => _$ExplanationOfBenefitDetailToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitSubDetail {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   CodeableConcept revenue;
   CodeableConcept category;
@@ -528,8 +520,8 @@ class ExplanationOfBenefitSubDetail {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitAddItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<int> itemSequence;
   List<int> detailSequence;
   List<int> subDetailSequence;
@@ -587,8 +579,8 @@ class ExplanationOfBenefitAddItem {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitDetail1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept productOrService;
   List<CodeableConcept> modifier;
   Quantity quantity;
@@ -622,8 +614,8 @@ class ExplanationOfBenefitDetail1 {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitSubDetail1 {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept productOrService;
   List<CodeableConcept> modifier;
   Quantity quantity;
@@ -655,8 +647,8 @@ class ExplanationOfBenefitSubDetail1 {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitTotal {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   Money amount;
 
@@ -668,16 +660,15 @@ class ExplanationOfBenefitTotal {
     @required this.amount,
   });
 
-  factory ExplanationOfBenefitTotal.fromJson(Map<String, dynamic> json) =>
-      _$ExplanationOfBenefitTotalFromJson(json);
+  factory ExplanationOfBenefitTotal.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitTotalFromJson(json);
   Map<String, dynamic> toJson() => _$ExplanationOfBenefitTotalToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitPayment {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Money adjustment;
   CodeableConcept adjustmentReason;
@@ -705,8 +696,8 @@ class ExplanationOfBenefitPayment {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitProcessNote {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int number;
   ExplanationOfBenefitProcessNote type;
   String text;
@@ -724,15 +715,14 @@ class ExplanationOfBenefitProcessNote {
 
   factory ExplanationOfBenefitProcessNote.fromJson(Map<String, dynamic> json) =>
       _$ExplanationOfBenefitProcessNoteFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ExplanationOfBenefitProcessNoteToJson(this);
+  Map<String, dynamic> toJson() => _$ExplanationOfBenefitProcessNoteToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitBenefitBalance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   bool excluded;
   String name;
@@ -756,18 +746,16 @@ class ExplanationOfBenefitBenefitBalance {
     this.financial,
   });
 
-  factory ExplanationOfBenefitBenefitBalance.fromJson(
-          Map<String, dynamic> json) =>
+  factory ExplanationOfBenefitBenefitBalance.fromJson(Map<String, dynamic> json) =>
       _$ExplanationOfBenefitBenefitBalanceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ExplanationOfBenefitBenefitBalanceToJson(this);
+  Map<String, dynamic> toJson() => _$ExplanationOfBenefitBenefitBalanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExplanationOfBenefitFinancial {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   int allowedUnsignedInt;
   String allowedString;
@@ -810,8 +798,7 @@ class ExplanationOfBenefitStatus extends PrimitiveObject<String> {
     );
   }
   const ExplanationOfBenefitStatus._(this.value);
-  factory ExplanationOfBenefitStatus.fromJson(String json) =>
-      ExplanationOfBenefitStatus(json);
+  factory ExplanationOfBenefitStatus.fromJson(String json) => ExplanationOfBenefitStatus(json);
   String toJson() => result();
 }
 
@@ -832,7 +819,6 @@ class ExplanationOfBenefitProcessNoteType extends PrimitiveObject<String> {
     );
   }
   const ExplanationOfBenefitProcessNoteType._(this.value);
-  factory ExplanationOfBenefitProcessNoteType.fromJson(String json) =>
-      ExplanationOfBenefitProcessNoteType(json);
+  factory ExplanationOfBenefitProcessNoteType.fromJson(String json) => ExplanationOfBenefitProcessNoteType(json);
   String toJson() => result();
 }

@@ -14,8 +14,8 @@ class DeviceRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Canonical> instantiatesCanonical;
   List<FhirUri> instantiatesUri;
@@ -83,16 +83,15 @@ class DeviceRequest {
     this.relevantHistory,
   });
 
-  factory DeviceRequest.fromJson(Map<String, dynamic> json) =>
-      _$DeviceRequestFromJson(json);
+  factory DeviceRequest.fromJson(Map<String, dynamic> json) => _$DeviceRequestFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DeviceRequestParameter {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   CodeableConcept valueCodeableConcept;
   Quantity valueQuantity;
@@ -110,7 +109,6 @@ class DeviceRequestParameter {
     this.valueBoolean,
   });
 
-  factory DeviceRequestParameter.fromJson(Map<String, dynamic> json) =>
-      _$DeviceRequestParameterFromJson(json);
+  factory DeviceRequestParameter.fromJson(Map<String, dynamic> json) => _$DeviceRequestParameterFromJson(json);
   Map<String, dynamic> toJson() => _$DeviceRequestParameterToJson(this);
 }

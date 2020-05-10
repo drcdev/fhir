@@ -17,8 +17,8 @@ class Appointment {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   AppointmentStatus status;
   CodeableConcept cancelationReason;
@@ -76,16 +76,15 @@ class Appointment {
     this.requestedPeriod,
   });
 
-  factory Appointment.fromJson(Map<String, dynamic> json) =>
-      _$AppointmentFromJson(json);
+  factory Appointment.fromJson(Map<String, dynamic> json) => _$AppointmentFromJson(json);
   Map<String, dynamic> toJson() => _$AppointmentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class AppointmentParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> type;
   Reference actor;
   AppointmentParticipantRequired required;
@@ -103,8 +102,7 @@ class AppointmentParticipant {
     this.period,
   });
 
-  factory AppointmentParticipant.fromJson(Map<String, dynamic> json) =>
-      _$AppointmentParticipantFromJson(json);
+  factory AppointmentParticipant.fromJson(Map<String, dynamic> json) => _$AppointmentParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$AppointmentParticipantToJson(this);
 }
 
@@ -153,8 +151,7 @@ class AppointmentParticipantRequired extends PrimitiveObject<String> {
     );
   }
   const AppointmentParticipantRequired._(this.value);
-  factory AppointmentParticipantRequired.fromJson(String json) =>
-      AppointmentParticipantRequired(json);
+  factory AppointmentParticipantRequired.fromJson(String json) => AppointmentParticipantRequired(json);
   String toJson() => result();
 }
 
@@ -176,7 +173,6 @@ class AppointmentParticipantStatus extends PrimitiveObject<String> {
     );
   }
   const AppointmentParticipantStatus._(this.value);
-  factory AppointmentParticipantStatus.fromJson(String json) =>
-      AppointmentParticipantStatus(json);
+  factory AppointmentParticipantStatus.fromJson(String json) => AppointmentParticipantStatus(json);
   String toJson() => result();
 }

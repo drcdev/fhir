@@ -8,7 +8,7 @@ part 'usageContext.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class UsageContext {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Coding code;
   CodeableConcept valueCodeableConcept;
   Quantity valueQuantity;
@@ -25,7 +25,6 @@ class UsageContext {
     this.valueReference,
   });
 
-  factory UsageContext.fromJson(Map<String, dynamic> json) =>
-      _$UsageContextFromJson(json);
+  factory UsageContext.fromJson(Map<String, dynamic> json) => _$UsageContextFromJson(json);
   Map<String, dynamic> toJson() => _$UsageContextToJson(this);
 }

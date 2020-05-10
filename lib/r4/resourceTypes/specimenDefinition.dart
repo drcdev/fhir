@@ -16,8 +16,8 @@ class SpecimenDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   CodeableConcept typeCollected;
   List<CodeableConcept> patientPreparation;
@@ -42,16 +42,15 @@ class SpecimenDefinition {
     this.typeTested,
   });
 
-  factory SpecimenDefinition.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenDefinitionFromJson(json);
+  factory SpecimenDefinition.fromJson(Map<String, dynamic> json) => _$SpecimenDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenDefinitionTypeTested {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool isDerived;
   CodeableConcept type;
   SpecimenDefinitionTypeTestedPreference preference;
@@ -83,8 +82,8 @@ class SpecimenDefinitionTypeTested {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenDefinitionContainer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept material;
   CodeableConcept type;
   CodeableConcept cap;
@@ -118,8 +117,8 @@ class SpecimenDefinitionContainer {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenDefinitionAdditive {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept additiveCodeableConcept;
   Reference additiveReference;
 
@@ -131,16 +130,15 @@ class SpecimenDefinitionAdditive {
     this.additiveReference,
   });
 
-  factory SpecimenDefinitionAdditive.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenDefinitionAdditiveFromJson(json);
+  factory SpecimenDefinitionAdditive.fromJson(Map<String, dynamic> json) => _$SpecimenDefinitionAdditiveFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenDefinitionAdditiveToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenDefinitionHandling {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept temperatureQualifier;
   Range temperatureRange;
   Duration maxDuration;
@@ -156,8 +154,7 @@ class SpecimenDefinitionHandling {
     this.instruction,
   });
 
-  factory SpecimenDefinitionHandling.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenDefinitionHandlingFromJson(json);
+  factory SpecimenDefinitionHandling.fromJson(Map<String, dynamic> json) => _$SpecimenDefinitionHandlingFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenDefinitionHandlingToJson(this);
 }
 
@@ -177,7 +174,6 @@ class SpecimenDefinitionTypeTestedPreference extends PrimitiveObject<String> {
     );
   }
   const SpecimenDefinitionTypeTestedPreference._(this.value);
-  factory SpecimenDefinitionTypeTestedPreference.fromJson(String json) =>
-      SpecimenDefinitionTypeTestedPreference(json);
+  factory SpecimenDefinitionTypeTestedPreference.fromJson(String json) => SpecimenDefinitionTypeTestedPreference(json);
   String toJson() => result();
 }

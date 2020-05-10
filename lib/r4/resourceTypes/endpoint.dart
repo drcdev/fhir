@@ -17,8 +17,8 @@ class Endpoint {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   EndpointStatus status;
   Coding connectionType;
@@ -54,8 +54,7 @@ class Endpoint {
     this.header,
   });
 
-  factory Endpoint.fromJson(Map<String, dynamic> json) =>
-      _$EndpointFromJson(json);
+  factory Endpoint.fromJson(Map<String, dynamic> json) => _$EndpointFromJson(json);
   Map<String, dynamic> toJson() => _$EndpointToJson(this);
 }
 

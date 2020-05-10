@@ -16,8 +16,8 @@ class Specimen {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Identifier accessionIdentifier;
   SpecimenStatus status;
@@ -57,16 +57,15 @@ class Specimen {
     this.note,
   });
 
-  factory Specimen.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenFromJson(json);
+  factory Specimen.fromJson(Map<String, dynamic> json) => _$SpecimenFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenCollection {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Reference collector;
   FhirDateTime collectedDateTime;
   Period collectedPeriod;
@@ -92,16 +91,15 @@ class SpecimenCollection {
     this.fastingStatusDuration,
   });
 
-  factory SpecimenCollection.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenCollectionFromJson(json);
+  factory SpecimenCollection.fromJson(Map<String, dynamic> json) => _$SpecimenCollectionFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenCollectionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenProcessing {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   CodeableConcept procedure;
   List<Reference> additive;
@@ -119,16 +117,15 @@ class SpecimenProcessing {
     this.timePeriod,
   });
 
-  factory SpecimenProcessing.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenProcessingFromJson(json);
+  factory SpecimenProcessing.fromJson(Map<String, dynamic> json) => _$SpecimenProcessingFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenProcessingToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class SpecimenContainer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   String description;
   CodeableConcept type;
@@ -150,8 +147,7 @@ class SpecimenContainer {
     this.additiveReference,
   });
 
-  factory SpecimenContainer.fromJson(Map<String, dynamic> json) =>
-      _$SpecimenContainerFromJson(json);
+  factory SpecimenContainer.fromJson(Map<String, dynamic> json) => _$SpecimenContainerFromJson(json);
   Map<String, dynamic> toJson() => _$SpecimenContainerToJson(this);
 }
 

@@ -9,8 +9,8 @@ part 'dosage.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Dosage {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   String text;
   List<CodeableConcept> additionalInstruction;
@@ -53,8 +53,8 @@ class Dosage {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class DosageDoseAndRate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   Range doseRange;
   Quantity doseQuantity;
@@ -74,7 +74,6 @@ class DosageDoseAndRate {
     this.rateQuantity,
   });
 
-  factory DosageDoseAndRate.fromJson(Map<String, dynamic> json) =>
-      _$DosageDoseAndRateFromJson(json);
+  factory DosageDoseAndRate.fromJson(Map<String, dynamic> json) => _$DosageDoseAndRateFromJson(json);
   Map<String, dynamic> toJson() => _$DosageDoseAndRateToJson(this);
 }

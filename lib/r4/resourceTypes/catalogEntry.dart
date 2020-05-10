@@ -17,8 +17,8 @@ class CatalogEntry {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   CodeableConcept type;
   bool orderable;
@@ -58,16 +58,15 @@ class CatalogEntry {
     this.relatedEntry,
   });
 
-  factory CatalogEntry.fromJson(Map<String, dynamic> json) =>
-      _$CatalogEntryFromJson(json);
+  factory CatalogEntry.fromJson(Map<String, dynamic> json) => _$CatalogEntryFromJson(json);
   Map<String, dynamic> toJson() => _$CatalogEntryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CatalogEntryRelatedEntry {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CatalogEntryRelatedEntryRelationtype relationtype;
   Reference item;
 
@@ -79,8 +78,7 @@ class CatalogEntryRelatedEntry {
     @required this.item,
   });
 
-  factory CatalogEntryRelatedEntry.fromJson(Map<String, dynamic> json) =>
-      _$CatalogEntryRelatedEntryFromJson(json);
+  factory CatalogEntryRelatedEntry.fromJson(Map<String, dynamic> json) => _$CatalogEntryRelatedEntryFromJson(json);
   Map<String, dynamic> toJson() => _$CatalogEntryRelatedEntryToJson(this);
 }
 
@@ -122,7 +120,6 @@ class CatalogEntryRelatedEntryRelationtype extends PrimitiveObject<String> {
     );
   }
   const CatalogEntryRelatedEntryRelationtype._(this.value);
-  factory CatalogEntryRelatedEntryRelationtype.fromJson(String json) =>
-      CatalogEntryRelatedEntryRelationtype(json);
+  factory CatalogEntryRelatedEntryRelationtype.fromJson(String json) => CatalogEntryRelatedEntryRelationtype(json);
   String toJson() => result();
 }

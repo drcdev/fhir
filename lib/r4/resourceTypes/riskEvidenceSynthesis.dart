@@ -17,8 +17,8 @@ class RiskEvidenceSynthesis {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -94,16 +94,15 @@ class RiskEvidenceSynthesis {
     this.certainty,
   });
 
-  factory RiskEvidenceSynthesis.fromJson(Map<String, dynamic> json) =>
-      _$RiskEvidenceSynthesisFromJson(json);
+  factory RiskEvidenceSynthesis.fromJson(Map<String, dynamic> json) => _$RiskEvidenceSynthesisFromJson(json);
   Map<String, dynamic> toJson() => _$RiskEvidenceSynthesisToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskEvidenceSynthesisSampleSize {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   int numberOfStudies;
   int numberOfParticipants;
@@ -119,15 +118,14 @@ class RiskEvidenceSynthesisSampleSize {
 
   factory RiskEvidenceSynthesisSampleSize.fromJson(Map<String, dynamic> json) =>
       _$RiskEvidenceSynthesisSampleSizeFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$RiskEvidenceSynthesisSampleSizeToJson(this);
+  Map<String, dynamic> toJson() => _$RiskEvidenceSynthesisSampleSizeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskEvidenceSynthesisRiskEstimate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String description;
   CodeableConcept type;
   double value;
@@ -149,18 +147,16 @@ class RiskEvidenceSynthesisRiskEstimate {
     this.precisionEstimate,
   });
 
-  factory RiskEvidenceSynthesisRiskEstimate.fromJson(
-          Map<String, dynamic> json) =>
+  factory RiskEvidenceSynthesisRiskEstimate.fromJson(Map<String, dynamic> json) =>
       _$RiskEvidenceSynthesisRiskEstimateFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$RiskEvidenceSynthesisRiskEstimateToJson(this);
+  Map<String, dynamic> toJson() => _$RiskEvidenceSynthesisRiskEstimateToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskEvidenceSynthesisPrecisionEstimate {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   double level;
   double from;
@@ -176,18 +172,16 @@ class RiskEvidenceSynthesisPrecisionEstimate {
     this.to,
   });
 
-  factory RiskEvidenceSynthesisPrecisionEstimate.fromJson(
-          Map<String, dynamic> json) =>
+  factory RiskEvidenceSynthesisPrecisionEstimate.fromJson(Map<String, dynamic> json) =>
       _$RiskEvidenceSynthesisPrecisionEstimateFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$RiskEvidenceSynthesisPrecisionEstimateToJson(this);
+  Map<String, dynamic> toJson() => _$RiskEvidenceSynthesisPrecisionEstimateToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskEvidenceSynthesisCertainty {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<CodeableConcept> rating;
   List<Annotation> note;
   List<RiskEvidenceSynthesisCertaintySubcomponent> certaintySubcomponent;
@@ -209,8 +203,8 @@ class RiskEvidenceSynthesisCertainty {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class RiskEvidenceSynthesisCertaintySubcomponent {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept type;
   List<CodeableConcept> rating;
   List<Annotation> note;
@@ -224,11 +218,9 @@ class RiskEvidenceSynthesisCertaintySubcomponent {
     this.note,
   });
 
-  factory RiskEvidenceSynthesisCertaintySubcomponent.fromJson(
-          Map<String, dynamic> json) =>
+  factory RiskEvidenceSynthesisCertaintySubcomponent.fromJson(Map<String, dynamic> json) =>
       _$RiskEvidenceSynthesisCertaintySubcomponentFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$RiskEvidenceSynthesisCertaintySubcomponentToJson(this);
+  Map<String, dynamic> toJson() => _$RiskEvidenceSynthesisCertaintySubcomponentToJson(this);
 }
 
 class RiskEvidenceSynthesisStatus extends PrimitiveObject<String> {
@@ -249,7 +241,6 @@ class RiskEvidenceSynthesisStatus extends PrimitiveObject<String> {
     );
   }
   const RiskEvidenceSynthesisStatus._(this.value);
-  factory RiskEvidenceSynthesisStatus.fromJson(String json) =>
-      RiskEvidenceSynthesisStatus(json);
+  factory RiskEvidenceSynthesisStatus.fromJson(String json) => RiskEvidenceSynthesisStatus(json);
   String toJson() => result();
 }

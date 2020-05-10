@@ -16,8 +16,8 @@ class Location {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   LocationStatus status;
   Coding operationalStatus;
@@ -65,16 +65,15 @@ class Location {
     this.endpoint,
   });
 
-  factory Location.fromJson(Map<String, dynamic> json) =>
-      _$LocationFromJson(json);
+  factory Location.fromJson(Map<String, dynamic> json) => _$LocationFromJson(json);
   Map<String, dynamic> toJson() => _$LocationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class LocationPosition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   double longitude;
   double latitude;
   double altitude;
@@ -88,16 +87,15 @@ class LocationPosition {
     this.altitude,
   });
 
-  factory LocationPosition.fromJson(Map<String, dynamic> json) =>
-      _$LocationPositionFromJson(json);
+  factory LocationPosition.fromJson(Map<String, dynamic> json) => _$LocationPositionFromJson(json);
   Map<String, dynamic> toJson() => _$LocationPositionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class LocationHoursOfOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Code> daysOfWeek;
   bool allDay;
   Time openingTime;
@@ -113,8 +111,7 @@ class LocationHoursOfOperation {
     this.closingTime,
   });
 
-  factory LocationHoursOfOperation.fromJson(Map<String, dynamic> json) =>
-      _$LocationHoursOfOperationFromJson(json);
+  factory LocationHoursOfOperation.fromJson(Map<String, dynamic> json) => _$LocationHoursOfOperationFromJson(json);
   Map<String, dynamic> toJson() => _$LocationHoursOfOperationToJson(this);
 }
 

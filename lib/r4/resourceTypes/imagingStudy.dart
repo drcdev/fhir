@@ -17,8 +17,8 @@ class ImagingStudy {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   ImagingStudyStatus status;
   List<Coding> modality;
@@ -72,16 +72,15 @@ class ImagingStudy {
     this.series,
   });
 
-  factory ImagingStudy.fromJson(Map<String, dynamic> json) =>
-      _$ImagingStudyFromJson(json);
+  factory ImagingStudy.fromJson(Map<String, dynamic> json) => _$ImagingStudyFromJson(json);
   Map<String, dynamic> toJson() => _$ImagingStudyToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImagingStudySeries {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id uid;
   int number;
   Coding modality;
@@ -113,16 +112,15 @@ class ImagingStudySeries {
     this.instance,
   });
 
-  factory ImagingStudySeries.fromJson(Map<String, dynamic> json) =>
-      _$ImagingStudySeriesFromJson(json);
+  factory ImagingStudySeries.fromJson(Map<String, dynamic> json) => _$ImagingStudySeriesFromJson(json);
   Map<String, dynamic> toJson() => _$ImagingStudySeriesToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImagingStudyPerformer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept function;
   Reference actor;
 
@@ -134,16 +132,15 @@ class ImagingStudyPerformer {
     @required this.actor,
   });
 
-  factory ImagingStudyPerformer.fromJson(Map<String, dynamic> json) =>
-      _$ImagingStudyPerformerFromJson(json);
+  factory ImagingStudyPerformer.fromJson(Map<String, dynamic> json) => _$ImagingStudyPerformerFromJson(json);
   Map<String, dynamic> toJson() => _$ImagingStudyPerformerToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ImagingStudyInstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id uid;
   Coding sopClass;
   int number;
@@ -159,8 +156,7 @@ class ImagingStudyInstance {
     this.title,
   });
 
-  factory ImagingStudyInstance.fromJson(Map<String, dynamic> json) =>
-      _$ImagingStudyInstanceFromJson(json);
+  factory ImagingStudyInstance.fromJson(Map<String, dynamic> json) => _$ImagingStudyInstanceFromJson(json);
   Map<String, dynamic> toJson() => _$ImagingStudyInstanceToJson(this);
 }
 

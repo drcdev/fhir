@@ -14,8 +14,8 @@ class MedicationStatement {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   List<Reference> basedOn;
   List<Reference> partOf;
@@ -67,7 +67,6 @@ class MedicationStatement {
     this.dosage,
   });
 
-  factory MedicationStatement.fromJson(Map<String, dynamic> json) =>
-      _$MedicationStatementFromJson(json);
+  factory MedicationStatement.fromJson(Map<String, dynamic> json) => _$MedicationStatementFromJson(json);
   Map<String, dynamic> toJson() => _$MedicationStatementToJson(this);
 }

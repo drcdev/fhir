@@ -16,8 +16,8 @@ class QuestionnaireResponse {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Identifier identifier;
   List<Reference> basedOn;
   List<Reference> partOf;
@@ -53,16 +53,15 @@ class QuestionnaireResponse {
     this.item,
   });
 
-  factory QuestionnaireResponse.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireResponseFromJson(json);
+  factory QuestionnaireResponse.fromJson(Map<String, dynamic> json) => _$QuestionnaireResponseFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireResponseToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireResponseItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String linkId;
   FhirUri definition;
   String text;
@@ -80,16 +79,15 @@ class QuestionnaireResponseItem {
     this.item,
   });
 
-  factory QuestionnaireResponseItem.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireResponseItemFromJson(json);
+  factory QuestionnaireResponseItem.fromJson(Map<String, dynamic> json) => _$QuestionnaireResponseItemFromJson(json);
   Map<String, dynamic> toJson() => _$QuestionnaireResponseItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class QuestionnaireResponseAnswer {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool valueBoolean;
   double valueDecimal;
   int valueInteger;
@@ -147,7 +145,6 @@ class QuestionnaireResponseStatus extends PrimitiveObject<String> {
     );
   }
   const QuestionnaireResponseStatus._(this.value);
-  factory QuestionnaireResponseStatus.fromJson(String json) =>
-      QuestionnaireResponseStatus(json);
+  factory QuestionnaireResponseStatus.fromJson(String json) => QuestionnaireResponseStatus(json);
   String toJson() => result();
 }

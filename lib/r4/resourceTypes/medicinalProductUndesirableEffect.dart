@@ -13,8 +13,8 @@ class MedicinalProductUndesirableEffect {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Reference> subject;
   CodeableConcept symptomConditionEffect;
   CodeableConcept classification;
@@ -38,9 +38,7 @@ class MedicinalProductUndesirableEffect {
     this.population,
   });
 
-  factory MedicinalProductUndesirableEffect.fromJson(
-          Map<String, dynamic> json) =>
+  factory MedicinalProductUndesirableEffect.fromJson(Map<String, dynamic> json) =>
       _$MedicinalProductUndesirableEffectFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$MedicinalProductUndesirableEffectToJson(this);
+  Map<String, dynamic> toJson() => _$MedicinalProductUndesirableEffectToJson(this);
 }

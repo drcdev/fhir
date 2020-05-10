@@ -10,7 +10,7 @@ part 'count.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Count {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   double value;
   CountComparator comparator;
   String unit;

@@ -14,8 +14,8 @@ class ClinicalImpression {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept statusReason;
@@ -71,16 +71,15 @@ class ClinicalImpression {
     this.note,
   });
 
-  factory ClinicalImpression.fromJson(Map<String, dynamic> json) =>
-      _$ClinicalImpressionFromJson(json);
+  factory ClinicalImpression.fromJson(Map<String, dynamic> json) => _$ClinicalImpressionFromJson(json);
   Map<String, dynamic> toJson() => _$ClinicalImpressionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ClinicalImpressionInvestigation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept code;
   List<Reference> item;
 
@@ -94,15 +93,14 @@ class ClinicalImpressionInvestigation {
 
   factory ClinicalImpressionInvestigation.fromJson(Map<String, dynamic> json) =>
       _$ClinicalImpressionInvestigationFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ClinicalImpressionInvestigationToJson(this);
+  Map<String, dynamic> toJson() => _$ClinicalImpressionInvestigationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ClinicalImpressionFinding {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept itemCodeableConcept;
   Reference itemReference;
   String basis;
@@ -116,7 +114,6 @@ class ClinicalImpressionFinding {
     this.basis,
   });
 
-  factory ClinicalImpressionFinding.fromJson(Map<String, dynamic> json) =>
-      _$ClinicalImpressionFindingFromJson(json);
+  factory ClinicalImpressionFinding.fromJson(Map<String, dynamic> json) => _$ClinicalImpressionFindingFromJson(json);
   Map<String, dynamic> toJson() => _$ClinicalImpressionFindingToJson(this);
 }

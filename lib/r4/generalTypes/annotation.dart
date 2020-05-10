@@ -7,7 +7,7 @@ part 'annotation.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class Annotation {
   String id;
-  List<Extension> extension;
+  List<FhirExtension> extension;
   Reference authorReference;
   String authorString;
   FhirDateTime time;
@@ -22,7 +22,6 @@ class Annotation {
     this.text,
   });
 
-  factory Annotation.fromJson(Map<String, dynamic> json) =>
-      _$AnnotationFromJson(json);
+  factory Annotation.fromJson(Map<String, dynamic> json) => _$AnnotationFromJson(json);
   Map<String, dynamic> toJson() => _$AnnotationToJson(this);
 }

@@ -16,8 +16,8 @@ class ExampleScenario {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -65,16 +65,15 @@ class ExampleScenario {
     this.workflow,
   });
 
-  factory ExampleScenario.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioFromJson(json);
+  factory ExampleScenario.fromJson(Map<String, dynamic> json) => _$ExampleScenarioFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioActor {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String actorId;
   ExampleScenarioActorType type;
   String name;
@@ -90,16 +89,15 @@ class ExampleScenarioActor {
     this.description,
   });
 
-  factory ExampleScenarioActor.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioActorFromJson(json);
+  factory ExampleScenarioActor.fromJson(Map<String, dynamic> json) => _$ExampleScenarioActorFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioActorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioInstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String resourceId;
   Code resourceType;
   String name;
@@ -119,16 +117,15 @@ class ExampleScenarioInstance {
     this.containedInstance,
   });
 
-  factory ExampleScenarioInstance.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioInstanceFromJson(json);
+  factory ExampleScenarioInstance.fromJson(Map<String, dynamic> json) => _$ExampleScenarioInstanceFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioInstanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioVersion {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String versionId;
   Markdown description;
 
@@ -140,16 +137,15 @@ class ExampleScenarioVersion {
     this.description,
   });
 
-  factory ExampleScenarioVersion.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioVersionFromJson(json);
+  factory ExampleScenarioVersion.fromJson(Map<String, dynamic> json) => _$ExampleScenarioVersionFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioVersionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioContainedInstance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String resourceId;
   String versionId;
 
@@ -161,18 +157,16 @@ class ExampleScenarioContainedInstance {
     this.versionId,
   });
 
-  factory ExampleScenarioContainedInstance.fromJson(
-          Map<String, dynamic> json) =>
+  factory ExampleScenarioContainedInstance.fromJson(Map<String, dynamic> json) =>
       _$ExampleScenarioContainedInstanceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ExampleScenarioContainedInstanceToJson(this);
+  Map<String, dynamic> toJson() => _$ExampleScenarioContainedInstanceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioProcess {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String title;
   Markdown description;
   Markdown preConditions;
@@ -190,16 +184,15 @@ class ExampleScenarioProcess {
     this.step,
   });
 
-  factory ExampleScenarioProcess.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioProcessFromJson(json);
+  factory ExampleScenarioProcess.fromJson(Map<String, dynamic> json) => _$ExampleScenarioProcessFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioProcessToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioStep {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<ExampleScenarioProcess> process;
   bool pause;
   ExampleScenarioOperation operation;
@@ -215,16 +208,15 @@ class ExampleScenarioStep {
     this.alternative,
   });
 
-  factory ExampleScenarioStep.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioStepFromJson(json);
+  factory ExampleScenarioStep.fromJson(Map<String, dynamic> json) => _$ExampleScenarioStepFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioStepToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioOperation {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String number;
   String type;
   String name;
@@ -252,16 +244,15 @@ class ExampleScenarioOperation {
     this.response,
   });
 
-  factory ExampleScenarioOperation.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioOperationFromJson(json);
+  factory ExampleScenarioOperation.fromJson(Map<String, dynamic> json) => _$ExampleScenarioOperationFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioOperationToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class ExampleScenarioAlternative {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String title;
   Markdown description;
   List<ExampleScenarioStep> step;
@@ -275,8 +266,7 @@ class ExampleScenarioAlternative {
     this.step,
   });
 
-  factory ExampleScenarioAlternative.fromJson(Map<String, dynamic> json) =>
-      _$ExampleScenarioAlternativeFromJson(json);
+  factory ExampleScenarioAlternative.fromJson(Map<String, dynamic> json) => _$ExampleScenarioAlternativeFromJson(json);
   Map<String, dynamic> toJson() => _$ExampleScenarioAlternativeToJson(this);
 }
 
@@ -298,8 +288,7 @@ class ExampleScenarioStatus extends PrimitiveObject<String> {
     );
   }
   const ExampleScenarioStatus._(this.value);
-  factory ExampleScenarioStatus.fromJson(String json) =>
-      ExampleScenarioStatus(json);
+  factory ExampleScenarioStatus.fromJson(String json) => ExampleScenarioStatus(json);
   String toJson() => result();
 }
 
@@ -319,7 +308,6 @@ class ExampleScenarioActorType extends PrimitiveObject<String> {
     );
   }
   const ExampleScenarioActorType._(this.value);
-  factory ExampleScenarioActorType.fromJson(String json) =>
-      ExampleScenarioActorType(json);
+  factory ExampleScenarioActorType.fromJson(String json) => ExampleScenarioActorType(json);
   String toJson() => result();
 }

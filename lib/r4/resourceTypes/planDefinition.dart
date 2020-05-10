@@ -17,8 +17,8 @@ class PlanDefinition {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   FhirUri url;
   List<Identifier> identifier;
   String version;
@@ -96,16 +96,15 @@ class PlanDefinition {
     this.action,
   });
 
-  factory PlanDefinition.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionFromJson(json);
+  factory PlanDefinition.fromJson(Map<String, dynamic> json) => _$PlanDefinitionFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionGoal {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept category;
   CodeableConcept description;
   CodeableConcept priority;
@@ -127,16 +126,15 @@ class PlanDefinitionGoal {
     this.target,
   });
 
-  factory PlanDefinitionGoal.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionGoalFromJson(json);
+  factory PlanDefinitionGoal.fromJson(Map<String, dynamic> json) => _$PlanDefinitionGoalFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionGoalToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionTarget {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept measure;
   Quantity detailQuantity;
   Range detailRange;
@@ -154,16 +152,15 @@ class PlanDefinitionTarget {
     this.due,
   });
 
-  factory PlanDefinitionTarget.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionTargetFromJson(json);
+  factory PlanDefinitionTarget.fromJson(Map<String, dynamic> json) => _$PlanDefinitionTargetFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionTargetToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String prefix;
   String title;
   String description;
@@ -239,16 +236,15 @@ class PlanDefinitionAction {
     this.action,
   });
 
-  factory PlanDefinitionAction.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionActionFromJson(json);
+  factory PlanDefinitionAction.fromJson(Map<String, dynamic> json) => _$PlanDefinitionActionFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionActionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionCondition {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   PlanDefinitionConditionKind kind;
   Expression expression;
 
@@ -260,16 +256,15 @@ class PlanDefinitionCondition {
     this.expression,
   });
 
-  factory PlanDefinitionCondition.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionConditionFromJson(json);
+  factory PlanDefinitionCondition.fromJson(Map<String, dynamic> json) => _$PlanDefinitionConditionFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionConditionToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionRelatedAction {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   Id actionId;
   PlanDefinitionRelatedActionRelationship relationship;
   Duration offsetDuration;
@@ -293,8 +288,8 @@ class PlanDefinitionRelatedAction {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionParticipant {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   PlanDefinitionParticipantType type;
   CodeableConcept role;
 
@@ -306,16 +301,15 @@ class PlanDefinitionParticipant {
     this.role,
   });
 
-  factory PlanDefinitionParticipant.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionParticipantFromJson(json);
+  factory PlanDefinitionParticipant.fromJson(Map<String, dynamic> json) => _$PlanDefinitionParticipantFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionParticipantToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class PlanDefinitionDynamicValue {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   String path;
   Expression expression;
 
@@ -327,8 +321,7 @@ class PlanDefinitionDynamicValue {
     this.expression,
   });
 
-  factory PlanDefinitionDynamicValue.fromJson(Map<String, dynamic> json) =>
-      _$PlanDefinitionDynamicValueFromJson(json);
+  factory PlanDefinitionDynamicValue.fromJson(Map<String, dynamic> json) => _$PlanDefinitionDynamicValueFromJson(json);
   Map<String, dynamic> toJson() => _$PlanDefinitionDynamicValueToJson(this);
 }
 
@@ -350,8 +343,7 @@ class PlanDefinitionStatus extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionStatus._(this.value);
-  factory PlanDefinitionStatus.fromJson(String json) =>
-      PlanDefinitionStatus(json);
+  factory PlanDefinitionStatus.fromJson(String json) => PlanDefinitionStatus(json);
   String toJson() => result();
 }
 
@@ -372,8 +364,7 @@ class PlanDefinitionActionGroupingBehavior extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionActionGroupingBehavior._(this.value);
-  factory PlanDefinitionActionGroupingBehavior.fromJson(String json) =>
-      PlanDefinitionActionGroupingBehavior(json);
+  factory PlanDefinitionActionGroupingBehavior.fromJson(String json) => PlanDefinitionActionGroupingBehavior(json);
   String toJson() => result();
 }
 
@@ -397,8 +388,7 @@ class PlanDefinitionActionSelectionBehavior extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionActionSelectionBehavior._(this.value);
-  factory PlanDefinitionActionSelectionBehavior.fromJson(String json) =>
-      PlanDefinitionActionSelectionBehavior(json);
+  factory PlanDefinitionActionSelectionBehavior.fromJson(String json) => PlanDefinitionActionSelectionBehavior(json);
   String toJson() => result();
 }
 
@@ -419,8 +409,7 @@ class PlanDefinitionActionRequiredBehavior extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionActionRequiredBehavior._(this.value);
-  factory PlanDefinitionActionRequiredBehavior.fromJson(String json) =>
-      PlanDefinitionActionRequiredBehavior(json);
+  factory PlanDefinitionActionRequiredBehavior.fromJson(String json) => PlanDefinitionActionRequiredBehavior(json);
   String toJson() => result();
 }
 
@@ -440,8 +429,7 @@ class PlanDefinitionActionPrecheckBehavior extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionActionPrecheckBehavior._(this.value);
-  factory PlanDefinitionActionPrecheckBehavior.fromJson(String json) =>
-      PlanDefinitionActionPrecheckBehavior(json);
+  factory PlanDefinitionActionPrecheckBehavior.fromJson(String json) => PlanDefinitionActionPrecheckBehavior(json);
   String toJson() => result();
 }
 
@@ -483,8 +471,7 @@ class PlanDefinitionConditionKind extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionConditionKind._(this.value);
-  factory PlanDefinitionConditionKind.fromJson(String json) =>
-      PlanDefinitionConditionKind(json);
+  factory PlanDefinitionConditionKind.fromJson(String json) => PlanDefinitionConditionKind(json);
   String toJson() => result();
 }
 
@@ -534,7 +521,6 @@ class PlanDefinitionParticipantType extends PrimitiveObject<String> {
     );
   }
   const PlanDefinitionParticipantType._(this.value);
-  factory PlanDefinitionParticipantType.fromJson(String json) =>
-      PlanDefinitionParticipantType(json);
+  factory PlanDefinitionParticipantType.fromJson(String json) => PlanDefinitionParticipantType(json);
   String toJson() => result();
 }

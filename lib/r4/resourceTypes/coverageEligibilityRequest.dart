@@ -14,8 +14,8 @@ class CoverageEligibilityRequest {
   Code language;
   Narrative text;
   List<dynamic> contained;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<Identifier> identifier;
   Code status;
   CodeableConcept priority;
@@ -59,16 +59,15 @@ class CoverageEligibilityRequest {
     this.item,
   });
 
-  factory CoverageEligibilityRequest.fromJson(Map<String, dynamic> json) =>
-      _$CoverageEligibilityRequestFromJson(json);
+  factory CoverageEligibilityRequest.fromJson(Map<String, dynamic> json) => _$CoverageEligibilityRequestFromJson(json);
   Map<String, dynamic> toJson() => _$CoverageEligibilityRequestToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityRequestSupportingInfo {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   int sequence;
   Reference information;
   bool appliesToAll;
@@ -82,18 +81,16 @@ class CoverageEligibilityRequestSupportingInfo {
     this.appliesToAll,
   });
 
-  factory CoverageEligibilityRequestSupportingInfo.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityRequestSupportingInfo.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityRequestSupportingInfoFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityRequestSupportingInfoToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityRequestSupportingInfoToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityRequestInsurance {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   bool focal;
   Reference coverage;
   String businessArrangement;
@@ -107,18 +104,16 @@ class CoverageEligibilityRequestInsurance {
     this.businessArrangement,
   });
 
-  factory CoverageEligibilityRequestInsurance.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityRequestInsurance.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityRequestInsuranceFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityRequestInsuranceToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityRequestInsuranceToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityRequestItem {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   List<int> supportingInfoSequence;
   CodeableConcept category;
   CodeableConcept productOrService;
@@ -154,8 +149,8 @@ class CoverageEligibilityRequestItem {
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class CoverageEligibilityRequestDiagnosis {
   String id;
-  List<Extension> extension;
-  List<Extension> modifierExtension;
+  List<FhirExtension> extension;
+  List<FhirExtension> modifierExtension;
   CodeableConcept diagnosisCodeableConcept;
   Reference diagnosisReference;
 
@@ -167,9 +162,7 @@ class CoverageEligibilityRequestDiagnosis {
     this.diagnosisReference,
   });
 
-  factory CoverageEligibilityRequestDiagnosis.fromJson(
-          Map<String, dynamic> json) =>
+  factory CoverageEligibilityRequestDiagnosis.fromJson(Map<String, dynamic> json) =>
       _$CoverageEligibilityRequestDiagnosisFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$CoverageEligibilityRequestDiagnosisToJson(this);
+  Map<String, dynamic> toJson() => _$CoverageEligibilityRequestDiagnosisToJson(this);
 }

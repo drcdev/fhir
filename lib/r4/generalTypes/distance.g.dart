@@ -10,8 +10,9 @@ Distance _$DistanceFromJson(Map<String, dynamic> json) {
   return Distance(
     id: json['id'] as String,
     extension: (json['extension'] as List)
-        ?.map((e) =>
-            e == null ? null : Extension.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     value: (json['value'] as num)?.toDouble(),
     comparator: json['comparator'] == null
