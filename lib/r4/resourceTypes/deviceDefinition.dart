@@ -5,6 +5,7 @@ import 'package:meta/meta.dart';
 import '../../fhir_r4.dart';
 import '../../primitiveTypes/primitiveFailures.dart';
 import '../../primitiveTypes/primitiveObjects.dart';
+import '../draft_types.dart';
 
 part 'deviceDefinition.g.dart';
 

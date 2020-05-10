@@ -1,9 +1,5 @@
+import 'draft_types.dart';
 import 'resourceTypes/location.dart';
-import 'draftTypes/marketingStatus.dart';
-import 'draftTypes/population.dart';
-import 'draftTypes/prodCharacteristic.dart';
-import 'draftTypes/productShelfLife.dart';
-import 'draftTypes/substanceAmount.dart';
 import 'resourceTypes/account.dart';
 import 'resourceTypes/activityDefinition.dart';
 import 'resourceTypes/adverseEvent.dart';

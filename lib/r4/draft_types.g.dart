@@ -6,8 +6,8 @@ part of 'draft_types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MarketingStatus _$_$_MarketingStatusFromJson(Map<String, dynamic> json) {
-  return _$_MarketingStatus(
+_$MarketingStatus _$_$MarketingStatusFromJson(Map<String, dynamic> json) {
+  return _$MarketingStatus(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -38,7 +38,7 @@ _$_MarketingStatus _$_$_MarketingStatusFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_MarketingStatusToJson(_$_MarketingStatus instance) {
+Map<String, dynamic> _$_$MarketingStatusToJson(_$MarketingStatus instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -60,8 +60,8 @@ Map<String, dynamic> _$_$_MarketingStatusToJson(_$_MarketingStatus instance) {
   return val;
 }
 
-_$_Population _$_$_PopulationFromJson(Map<String, dynamic> json) {
-  return _$_Population(
+_$Population _$_$PopulationFromJson(Map<String, dynamic> json) {
+  return _$Population(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -93,7 +93,7 @@ _$_Population _$_$_PopulationFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_PopulationToJson(_$_Population instance) {
+Map<String, dynamic> _$_$PopulationToJson(_$Population instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -116,9 +116,8 @@ Map<String, dynamic> _$_$_PopulationToJson(_$_Population instance) {
   return val;
 }
 
-_$_ProdCharacteristic _$_$_ProdCharacteristicFromJson(
-    Map<String, dynamic> json) {
-  return _$_ProdCharacteristic(
+_$ProdCharacteristic _$_$ProdCharacteristicFromJson(Map<String, dynamic> json) {
+  return _$ProdCharacteristic(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -161,8 +160,8 @@ _$_ProdCharacteristic _$_$_ProdCharacteristicFromJson(
   );
 }
 
-Map<String, dynamic> _$_$_ProdCharacteristicToJson(
-    _$_ProdCharacteristic instance) {
+Map<String, dynamic> _$_$ProdCharacteristicToJson(
+    _$ProdCharacteristic instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -190,8 +189,8 @@ Map<String, dynamic> _$_$_ProdCharacteristicToJson(
   return val;
 }
 
-_$_ProductShelfLife _$_$_ProductShelfLifeFromJson(Map<String, dynamic> json) {
-  return _$_ProductShelfLife(
+_$ProductShelfLife _$_$ProductShelfLifeFromJson(Map<String, dynamic> json) {
+  return _$ProductShelfLife(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -220,7 +219,7 @@ _$_ProductShelfLife _$_$_ProductShelfLifeFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ProductShelfLifeToJson(_$_ProductShelfLife instance) {
+Map<String, dynamic> _$_$ProductShelfLifeToJson(_$ProductShelfLife instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -242,8 +241,8 @@ Map<String, dynamic> _$_$_ProductShelfLifeToJson(_$_ProductShelfLife instance) {
   return val;
 }
 
-_$_SubstanceAmount _$_$_SubstanceAmountFromJson(Map<String, dynamic> json) {
-  return _$_SubstanceAmount(
+_$SubstanceAmount _$_$SubstanceAmountFromJson(Map<String, dynamic> json) {
+  return _$SubstanceAmount(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -270,12 +269,12 @@ _$_SubstanceAmount _$_$_SubstanceAmountFromJson(Map<String, dynamic> json) {
     json['amountText'] as String,
     json['referenceRange'] == null
         ? null
-        : _SubstanceAmountReferenceRange.fromJson(
+        : SubstanceAmountReferenceRange.fromJson(
             json['referenceRange'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$_$_SubstanceAmountToJson(_$_SubstanceAmount instance) {
+Map<String, dynamic> _$_$SubstanceAmountToJson(_$SubstanceAmount instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -298,9 +297,9 @@ Map<String, dynamic> _$_$_SubstanceAmountToJson(_$_SubstanceAmount instance) {
   return val;
 }
 
-_$_SubstanceAmountReferenceRange _$_$_SubstanceAmountReferenceRangeFromJson(
+_$SubstanceAmountReferenceRange _$_$SubstanceAmountReferenceRangeFromJson(
     Map<String, dynamic> json) {
-  return _$_SubstanceAmountReferenceRange(
+  return _$SubstanceAmountReferenceRange(
     json['id'] as String,
     (json['extension'] as List)
         ?.map((e) => e == null
@@ -321,8 +320,8 @@ _$_SubstanceAmountReferenceRange _$_$_SubstanceAmountReferenceRangeFromJson(
   );
 }
 
-Map<String, dynamic> _$_$_SubstanceAmountReferenceRangeToJson(
-    _$_SubstanceAmountReferenceRange instance) {
+Map<String, dynamic> _$_$SubstanceAmountReferenceRangeToJson(
+    _$SubstanceAmountReferenceRange instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

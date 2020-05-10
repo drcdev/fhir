@@ -11,17 +11,17 @@ T _$identity<T>(T value) => value;
 DraftTypes _$DraftTypesFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType'] as String) {
     case 'marketingStatus':
-      return _MarketingStatus.fromJson(json);
+      return MarketingStatus.fromJson(json);
     case 'population':
-      return _Population.fromJson(json);
+      return Population.fromJson(json);
     case 'prodCharacteristic':
-      return _ProdCharacteristic.fromJson(json);
+      return ProdCharacteristic.fromJson(json);
     case 'productShelfLife':
-      return _ProductShelfLife.fromJson(json);
+      return ProductShelfLife.fromJson(json);
     case 'substanceAmount':
-      return _SubstanceAmount.fromJson(json);
+      return SubstanceAmount.fromJson(json);
     case 'substanceAmountReferenceRange':
-      return _SubstanceAmountReferenceRange.fromJson(json);
+      return SubstanceAmountReferenceRange.fromJson(json);
 
     default:
       throw FallThroughError();
@@ -31,7 +31,7 @@ DraftTypes _$DraftTypesFromJson(Map<String, dynamic> json) {
 class _$DraftTypesTearOff {
   const _$DraftTypesTearOff();
 
-  _MarketingStatus marketingStatus(
+  MarketingStatus marketingStatus(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -40,7 +40,7 @@ class _$DraftTypesTearOff {
       CodeableConcept status,
       Period dateRange,
       FhirDateTime restoreDate) {
-    return _MarketingStatus(
+    return MarketingStatus(
       id,
       fhirExtension,
       modifierExtension,
@@ -52,7 +52,7 @@ class _$DraftTypesTearOff {
     );
   }
 
-  _Population population(
+  Population population(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -61,7 +61,7 @@ class _$DraftTypesTearOff {
       CodeableConcept gender,
       CodeableConcept race,
       CodeableConcept physiologicalCondition) {
-    return _Population(
+    return Population(
       id,
       fhirExtension,
       modifierExtension,
@@ -73,7 +73,7 @@ class _$DraftTypesTearOff {
     );
   }
 
-  _ProdCharacteristic prodCharacteristic(
+  ProdCharacteristic prodCharacteristic(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -88,7 +88,7 @@ class _$DraftTypesTearOff {
       List<String> imprint,
       List<Attachment> image,
       CodeableConcept scoring) {
-    return _ProdCharacteristic(
+    return ProdCharacteristic(
       id,
       fhirExtension,
       modifierExtension,
@@ -106,7 +106,7 @@ class _$DraftTypesTearOff {
     );
   }
 
-  _ProductShelfLife productShelfLife(
+  ProductShelfLife productShelfLife(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -114,7 +114,7 @@ class _$DraftTypesTearOff {
       CodeableConcept type,
       Quantity period,
       List<CodeableConcept> specialPrecautionsForStorage) {
-    return _ProductShelfLife(
+    return ProductShelfLife(
       id,
       fhirExtension,
       modifierExtension,
@@ -125,7 +125,7 @@ class _$DraftTypesTearOff {
     );
   }
 
-  _SubstanceAmount substanceAmount(
+  SubstanceAmount substanceAmount(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -134,8 +134,8 @@ class _$DraftTypesTearOff {
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      _SubstanceAmountReferenceRange referenceRange) {
-    return _SubstanceAmount(
+      SubstanceAmountReferenceRange referenceRange) {
+    return SubstanceAmount(
       id,
       fhirExtension,
       modifierExtension,
@@ -148,13 +148,13 @@ class _$DraftTypesTearOff {
     );
   }
 
-  _SubstanceAmountReferenceRange substanceAmountReferenceRange(
+  SubstanceAmountReferenceRange substanceAmountReferenceRange(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity lowLimit,
       Quantity highLimit) {
-    return _SubstanceAmountReferenceRange(
+    return SubstanceAmountReferenceRange(
       id,
       fhirExtension,
       modifierExtension,
@@ -230,7 +230,7 @@ mixin _$DraftTypes {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -291,7 +291,7 @@ mixin _$DraftTypes {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -302,23 +302,23 @@ mixin _$DraftTypes {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   });
   Map<String, dynamic> toJson();
@@ -360,11 +360,11 @@ class _$DraftTypesCopyWithImpl<$Res> implements $DraftTypesCopyWith<$Res> {
   }
 }
 
-abstract class _$MarketingStatusCopyWith<$Res>
+abstract class $MarketingStatusCopyWith<$Res>
     implements $DraftTypesCopyWith<$Res> {
-  factory _$MarketingStatusCopyWith(
-          _MarketingStatus value, $Res Function(_MarketingStatus) then) =
-      __$MarketingStatusCopyWithImpl<$Res>;
+  factory $MarketingStatusCopyWith(
+          MarketingStatus value, $Res Function(MarketingStatus) then) =
+      _$MarketingStatusCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -377,15 +377,14 @@ abstract class _$MarketingStatusCopyWith<$Res>
       FhirDateTime restoreDate});
 }
 
-class __$MarketingStatusCopyWithImpl<$Res>
-    extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$MarketingStatusCopyWith<$Res> {
-  __$MarketingStatusCopyWithImpl(
-      _MarketingStatus _value, $Res Function(_MarketingStatus) _then)
-      : super(_value, (v) => _then(v as _MarketingStatus));
+class _$MarketingStatusCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
+    implements $MarketingStatusCopyWith<$Res> {
+  _$MarketingStatusCopyWithImpl(
+      MarketingStatus _value, $Res Function(MarketingStatus) _then)
+      : super(_value, (v) => _then(v as MarketingStatus));
 
   @override
-  _MarketingStatus get _value => super._value as _MarketingStatus;
+  MarketingStatus get _value => super._value as MarketingStatus;
 
   @override
   $Res call({
@@ -398,7 +397,7 @@ class __$MarketingStatusCopyWithImpl<$Res>
     Object dateRange = freezed,
     Object restoreDate = freezed,
   }) {
-    return _then(_MarketingStatus(
+    return _then(MarketingStatus(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -418,8 +417,8 @@ class __$MarketingStatusCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_MarketingStatus implements _MarketingStatus {
-  const _$_MarketingStatus(
+class _$MarketingStatus implements MarketingStatus {
+  const _$MarketingStatus(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -437,8 +436,8 @@ class _$_MarketingStatus implements _MarketingStatus {
         assert(dateRange != null),
         assert(restoreDate != null);
 
-  factory _$_MarketingStatus.fromJson(Map<String, dynamic> json) =>
-      _$_$_MarketingStatusFromJson(json);
+  factory _$MarketingStatus.fromJson(Map<String, dynamic> json) =>
+      _$_$MarketingStatusFromJson(json);
 
   @override
   final String id;
@@ -466,7 +465,7 @@ class _$_MarketingStatus implements _MarketingStatus {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MarketingStatus &&
+        (other is MarketingStatus &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -504,8 +503,8 @@ class _$_MarketingStatus implements _MarketingStatus {
       const DeepCollectionEquality().hash(restoreDate);
 
   @override
-  _$MarketingStatusCopyWith<_MarketingStatus> get copyWith =>
-      __$MarketingStatusCopyWithImpl<_MarketingStatus>(this, _$identity);
+  $MarketingStatusCopyWith<MarketingStatus> get copyWith =>
+      _$MarketingStatusCopyWithImpl<MarketingStatus>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -565,7 +564,7 @@ class _$_MarketingStatus implements _MarketingStatus {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -637,7 +636,7 @@ class _$_MarketingStatus implements _MarketingStatus {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -657,14 +656,14 @@ class _$_MarketingStatus implements _MarketingStatus {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -678,12 +677,12 @@ class _$_MarketingStatus implements _MarketingStatus {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -695,13 +694,12 @@ class _$_MarketingStatus implements _MarketingStatus {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MarketingStatusToJson(this)
-      ..['runtimeType'] = 'marketingStatus';
+    return _$_$MarketingStatusToJson(this)..['runtimeType'] = 'marketingStatus';
   }
 }
 
-abstract class _MarketingStatus implements DraftTypes {
-  const factory _MarketingStatus(
+abstract class MarketingStatus implements DraftTypes {
+  const factory MarketingStatus(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -709,10 +707,10 @@ abstract class _MarketingStatus implements DraftTypes {
       CodeableConcept jurisdiction,
       CodeableConcept status,
       Period dateRange,
-      FhirDateTime restoreDate) = _$_MarketingStatus;
+      FhirDateTime restoreDate) = _$MarketingStatus;
 
-  factory _MarketingStatus.fromJson(Map<String, dynamic> json) =
-      _$_MarketingStatus.fromJson;
+  factory MarketingStatus.fromJson(Map<String, dynamic> json) =
+      _$MarketingStatus.fromJson;
 
   @override
   String get id;
@@ -727,13 +725,13 @@ abstract class _MarketingStatus implements DraftTypes {
   Period get dateRange;
   FhirDateTime get restoreDate;
   @override
-  _$MarketingStatusCopyWith<_MarketingStatus> get copyWith;
+  $MarketingStatusCopyWith<MarketingStatus> get copyWith;
 }
 
-abstract class _$PopulationCopyWith<$Res> implements $DraftTypesCopyWith<$Res> {
-  factory _$PopulationCopyWith(
-          _Population value, $Res Function(_Population) then) =
-      __$PopulationCopyWithImpl<$Res>;
+abstract class $PopulationCopyWith<$Res> implements $DraftTypesCopyWith<$Res> {
+  factory $PopulationCopyWith(
+          Population value, $Res Function(Population) then) =
+      _$PopulationCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -746,14 +744,13 @@ abstract class _$PopulationCopyWith<$Res> implements $DraftTypesCopyWith<$Res> {
       CodeableConcept physiologicalCondition});
 }
 
-class __$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$PopulationCopyWith<$Res> {
-  __$PopulationCopyWithImpl(
-      _Population _value, $Res Function(_Population) _then)
-      : super(_value, (v) => _then(v as _Population));
+class _$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
+    implements $PopulationCopyWith<$Res> {
+  _$PopulationCopyWithImpl(Population _value, $Res Function(Population) _then)
+      : super(_value, (v) => _then(v as Population));
 
   @override
-  _Population get _value => super._value as _Population;
+  Population get _value => super._value as Population;
 
   @override
   $Res call({
@@ -766,7 +763,7 @@ class __$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
     Object race = freezed,
     Object physiologicalCondition = freezed,
   }) {
-    return _then(_Population(
+    return _then(Population(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -788,8 +785,8 @@ class __$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_Population implements _Population {
-  const _$_Population(
+class _$Population implements Population {
+  const _$Population(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -807,8 +804,8 @@ class _$_Population implements _Population {
         assert(race != null),
         assert(physiologicalCondition != null);
 
-  factory _$_Population.fromJson(Map<String, dynamic> json) =>
-      _$_$_PopulationFromJson(json);
+  factory _$Population.fromJson(Map<String, dynamic> json) =>
+      _$_$PopulationFromJson(json);
 
   @override
   final String id;
@@ -836,7 +833,7 @@ class _$_Population implements _Population {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Population &&
+        (other is Population &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -873,8 +870,8 @@ class _$_Population implements _Population {
       const DeepCollectionEquality().hash(physiologicalCondition);
 
   @override
-  _$PopulationCopyWith<_Population> get copyWith =>
-      __$PopulationCopyWithImpl<_Population>(this, _$identity);
+  $PopulationCopyWith<Population> get copyWith =>
+      _$PopulationCopyWithImpl<Population>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -934,7 +931,7 @@ class _$_Population implements _Population {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -1006,7 +1003,7 @@ class _$_Population implements _Population {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1026,14 +1023,14 @@ class _$_Population implements _Population {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -1047,12 +1044,12 @@ class _$_Population implements _Population {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1064,12 +1061,12 @@ class _$_Population implements _Population {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PopulationToJson(this)..['runtimeType'] = 'population';
+    return _$_$PopulationToJson(this)..['runtimeType'] = 'population';
   }
 }
 
-abstract class _Population implements DraftTypes {
-  const factory _Population(
+abstract class Population implements DraftTypes {
+  const factory Population(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -1077,10 +1074,10 @@ abstract class _Population implements DraftTypes {
       CodeableConcept ageCodeableConcept,
       CodeableConcept gender,
       CodeableConcept race,
-      CodeableConcept physiologicalCondition) = _$_Population;
+      CodeableConcept physiologicalCondition) = _$Population;
 
-  factory _Population.fromJson(Map<String, dynamic> json) =
-      _$_Population.fromJson;
+  factory Population.fromJson(Map<String, dynamic> json) =
+      _$Population.fromJson;
 
   @override
   String get id;
@@ -1095,14 +1092,14 @@ abstract class _Population implements DraftTypes {
   CodeableConcept get race;
   CodeableConcept get physiologicalCondition;
   @override
-  _$PopulationCopyWith<_Population> get copyWith;
+  $PopulationCopyWith<Population> get copyWith;
 }
 
-abstract class _$ProdCharacteristicCopyWith<$Res>
+abstract class $ProdCharacteristicCopyWith<$Res>
     implements $DraftTypesCopyWith<$Res> {
-  factory _$ProdCharacteristicCopyWith(
-          _ProdCharacteristic value, $Res Function(_ProdCharacteristic) then) =
-      __$ProdCharacteristicCopyWithImpl<$Res>;
+  factory $ProdCharacteristicCopyWith(
+          ProdCharacteristic value, $Res Function(ProdCharacteristic) then) =
+      _$ProdCharacteristicCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1121,15 +1118,15 @@ abstract class _$ProdCharacteristicCopyWith<$Res>
       CodeableConcept scoring});
 }
 
-class __$ProdCharacteristicCopyWithImpl<$Res>
+class _$ProdCharacteristicCopyWithImpl<$Res>
     extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$ProdCharacteristicCopyWith<$Res> {
-  __$ProdCharacteristicCopyWithImpl(
-      _ProdCharacteristic _value, $Res Function(_ProdCharacteristic) _then)
-      : super(_value, (v) => _then(v as _ProdCharacteristic));
+    implements $ProdCharacteristicCopyWith<$Res> {
+  _$ProdCharacteristicCopyWithImpl(
+      ProdCharacteristic _value, $Res Function(ProdCharacteristic) _then)
+      : super(_value, (v) => _then(v as ProdCharacteristic));
 
   @override
-  _ProdCharacteristic get _value => super._value as _ProdCharacteristic;
+  ProdCharacteristic get _value => super._value as ProdCharacteristic;
 
   @override
   $Res call({
@@ -1148,7 +1145,7 @@ class __$ProdCharacteristicCopyWithImpl<$Res>
     Object image = freezed,
     Object scoring = freezed,
   }) {
-    return _then(_ProdCharacteristic(
+    return _then(ProdCharacteristic(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -1176,8 +1173,8 @@ class __$ProdCharacteristicCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_ProdCharacteristic implements _ProdCharacteristic {
-  const _$_ProdCharacteristic(
+class _$ProdCharacteristic implements ProdCharacteristic {
+  const _$ProdCharacteristic(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -1207,8 +1204,8 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
         assert(image != null),
         assert(scoring != null);
 
-  factory _$_ProdCharacteristic.fromJson(Map<String, dynamic> json) =>
-      _$_$_ProdCharacteristicFromJson(json);
+  factory _$ProdCharacteristic.fromJson(Map<String, dynamic> json) =>
+      _$_$ProdCharacteristicFromJson(json);
 
   @override
   final String id;
@@ -1248,7 +1245,7 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProdCharacteristic &&
+        (other is ProdCharacteristic &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -1303,8 +1300,8 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
       const DeepCollectionEquality().hash(scoring);
 
   @override
-  _$ProdCharacteristicCopyWith<_ProdCharacteristic> get copyWith =>
-      __$ProdCharacteristicCopyWithImpl<_ProdCharacteristic>(this, _$identity);
+  $ProdCharacteristicCopyWith<ProdCharacteristic> get copyWith =>
+      _$ProdCharacteristicCopyWithImpl<ProdCharacteristic>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1364,7 +1361,7 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -1449,7 +1446,7 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1482,14 +1479,14 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -1503,12 +1500,12 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1520,13 +1517,13 @@ class _$_ProdCharacteristic implements _ProdCharacteristic {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ProdCharacteristicToJson(this)
+    return _$_$ProdCharacteristicToJson(this)
       ..['runtimeType'] = 'prodCharacteristic';
   }
 }
 
-abstract class _ProdCharacteristic implements DraftTypes {
-  const factory _ProdCharacteristic(
+abstract class ProdCharacteristic implements DraftTypes {
+  const factory ProdCharacteristic(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -1540,10 +1537,10 @@ abstract class _ProdCharacteristic implements DraftTypes {
       List<String> color,
       List<String> imprint,
       List<Attachment> image,
-      CodeableConcept scoring) = _$_ProdCharacteristic;
+      CodeableConcept scoring) = _$ProdCharacteristic;
 
-  factory _ProdCharacteristic.fromJson(Map<String, dynamic> json) =
-      _$_ProdCharacteristic.fromJson;
+  factory ProdCharacteristic.fromJson(Map<String, dynamic> json) =
+      _$ProdCharacteristic.fromJson;
 
   @override
   String get id;
@@ -1564,14 +1561,14 @@ abstract class _ProdCharacteristic implements DraftTypes {
   List<Attachment> get image;
   CodeableConcept get scoring;
   @override
-  _$ProdCharacteristicCopyWith<_ProdCharacteristic> get copyWith;
+  $ProdCharacteristicCopyWith<ProdCharacteristic> get copyWith;
 }
 
-abstract class _$ProductShelfLifeCopyWith<$Res>
+abstract class $ProductShelfLifeCopyWith<$Res>
     implements $DraftTypesCopyWith<$Res> {
-  factory _$ProductShelfLifeCopyWith(
-          _ProductShelfLife value, $Res Function(_ProductShelfLife) then) =
-      __$ProductShelfLifeCopyWithImpl<$Res>;
+  factory $ProductShelfLifeCopyWith(
+          ProductShelfLife value, $Res Function(ProductShelfLife) then) =
+      _$ProductShelfLifeCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1583,15 +1580,15 @@ abstract class _$ProductShelfLifeCopyWith<$Res>
       List<CodeableConcept> specialPrecautionsForStorage});
 }
 
-class __$ProductShelfLifeCopyWithImpl<$Res>
+class _$ProductShelfLifeCopyWithImpl<$Res>
     extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$ProductShelfLifeCopyWith<$Res> {
-  __$ProductShelfLifeCopyWithImpl(
-      _ProductShelfLife _value, $Res Function(_ProductShelfLife) _then)
-      : super(_value, (v) => _then(v as _ProductShelfLife));
+    implements $ProductShelfLifeCopyWith<$Res> {
+  _$ProductShelfLifeCopyWithImpl(
+      ProductShelfLife _value, $Res Function(ProductShelfLife) _then)
+      : super(_value, (v) => _then(v as ProductShelfLife));
 
   @override
-  _ProductShelfLife get _value => super._value as _ProductShelfLife;
+  ProductShelfLife get _value => super._value as ProductShelfLife;
 
   @override
   $Res call({
@@ -1603,7 +1600,7 @@ class __$ProductShelfLifeCopyWithImpl<$Res>
     Object period = freezed,
     Object specialPrecautionsForStorage = freezed,
   }) {
-    return _then(_ProductShelfLife(
+    return _then(ProductShelfLife(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -1622,8 +1619,8 @@ class __$ProductShelfLifeCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_ProductShelfLife implements _ProductShelfLife {
-  const _$_ProductShelfLife(
+class _$ProductShelfLife implements ProductShelfLife {
+  const _$ProductShelfLife(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -1639,8 +1636,8 @@ class _$_ProductShelfLife implements _ProductShelfLife {
         assert(period != null),
         assert(specialPrecautionsForStorage != null);
 
-  factory _$_ProductShelfLife.fromJson(Map<String, dynamic> json) =>
-      _$_$_ProductShelfLifeFromJson(json);
+  factory _$ProductShelfLife.fromJson(Map<String, dynamic> json) =>
+      _$_$ProductShelfLifeFromJson(json);
 
   @override
   final String id;
@@ -1666,7 +1663,7 @@ class _$_ProductShelfLife implements _ProductShelfLife {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProductShelfLife &&
+        (other is ProductShelfLife &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -1701,8 +1698,8 @@ class _$_ProductShelfLife implements _ProductShelfLife {
       const DeepCollectionEquality().hash(specialPrecautionsForStorage);
 
   @override
-  _$ProductShelfLifeCopyWith<_ProductShelfLife> get copyWith =>
-      __$ProductShelfLifeCopyWithImpl<_ProductShelfLife>(this, _$identity);
+  $ProductShelfLifeCopyWith<ProductShelfLife> get copyWith =>
+      _$ProductShelfLifeCopyWithImpl<ProductShelfLife>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1762,7 +1759,7 @@ class _$_ProductShelfLife implements _ProductShelfLife {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -1834,7 +1831,7 @@ class _$_ProductShelfLife implements _ProductShelfLife {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -1854,14 +1851,14 @@ class _$_ProductShelfLife implements _ProductShelfLife {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -1875,12 +1872,12 @@ class _$_ProductShelfLife implements _ProductShelfLife {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1892,23 +1889,23 @@ class _$_ProductShelfLife implements _ProductShelfLife {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ProductShelfLifeToJson(this)
+    return _$_$ProductShelfLifeToJson(this)
       ..['runtimeType'] = 'productShelfLife';
   }
 }
 
-abstract class _ProductShelfLife implements DraftTypes {
-  const factory _ProductShelfLife(
+abstract class ProductShelfLife implements DraftTypes {
+  const factory ProductShelfLife(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Identifier identifier,
       CodeableConcept type,
       Quantity period,
-      List<CodeableConcept> specialPrecautionsForStorage) = _$_ProductShelfLife;
+      List<CodeableConcept> specialPrecautionsForStorage) = _$ProductShelfLife;
 
-  factory _ProductShelfLife.fromJson(Map<String, dynamic> json) =
-      _$_ProductShelfLife.fromJson;
+  factory ProductShelfLife.fromJson(Map<String, dynamic> json) =
+      _$ProductShelfLife.fromJson;
 
   @override
   String get id;
@@ -1922,14 +1919,14 @@ abstract class _ProductShelfLife implements DraftTypes {
   Quantity get period;
   List<CodeableConcept> get specialPrecautionsForStorage;
   @override
-  _$ProductShelfLifeCopyWith<_ProductShelfLife> get copyWith;
+  $ProductShelfLifeCopyWith<ProductShelfLife> get copyWith;
 }
 
-abstract class _$SubstanceAmountCopyWith<$Res>
+abstract class $SubstanceAmountCopyWith<$Res>
     implements $DraftTypesCopyWith<$Res> {
-  factory _$SubstanceAmountCopyWith(
-          _SubstanceAmount value, $Res Function(_SubstanceAmount) then) =
-      __$SubstanceAmountCopyWithImpl<$Res>;
+  factory $SubstanceAmountCopyWith(
+          SubstanceAmount value, $Res Function(SubstanceAmount) then) =
+      _$SubstanceAmountCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1940,18 +1937,17 @@ abstract class _$SubstanceAmountCopyWith<$Res>
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      _SubstanceAmountReferenceRange referenceRange});
+      SubstanceAmountReferenceRange referenceRange});
 }
 
-class __$SubstanceAmountCopyWithImpl<$Res>
-    extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$SubstanceAmountCopyWith<$Res> {
-  __$SubstanceAmountCopyWithImpl(
-      _SubstanceAmount _value, $Res Function(_SubstanceAmount) _then)
-      : super(_value, (v) => _then(v as _SubstanceAmount));
+class _$SubstanceAmountCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
+    implements $SubstanceAmountCopyWith<$Res> {
+  _$SubstanceAmountCopyWithImpl(
+      SubstanceAmount _value, $Res Function(SubstanceAmount) _then)
+      : super(_value, (v) => _then(v as SubstanceAmount));
 
   @override
-  _SubstanceAmount get _value => super._value as _SubstanceAmount;
+  SubstanceAmount get _value => super._value as SubstanceAmount;
 
   @override
   $Res call({
@@ -1965,7 +1961,7 @@ class __$SubstanceAmountCopyWithImpl<$Res>
     Object amountText = freezed,
     Object referenceRange = freezed,
   }) {
-    return _then(_SubstanceAmount(
+    return _then(SubstanceAmount(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -1982,14 +1978,14 @@ class __$SubstanceAmountCopyWithImpl<$Res>
       amountText == freezed ? _value.amountText : amountText as String,
       referenceRange == freezed
           ? _value.referenceRange
-          : referenceRange as _SubstanceAmountReferenceRange,
+          : referenceRange as SubstanceAmountReferenceRange,
     ));
   }
 }
 
 @JsonSerializable()
-class _$_SubstanceAmount implements _SubstanceAmount {
-  const _$_SubstanceAmount(
+class _$SubstanceAmount implements SubstanceAmount {
+  const _$SubstanceAmount(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -2009,8 +2005,8 @@ class _$_SubstanceAmount implements _SubstanceAmount {
         assert(amountText != null),
         assert(referenceRange != null);
 
-  factory _$_SubstanceAmount.fromJson(Map<String, dynamic> json) =>
-      _$_$_SubstanceAmountFromJson(json);
+  factory _$SubstanceAmount.fromJson(Map<String, dynamic> json) =>
+      _$_$SubstanceAmountFromJson(json);
 
   @override
   final String id;
@@ -2030,7 +2026,7 @@ class _$_SubstanceAmount implements _SubstanceAmount {
   @override
   final String amountText;
   @override
-  final _SubstanceAmountReferenceRange referenceRange;
+  final SubstanceAmountReferenceRange referenceRange;
 
   @override
   String toString() {
@@ -2040,7 +2036,7 @@ class _$_SubstanceAmount implements _SubstanceAmount {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SubstanceAmount &&
+        (other is SubstanceAmount &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -2083,8 +2079,8 @@ class _$_SubstanceAmount implements _SubstanceAmount {
       const DeepCollectionEquality().hash(referenceRange);
 
   @override
-  _$SubstanceAmountCopyWith<_SubstanceAmount> get copyWith =>
-      __$SubstanceAmountCopyWithImpl<_SubstanceAmount>(this, _$identity);
+  $SubstanceAmountCopyWith<SubstanceAmount> get copyWith =>
+      _$SubstanceAmountCopyWithImpl<SubstanceAmount>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2144,7 +2140,7 @@ class _$_SubstanceAmount implements _SubstanceAmount {
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -2216,7 +2212,7 @@ class _$_SubstanceAmount implements _SubstanceAmount {
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -2244,14 +2240,14 @@ class _$_SubstanceAmount implements _SubstanceAmount {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -2265,12 +2261,12 @@ class _$_SubstanceAmount implements _SubstanceAmount {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2282,13 +2278,12 @@ class _$_SubstanceAmount implements _SubstanceAmount {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubstanceAmountToJson(this)
-      ..['runtimeType'] = 'substanceAmount';
+    return _$_$SubstanceAmountToJson(this)..['runtimeType'] = 'substanceAmount';
   }
 }
 
-abstract class _SubstanceAmount implements DraftTypes {
-  const factory _SubstanceAmount(
+abstract class SubstanceAmount implements DraftTypes {
+  const factory SubstanceAmount(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -2297,10 +2292,10 @@ abstract class _SubstanceAmount implements DraftTypes {
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      _SubstanceAmountReferenceRange referenceRange) = _$_SubstanceAmount;
+      SubstanceAmountReferenceRange referenceRange) = _$SubstanceAmount;
 
-  factory _SubstanceAmount.fromJson(Map<String, dynamic> json) =
-      _$_SubstanceAmount.fromJson;
+  factory SubstanceAmount.fromJson(Map<String, dynamic> json) =
+      _$SubstanceAmount.fromJson;
 
   @override
   String get id;
@@ -2314,17 +2309,17 @@ abstract class _SubstanceAmount implements DraftTypes {
   Markdown get amountString;
   CodeableConcept get amountType;
   String get amountText;
-  _SubstanceAmountReferenceRange get referenceRange;
+  SubstanceAmountReferenceRange get referenceRange;
   @override
-  _$SubstanceAmountCopyWith<_SubstanceAmount> get copyWith;
+  $SubstanceAmountCopyWith<SubstanceAmount> get copyWith;
 }
 
-abstract class _$SubstanceAmountReferenceRangeCopyWith<$Res>
+abstract class $SubstanceAmountReferenceRangeCopyWith<$Res>
     implements $DraftTypesCopyWith<$Res> {
-  factory _$SubstanceAmountReferenceRangeCopyWith(
-          _SubstanceAmountReferenceRange value,
-          $Res Function(_SubstanceAmountReferenceRange) then) =
-      __$SubstanceAmountReferenceRangeCopyWithImpl<$Res>;
+  factory $SubstanceAmountReferenceRangeCopyWith(
+          SubstanceAmountReferenceRange value,
+          $Res Function(SubstanceAmountReferenceRange) then) =
+      _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -2334,17 +2329,17 @@ abstract class _$SubstanceAmountReferenceRangeCopyWith<$Res>
       Quantity highLimit});
 }
 
-class __$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
+class _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
     extends _$DraftTypesCopyWithImpl<$Res>
-    implements _$SubstanceAmountReferenceRangeCopyWith<$Res> {
-  __$SubstanceAmountReferenceRangeCopyWithImpl(
-      _SubstanceAmountReferenceRange _value,
-      $Res Function(_SubstanceAmountReferenceRange) _then)
-      : super(_value, (v) => _then(v as _SubstanceAmountReferenceRange));
+    implements $SubstanceAmountReferenceRangeCopyWith<$Res> {
+  _$SubstanceAmountReferenceRangeCopyWithImpl(
+      SubstanceAmountReferenceRange _value,
+      $Res Function(SubstanceAmountReferenceRange) _then)
+      : super(_value, (v) => _then(v as SubstanceAmountReferenceRange));
 
   @override
-  _SubstanceAmountReferenceRange get _value =>
-      super._value as _SubstanceAmountReferenceRange;
+  SubstanceAmountReferenceRange get _value =>
+      super._value as SubstanceAmountReferenceRange;
 
   @override
   $Res call({
@@ -2354,7 +2349,7 @@ class __$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
     Object lowLimit = freezed,
     Object highLimit = freezed,
   }) {
-    return _then(_SubstanceAmountReferenceRange(
+    return _then(SubstanceAmountReferenceRange(
       id == freezed ? _value.id : id as String,
       fhirExtension == freezed
           ? _value.fhirExtension
@@ -2369,9 +2364,8 @@ class __$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_SubstanceAmountReferenceRange
-    implements _SubstanceAmountReferenceRange {
-  const _$_SubstanceAmountReferenceRange(
+class _$SubstanceAmountReferenceRange implements SubstanceAmountReferenceRange {
+  const _$SubstanceAmountReferenceRange(
       this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
@@ -2383,9 +2377,8 @@ class _$_SubstanceAmountReferenceRange
         assert(lowLimit != null),
         assert(highLimit != null);
 
-  factory _$_SubstanceAmountReferenceRange.fromJson(
-          Map<String, dynamic> json) =>
-      _$_$_SubstanceAmountReferenceRangeFromJson(json);
+  factory _$SubstanceAmountReferenceRange.fromJson(Map<String, dynamic> json) =>
+      _$_$SubstanceAmountReferenceRangeFromJson(json);
 
   @override
   final String id;
@@ -2407,7 +2400,7 @@ class _$_SubstanceAmountReferenceRange
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SubstanceAmountReferenceRange &&
+        (other is SubstanceAmountReferenceRange &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.fhirExtension, fhirExtension) ||
@@ -2434,9 +2427,9 @@ class _$_SubstanceAmountReferenceRange
       const DeepCollectionEquality().hash(highLimit);
 
   @override
-  _$SubstanceAmountReferenceRangeCopyWith<_SubstanceAmountReferenceRange>
-      get copyWith => __$SubstanceAmountReferenceRangeCopyWithImpl<
-          _SubstanceAmountReferenceRange>(this, _$identity);
+  $SubstanceAmountReferenceRangeCopyWith<SubstanceAmountReferenceRange>
+      get copyWith => _$SubstanceAmountReferenceRangeCopyWithImpl<
+          SubstanceAmountReferenceRange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2496,7 +2489,7 @@ class _$_SubstanceAmountReferenceRange
             Markdown amountString,
             CodeableConcept amountType,
             String amountText,
-            _SubstanceAmountReferenceRange referenceRange),
+            SubstanceAmountReferenceRange referenceRange),
     @required
         Result substanceAmountReferenceRange(
             String id,
@@ -2568,7 +2561,7 @@ class _$_SubstanceAmountReferenceRange
         Markdown amountString,
         CodeableConcept amountType,
         String amountText,
-        _SubstanceAmountReferenceRange referenceRange),
+        SubstanceAmountReferenceRange referenceRange),
     Result substanceAmountReferenceRange(
         String id,
         @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -2588,14 +2581,14 @@ class _$_SubstanceAmountReferenceRange
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result marketingStatus(_MarketingStatus value),
-    @required Result population(_Population value),
-    @required Result prodCharacteristic(_ProdCharacteristic value),
-    @required Result productShelfLife(_ProductShelfLife value),
-    @required Result substanceAmount(_SubstanceAmount value),
+    @required Result marketingStatus(MarketingStatus value),
+    @required Result population(Population value),
+    @required Result prodCharacteristic(ProdCharacteristic value),
+    @required Result productShelfLife(ProductShelfLife value),
+    @required Result substanceAmount(SubstanceAmount value),
     @required
         Result substanceAmountReferenceRange(
-            _SubstanceAmountReferenceRange value),
+            SubstanceAmountReferenceRange value),
   }) {
     assert(marketingStatus != null);
     assert(population != null);
@@ -2609,12 +2602,12 @@ class _$_SubstanceAmountReferenceRange
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result marketingStatus(_MarketingStatus value),
-    Result population(_Population value),
-    Result prodCharacteristic(_ProdCharacteristic value),
-    Result productShelfLife(_ProductShelfLife value),
-    Result substanceAmount(_SubstanceAmount value),
-    Result substanceAmountReferenceRange(_SubstanceAmountReferenceRange value),
+    Result marketingStatus(MarketingStatus value),
+    Result population(Population value),
+    Result prodCharacteristic(ProdCharacteristic value),
+    Result productShelfLife(ProductShelfLife value),
+    Result substanceAmount(SubstanceAmount value),
+    Result substanceAmountReferenceRange(SubstanceAmountReferenceRange value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2626,21 +2619,21 @@ class _$_SubstanceAmountReferenceRange
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubstanceAmountReferenceRangeToJson(this)
+    return _$_$SubstanceAmountReferenceRangeToJson(this)
       ..['runtimeType'] = 'substanceAmountReferenceRange';
   }
 }
 
-abstract class _SubstanceAmountReferenceRange implements DraftTypes {
-  const factory _SubstanceAmountReferenceRange(
+abstract class SubstanceAmountReferenceRange implements DraftTypes {
+  const factory SubstanceAmountReferenceRange(
       String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity lowLimit,
-      Quantity highLimit) = _$_SubstanceAmountReferenceRange;
+      Quantity highLimit) = _$SubstanceAmountReferenceRange;
 
-  factory _SubstanceAmountReferenceRange.fromJson(Map<String, dynamic> json) =
-      _$_SubstanceAmountReferenceRange.fromJson;
+  factory SubstanceAmountReferenceRange.fromJson(Map<String, dynamic> json) =
+      _$SubstanceAmountReferenceRange.fromJson;
 
   @override
   String get id;
@@ -2652,6 +2645,6 @@ abstract class _SubstanceAmountReferenceRange implements DraftTypes {
   Quantity get lowLimit;
   Quantity get highLimit;
   @override
-  _$SubstanceAmountReferenceRangeCopyWith<_SubstanceAmountReferenceRange>
+  $SubstanceAmountReferenceRangeCopyWith<SubstanceAmountReferenceRange>
       get copyWith;
 }

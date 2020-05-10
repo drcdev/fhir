@@ -1,8 +1,3 @@
-export './draftTypes/population.dart';
-export './draftTypes/prodCharacteristic.dart';
-export './draftTypes/productShelfLife.dart';
-export './draftTypes/substanceAmount.dart';
-
 import 'package:fhir/primitiveTypes/fhirDateTime.dart';
 import 'package:fhir/primitiveTypes/primitiveTypes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,6 +16,9 @@ import 'specialTypes/extension.dart';
 part 'draft_types.freezed.dart';
 part 'draft_types.g.dart';
 
+// Note, by switching from public constructors (... = MarketingStatus) to private (... = _MarketingStatus)
+// We will have to call DraftTypes.marketingStatus to get to the appropriate class
+
 @freezed
 abstract class DraftTypes with _$DraftTypes {
   const factory DraftTypes.marketingStatus(
@@ -32,7 +30,7 @@ abstract class DraftTypes with _$DraftTypes {
     CodeableConcept status,
     Period dateRange,
     FhirDateTime restoreDate,
-  ) = _MarketingStatus;
+  ) = MarketingStatus;
   const factory DraftTypes.population(
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -42,7 +40,7 @@ abstract class DraftTypes with _$DraftTypes {
     CodeableConcept gender,
     CodeableConcept race,
     CodeableConcept physiologicalCondition,
-  ) = _Population;
+  ) = Population;
   const factory DraftTypes.prodCharacteristic(
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -58,7 +56,7 @@ abstract class DraftTypes with _$DraftTypes {
     List<String> imprint,
     List<Attachment> image,
     CodeableConcept scoring,
-  ) = _ProdCharacteristic;
+  ) = ProdCharacteristic;
   const factory DraftTypes.productShelfLife(
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
@@ -67,7 +65,7 @@ abstract class DraftTypes with _$DraftTypes {
     CodeableConcept type,
     Quantity period,
     List<CodeableConcept> specialPrecautionsForStorage,
-  ) = _ProductShelfLife;
+  ) = ProductShelfLife;
 
   /// Substance Amount
   const factory DraftTypes.substanceAmount(
@@ -79,17 +77,15 @@ abstract class DraftTypes with _$DraftTypes {
     Markdown amountString,
     CodeableConcept amountType,
     String amountText,
-
-    // todo: verify this is the correct method
-    _SubstanceAmountReferenceRange referenceRange,
-  ) = _SubstanceAmount;
+    SubstanceAmountReferenceRange referenceRange,
+  ) = SubstanceAmount;
   const factory DraftTypes.substanceAmountReferenceRange(
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     List<FhirExtension> modifierExtension,
     Quantity lowLimit,
     Quantity highLimit,
-  ) = _SubstanceAmountReferenceRange;
+  ) = SubstanceAmountReferenceRange;
 
   factory DraftTypes.fromJson(Map<String, dynamic> json) => _$DraftTypesFromJson(json);
 }
