@@ -62,10 +62,8 @@ Slot _$SlotFromJson(Map<String, dynamic> json) {
     status: json['status'] == null
         ? null
         : SlotStatus.fromJson(json['status'] as String),
-    start: json['start'] == null
-        ? null
-        : Instant.fromJson(json['start'] as String),
-    end: json['end'] == null ? null : Instant.fromJson(json['end'] as String),
+    start: json['start'],
+    end: json['end'],
     overbooked: json['overbooked'] as bool,
     comment: json['comment'] as String,
   );
@@ -102,8 +100,8 @@ Map<String, dynamic> _$SlotToJson(Slot instance) {
   writeNotNull('appointmentType', instance.appointmentType?.toJson());
   writeNotNull('schedule', instance.schedule?.toJson());
   writeNotNull('status', instance.status?.toJson());
-  writeNotNull('start', instance.start?.toJson());
-  writeNotNull('end', instance.end?.toJson());
+  writeNotNull('start', instance.start);
+  writeNotNull('end', instance.end);
   writeNotNull('overbooked', instance.overbooked);
   writeNotNull('comment', instance.comment);
   return val;

@@ -357,9 +357,7 @@ StructureMapSource _$StructureMapSourceFromJson(Map<String, dynamic> json) {
     min: json['min'] as int,
     max: json['max'] as String,
     type: json['type'] as String,
-    defaultValueBase64Binary: json['defaultValueBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['defaultValueBase64Binary'] as String),
+    defaultValueBase64Binary: json['defaultValueBase64Binary'],
     defaultValueBoolean: json['defaultValueBoolean'] as bool,
     defaultValueCanonical: json['defaultValueCanonical'] == null
         ? null
@@ -377,21 +375,15 @@ StructureMapSource _$StructureMapSourceFromJson(Map<String, dynamic> json) {
     defaultValueId: json['defaultValueId'] == null
         ? null
         : Id.fromJson(json['defaultValueId'] as String),
-    defaultValueInstant: json['defaultValueInstant'] == null
-        ? null
-        : Instant.fromJson(json['defaultValueInstant'] as String),
+    defaultValueInstant: json['defaultValueInstant'],
     defaultValueInteger: json['defaultValueInteger'] as int,
     defaultValueMarkdown: json['defaultValueMarkdown'] == null
         ? null
         : Markdown.fromJson(json['defaultValueMarkdown'] as String),
-    defaultValueOid: json['defaultValueOid'] == null
-        ? null
-        : Oid.fromJson(json['defaultValueOid'] as String),
+    defaultValueOid: json['defaultValueOid'],
     defaultValuePositiveInt: json['defaultValuePositiveInt'] as int,
     defaultValueString: json['defaultValueString'] as String,
-    defaultValueTime: json['defaultValueTime'] == null
-        ? null
-        : Time.fromJson(json['defaultValueTime'] as String),
+    defaultValueTime: json['defaultValueTime'],
     defaultValueUnsignedInt: json['defaultValueUnsignedInt'] as int,
     defaultValueUri: json['defaultValueUri'] == null
         ? null
@@ -399,9 +391,7 @@ StructureMapSource _$StructureMapSourceFromJson(Map<String, dynamic> json) {
     defaultValueUrl: json['defaultValueUrl'] == null
         ? null
         : FhirUrl.fromJson(json['defaultValueUrl'] as String),
-    defaultValueUuid: json['defaultValueUuid'] == null
-        ? null
-        : Uuid.fromJson(json['defaultValueUuid'] as String),
+    defaultValueUuid: json['defaultValueUuid'],
     defaultValueAddress: json['defaultValueAddress'] == null
         ? null
         : Address.fromJson(json['defaultValueAddress'] as Map<String, dynamic>),
@@ -547,8 +537,7 @@ Map<String, dynamic> _$StructureMapSourceToJson(StructureMapSource instance) {
   writeNotNull('min', instance.min);
   writeNotNull('max', instance.max);
   writeNotNull('type', instance.type);
-  writeNotNull(
-      'defaultValueBase64Binary', instance.defaultValueBase64Binary?.toJson());
+  writeNotNull('defaultValueBase64Binary', instance.defaultValueBase64Binary);
   writeNotNull('defaultValueBoolean', instance.defaultValueBoolean);
   writeNotNull(
       'defaultValueCanonical', instance.defaultValueCanonical?.toJson());
@@ -557,17 +546,17 @@ Map<String, dynamic> _$StructureMapSourceToJson(StructureMapSource instance) {
   writeNotNull('defaultValueDateTime', instance.defaultValueDateTime?.toJson());
   writeNotNull('defaultValueDecimal', instance.defaultValueDecimal);
   writeNotNull('defaultValueId', instance.defaultValueId?.toJson());
-  writeNotNull('defaultValueInstant', instance.defaultValueInstant?.toJson());
+  writeNotNull('defaultValueInstant', instance.defaultValueInstant);
   writeNotNull('defaultValueInteger', instance.defaultValueInteger);
   writeNotNull('defaultValueMarkdown', instance.defaultValueMarkdown?.toJson());
-  writeNotNull('defaultValueOid', instance.defaultValueOid?.toJson());
+  writeNotNull('defaultValueOid', instance.defaultValueOid);
   writeNotNull('defaultValuePositiveInt', instance.defaultValuePositiveInt);
   writeNotNull('defaultValueString', instance.defaultValueString);
-  writeNotNull('defaultValueTime', instance.defaultValueTime?.toJson());
+  writeNotNull('defaultValueTime', instance.defaultValueTime);
   writeNotNull('defaultValueUnsignedInt', instance.defaultValueUnsignedInt);
   writeNotNull('defaultValueUri', instance.defaultValueUri?.toJson());
   writeNotNull('defaultValueUrl', instance.defaultValueUrl?.toJson());
-  writeNotNull('defaultValueUuid', instance.defaultValueUuid?.toJson());
+  writeNotNull('defaultValueUuid', instance.defaultValueUuid);
   writeNotNull('defaultValueAddress', instance.defaultValueAddress?.toJson());
   writeNotNull('defaultValueAge', instance.defaultValueAge?.toJson());
   writeNotNull(

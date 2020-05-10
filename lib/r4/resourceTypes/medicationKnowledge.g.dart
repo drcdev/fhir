@@ -685,9 +685,7 @@ MedicationKnowledgeDrugCharacteristic
     valueQuantity: json['valueQuantity'] == null
         ? null
         : Quantity.fromJson(json['valueQuantity'] as Map<String, dynamic>),
-    valueBase64Binary: json['valueBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
+    valueBase64Binary: json['valueBase64Binary'],
   );
 }
 
@@ -710,7 +708,7 @@ Map<String, dynamic> _$MedicationKnowledgeDrugCharacteristicToJson(
   writeNotNull('valueCodeableConcept', instance.valueCodeableConcept?.toJson());
   writeNotNull('valueString', instance.valueString);
   writeNotNull('valueQuantity', instance.valueQuantity?.toJson());
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
   return val;
 }
 

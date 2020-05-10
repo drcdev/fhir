@@ -188,12 +188,8 @@ LocationHoursOfOperation _$LocationHoursOfOperationFromJson(
         ?.map((e) => e == null ? null : Code.fromJson(e as String))
         ?.toList(),
     allDay: json['allDay'] as bool,
-    openingTime: json['openingTime'] == null
-        ? null
-        : Time.fromJson(json['openingTime'] as String),
-    closingTime: json['closingTime'] == null
-        ? null
-        : Time.fromJson(json['closingTime'] as String),
+    openingTime: json['openingTime'],
+    closingTime: json['closingTime'],
   );
 }
 
@@ -215,7 +211,7 @@ Map<String, dynamic> _$LocationHoursOfOperationToJson(
   writeNotNull(
       'daysOfWeek', instance.daysOfWeek?.map((e) => e?.toJson())?.toList());
   writeNotNull('allDay', instance.allDay);
-  writeNotNull('openingTime', instance.openingTime?.toJson());
-  writeNotNull('closingTime', instance.closingTime?.toJson());
+  writeNotNull('openingTime', instance.openingTime);
+  writeNotNull('closingTime', instance.closingTime);
   return val;
 }

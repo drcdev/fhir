@@ -15,9 +15,7 @@ FhirExtension _$FhirExtensionFromJson(Map<String, dynamic> json) {
             : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url'] as String),
-    valueBase64Binary: json['valueBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
+    valueBase64Binary: json['valueBase64Binary'],
     valueBoolean: json['valueBoolean'] as bool,
     valueCanonical: json['valueCanonical'] == null
         ? null
@@ -34,21 +32,15 @@ FhirExtension _$FhirExtensionFromJson(Map<String, dynamic> json) {
     valueDecimal: (json['valueDecimal'] as num)?.toDouble(),
     valueId:
         json['valueId'] == null ? null : Id.fromJson(json['valueId'] as String),
-    valueInstant: json['valueInstant'] == null
-        ? null
-        : Instant.fromJson(json['valueInstant'] as String),
+    valueInstant: json['valueInstant'],
     valueInteger: json['valueInteger'] as int,
     valueMarkdown: json['valueMarkdown'] == null
         ? null
         : Markdown.fromJson(json['valueMarkdown'] as String),
-    valueOid: json['valueOid'] == null
-        ? null
-        : Oid.fromJson(json['valueOid'] as String),
+    valueOid: json['valueOid'],
     valuePositiveInt: json['valuePositiveInt'] as int,
     valueString: json['valueString'] as String,
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueUnsignedInt: json['valueUnsignedInt'] as int,
     valueUri: json['valueUri'] == null
         ? null
@@ -56,9 +48,7 @@ FhirExtension _$FhirExtensionFromJson(Map<String, dynamic> json) {
     valueUrl: json['valueUrl'] == null
         ? null
         : FhirUrl.fromJson(json['valueUrl'] as String),
-    valueUuid: json['valueUuid'] == null
-        ? null
-        : Uuid.fromJson(json['valueUuid'] as String),
+    valueUuid: json['valueUuid'],
     valueAddress: json['valueAddress'] == null
         ? null
         : Address.fromJson(json['valueAddress'] as Map<String, dynamic>),
@@ -178,7 +168,7 @@ Map<String, dynamic> _$FhirExtensionToJson(FhirExtension instance) {
   writeNotNull('fhirExtension',
       instance.fhirExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('url', instance.url?.toJson());
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
   writeNotNull('valueBoolean', instance.valueBoolean);
   writeNotNull('valueCanonical', instance.valueCanonical?.toJson());
   writeNotNull('valueCode', instance.valueCode?.toJson());
@@ -186,17 +176,17 @@ Map<String, dynamic> _$FhirExtensionToJson(FhirExtension instance) {
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valueDecimal', instance.valueDecimal);
   writeNotNull('valueId', instance.valueId?.toJson());
-  writeNotNull('valueInstant', instance.valueInstant?.toJson());
+  writeNotNull('valueInstant', instance.valueInstant);
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueMarkdown', instance.valueMarkdown?.toJson());
-  writeNotNull('valueOid', instance.valueOid?.toJson());
+  writeNotNull('valueOid', instance.valueOid);
   writeNotNull('valuePositiveInt', instance.valuePositiveInt);
   writeNotNull('valueString', instance.valueString);
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueUnsignedInt', instance.valueUnsignedInt);
   writeNotNull('valueUri', instance.valueUri?.toJson());
   writeNotNull('valueUrl', instance.valueUrl?.toJson());
-  writeNotNull('valueUuid', instance.valueUuid?.toJson());
+  writeNotNull('valueUuid', instance.valueUuid);
   writeNotNull('valueAddress', instance.valueAddress?.toJson());
   writeNotNull('valueAge', instance.valueAge?.toJson());
   writeNotNull('valueAnnotation', instance.valueAnnotation?.toJson());

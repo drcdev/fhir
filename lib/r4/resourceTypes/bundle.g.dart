@@ -25,9 +25,7 @@ Bundle _$BundleFromJson(Map<String, dynamic> json) {
     type: json['type'] == null
         ? null
         : BundleType.fromJson(json['type'] as String),
-    timestamp: json['timestamp'] == null
-        ? null
-        : Instant.fromJson(json['timestamp'] as String),
+    timestamp: json['timestamp'],
     total: json['total'] as int,
     link: (json['link'] as List)
         ?.map((e) =>
@@ -59,7 +57,7 @@ Map<String, dynamic> _$BundleToJson(Bundle instance) {
   writeNotNull('language', instance.language?.toJson());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('timestamp', instance.timestamp?.toJson());
+  writeNotNull('timestamp', instance.timestamp);
   writeNotNull('total', instance.total);
   writeNotNull('link', instance.link?.map((e) => e?.toJson())?.toList());
   writeNotNull('entry', instance.entry?.map((e) => e?.toJson())?.toList());
@@ -217,9 +215,7 @@ BundleRequest _$BundleRequestFromJson(Map<String, dynamic> json) {
         : BundleRequestMethod.fromJson(json['method'] as String),
     url: json['url'] == null ? null : FhirUri.fromJson(json['url'] as String),
     ifNoneMatch: json['ifNoneMatch'] as String,
-    ifModifiedSince: json['ifModifiedSince'] == null
-        ? null
-        : Instant.fromJson(json['ifModifiedSince'] as String),
+    ifModifiedSince: json['ifModifiedSince'],
     ifMatch: json['ifMatch'] as String,
     ifNoneExist: json['ifNoneExist'] as String,
   );
@@ -242,7 +238,7 @@ Map<String, dynamic> _$BundleRequestToJson(BundleRequest instance) {
   writeNotNull('method', instance.method?.toJson());
   writeNotNull('url', instance.url?.toJson());
   writeNotNull('ifNoneMatch', instance.ifNoneMatch);
-  writeNotNull('ifModifiedSince', instance.ifModifiedSince?.toJson());
+  writeNotNull('ifModifiedSince', instance.ifModifiedSince);
   writeNotNull('ifMatch', instance.ifMatch);
   writeNotNull('ifNoneExist', instance.ifNoneExist);
   return val;
@@ -266,9 +262,7 @@ BundleResponse _$BundleResponseFromJson(Map<String, dynamic> json) {
         ? null
         : FhirUri.fromJson(json['location'] as String),
     etag: json['etag'] as String,
-    lastModified: json['lastModified'] == null
-        ? null
-        : Instant.fromJson(json['lastModified'] as String),
+    lastModified: json['lastModified'],
     outcome: json['outcome'],
   );
 }
@@ -290,7 +284,7 @@ Map<String, dynamic> _$BundleResponseToJson(BundleResponse instance) {
   writeNotNull('status', instance.status);
   writeNotNull('location', instance.location?.toJson());
   writeNotNull('etag', instance.etag);
-  writeNotNull('lastModified', instance.lastModified?.toJson());
+  writeNotNull('lastModified', instance.lastModified);
   writeNotNull('outcome', instance.outcome);
   return val;
 }

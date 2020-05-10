@@ -78,10 +78,8 @@ Appointment _$AppointmentFromJson(Map<String, dynamic> json) {
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    start: json['start'] == null
-        ? null
-        : Instant.fromJson(json['start'] as String),
-    end: json['end'] == null ? null : Instant.fromJson(json['end'] as String),
+    start: json['start'],
+    end: json['end'],
     minutesDuration: json['minutesDuration'] as int,
     slot: (json['slot'] as List)
         ?.map((e) =>
@@ -147,8 +145,8 @@ Map<String, dynamic> _$AppointmentToJson(Appointment instance) {
   writeNotNull('description', instance.description);
   writeNotNull('supportingInformation',
       instance.supportingInformation?.map((e) => e?.toJson())?.toList());
-  writeNotNull('start', instance.start?.toJson());
-  writeNotNull('end', instance.end?.toJson());
+  writeNotNull('start', instance.start);
+  writeNotNull('end', instance.end);
   writeNotNull('minutesDuration', instance.minutesDuration);
   writeNotNull('slot', instance.slot?.map((e) => e?.toJson())?.toList());
   writeNotNull('created', instance.created?.toJson());

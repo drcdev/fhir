@@ -75,12 +75,8 @@ Observation _$ObservationFromJson(Map<String, dynamic> json) {
     effectiveTiming: json['effectiveTiming'] == null
         ? null
         : Timing.fromJson(json['effectiveTiming'] as Map<String, dynamic>),
-    effectiveInstant: json['effectiveInstant'] == null
-        ? null
-        : Instant.fromJson(json['effectiveInstant'] as String),
-    issued: json['issued'] == null
-        ? null
-        : Instant.fromJson(json['issued'] as String),
+    effectiveInstant: json['effectiveInstant'],
+    issued: json['issued'],
     performer: (json['performer'] as List)
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
@@ -105,9 +101,7 @@ Observation _$ObservationFromJson(Map<String, dynamic> json) {
         ? null
         : SampledData.fromJson(
             json['valueSampledData'] as Map<String, dynamic>),
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueDateTime: json['valueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['valueDateTime'] as String),
@@ -194,8 +188,8 @@ Map<String, dynamic> _$ObservationToJson(Observation instance) {
   writeNotNull('effectiveDateTime', instance.effectiveDateTime?.toJson());
   writeNotNull('effectivePeriod', instance.effectivePeriod?.toJson());
   writeNotNull('effectiveTiming', instance.effectiveTiming?.toJson());
-  writeNotNull('effectiveInstant', instance.effectiveInstant?.toJson());
-  writeNotNull('issued', instance.issued?.toJson());
+  writeNotNull('effectiveInstant', instance.effectiveInstant);
+  writeNotNull('issued', instance.issued);
   writeNotNull(
       'performer', instance.performer?.map((e) => e?.toJson())?.toList());
   writeNotNull('valueQuantity', instance.valueQuantity?.toJson());
@@ -206,7 +200,7 @@ Map<String, dynamic> _$ObservationToJson(Observation instance) {
   writeNotNull('valueRange', instance.valueRange?.toJson());
   writeNotNull('valueRatio', instance.valueRatio?.toJson());
   writeNotNull('valueSampledData', instance.valueSampledData?.toJson());
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valuePeriod', instance.valuePeriod?.toJson());
   writeNotNull('dataAbsentReason', instance.dataAbsentReason?.toJson());
@@ -324,9 +318,7 @@ ObservationComponent _$ObservationComponentFromJson(Map<String, dynamic> json) {
         ? null
         : SampledData.fromJson(
             json['valueSampledData'] as Map<String, dynamic>),
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueDateTime: json['valueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['valueDateTime'] as String),
@@ -374,7 +366,7 @@ Map<String, dynamic> _$ObservationComponentToJson(
   writeNotNull('valueRange', instance.valueRange?.toJson());
   writeNotNull('valueRatio', instance.valueRatio?.toJson());
   writeNotNull('valueSampledData', instance.valueSampledData?.toJson());
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valuePeriod', instance.valuePeriod?.toJson());
   writeNotNull('dataAbsentReason', instance.dataAbsentReason?.toJson());

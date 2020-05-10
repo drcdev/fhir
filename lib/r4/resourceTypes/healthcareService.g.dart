@@ -245,12 +245,8 @@ HealthcareServiceAvailableTime _$HealthcareServiceAvailableTimeFromJson(
         ?.toList(),
     daysOfWeek: (json['daysOfWeek'] as List)?.map((e) => e as String)?.toList(),
     allDay: json['allDay'] as bool,
-    availableStartTime: json['availableStartTime'] == null
-        ? null
-        : Time.fromJson(json['availableStartTime'] as String),
-    availableEndTime: json['availableEndTime'] == null
-        ? null
-        : Time.fromJson(json['availableEndTime'] as String),
+    availableStartTime: json['availableStartTime'],
+    availableEndTime: json['availableEndTime'],
   );
 }
 
@@ -271,8 +267,8 @@ Map<String, dynamic> _$HealthcareServiceAvailableTimeToJson(
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('daysOfWeek', instance.daysOfWeek);
   writeNotNull('allDay', instance.allDay);
-  writeNotNull('availableStartTime', instance.availableStartTime?.toJson());
-  writeNotNull('availableEndTime', instance.availableEndTime?.toJson());
+  writeNotNull('availableStartTime', instance.availableStartTime);
+  writeNotNull('availableEndTime', instance.availableEndTime);
   return val;
 }
 

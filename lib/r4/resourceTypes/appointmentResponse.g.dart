@@ -40,10 +40,8 @@ AppointmentResponse _$AppointmentResponseFromJson(Map<String, dynamic> json) {
     appointment: json['appointment'] == null
         ? null
         : Reference.fromJson(json['appointment'] as Map<String, dynamic>),
-    start: json['start'] == null
-        ? null
-        : Instant.fromJson(json['start'] as String),
-    end: json['end'] == null ? null : Instant.fromJson(json['end'] as String),
+    start: json['start'],
+    end: json['end'],
     participantType: (json['participantType'] as List)
         ?.map((e) => e == null
             ? null
@@ -82,8 +80,8 @@ Map<String, dynamic> _$AppointmentResponseToJson(AppointmentResponse instance) {
   writeNotNull(
       'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
   writeNotNull('appointment', instance.appointment?.toJson());
-  writeNotNull('start', instance.start?.toJson());
-  writeNotNull('end', instance.end?.toJson());
+  writeNotNull('start', instance.start);
+  writeNotNull('end', instance.end);
   writeNotNull('participantType',
       instance.participantType?.map((e) => e?.toJson())?.toList());
   writeNotNull('actor', instance.actor?.toJson());

@@ -64,9 +64,7 @@ DiagnosticReport _$DiagnosticReportFromJson(Map<String, dynamic> json) {
     effectivePeriod: json['effectivePeriod'] == null
         ? null
         : Period.fromJson(json['effectivePeriod'] as Map<String, dynamic>),
-    issued: json['issued'] == null
-        ? null
-        : Instant.fromJson(json['issued'] as String),
+    issued: json['issued'],
     performer: (json['performer'] as List)
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
@@ -136,7 +134,7 @@ Map<String, dynamic> _$DiagnosticReportToJson(DiagnosticReport instance) {
   writeNotNull('encounter', instance.encounter?.toJson());
   writeNotNull('effectiveDateTime', instance.effectiveDateTime?.toJson());
   writeNotNull('effectivePeriod', instance.effectivePeriod?.toJson());
-  writeNotNull('issued', instance.issued?.toJson());
+  writeNotNull('issued', instance.issued);
   writeNotNull(
       'performer', instance.performer?.map((e) => e?.toJson())?.toList());
   writeNotNull('resultsInterpreter',

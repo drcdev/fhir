@@ -17,9 +17,7 @@ Meta _$MetaFromJson(Map<String, dynamic> json) {
     versionId: json['versionId'] == null
         ? null
         : Id.fromJson(json['versionId'] as String),
-    lastUpdated: json['lastUpdated'] == null
-        ? null
-        : Instant.fromJson(json['lastUpdated'] as String),
+    lastUpdated: json['lastUpdated'],
     source: json['source'] == null ? null : Uri.parse(json['source'] as String),
     profile: (json['profile'] as List)
         ?.map((e) => e == null ? null : Canonical.fromJson(e as String))
@@ -48,7 +46,7 @@ Map<String, dynamic> _$MetaToJson(Meta instance) {
   writeNotNull(
       'extension', instance.extension?.map((e) => e?.toJson())?.toList());
   writeNotNull('versionId', instance.versionId?.toJson());
-  writeNotNull('lastUpdated', instance.lastUpdated?.toJson());
+  writeNotNull('lastUpdated', instance.lastUpdated);
   writeNotNull('source', instance.source?.toString());
   writeNotNull('profile', instance.profile?.map((e) => e?.toJson())?.toList());
   writeNotNull(

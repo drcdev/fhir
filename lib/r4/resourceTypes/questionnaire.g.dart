@@ -271,9 +271,7 @@ QuestionnaireEnableWhen _$QuestionnaireEnableWhenFromJson(
     answerDateTime: json['answerDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['answerDateTime'] as String),
-    answerTime: json['answerTime'] == null
-        ? null
-        : Time.fromJson(json['answerTime'] as String),
+    answerTime: json['answerTime'],
     answerString: json['answerString'] as String,
     answerCoding: json['answerCoding'] == null
         ? null
@@ -309,7 +307,7 @@ Map<String, dynamic> _$QuestionnaireEnableWhenToJson(
   writeNotNull('answerInteger', instance.answerInteger);
   writeNotNull('answerDate', instance.answerDate?.toJson());
   writeNotNull('answerDateTime', instance.answerDateTime?.toJson());
-  writeNotNull('answerTime', instance.answerTime?.toJson());
+  writeNotNull('answerTime', instance.answerTime);
   writeNotNull('answerString', instance.answerString);
   writeNotNull('answerCoding', instance.answerCoding?.toJson());
   writeNotNull('answerQuantity', instance.answerQuantity?.toJson());
@@ -335,9 +333,7 @@ QuestionnaireAnswerOption _$QuestionnaireAnswerOptionFromJson(
     valueDate: json['valueDate'] == null
         ? null
         : Date.fromJson(json['valueDate'] as String),
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueString: json['valueString'] as String,
     valueCoding: json['valueCoding'] == null
         ? null
@@ -366,7 +362,7 @@ Map<String, dynamic> _$QuestionnaireAnswerOptionToJson(
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueDate', instance.valueDate?.toJson());
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueString', instance.valueString);
   writeNotNull('valueCoding', instance.valueCoding?.toJson());
   writeNotNull('valueReference', instance.valueReference?.toJson());
@@ -396,9 +392,7 @@ QuestionnaireInitial _$QuestionnaireInitialFromJson(Map<String, dynamic> json) {
     valueDateTime: json['valueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['valueDateTime'] as String),
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueString: json['valueString'] as String,
     valueUri: json['valueUri'] == null
         ? null
@@ -438,7 +432,7 @@ Map<String, dynamic> _$QuestionnaireInitialToJson(
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueDate', instance.valueDate?.toJson());
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueString', instance.valueString);
   writeNotNull('valueUri', instance.valueUri?.toJson());
   writeNotNull('valueAttachment', instance.valueAttachment?.toJson());

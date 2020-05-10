@@ -40,7 +40,7 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
         ?.map((e) =>
             e == null ? null : ContactPoint.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    end: json['end'] == null ? null : Instant.fromJson(json['end'] as String),
+    end: json['end'],
     reason: json['reason'] as String,
     criteria: json['criteria'] as String,
     error: json['error'] as String,
@@ -72,7 +72,7 @@ Map<String, dynamic> _$SubscriptionToJson(Subscription instance) {
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('status', instance.status?.toJson());
   writeNotNull('contact', instance.contact?.map((e) => e?.toJson())?.toList());
-  writeNotNull('end', instance.end?.toJson());
+  writeNotNull('end', instance.end);
   writeNotNull('reason', instance.reason);
   writeNotNull('criteria', instance.criteria);
   writeNotNull('error', instance.error);

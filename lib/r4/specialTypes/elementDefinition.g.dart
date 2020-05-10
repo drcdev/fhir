@@ -60,9 +60,7 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
             ? null
             : ElementDefinitionType.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    defaultValueBase64Binary: json['defaultValueBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['defaultValueBase64Binary'] as String),
+    defaultValueBase64Binary: json['defaultValueBase64Binary'],
     defaultValueBoolean: json['defaultValueBoolean'] as bool,
     defaultValueCanonical: json['defaultValueCanonical'] == null
         ? null
@@ -80,21 +78,15 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     defaultValueId: json['defaultValueId'] == null
         ? null
         : Id.fromJson(json['defaultValueId'] as String),
-    defaultValueInstant: json['defaultValueInstant'] == null
-        ? null
-        : Instant.fromJson(json['defaultValueInstant'] as String),
+    defaultValueInstant: json['defaultValueInstant'],
     defaultValueInteger: json['defaultValueInteger'] as int,
     defaultValueMarkdown: json['defaultValueMarkdown'] == null
         ? null
         : Markdown.fromJson(json['defaultValueMarkdown'] as String),
-    defaultValueOid: json['defaultValueOid'] == null
-        ? null
-        : Oid.fromJson(json['defaultValueOid'] as String),
+    defaultValueOid: json['defaultValueOid'],
     defaultValuePositiveInt: json['defaultValuePositiveInt'] as int,
     defaultValueString: json['defaultValueString'] as String,
-    defaultValueTime: json['defaultValueTime'] == null
-        ? null
-        : Time.fromJson(json['defaultValueTime'] as String),
+    defaultValueTime: json['defaultValueTime'],
     defaultValueUnsignedInt: json['defaultValueUnsignedInt'] as int,
     defaultValueUri: json['defaultValueUri'] == null
         ? null
@@ -102,9 +94,7 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     defaultValueUrl: json['defaultValueUrl'] == null
         ? null
         : FhirUrl.fromJson(json['defaultValueUrl'] as String),
-    defaultValueUuid: json['defaultValueUuid'] == null
-        ? null
-        : Uuid.fromJson(json['defaultValueUuid'] as String),
+    defaultValueUuid: json['defaultValueUuid'],
     defaultValueAddress: json['defaultValueAddress'] == null
         ? null
         : Address.fromJson(json['defaultValueAddress'] as Map<String, dynamic>),
@@ -223,9 +213,7 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
         ? null
         : Markdown.fromJson(json['meaningWhenMissing'] as String),
     orderMeaning: json['orderMeaning'] as String,
-    fixedBase64Binary: json['fixedBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['fixedBase64Binary'] as String),
+    fixedBase64Binary: json['fixedBase64Binary'],
     fixedBoolean: json['fixedBoolean'] as bool,
     fixedCanonical: json['fixedCanonical'] == null
         ? null
@@ -242,21 +230,15 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     fixedDecimal: (json['fixedDecimal'] as num)?.toDouble(),
     fixedId:
         json['fixedId'] == null ? null : Id.fromJson(json['fixedId'] as String),
-    fixedInstant: json['fixedInstant'] == null
-        ? null
-        : Instant.fromJson(json['fixedInstant'] as String),
+    fixedInstant: json['fixedInstant'],
     fixedInteger: json['fixedInteger'] as int,
     fixedMarkdown: json['fixedMarkdown'] == null
         ? null
         : Markdown.fromJson(json['fixedMarkdown'] as String),
-    fixedOid: json['fixedOid'] == null
-        ? null
-        : Oid.fromJson(json['fixedOid'] as String),
+    fixedOid: json['fixedOid'],
     fixedPositiveInt: json['fixedPositiveInt'] as int,
     fixedString: json['fixedString'] as String,
-    fixedTime: json['fixedTime'] == null
-        ? null
-        : Time.fromJson(json['fixedTime'] as String),
+    fixedTime: json['fixedTime'],
     fixedUnsignedInt: json['fixedUnsignedInt'] as int,
     fixedUri: json['fixedUri'] == null
         ? null
@@ -264,9 +246,7 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     fixedUrl: json['fixedUrl'] == null
         ? null
         : FhirUrl.fromJson(json['fixedUrl'] as String),
-    fixedUuid: json['fixedUuid'] == null
-        ? null
-        : Uuid.fromJson(json['fixedUuid'] as String),
+    fixedUuid: json['fixedUuid'],
     fixedAddress: json['fixedAddress'] == null
         ? null
         : Address.fromJson(json['fixedAddress'] as Map<String, dynamic>),
@@ -513,12 +493,8 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     minValueDateTime: json['minValueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['minValueDateTime'] as String),
-    minValueInstant: json['minValueInstant'] == null
-        ? null
-        : Instant.fromJson(json['minValueInstant'] as String),
-    minValueTime: json['minValueTime'] == null
-        ? null
-        : Time.fromJson(json['minValueTime'] as String),
+    minValueInstant: json['minValueInstant'],
+    minValueTime: json['minValueTime'],
     minValueDecimal: (json['minValueDecimal'] as num)?.toDouble(),
     minValueInteger: json['minValueInteger'] as int,
     minValuePositiveInt: json['minValuePositiveInt'] as int,
@@ -532,12 +508,8 @@ ElementDefinition _$ElementDefinitionFromJson(Map<String, dynamic> json) {
     maxValueDateTime: json['maxValueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['maxValueDateTime'] as String),
-    maxValueInstant: json['maxValueInstant'] == null
-        ? null
-        : Instant.fromJson(json['maxValueInstant'] as String),
-    maxValueTime: json['maxValueTime'] == null
-        ? null
-        : Time.fromJson(json['maxValueTime'] as String),
+    maxValueInstant: json['maxValueInstant'],
+    maxValueTime: json['maxValueTime'],
     maxValueDecimal: (json['maxValueDecimal'] as num)?.toDouble(),
     maxValueInteger: json['maxValueInteger'] as int,
     maxValuePositiveInt: json['maxValuePositiveInt'] as int,
@@ -602,8 +574,7 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('base', instance.base?.toJson());
   writeNotNull('contentReference', instance.contentReference?.toJson());
   writeNotNull('type', instance.type?.map((e) => e?.toJson())?.toList());
-  writeNotNull(
-      'defaultValueBase64Binary', instance.defaultValueBase64Binary?.toJson());
+  writeNotNull('defaultValueBase64Binary', instance.defaultValueBase64Binary);
   writeNotNull('defaultValueBoolean', instance.defaultValueBoolean);
   writeNotNull(
       'defaultValueCanonical', instance.defaultValueCanonical?.toJson());
@@ -612,17 +583,17 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('defaultValueDateTime', instance.defaultValueDateTime?.toJson());
   writeNotNull('defaultValueDecimal', instance.defaultValueDecimal);
   writeNotNull('defaultValueId', instance.defaultValueId?.toJson());
-  writeNotNull('defaultValueInstant', instance.defaultValueInstant?.toJson());
+  writeNotNull('defaultValueInstant', instance.defaultValueInstant);
   writeNotNull('defaultValueInteger', instance.defaultValueInteger);
   writeNotNull('defaultValueMarkdown', instance.defaultValueMarkdown?.toJson());
-  writeNotNull('defaultValueOid', instance.defaultValueOid?.toJson());
+  writeNotNull('defaultValueOid', instance.defaultValueOid);
   writeNotNull('defaultValuePositiveInt', instance.defaultValuePositiveInt);
   writeNotNull('defaultValueString', instance.defaultValueString);
-  writeNotNull('defaultValueTime', instance.defaultValueTime?.toJson());
+  writeNotNull('defaultValueTime', instance.defaultValueTime);
   writeNotNull('defaultValueUnsignedInt', instance.defaultValueUnsignedInt);
   writeNotNull('defaultValueUri', instance.defaultValueUri?.toJson());
   writeNotNull('defaultValueUrl', instance.defaultValueUrl?.toJson());
-  writeNotNull('defaultValueUuid', instance.defaultValueUuid?.toJson());
+  writeNotNull('defaultValueUuid', instance.defaultValueUuid);
   writeNotNull('defaultValueAddress', instance.defaultValueAddress?.toJson());
   writeNotNull('defaultValueAge', instance.defaultValueAge?.toJson());
   writeNotNull(
@@ -673,7 +644,7 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('defaultValueMeta', instance.defaultValueMeta?.toJson());
   writeNotNull('meaningWhenMissing', instance.meaningWhenMissing?.toJson());
   writeNotNull('orderMeaning', instance.orderMeaning);
-  writeNotNull('fixedBase64Binary', instance.fixedBase64Binary?.toJson());
+  writeNotNull('fixedBase64Binary', instance.fixedBase64Binary);
   writeNotNull('fixedBoolean', instance.fixedBoolean);
   writeNotNull('fixedCanonical', instance.fixedCanonical?.toJson());
   writeNotNull('fixedCode', instance.fixedCode?.toJson());
@@ -681,17 +652,17 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('fixedDateTime', instance.fixedDateTime?.toJson());
   writeNotNull('fixedDecimal', instance.fixedDecimal);
   writeNotNull('fixedId', instance.fixedId?.toJson());
-  writeNotNull('fixedInstant', instance.fixedInstant?.toJson());
+  writeNotNull('fixedInstant', instance.fixedInstant);
   writeNotNull('fixedInteger', instance.fixedInteger);
   writeNotNull('fixedMarkdown', instance.fixedMarkdown?.toJson());
-  writeNotNull('fixedOid', instance.fixedOid?.toJson());
+  writeNotNull('fixedOid', instance.fixedOid);
   writeNotNull('fixedPositiveInt', instance.fixedPositiveInt);
   writeNotNull('fixedString', instance.fixedString);
-  writeNotNull('fixedTime', instance.fixedTime?.toJson());
+  writeNotNull('fixedTime', instance.fixedTime);
   writeNotNull('fixedUnsignedInt', instance.fixedUnsignedInt);
   writeNotNull('fixedUri', instance.fixedUri?.toJson());
   writeNotNull('fixedUrl', instance.fixedUrl?.toJson());
-  writeNotNull('fixedUuid', instance.fixedUuid?.toJson());
+  writeNotNull('fixedUuid', instance.fixedUuid);
   writeNotNull('fixedAddress', instance.fixedAddress?.toJson());
   writeNotNull('fixedAge', instance.fixedAge?.toJson());
   writeNotNull('fixedAnnotation', instance.fixedAnnotation?.toJson());
@@ -783,8 +754,8 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('example', instance.example?.map((e) => e?.toJson())?.toList());
   writeNotNull('minValueDate', instance.minValueDate?.toJson());
   writeNotNull('minValueDateTime', instance.minValueDateTime?.toJson());
-  writeNotNull('minValueInstant', instance.minValueInstant?.toJson());
-  writeNotNull('minValueTime', instance.minValueTime?.toJson());
+  writeNotNull('minValueInstant', instance.minValueInstant);
+  writeNotNull('minValueTime', instance.minValueTime);
   writeNotNull('minValueDecimal', instance.minValueDecimal);
   writeNotNull('minValueInteger', instance.minValueInteger);
   writeNotNull('minValuePositiveInt', instance.minValuePositiveInt);
@@ -792,8 +763,8 @@ Map<String, dynamic> _$ElementDefinitionToJson(ElementDefinition instance) {
   writeNotNull('minValueQuantity', instance.minValueQuantity?.toJson());
   writeNotNull('maxValueDate', instance.maxValueDate?.toJson());
   writeNotNull('maxValueDateTime', instance.maxValueDateTime?.toJson());
-  writeNotNull('maxValueInstant', instance.maxValueInstant?.toJson());
-  writeNotNull('maxValueTime', instance.maxValueTime?.toJson());
+  writeNotNull('maxValueInstant', instance.maxValueInstant);
+  writeNotNull('maxValueTime', instance.maxValueTime);
   writeNotNull('maxValueDecimal', instance.maxValueDecimal);
   writeNotNull('maxValueInteger', instance.maxValueInteger);
   writeNotNull('maxValuePositiveInt', instance.maxValuePositiveInt);
@@ -1020,9 +991,7 @@ ElementDefinitionExample _$ElementDefinitionExampleFromJson(
             : FhirExtension.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     label: json['label'] as String,
-    valueBase64Binary: json['valueBase64Binary'] == null
-        ? null
-        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
+    valueBase64Binary: json['valueBase64Binary'],
     valueBoolean: json['valueBoolean'] as bool,
     valueCanonical: json['valueCanonical'] == null
         ? null
@@ -1039,21 +1008,15 @@ ElementDefinitionExample _$ElementDefinitionExampleFromJson(
     valueDecimal: (json['valueDecimal'] as num)?.toDouble(),
     valueId:
         json['valueId'] == null ? null : Id.fromJson(json['valueId'] as String),
-    valueInstant: json['valueInstant'] == null
-        ? null
-        : Instant.fromJson(json['valueInstant'] as String),
+    valueInstant: json['valueInstant'],
     valueInteger: json['valueInteger'] as int,
     valueMarkdown: json['valueMarkdown'] == null
         ? null
         : Markdown.fromJson(json['valueMarkdown'] as String),
-    valueOid: json['valueOid'] == null
-        ? null
-        : Oid.fromJson(json['valueOid'] as String),
+    valueOid: json['valueOid'],
     valuePositiveInt: json['valuePositiveInt'] as int,
     valueString: json['valueString'] as String,
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueUnsignedInt: json['valueUnsignedInt'] as int,
     valueUri: json['valueUri'] == null
         ? null
@@ -1061,9 +1024,7 @@ ElementDefinitionExample _$ElementDefinitionExampleFromJson(
     valueUrl: json['valueUrl'] == null
         ? null
         : FhirUrl.fromJson(json['valueUrl'] as String),
-    valueUuid: json['valueUuid'] == null
-        ? null
-        : Uuid.fromJson(json['valueUuid'] as String),
+    valueUuid: json['valueUuid'],
     valueAddress: json['valueAddress'] == null
         ? null
         : Address.fromJson(json['valueAddress'] as Map<String, dynamic>),
@@ -1186,7 +1147,7 @@ Map<String, dynamic> _$ElementDefinitionExampleToJson(
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('label', instance.label);
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
   writeNotNull('valueBoolean', instance.valueBoolean);
   writeNotNull('valueCanonical', instance.valueCanonical?.toJson());
   writeNotNull('valueCode', instance.valueCode?.toJson());
@@ -1194,17 +1155,17 @@ Map<String, dynamic> _$ElementDefinitionExampleToJson(
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valueDecimal', instance.valueDecimal);
   writeNotNull('valueId', instance.valueId?.toJson());
-  writeNotNull('valueInstant', instance.valueInstant?.toJson());
+  writeNotNull('valueInstant', instance.valueInstant);
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueMarkdown', instance.valueMarkdown?.toJson());
-  writeNotNull('valueOid', instance.valueOid?.toJson());
+  writeNotNull('valueOid', instance.valueOid);
   writeNotNull('valuePositiveInt', instance.valuePositiveInt);
   writeNotNull('valueString', instance.valueString);
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueUnsignedInt', instance.valueUnsignedInt);
   writeNotNull('valueUri', instance.valueUri?.toJson());
   writeNotNull('valueUrl', instance.valueUrl?.toJson());
-  writeNotNull('valueUuid', instance.valueUuid?.toJson());
+  writeNotNull('valueUuid', instance.valueUuid);
   writeNotNull('valueAddress', instance.valueAddress?.toJson());
   writeNotNull('valueAge', instance.valueAge?.toJson());
   writeNotNull('valueAnnotation', instance.valueAnnotation?.toJson());

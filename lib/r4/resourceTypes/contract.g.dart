@@ -563,9 +563,7 @@ ContractAnswer _$ContractAnswerFromJson(Map<String, dynamic> json) {
     valueDateTime: json['valueDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['valueDateTime'] as String),
-    valueTime: json['valueTime'] == null
-        ? null
-        : Time.fromJson(json['valueTime'] as String),
+    valueTime: json['valueTime'],
     valueString: json['valueString'] as String,
     valueUri: json['valueUri'] == null
         ? null
@@ -604,7 +602,7 @@ Map<String, dynamic> _$ContractAnswerToJson(ContractAnswer instance) {
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueDate', instance.valueDate?.toJson());
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
-  writeNotNull('valueTime', instance.valueTime?.toJson());
+  writeNotNull('valueTime', instance.valueTime);
   writeNotNull('valueString', instance.valueString);
   writeNotNull('valueUri', instance.valueUri?.toJson());
   writeNotNull('valueAttachment', instance.valueAttachment?.toJson());
