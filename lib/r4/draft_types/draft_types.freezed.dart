@@ -32,49 +32,49 @@ class _$DraftTypesTearOff {
   const _$DraftTypesTearOff();
 
   MarketingStatus marketingStatus(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       CodeableConcept country,
       CodeableConcept jurisdiction,
       CodeableConcept status,
       Period dateRange,
-      FhirDateTime restoreDate) {
+      FhirDateTime restoreDate}) {
     return MarketingStatus(
-      id,
-      fhirExtension,
-      modifierExtension,
-      country,
-      jurisdiction,
-      status,
-      dateRange,
-      restoreDate,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      country: country,
+      jurisdiction: jurisdiction,
+      status: status,
+      dateRange: dateRange,
+      restoreDate: restoreDate,
     );
   }
 
   Population population(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Range ageRange,
       CodeableConcept ageCodeableConcept,
       CodeableConcept gender,
       CodeableConcept race,
-      CodeableConcept physiologicalCondition) {
+      CodeableConcept physiologicalCondition}) {
     return Population(
-      id,
-      fhirExtension,
-      modifierExtension,
-      ageRange,
-      ageCodeableConcept,
-      gender,
-      race,
-      physiologicalCondition,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      ageRange: ageRange,
+      ageCodeableConcept: ageCodeableConcept,
+      gender: gender,
+      race: race,
+      physiologicalCondition: physiologicalCondition,
     );
   }
 
   ProdCharacteristic prodCharacteristic(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity height,
@@ -87,46 +87,46 @@ class _$DraftTypesTearOff {
       List<String> color,
       List<String> imprint,
       List<Attachment> image,
-      CodeableConcept scoring) {
+      CodeableConcept scoring}) {
     return ProdCharacteristic(
-      id,
-      fhirExtension,
-      modifierExtension,
-      height,
-      width,
-      depth,
-      weight,
-      nominalVolume,
-      externalDiameter,
-      shape,
-      color,
-      imprint,
-      image,
-      scoring,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      height: height,
+      width: width,
+      depth: depth,
+      weight: weight,
+      nominalVolume: nominalVolume,
+      externalDiameter: externalDiameter,
+      shape: shape,
+      color: color,
+      imprint: imprint,
+      image: image,
+      scoring: scoring,
     );
   }
 
   ProductShelfLife productShelfLife(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Identifier identifier,
       CodeableConcept type,
       Quantity period,
-      List<CodeableConcept> specialPrecautionsForStorage) {
+      List<CodeableConcept> specialPrecautionsForStorage}) {
     return ProductShelfLife(
-      id,
-      fhirExtension,
-      modifierExtension,
-      identifier,
-      type,
-      period,
-      specialPrecautionsForStorage,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      identifier: identifier,
+      type: type,
+      period: period,
+      specialPrecautionsForStorage: specialPrecautionsForStorage,
     );
   }
 
   SubstanceAmount substanceAmount(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity amountQuantity,
@@ -134,32 +134,32 @@ class _$DraftTypesTearOff {
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      SubstanceAmountReferenceRange referenceRange) {
+      SubstanceAmountReferenceRange referenceRange}) {
     return SubstanceAmount(
-      id,
-      fhirExtension,
-      modifierExtension,
-      amountQuantity,
-      amountRange,
-      amountString,
-      amountType,
-      amountText,
-      referenceRange,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      amountQuantity: amountQuantity,
+      amountRange: amountRange,
+      amountString: amountString,
+      amountType: amountType,
+      amountText: amountText,
+      referenceRange: referenceRange,
     );
   }
 
   SubstanceAmountReferenceRange substanceAmountReferenceRange(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity lowLimit,
-      Quantity highLimit) {
+      Quantity highLimit}) {
     return SubstanceAmountReferenceRange(
-      id,
-      fhirExtension,
-      modifierExtension,
-      lowLimit,
-      highLimit,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      lowLimit: lowLimit,
+      highLimit: highLimit,
     );
   }
 }
@@ -398,20 +398,22 @@ class _$MarketingStatusCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
     Object restoreDate = freezed,
   }) {
     return _then(MarketingStatus(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      country == freezed ? _value.country : country as CodeableConcept,
-      jurisdiction == freezed
+      country: country == freezed ? _value.country : country as CodeableConcept,
+      jurisdiction: jurisdiction == freezed
           ? _value.jurisdiction
           : jurisdiction as CodeableConcept,
-      status == freezed ? _value.status : status as CodeableConcept,
-      dateRange == freezed ? _value.dateRange : dateRange as Period,
-      restoreDate == freezed ? _value.restoreDate : restoreDate as FhirDateTime,
+      status: status == freezed ? _value.status : status as CodeableConcept,
+      dateRange: dateRange == freezed ? _value.dateRange : dateRange as Period,
+      restoreDate: restoreDate == freezed
+          ? _value.restoreDate
+          : restoreDate as FhirDateTime,
     ));
   }
 }
@@ -419,22 +421,14 @@ class _$MarketingStatusCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MarketingStatus implements MarketingStatus {
   const _$MarketingStatus(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.country,
       this.jurisdiction,
       this.status,
       this.dateRange,
-      this.restoreDate)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(country != null),
-        assert(jurisdiction != null),
-        assert(status != null),
-        assert(dateRange != null),
-        assert(restoreDate != null);
+      this.restoreDate});
 
   factory _$MarketingStatus.fromJson(Map<String, dynamic> json) =>
       _$_$MarketingStatusFromJson(json);
@@ -700,14 +694,14 @@ class _$MarketingStatus implements MarketingStatus {
 
 abstract class MarketingStatus implements DraftTypes {
   const factory MarketingStatus(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       CodeableConcept country,
       CodeableConcept jurisdiction,
       CodeableConcept status,
       Period dateRange,
-      FhirDateTime restoreDate) = _$MarketingStatus;
+      FhirDateTime restoreDate}) = _$MarketingStatus;
 
   factory MarketingStatus.fromJson(Map<String, dynamic> json) =
       _$MarketingStatus.fromJson;
@@ -764,20 +758,20 @@ class _$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
     Object physiologicalCondition = freezed,
   }) {
     return _then(Population(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      ageRange == freezed ? _value.ageRange : ageRange as Range,
-      ageCodeableConcept == freezed
+      ageRange: ageRange == freezed ? _value.ageRange : ageRange as Range,
+      ageCodeableConcept: ageCodeableConcept == freezed
           ? _value.ageCodeableConcept
           : ageCodeableConcept as CodeableConcept,
-      gender == freezed ? _value.gender : gender as CodeableConcept,
-      race == freezed ? _value.race : race as CodeableConcept,
-      physiologicalCondition == freezed
+      gender: gender == freezed ? _value.gender : gender as CodeableConcept,
+      race: race == freezed ? _value.race : race as CodeableConcept,
+      physiologicalCondition: physiologicalCondition == freezed
           ? _value.physiologicalCondition
           : physiologicalCondition as CodeableConcept,
     ));
@@ -787,22 +781,14 @@ class _$PopulationCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Population implements Population {
   const _$Population(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.ageRange,
       this.ageCodeableConcept,
       this.gender,
       this.race,
-      this.physiologicalCondition)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(ageRange != null),
-        assert(ageCodeableConcept != null),
-        assert(gender != null),
-        assert(race != null),
-        assert(physiologicalCondition != null);
+      this.physiologicalCondition});
 
   factory _$Population.fromJson(Map<String, dynamic> json) =>
       _$_$PopulationFromJson(json);
@@ -1067,14 +1053,14 @@ class _$Population implements Population {
 
 abstract class Population implements DraftTypes {
   const factory Population(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Range ageRange,
       CodeableConcept ageCodeableConcept,
       CodeableConcept gender,
       CodeableConcept race,
-      CodeableConcept physiologicalCondition) = _$Population;
+      CodeableConcept physiologicalCondition}) = _$Population;
 
   factory Population.fromJson(Map<String, dynamic> json) =
       _$Population.fromJson;
@@ -1146,28 +1132,28 @@ class _$ProdCharacteristicCopyWithImpl<$Res>
     Object scoring = freezed,
   }) {
     return _then(ProdCharacteristic(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      height == freezed ? _value.height : height as Quantity,
-      width == freezed ? _value.width : width as Quantity,
-      depth == freezed ? _value.depth : depth as Quantity,
-      weight == freezed ? _value.weight : weight as Quantity,
-      nominalVolume == freezed
+      height: height == freezed ? _value.height : height as Quantity,
+      width: width == freezed ? _value.width : width as Quantity,
+      depth: depth == freezed ? _value.depth : depth as Quantity,
+      weight: weight == freezed ? _value.weight : weight as Quantity,
+      nominalVolume: nominalVolume == freezed
           ? _value.nominalVolume
           : nominalVolume as Quantity,
-      externalDiameter == freezed
+      externalDiameter: externalDiameter == freezed
           ? _value.externalDiameter
           : externalDiameter as Quantity,
-      shape == freezed ? _value.shape : shape as String,
-      color == freezed ? _value.color : color as List<String>,
-      imprint == freezed ? _value.imprint : imprint as List<String>,
-      image == freezed ? _value.image : image as List<Attachment>,
-      scoring == freezed ? _value.scoring : scoring as CodeableConcept,
+      shape: shape == freezed ? _value.shape : shape as String,
+      color: color == freezed ? _value.color : color as List<String>,
+      imprint: imprint == freezed ? _value.imprint : imprint as List<String>,
+      image: image == freezed ? _value.image : image as List<Attachment>,
+      scoring: scoring == freezed ? _value.scoring : scoring as CodeableConcept,
     ));
   }
 }
@@ -1175,7 +1161,7 @@ class _$ProdCharacteristicCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProdCharacteristic implements ProdCharacteristic {
   const _$ProdCharacteristic(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.height,
@@ -1188,21 +1174,7 @@ class _$ProdCharacteristic implements ProdCharacteristic {
       this.color,
       this.imprint,
       this.image,
-      this.scoring)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(height != null),
-        assert(width != null),
-        assert(depth != null),
-        assert(weight != null),
-        assert(nominalVolume != null),
-        assert(externalDiameter != null),
-        assert(shape != null),
-        assert(color != null),
-        assert(imprint != null),
-        assert(image != null),
-        assert(scoring != null);
+      this.scoring});
 
   factory _$ProdCharacteristic.fromJson(Map<String, dynamic> json) =>
       _$_$ProdCharacteristicFromJson(json);
@@ -1524,7 +1496,7 @@ class _$ProdCharacteristic implements ProdCharacteristic {
 
 abstract class ProdCharacteristic implements DraftTypes {
   const factory ProdCharacteristic(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity height,
@@ -1537,7 +1509,7 @@ abstract class ProdCharacteristic implements DraftTypes {
       List<String> color,
       List<String> imprint,
       List<Attachment> image,
-      CodeableConcept scoring) = _$ProdCharacteristic;
+      CodeableConcept scoring}) = _$ProdCharacteristic;
 
   factory ProdCharacteristic.fromJson(Map<String, dynamic> json) =
       _$ProdCharacteristic.fromJson;
@@ -1601,17 +1573,18 @@ class _$ProductShelfLifeCopyWithImpl<$Res>
     Object specialPrecautionsForStorage = freezed,
   }) {
     return _then(ProductShelfLife(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      identifier == freezed ? _value.identifier : identifier as Identifier,
-      type == freezed ? _value.type : type as CodeableConcept,
-      period == freezed ? _value.period : period as Quantity,
-      specialPrecautionsForStorage == freezed
+      identifier:
+          identifier == freezed ? _value.identifier : identifier as Identifier,
+      type: type == freezed ? _value.type : type as CodeableConcept,
+      period: period == freezed ? _value.period : period as Quantity,
+      specialPrecautionsForStorage: specialPrecautionsForStorage == freezed
           ? _value.specialPrecautionsForStorage
           : specialPrecautionsForStorage as List<CodeableConcept>,
     ));
@@ -1621,20 +1594,13 @@ class _$ProductShelfLifeCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductShelfLife implements ProductShelfLife {
   const _$ProductShelfLife(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.identifier,
       this.type,
       this.period,
-      this.specialPrecautionsForStorage)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(identifier != null),
-        assert(type != null),
-        assert(period != null),
-        assert(specialPrecautionsForStorage != null);
+      this.specialPrecautionsForStorage});
 
   factory _$ProductShelfLife.fromJson(Map<String, dynamic> json) =>
       _$_$ProductShelfLifeFromJson(json);
@@ -1896,13 +1862,13 @@ class _$ProductShelfLife implements ProductShelfLife {
 
 abstract class ProductShelfLife implements DraftTypes {
   const factory ProductShelfLife(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Identifier identifier,
       CodeableConcept type,
       Quantity period,
-      List<CodeableConcept> specialPrecautionsForStorage) = _$ProductShelfLife;
+      List<CodeableConcept> specialPrecautionsForStorage}) = _$ProductShelfLife;
 
   factory ProductShelfLife.fromJson(Map<String, dynamic> json) =
       _$ProductShelfLife.fromJson;
@@ -1962,21 +1928,27 @@ class _$SubstanceAmountCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
     Object referenceRange = freezed,
   }) {
     return _then(SubstanceAmount(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      amountQuantity == freezed
+      amountQuantity: amountQuantity == freezed
           ? _value.amountQuantity
           : amountQuantity as Quantity,
-      amountRange == freezed ? _value.amountRange : amountRange as Range,
-      amountString == freezed ? _value.amountString : amountString as Markdown,
-      amountType == freezed ? _value.amountType : amountType as CodeableConcept,
-      amountText == freezed ? _value.amountText : amountText as String,
-      referenceRange == freezed
+      amountRange:
+          amountRange == freezed ? _value.amountRange : amountRange as Range,
+      amountString: amountString == freezed
+          ? _value.amountString
+          : amountString as Markdown,
+      amountType: amountType == freezed
+          ? _value.amountType
+          : amountType as CodeableConcept,
+      amountText:
+          amountText == freezed ? _value.amountText : amountText as String,
+      referenceRange: referenceRange == freezed
           ? _value.referenceRange
           : referenceRange as SubstanceAmountReferenceRange,
     ));
@@ -1986,7 +1958,7 @@ class _$SubstanceAmountCopyWithImpl<$Res> extends _$DraftTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SubstanceAmount implements SubstanceAmount {
   const _$SubstanceAmount(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.amountQuantity,
@@ -1994,16 +1966,7 @@ class _$SubstanceAmount implements SubstanceAmount {
       this.amountString,
       this.amountType,
       this.amountText,
-      this.referenceRange)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(amountQuantity != null),
-        assert(amountRange != null),
-        assert(amountString != null),
-        assert(amountType != null),
-        assert(amountText != null),
-        assert(referenceRange != null);
+      this.referenceRange});
 
   factory _$SubstanceAmount.fromJson(Map<String, dynamic> json) =>
       _$_$SubstanceAmountFromJson(json);
@@ -2284,7 +2247,7 @@ class _$SubstanceAmount implements SubstanceAmount {
 
 abstract class SubstanceAmount implements DraftTypes {
   const factory SubstanceAmount(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity amountQuantity,
@@ -2292,7 +2255,7 @@ abstract class SubstanceAmount implements DraftTypes {
       Markdown amountString,
       CodeableConcept amountType,
       String amountText,
-      SubstanceAmountReferenceRange referenceRange) = _$SubstanceAmount;
+      SubstanceAmountReferenceRange referenceRange}) = _$SubstanceAmount;
 
   factory SubstanceAmount.fromJson(Map<String, dynamic> json) =
       _$SubstanceAmount.fromJson;
@@ -2350,15 +2313,16 @@ class _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
     Object highLimit = freezed,
   }) {
     return _then(SubstanceAmountReferenceRange(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      lowLimit == freezed ? _value.lowLimit : lowLimit as Quantity,
-      highLimit == freezed ? _value.highLimit : highLimit as Quantity,
+      lowLimit: lowLimit == freezed ? _value.lowLimit : lowLimit as Quantity,
+      highLimit:
+          highLimit == freezed ? _value.highLimit : highLimit as Quantity,
     ));
   }
 }
@@ -2366,16 +2330,11 @@ class _$SubstanceAmountReferenceRangeCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SubstanceAmountReferenceRange implements SubstanceAmountReferenceRange {
   const _$SubstanceAmountReferenceRange(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.lowLimit,
-      this.highLimit)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(lowLimit != null),
-        assert(highLimit != null);
+      this.highLimit});
 
   factory _$SubstanceAmountReferenceRange.fromJson(Map<String, dynamic> json) =>
       _$_$SubstanceAmountReferenceRangeFromJson(json);
@@ -2626,11 +2585,11 @@ class _$SubstanceAmountReferenceRange implements SubstanceAmountReferenceRange {
 
 abstract class SubstanceAmountReferenceRange implements DraftTypes {
   const factory SubstanceAmountReferenceRange(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       Quantity lowLimit,
-      Quantity highLimit) = _$SubstanceAmountReferenceRange;
+      Quantity highLimit}) = _$SubstanceAmountReferenceRange;
 
   factory SubstanceAmountReferenceRange.fromJson(Map<String, dynamic> json) =
       _$SubstanceAmountReferenceRange.fromJson;

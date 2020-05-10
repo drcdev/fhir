@@ -2,15 +2,15 @@ import 'package:fhir/primitiveTypes/primitiveTypes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'general_types.enums.dart';
-import 'specialTypes/extension.dart';
-import 'specialTypes/reference.dart';
+import '../specialTypes/extension.dart';
+import '../specialTypes/reference.dart';
 
 part 'general_types.g.dart';
 part 'general_types.freezed.dart';
 
 @freezed
 abstract class GeneralTypes with _$GeneralTypes {
-  const factory GeneralTypes.address(
+  const factory GeneralTypes.address({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     @JsonKey(unknownEnumValue: AddressUse.unknown) AddressUse use,
@@ -23,9 +23,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     String postalCode,
     String country,
     Period period,
-  ) = Address;
+  }) = Address;
 
-  const factory GeneralTypes.age(
+  const factory GeneralTypes.age({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
@@ -33,18 +33,18 @@ abstract class GeneralTypes with _$GeneralTypes {
     String unit,
     FhirUri system,
     Code code,
-  ) = Age;
+  }) = Age;
 
-  const factory GeneralTypes.annotation(
+  const factory GeneralTypes.annotation({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     Reference authorReference,
     String authorString,
     FhirDateTime time,
     Markdown text,
-  ) = Annotation;
+  }) = Annotation;
 
-  const factory GeneralTypes.attachment(
+  const factory GeneralTypes.attachment({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     Code contentType,
@@ -55,16 +55,16 @@ abstract class GeneralTypes with _$GeneralTypes {
     Base64Binary hash,
     String title,
     FhirDateTime creation,
-  ) = Attachment;
+  }) = Attachment;
 
-  const factory GeneralTypes.codeableConcept(
+  const factory GeneralTypes.codeableConcept({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     List<Coding> coding,
     String text,
-  ) = CodeableConcept;
+  }) = CodeableConcept;
 
-  const factory GeneralTypes.coding(
+  const factory GeneralTypes.coding({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     FhirUri system,
@@ -72,9 +72,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     Code code,
     String display,
     bool userSelected,
-  ) = Coding;
+  }) = Coding;
 
-  const factory GeneralTypes.contactPoint(
+  const factory GeneralTypes.contactPoint({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     @JsonKey(unknownEnumValue: ContactPointSystem.unknown) ContactPointSystem system,
@@ -82,9 +82,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     @JsonKey(unknownEnumValue: ContactPointUse.unknown) ContactPointUse use,
     int rank,
     Period period,
-  ) = ContactPoint;
+  }) = ContactPoint;
 
-  const factory GeneralTypes.count(
+  const factory GeneralTypes.count({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
@@ -92,9 +92,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     String unit,
     FhirUri system,
     Code code,
-  ) = Count;
+  }) = Count;
 
-  const factory GeneralTypes.distance(
+  const factory GeneralTypes.distance({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
@@ -102,9 +102,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     String unit,
     FhirUri system,
     Code code,
-  ) = Distance;
+  }) = Distance;
 
-  const factory GeneralTypes.duration(
+  const factory GeneralTypes.duration({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
@@ -112,9 +112,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     String unit,
     FhirUri system,
     Code code,
-  ) = Duration;
+  }) = Duration;
 
-  const factory GeneralTypes.humanName(
+  const factory GeneralTypes.humanName({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     @JsonKey(unknownEnumValue: HumanNameUse.unknown) HumanNameUse use,
@@ -124,9 +124,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     List<String> prefix,
     List<String> suffix,
     Period period,
-  ) = HumanName;
+  }) = HumanName;
 
-  const factory GeneralTypes.identifier(
+  const factory GeneralTypes.identifier({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     IdentifierUse use,
@@ -135,23 +135,23 @@ abstract class GeneralTypes with _$GeneralTypes {
     String value,
     Period period,
     Reference assigner,
-  ) = Identifier;
+  }) = Identifier;
 
-  const factory GeneralTypes.money(
+  const factory GeneralTypes.money({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
     Code currency,
-  ) = Money;
+  }) = Money;
 
-  const factory GeneralTypes.period(
+  const factory GeneralTypes.period({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     FhirDateTime start,
     FhirDateTime end,
-  ) = Period;
+  }) = Period;
 
-  const factory GeneralTypes.quantity(
+  const factory GeneralTypes.quantity({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     double value,
@@ -159,23 +159,23 @@ abstract class GeneralTypes with _$GeneralTypes {
     String unit,
     FhirUri system,
     Code code,
-  ) = Quantity;
+  }) = Quantity;
 
-  const factory GeneralTypes.range(
+  const factory GeneralTypes.range({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     Quantity low,
     Quantity high,
-  ) = Range;
+  }) = Range;
 
-  const factory GeneralTypes.ratio(
+  const factory GeneralTypes.ratio({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     Quantity numerator,
     Quantity denominator,
-  ) = Ratio;
+  }) = Ratio;
 
-  const factory GeneralTypes.sampledData(
+  const factory GeneralTypes.sampledData({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     Quantity origin,
@@ -185,9 +185,9 @@ abstract class GeneralTypes with _$GeneralTypes {
     double upperLimit,
     int dimensions,
     String data,
-  ) = SampledData;
+  }) = SampledData;
 
-  const factory GeneralTypes.signature(
+  const factory GeneralTypes.signature({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     List<Coding> type,
@@ -198,18 +198,18 @@ abstract class GeneralTypes with _$GeneralTypes {
     Code targetFormat,
     Code sigFormat,
     Base64Binary data,
-  ) = Signature;
+  }) = Signature;
 
-  const factory GeneralTypes.timing(
+  const factory GeneralTypes.timing({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     List<FhirExtension> modifierExtension,
     List<DateTime> event,
     TimingRepeat repeat,
     CodeableConcept code,
-  ) = Timing;
+  }) = Timing;
 
-  const factory GeneralTypes.timingRepeat(
+  const factory GeneralTypes.timingRepeat({
     String id,
     @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
     List<FhirExtension> modifierExtension,
@@ -231,7 +231,7 @@ abstract class GeneralTypes with _$GeneralTypes {
     //todo: does this need an unknownEnumValue key?
     @JsonKey(name: 'when') List<TimingRepeatWhen> timingRepeatWhenList,
     int offset,
-  ) = TimingRepeat;
+  }) = TimingRepeat;
 
   factory GeneralTypes.fromJson(Map<String, dynamic> json) => _$GeneralTypesFromJson(json);
 }

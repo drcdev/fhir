@@ -1,4 +1,4 @@
-import 'draft_types.dart';
+import './draft_types/draft_types.dart';
 import 'resourceTypes/location.dart';
 import 'resourceTypes/account.dart';
 import 'resourceTypes/activityDefinition.dart';

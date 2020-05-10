@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../fhir_r4.dart';
-import '../draft_types.dart';
 
 part 'medicinalProductUndesirableEffect.g.dart';
 

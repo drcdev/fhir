@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import '../../fhir_r4.dart';
-import '../draft_types.dart';
 
 part 'medicinalProduct.g.dart';
 

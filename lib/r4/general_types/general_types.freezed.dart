@@ -62,7 +62,7 @@ class _$GeneralTypesTearOff {
   const _$GeneralTypesTearOff();
 
   Address address(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: AddressUse.unknown) AddressUse use,
       @JsonKey(unknownEnumValue: AddressType.unknown) AddressType type,
@@ -73,61 +73,61 @@ class _$GeneralTypesTearOff {
       String state,
       String postalCode,
       String country,
-      Period period) {
+      Period period}) {
     return Address(
-      id,
-      fhirExtension,
-      use,
-      type,
-      text,
-      line,
-      city,
-      district,
-      state,
-      postalCode,
-      country,
-      period,
+      id: id,
+      fhirExtension: fhirExtension,
+      use: use,
+      type: type,
+      text: text,
+      line: line,
+      city: city,
+      district: district,
+      state: state,
+      postalCode: postalCode,
+      country: country,
+      period: period,
     );
   }
 
   Age age(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) {
+      Code code}) {
     return Age(
-      id,
-      fhirExtension,
-      value,
-      comparator,
-      unit,
-      system,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      comparator: comparator,
+      unit: unit,
+      system: system,
+      code: code,
     );
   }
 
   Annotation annotation(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Reference authorReference,
       String authorString,
       FhirDateTime time,
-      Markdown text) {
+      Markdown text}) {
     return Annotation(
-      id,
-      fhirExtension,
-      authorReference,
-      authorString,
-      time,
-      text,
+      id: id,
+      fhirExtension: fhirExtension,
+      authorReference: authorReference,
+      authorString: authorString,
+      time: time,
+      text: text,
     );
   }
 
   Attachment attachment(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Code contentType,
       Code language,
@@ -136,55 +136,55 @@ class _$GeneralTypesTearOff {
       int size,
       Base64Binary hash,
       String title,
-      FhirDateTime creation) {
+      FhirDateTime creation}) {
     return Attachment(
-      id,
-      fhirExtension,
-      contentType,
-      language,
-      data,
-      url,
-      size,
-      hash,
-      title,
-      creation,
+      id: id,
+      fhirExtension: fhirExtension,
+      contentType: contentType,
+      language: language,
+      data: data,
+      url: url,
+      size: size,
+      hash: hash,
+      title: title,
+      creation: creation,
     );
   }
 
   CodeableConcept codeableConcept(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<Coding> coding,
-      String text) {
+      String text}) {
     return CodeableConcept(
-      id,
-      fhirExtension,
-      coding,
-      text,
+      id: id,
+      fhirExtension: fhirExtension,
+      coding: coding,
+      text: text,
     );
   }
 
   Coding coding(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       FhirUri system,
       String version,
       Code code,
       String display,
-      bool userSelected) {
+      bool userSelected}) {
     return Coding(
-      id,
-      fhirExtension,
-      system,
-      version,
-      code,
-      display,
-      userSelected,
+      id: id,
+      fhirExtension: fhirExtension,
+      system: system,
+      version: version,
+      code: code,
+      display: display,
+      userSelected: userSelected,
     );
   }
 
   ContactPoint contactPoint(
-      String id,
+      {String id,
       @JsonKey(name: 'extension')
           List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: ContactPointSystem.unknown)
@@ -193,77 +193,77 @@ class _$GeneralTypesTearOff {
       @JsonKey(unknownEnumValue: ContactPointUse.unknown)
           ContactPointUse use,
       int rank,
-      Period period) {
+      Period period}) {
     return ContactPoint(
-      id,
-      fhirExtension,
-      system,
-      value,
-      use,
-      rank,
-      period,
+      id: id,
+      fhirExtension: fhirExtension,
+      system: system,
+      value: value,
+      use: use,
+      rank: rank,
+      period: period,
     );
   }
 
   Count count(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) {
+      Code code}) {
     return Count(
-      id,
-      fhirExtension,
-      value,
-      comparator,
-      unit,
-      system,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      comparator: comparator,
+      unit: unit,
+      system: system,
+      code: code,
     );
   }
 
   Distance distance(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) {
+      Code code}) {
     return Distance(
-      id,
-      fhirExtension,
-      value,
-      comparator,
-      unit,
-      system,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      comparator: comparator,
+      unit: unit,
+      system: system,
+      code: code,
     );
   }
 
   Duration duration(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) {
+      Code code}) {
     return Duration(
-      id,
-      fhirExtension,
-      value,
-      comparator,
-      unit,
-      system,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      comparator: comparator,
+      unit: unit,
+      system: system,
+      code: code,
     );
   }
 
   HumanName humanName(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: HumanNameUse.unknown) HumanNameUse use,
       String text,
@@ -271,114 +271,114 @@ class _$GeneralTypesTearOff {
       List<String> given,
       List<String> prefix,
       List<String> suffix,
-      Period period) {
+      Period period}) {
     return HumanName(
-      id,
-      fhirExtension,
-      use,
-      text,
-      family,
-      given,
-      prefix,
-      suffix,
-      period,
+      id: id,
+      fhirExtension: fhirExtension,
+      use: use,
+      text: text,
+      family: family,
+      given: given,
+      prefix: prefix,
+      suffix: suffix,
+      period: period,
     );
   }
 
   Identifier identifier(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       IdentifierUse use,
       CodeableConcept type,
       FhirUri system,
       String value,
       Period period,
-      Reference assigner) {
+      Reference assigner}) {
     return Identifier(
-      id,
-      fhirExtension,
-      use,
-      type,
-      system,
-      value,
-      period,
-      assigner,
+      id: id,
+      fhirExtension: fhirExtension,
+      use: use,
+      type: type,
+      system: system,
+      value: value,
+      period: period,
+      assigner: assigner,
     );
   }
 
   Money money(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
-      Code currency) {
+      Code currency}) {
     return Money(
-      id,
-      fhirExtension,
-      value,
-      currency,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      currency: currency,
     );
   }
 
   Period period(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       FhirDateTime start,
-      FhirDateTime end) {
+      FhirDateTime end}) {
     return Period(
-      id,
-      fhirExtension,
-      start,
-      end,
+      id: id,
+      fhirExtension: fhirExtension,
+      start: start,
+      end: end,
     );
   }
 
   Quantity quantity(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) {
+      Code code}) {
     return Quantity(
-      id,
-      fhirExtension,
-      value,
-      comparator,
-      unit,
-      system,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      value: value,
+      comparator: comparator,
+      unit: unit,
+      system: system,
+      code: code,
     );
   }
 
   Range range(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity low,
-      Quantity high) {
+      Quantity high}) {
     return Range(
-      id,
-      fhirExtension,
-      low,
-      high,
+      id: id,
+      fhirExtension: fhirExtension,
+      low: low,
+      high: high,
     );
   }
 
   Ratio ratio(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity numerator,
-      Quantity denominator) {
+      Quantity denominator}) {
     return Ratio(
-      id,
-      fhirExtension,
-      numerator,
-      denominator,
+      id: id,
+      fhirExtension: fhirExtension,
+      numerator: numerator,
+      denominator: denominator,
     );
   }
 
   SampledData sampledData(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity origin,
       double period,
@@ -386,22 +386,22 @@ class _$GeneralTypesTearOff {
       double lowerLimit,
       double upperLimit,
       int dimensions,
-      String data) {
+      String data}) {
     return SampledData(
-      id,
-      fhirExtension,
-      origin,
-      period,
-      factor,
-      lowerLimit,
-      upperLimit,
-      dimensions,
-      data,
+      id: id,
+      fhirExtension: fhirExtension,
+      origin: origin,
+      period: period,
+      factor: factor,
+      lowerLimit: lowerLimit,
+      upperLimit: upperLimit,
+      dimensions: dimensions,
+      data: data,
     );
   }
 
   Signature signature(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<Coding> type,
       @JsonKey(name: 'when') Instant whenInstant,
@@ -409,39 +409,39 @@ class _$GeneralTypesTearOff {
       Reference onBehalfOf,
       Code targetFormat,
       Code sigFormat,
-      Base64Binary data) {
+      Base64Binary data}) {
     return Signature(
-      id,
-      fhirExtension,
-      type,
-      whenInstant,
-      who,
-      onBehalfOf,
-      targetFormat,
-      sigFormat,
-      data,
+      id: id,
+      fhirExtension: fhirExtension,
+      type: type,
+      whenInstant: whenInstant,
+      who: who,
+      onBehalfOf: onBehalfOf,
+      targetFormat: targetFormat,
+      sigFormat: sigFormat,
+      data: data,
     );
   }
 
   Timing timing(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       List<DateTime> event,
       TimingRepeat repeat,
-      CodeableConcept code) {
+      CodeableConcept code}) {
     return Timing(
-      id,
-      fhirExtension,
-      modifierExtension,
-      event,
-      repeat,
-      code,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      event: event,
+      repeat: repeat,
+      code: code,
     );
   }
 
   TimingRepeat timingRepeat(
-      String id,
+      {String id,
       @JsonKey(name: 'extension')
           List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -464,28 +464,28 @@ class _$GeneralTypesTearOff {
       List<Time> timeOfDay,
       @JsonKey(name: 'when')
           List<TimingRepeatWhen> timingRepeatWhenList,
-      int offset) {
+      int offset}) {
     return TimingRepeat(
-      id,
-      fhirExtension,
-      modifierExtension,
-      boundsDuration,
-      boundsRange,
-      boundsPeriod,
-      count,
-      countMax,
-      duration,
-      durationMax,
-      durationUnit,
-      frequency,
-      frequencyMax,
-      period,
-      periodMax,
-      periodUnit,
-      dayOfWeek,
-      timeOfDay,
-      timingRepeatWhenList,
-      offset,
+      id: id,
+      fhirExtension: fhirExtension,
+      modifierExtension: modifierExtension,
+      boundsDuration: boundsDuration,
+      boundsRange: boundsRange,
+      boundsPeriod: boundsPeriod,
+      count: count,
+      countMax: countMax,
+      duration: duration,
+      durationMax: durationMax,
+      durationUnit: durationUnit,
+      frequency: frequency,
+      frequencyMax: frequencyMax,
+      period: period,
+      periodMax: periodMax,
+      periodUnit: periodUnit,
+      dayOfWeek: dayOfWeek,
+      timeOfDay: timeOfDay,
+      timingRepeatWhenList: timingRepeatWhenList,
+      offset: offset,
     );
   }
 }
@@ -1034,20 +1034,21 @@ class _$AddressCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object period = freezed,
   }) {
     return _then(Address(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      use == freezed ? _value.use : use as AddressUse,
-      type == freezed ? _value.type : type as AddressType,
-      text == freezed ? _value.text : text as String,
-      line == freezed ? _value.line : line as List<String>,
-      city == freezed ? _value.city : city as String,
-      district == freezed ? _value.district : district as String,
-      state == freezed ? _value.state : state as String,
-      postalCode == freezed ? _value.postalCode : postalCode as String,
-      country == freezed ? _value.country : country as String,
-      period == freezed ? _value.period : period as Period,
+      use: use == freezed ? _value.use : use as AddressUse,
+      type: type == freezed ? _value.type : type as AddressType,
+      text: text == freezed ? _value.text : text as String,
+      line: line == freezed ? _value.line : line as List<String>,
+      city: city == freezed ? _value.city : city as String,
+      district: district == freezed ? _value.district : district as String,
+      state: state == freezed ? _value.state : state as String,
+      postalCode:
+          postalCode == freezed ? _value.postalCode : postalCode as String,
+      country: country == freezed ? _value.country : country as String,
+      period: period == freezed ? _value.period : period as Period,
     ));
   }
 }
@@ -1055,7 +1056,7 @@ class _$AddressCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Address implements Address {
   const _$Address(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       @JsonKey(unknownEnumValue: AddressUse.unknown) this.use,
       @JsonKey(unknownEnumValue: AddressType.unknown) this.type,
@@ -1066,19 +1067,7 @@ class _$Address implements Address {
       this.state,
       this.postalCode,
       this.country,
-      this.period)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(use != null),
-        assert(type != null),
-        assert(text != null),
-        assert(line != null),
-        assert(city != null),
-        assert(district != null),
-        assert(state != null),
-        assert(postalCode != null),
-        assert(country != null),
-        assert(period != null);
+      this.period});
 
   factory _$Address.fromJson(Map<String, dynamic> json) =>
       _$_$AddressFromJson(json);
@@ -1705,7 +1694,7 @@ class _$Address implements Address {
 
 abstract class Address implements GeneralTypes {
   const factory Address(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: AddressUse.unknown) AddressUse use,
       @JsonKey(unknownEnumValue: AddressType.unknown) AddressType type,
@@ -1716,7 +1705,7 @@ abstract class Address implements GeneralTypes {
       String state,
       String postalCode,
       String country,
-      Period period) = _$Address;
+      Period period}) = _$Address;
 
   factory Address.fromJson(Map<String, dynamic> json) = _$Address.fromJson;
 
@@ -1774,15 +1763,16 @@ class _$AgeCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Age(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      comparator == freezed ? _value.comparator : comparator as Comparator,
-      unit == freezed ? _value.unit : unit as String,
-      system == freezed ? _value.system : system as FhirUri,
-      code == freezed ? _value.code : code as Code,
+      value: value == freezed ? _value.value : value as double,
+      comparator:
+          comparator == freezed ? _value.comparator : comparator as Comparator,
+      unit: unit == freezed ? _value.unit : unit as String,
+      system: system == freezed ? _value.system : system as FhirUri,
+      code: code == freezed ? _value.code : code as Code,
     ));
   }
 }
@@ -1790,20 +1780,13 @@ class _$AgeCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Age implements Age {
   const _$Age(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.value,
       @JsonKey(unknownEnumValue: Comparator.unknown) this.comparator,
       this.unit,
       this.system,
-      this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(comparator != null),
-        assert(unit != null),
-        assert(system != null),
-        assert(code != null);
+      this.code});
 
   factory _$Age.fromJson(Map<String, dynamic> json) => _$_$AgeFromJson(json);
 
@@ -2398,13 +2381,13 @@ class _$Age implements Age {
 
 abstract class Age implements GeneralTypes {
   const factory Age(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) = _$Age;
+      Code code}) = _$Age;
 
   factory Age.fromJson(Map<String, dynamic> json) = _$Age.fromJson;
 
@@ -2456,30 +2439,31 @@ class _$AnnotationCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object text = freezed,
   }) {
     return _then(Annotation(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      authorReference == freezed
+      authorReference: authorReference == freezed
           ? _value.authorReference
           : authorReference as Reference,
-      authorString == freezed ? _value.authorString : authorString as String,
-      time == freezed ? _value.time : time as FhirDateTime,
-      text == freezed ? _value.text : text as Markdown,
+      authorString: authorString == freezed
+          ? _value.authorString
+          : authorString as String,
+      time: time == freezed ? _value.time : time as FhirDateTime,
+      text: text == freezed ? _value.text : text as Markdown,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Annotation implements Annotation {
-  const _$Annotation(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.authorReference, this.authorString, this.time, this.text)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(authorReference != null),
-        assert(authorString != null),
-        assert(time != null),
-        assert(text != null);
+  const _$Annotation(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.authorReference,
+      this.authorString,
+      this.time,
+      this.text});
 
   factory _$Annotation.fromJson(Map<String, dynamic> json) =>
       _$_$AnnotationFromJson(json);
@@ -3073,12 +3057,12 @@ class _$Annotation implements Annotation {
 
 abstract class Annotation implements GeneralTypes {
   const factory Annotation(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Reference authorReference,
       String authorString,
       FhirDateTime time,
-      Markdown text) = _$Annotation;
+      Markdown text}) = _$Annotation;
 
   factory Annotation.fromJson(Map<String, dynamic> json) =
       _$Annotation.fromJson;
@@ -3137,18 +3121,20 @@ class _$AttachmentCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object creation = freezed,
   }) {
     return _then(Attachment(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      contentType == freezed ? _value.contentType : contentType as Code,
-      language == freezed ? _value.language : language as Code,
-      data == freezed ? _value.data : data as Base64Binary,
-      url == freezed ? _value.url : url as FhirUrl,
-      size == freezed ? _value.size : size as int,
-      hash == freezed ? _value.hash : hash as Base64Binary,
-      title == freezed ? _value.title : title as String,
-      creation == freezed ? _value.creation : creation as FhirDateTime,
+      contentType:
+          contentType == freezed ? _value.contentType : contentType as Code,
+      language: language == freezed ? _value.language : language as Code,
+      data: data == freezed ? _value.data : data as Base64Binary,
+      url: url == freezed ? _value.url : url as FhirUrl,
+      size: size == freezed ? _value.size : size as int,
+      hash: hash == freezed ? _value.hash : hash as Base64Binary,
+      title: title == freezed ? _value.title : title as String,
+      creation:
+          creation == freezed ? _value.creation : creation as FhirDateTime,
     ));
   }
 }
@@ -3156,7 +3142,7 @@ class _$AttachmentCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Attachment implements Attachment {
   const _$Attachment(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.contentType,
       this.language,
@@ -3165,17 +3151,7 @@ class _$Attachment implements Attachment {
       this.size,
       this.hash,
       this.title,
-      this.creation)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(contentType != null),
-        assert(language != null),
-        assert(data != null),
-        assert(url != null),
-        assert(size != null),
-        assert(hash != null),
-        assert(title != null),
-        assert(creation != null);
+      this.creation});
 
   factory _$Attachment.fromJson(Map<String, dynamic> json) =>
       _$_$AttachmentFromJson(json);
@@ -3790,7 +3766,7 @@ class _$Attachment implements Attachment {
 
 abstract class Attachment implements GeneralTypes {
   const factory Attachment(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Code contentType,
       Code language,
@@ -3799,7 +3775,7 @@ abstract class Attachment implements GeneralTypes {
       int size,
       Base64Binary hash,
       String title,
-      FhirDateTime creation) = _$Attachment;
+      FhirDateTime creation}) = _$Attachment;
 
   factory Attachment.fromJson(Map<String, dynamic> json) =
       _$Attachment.fromJson;
@@ -3852,24 +3828,23 @@ class _$CodeableConceptCopyWithImpl<$Res>
     Object text = freezed,
   }) {
     return _then(CodeableConcept(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      coding == freezed ? _value.coding : coding as List<Coding>,
-      text == freezed ? _value.text : text as String,
+      coding: coding == freezed ? _value.coding : coding as List<Coding>,
+      text: text == freezed ? _value.text : text as String,
     ));
   }
 }
 
 @JsonSerializable()
 class _$CodeableConcept implements CodeableConcept {
-  const _$CodeableConcept(this.id,
-      @JsonKey(name: 'extension') this.fhirExtension, this.coding, this.text)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(coding != null),
-        assert(text != null);
+  const _$CodeableConcept(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.coding,
+      this.text});
 
   factory _$CodeableConcept.fromJson(Map<String, dynamic> json) =>
       _$_$CodeableConceptFromJson(json);
@@ -4449,10 +4424,10 @@ class _$CodeableConcept implements CodeableConcept {
 
 abstract class CodeableConcept implements GeneralTypes {
   const factory CodeableConcept(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<Coding> coding,
-      String text) = _$CodeableConcept;
+      String text}) = _$CodeableConcept;
 
   factory CodeableConcept.fromJson(Map<String, dynamic> json) =
       _$CodeableConcept.fromJson;
@@ -4501,30 +4476,30 @@ class _$CodingCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object userSelected = freezed,
   }) {
     return _then(Coding(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      system == freezed ? _value.system : system as FhirUri,
-      version == freezed ? _value.version : version as String,
-      code == freezed ? _value.code : code as Code,
-      display == freezed ? _value.display : display as String,
-      userSelected == freezed ? _value.userSelected : userSelected as bool,
+      system: system == freezed ? _value.system : system as FhirUri,
+      version: version == freezed ? _value.version : version as String,
+      code: code == freezed ? _value.code : code as Code,
+      display: display == freezed ? _value.display : display as String,
+      userSelected:
+          userSelected == freezed ? _value.userSelected : userSelected as bool,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Coding implements Coding {
-  const _$Coding(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.system, this.version, this.code, this.display, this.userSelected)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(system != null),
-        assert(version != null),
-        assert(code != null),
-        assert(display != null),
-        assert(userSelected != null);
+  const _$Coding(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.system,
+      this.version,
+      this.code,
+      this.display,
+      this.userSelected});
 
   factory _$Coding.fromJson(Map<String, dynamic> json) =>
       _$_$CodingFromJson(json);
@@ -5124,13 +5099,13 @@ class _$Coding implements Coding {
 
 abstract class Coding implements GeneralTypes {
   const factory Coding(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       FhirUri system,
       String version,
       Code code,
       String display,
-      bool userSelected) = _$Coding;
+      bool userSelected}) = _$Coding;
 
   factory Coding.fromJson(Map<String, dynamic> json) = _$Coding.fromJson;
 
@@ -5187,15 +5162,15 @@ class _$ContactPointCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object period = freezed,
   }) {
     return _then(ContactPoint(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      system == freezed ? _value.system : system as ContactPointSystem,
-      value == freezed ? _value.value : value as String,
-      use == freezed ? _value.use : use as ContactPointUse,
-      rank == freezed ? _value.rank : rank as int,
-      period == freezed ? _value.period : period as Period,
+      system: system == freezed ? _value.system : system as ContactPointSystem,
+      value: value == freezed ? _value.value : value as String,
+      use: use == freezed ? _value.use : use as ContactPointUse,
+      rank: rank == freezed ? _value.rank : rank as int,
+      period: period == freezed ? _value.period : period as Period,
     ));
   }
 }
@@ -5203,20 +5178,13 @@ class _$ContactPointCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ContactPoint implements ContactPoint {
   const _$ContactPoint(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       @JsonKey(unknownEnumValue: ContactPointSystem.unknown) this.system,
       this.value,
       @JsonKey(unknownEnumValue: ContactPointUse.unknown) this.use,
       this.rank,
-      this.period)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(system != null),
-        assert(value != null),
-        assert(use != null),
-        assert(rank != null),
-        assert(period != null);
+      this.period});
 
   factory _$ContactPoint.fromJson(Map<String, dynamic> json) =>
       _$_$ContactPointFromJson(json);
@@ -5815,7 +5783,7 @@ class _$ContactPoint implements ContactPoint {
 
 abstract class ContactPoint implements GeneralTypes {
   const factory ContactPoint(
-      String id,
+      {String id,
       @JsonKey(name: 'extension')
           List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: ContactPointSystem.unknown)
@@ -5824,7 +5792,7 @@ abstract class ContactPoint implements GeneralTypes {
       @JsonKey(unknownEnumValue: ContactPointUse.unknown)
           ContactPointUse use,
       int rank,
-      Period period) = _$ContactPoint;
+      Period period}) = _$ContactPoint;
 
   factory ContactPoint.fromJson(Map<String, dynamic> json) =
       _$ContactPoint.fromJson;
@@ -5878,15 +5846,16 @@ class _$CountCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Count(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      comparator == freezed ? _value.comparator : comparator as Comparator,
-      unit == freezed ? _value.unit : unit as String,
-      system == freezed ? _value.system : system as FhirUri,
-      code == freezed ? _value.code : code as Code,
+      value: value == freezed ? _value.value : value as double,
+      comparator:
+          comparator == freezed ? _value.comparator : comparator as Comparator,
+      unit: unit == freezed ? _value.unit : unit as String,
+      system: system == freezed ? _value.system : system as FhirUri,
+      code: code == freezed ? _value.code : code as Code,
     ));
   }
 }
@@ -5894,20 +5863,13 @@ class _$CountCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Count implements Count {
   const _$Count(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.value,
       @JsonKey(unknownEnumValue: Comparator.unknown) this.comparator,
       this.unit,
       this.system,
-      this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(comparator != null),
-        assert(unit != null),
-        assert(system != null),
-        assert(code != null);
+      this.code});
 
   factory _$Count.fromJson(Map<String, dynamic> json) =>
       _$_$CountFromJson(json);
@@ -6504,13 +6466,13 @@ class _$Count implements Count {
 
 abstract class Count implements GeneralTypes {
   const factory Count(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) = _$Count;
+      Code code}) = _$Count;
 
   factory Count.fromJson(Map<String, dynamic> json) = _$Count.fromJson;
 
@@ -6562,15 +6524,16 @@ class _$DistanceCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Distance(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      comparator == freezed ? _value.comparator : comparator as Comparator,
-      unit == freezed ? _value.unit : unit as String,
-      system == freezed ? _value.system : system as FhirUri,
-      code == freezed ? _value.code : code as Code,
+      value: value == freezed ? _value.value : value as double,
+      comparator:
+          comparator == freezed ? _value.comparator : comparator as Comparator,
+      unit: unit == freezed ? _value.unit : unit as String,
+      system: system == freezed ? _value.system : system as FhirUri,
+      code: code == freezed ? _value.code : code as Code,
     ));
   }
 }
@@ -6578,20 +6541,13 @@ class _$DistanceCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Distance implements Distance {
   const _$Distance(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.value,
       @JsonKey(unknownEnumValue: Comparator.unknown) this.comparator,
       this.unit,
       this.system,
-      this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(comparator != null),
-        assert(unit != null),
-        assert(system != null),
-        assert(code != null);
+      this.code});
 
   factory _$Distance.fromJson(Map<String, dynamic> json) =>
       _$_$DistanceFromJson(json);
@@ -7188,13 +7144,13 @@ class _$Distance implements Distance {
 
 abstract class Distance implements GeneralTypes {
   const factory Distance(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) = _$Distance;
+      Code code}) = _$Distance;
 
   factory Distance.fromJson(Map<String, dynamic> json) = _$Distance.fromJson;
 
@@ -7246,15 +7202,16 @@ class _$DurationCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Duration(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      comparator == freezed ? _value.comparator : comparator as Comparator,
-      unit == freezed ? _value.unit : unit as String,
-      system == freezed ? _value.system : system as FhirUri,
-      code == freezed ? _value.code : code as Code,
+      value: value == freezed ? _value.value : value as double,
+      comparator:
+          comparator == freezed ? _value.comparator : comparator as Comparator,
+      unit: unit == freezed ? _value.unit : unit as String,
+      system: system == freezed ? _value.system : system as FhirUri,
+      code: code == freezed ? _value.code : code as Code,
     ));
   }
 }
@@ -7262,20 +7219,13 @@ class _$DurationCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Duration implements Duration {
   const _$Duration(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.value,
       @JsonKey(unknownEnumValue: Comparator.unknown) this.comparator,
       this.unit,
       this.system,
-      this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(comparator != null),
-        assert(unit != null),
-        assert(system != null),
-        assert(code != null);
+      this.code});
 
   factory _$Duration.fromJson(Map<String, dynamic> json) =>
       _$_$DurationFromJson(json);
@@ -7872,13 +7822,13 @@ class _$Duration implements Duration {
 
 abstract class Duration implements GeneralTypes {
   const factory Duration(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) = _$Duration;
+      Code code}) = _$Duration;
 
   factory Duration.fromJson(Map<String, dynamic> json) = _$Duration.fromJson;
 
@@ -7934,17 +7884,17 @@ class _$HumanNameCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object period = freezed,
   }) {
     return _then(HumanName(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      use == freezed ? _value.use : use as HumanNameUse,
-      text == freezed ? _value.text : text as String,
-      family == freezed ? _value.family : family as String,
-      given == freezed ? _value.given : given as List<String>,
-      prefix == freezed ? _value.prefix : prefix as List<String>,
-      suffix == freezed ? _value.suffix : suffix as List<String>,
-      period == freezed ? _value.period : period as Period,
+      use: use == freezed ? _value.use : use as HumanNameUse,
+      text: text == freezed ? _value.text : text as String,
+      family: family == freezed ? _value.family : family as String,
+      given: given == freezed ? _value.given : given as List<String>,
+      prefix: prefix == freezed ? _value.prefix : prefix as List<String>,
+      suffix: suffix == freezed ? _value.suffix : suffix as List<String>,
+      period: period == freezed ? _value.period : period as Period,
     ));
   }
 }
@@ -7952,7 +7902,7 @@ class _$HumanNameCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HumanName implements HumanName {
   const _$HumanName(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       @JsonKey(unknownEnumValue: HumanNameUse.unknown) this.use,
       this.text,
@@ -7960,16 +7910,7 @@ class _$HumanName implements HumanName {
       this.given,
       this.prefix,
       this.suffix,
-      this.period)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(use != null),
-        assert(text != null),
-        assert(family != null),
-        assert(given != null),
-        assert(prefix != null),
-        assert(suffix != null),
-        assert(period != null);
+      this.period});
 
   factory _$HumanName.fromJson(Map<String, dynamic> json) =>
       _$_$HumanNameFromJson(json);
@@ -8577,7 +8518,7 @@ class _$HumanName implements HumanName {
 
 abstract class HumanName implements GeneralTypes {
   const factory HumanName(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       @JsonKey(unknownEnumValue: HumanNameUse.unknown) HumanNameUse use,
       String text,
@@ -8585,7 +8526,7 @@ abstract class HumanName implements GeneralTypes {
       List<String> given,
       List<String> prefix,
       List<String> suffix,
-      Period period) = _$HumanName;
+      Period period}) = _$HumanName;
 
   factory HumanName.fromJson(Map<String, dynamic> json) = _$HumanName.fromJson;
 
@@ -8643,32 +8584,31 @@ class _$IdentifierCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object assigner = freezed,
   }) {
     return _then(Identifier(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      use == freezed ? _value.use : use as IdentifierUse,
-      type == freezed ? _value.type : type as CodeableConcept,
-      system == freezed ? _value.system : system as FhirUri,
-      value == freezed ? _value.value : value as String,
-      period == freezed ? _value.period : period as Period,
-      assigner == freezed ? _value.assigner : assigner as Reference,
+      use: use == freezed ? _value.use : use as IdentifierUse,
+      type: type == freezed ? _value.type : type as CodeableConcept,
+      system: system == freezed ? _value.system : system as FhirUri,
+      value: value == freezed ? _value.value : value as String,
+      period: period == freezed ? _value.period : period as Period,
+      assigner: assigner == freezed ? _value.assigner : assigner as Reference,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Identifier implements Identifier {
-  const _$Identifier(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.use, this.type, this.system, this.value, this.period, this.assigner)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(use != null),
-        assert(type != null),
-        assert(system != null),
-        assert(value != null),
-        assert(period != null),
-        assert(assigner != null);
+  const _$Identifier(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.use,
+      this.type,
+      this.system,
+      this.value,
+      this.period,
+      this.assigner});
 
   factory _$Identifier.fromJson(Map<String, dynamic> json) =>
       _$_$IdentifierFromJson(json);
@@ -9271,14 +9211,14 @@ class _$Identifier implements Identifier {
 
 abstract class Identifier implements GeneralTypes {
   const factory Identifier(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       IdentifierUse use,
       CodeableConcept type,
       FhirUri system,
       String value,
       Period period,
-      Reference assigner) = _$Identifier;
+      Reference assigner}) = _$Identifier;
 
   factory Identifier.fromJson(Map<String, dynamic> json) =
       _$Identifier.fromJson;
@@ -9325,24 +9265,23 @@ class _$MoneyCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object currency = freezed,
   }) {
     return _then(Money(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      currency == freezed ? _value.currency : currency as Code,
+      value: value == freezed ? _value.value : value as double,
+      currency: currency == freezed ? _value.currency : currency as Code,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Money implements Money {
-  const _$Money(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.value, this.currency)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(currency != null);
+  const _$Money(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.value,
+      this.currency});
 
   factory _$Money.fromJson(Map<String, dynamic> json) =>
       _$_$MoneyFromJson(json);
@@ -9923,10 +9862,10 @@ class _$Money implements Money {
 
 abstract class Money implements GeneralTypes {
   const factory Money(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
-      Code currency) = _$Money;
+      Code currency}) = _$Money;
 
   factory Money.fromJson(Map<String, dynamic> json) = _$Money.fromJson;
 
@@ -9968,24 +9907,23 @@ class _$PeriodCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object end = freezed,
   }) {
     return _then(Period(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      start == freezed ? _value.start : start as FhirDateTime,
-      end == freezed ? _value.end : end as FhirDateTime,
+      start: start == freezed ? _value.start : start as FhirDateTime,
+      end: end == freezed ? _value.end : end as FhirDateTime,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Period implements Period {
-  const _$Period(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.start, this.end)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(start != null),
-        assert(end != null);
+  const _$Period(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.start,
+      this.end});
 
   factory _$Period.fromJson(Map<String, dynamic> json) =>
       _$_$PeriodFromJson(json);
@@ -10565,10 +10503,10 @@ class _$Period implements Period {
 
 abstract class Period implements GeneralTypes {
   const factory Period(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       FhirDateTime start,
-      FhirDateTime end) = _$Period;
+      FhirDateTime end}) = _$Period;
 
   factory Period.fromJson(Map<String, dynamic> json) = _$Period.fromJson;
 
@@ -10616,15 +10554,16 @@ class _$QuantityCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Quantity(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      value == freezed ? _value.value : value as double,
-      comparator == freezed ? _value.comparator : comparator as Comparator,
-      unit == freezed ? _value.unit : unit as String,
-      system == freezed ? _value.system : system as FhirUri,
-      code == freezed ? _value.code : code as Code,
+      value: value == freezed ? _value.value : value as double,
+      comparator:
+          comparator == freezed ? _value.comparator : comparator as Comparator,
+      unit: unit == freezed ? _value.unit : unit as String,
+      system: system == freezed ? _value.system : system as FhirUri,
+      code: code == freezed ? _value.code : code as Code,
     ));
   }
 }
@@ -10632,20 +10571,13 @@ class _$QuantityCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Quantity implements Quantity {
   const _$Quantity(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.value,
       @JsonKey(unknownEnumValue: Comparator.unknown) this.comparator,
       this.unit,
       this.system,
-      this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(value != null),
-        assert(comparator != null),
-        assert(unit != null),
-        assert(system != null),
-        assert(code != null);
+      this.code});
 
   factory _$Quantity.fromJson(Map<String, dynamic> json) =>
       _$_$QuantityFromJson(json);
@@ -11242,13 +11174,13 @@ class _$Quantity implements Quantity {
 
 abstract class Quantity implements GeneralTypes {
   const factory Quantity(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       double value,
       @JsonKey(unknownEnumValue: Comparator.unknown) Comparator comparator,
       String unit,
       FhirUri system,
-      Code code) = _$Quantity;
+      Code code}) = _$Quantity;
 
   factory Quantity.fromJson(Map<String, dynamic> json) = _$Quantity.fromJson;
 
@@ -11294,24 +11226,23 @@ class _$RangeCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object high = freezed,
   }) {
     return _then(Range(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      low == freezed ? _value.low : low as Quantity,
-      high == freezed ? _value.high : high as Quantity,
+      low: low == freezed ? _value.low : low as Quantity,
+      high: high == freezed ? _value.high : high as Quantity,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Range implements Range {
-  const _$Range(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.low, this.high)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(low != null),
-        assert(high != null);
+  const _$Range(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.low,
+      this.high});
 
   factory _$Range.fromJson(Map<String, dynamic> json) =>
       _$_$RangeFromJson(json);
@@ -11891,10 +11822,10 @@ class _$Range implements Range {
 
 abstract class Range implements GeneralTypes {
   const factory Range(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity low,
-      Quantity high) = _$Range;
+      Quantity high}) = _$Range;
 
   factory Range.fromJson(Map<String, dynamic> json) = _$Range.fromJson;
 
@@ -11936,24 +11867,25 @@ class _$RatioCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object denominator = freezed,
   }) {
     return _then(Ratio(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      numerator == freezed ? _value.numerator : numerator as Quantity,
-      denominator == freezed ? _value.denominator : denominator as Quantity,
+      numerator:
+          numerator == freezed ? _value.numerator : numerator as Quantity,
+      denominator:
+          denominator == freezed ? _value.denominator : denominator as Quantity,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Ratio implements Ratio {
-  const _$Ratio(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.numerator, this.denominator)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(numerator != null),
-        assert(denominator != null);
+  const _$Ratio(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.numerator,
+      this.denominator});
 
   factory _$Ratio.fromJson(Map<String, dynamic> json) =>
       _$_$RatioFromJson(json);
@@ -12535,10 +12467,10 @@ class _$Ratio implements Ratio {
 
 abstract class Ratio implements GeneralTypes {
   const factory Ratio(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity numerator,
-      Quantity denominator) = _$Ratio;
+      Quantity denominator}) = _$Ratio;
 
   factory Ratio.fromJson(Map<String, dynamic> json) = _$Ratio.fromJson;
 
@@ -12593,17 +12525,19 @@ class _$SampledDataCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object data = freezed,
   }) {
     return _then(SampledData(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      origin == freezed ? _value.origin : origin as Quantity,
-      period == freezed ? _value.period : period as double,
-      factor == freezed ? _value.factor : factor as double,
-      lowerLimit == freezed ? _value.lowerLimit : lowerLimit as double,
-      upperLimit == freezed ? _value.upperLimit : upperLimit as double,
-      dimensions == freezed ? _value.dimensions : dimensions as int,
-      data == freezed ? _value.data : data as String,
+      origin: origin == freezed ? _value.origin : origin as Quantity,
+      period: period == freezed ? _value.period : period as double,
+      factor: factor == freezed ? _value.factor : factor as double,
+      lowerLimit:
+          lowerLimit == freezed ? _value.lowerLimit : lowerLimit as double,
+      upperLimit:
+          upperLimit == freezed ? _value.upperLimit : upperLimit as double,
+      dimensions: dimensions == freezed ? _value.dimensions : dimensions as int,
+      data: data == freezed ? _value.data : data as String,
     ));
   }
 }
@@ -12611,7 +12545,7 @@ class _$SampledDataCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SampledData implements SampledData {
   const _$SampledData(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.origin,
       this.period,
@@ -12619,16 +12553,7 @@ class _$SampledData implements SampledData {
       this.lowerLimit,
       this.upperLimit,
       this.dimensions,
-      this.data)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(origin != null),
-        assert(period != null),
-        assert(factor != null),
-        assert(lowerLimit != null),
-        assert(upperLimit != null),
-        assert(dimensions != null),
-        assert(data != null);
+      this.data});
 
   factory _$SampledData.fromJson(Map<String, dynamic> json) =>
       _$_$SampledDataFromJson(json);
@@ -13238,7 +13163,7 @@ class _$SampledData implements SampledData {
 
 abstract class SampledData implements GeneralTypes {
   const factory SampledData(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       Quantity origin,
       double period,
@@ -13246,7 +13171,7 @@ abstract class SampledData implements GeneralTypes {
       double lowerLimit,
       double upperLimit,
       int dimensions,
-      String data) = _$SampledData;
+      String data}) = _$SampledData;
 
   factory SampledData.fromJson(Map<String, dynamic> json) =
       _$SampledData.fromJson;
@@ -13304,17 +13229,20 @@ class _$SignatureCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object data = freezed,
   }) {
     return _then(Signature(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      type == freezed ? _value.type : type as List<Coding>,
-      whenInstant == freezed ? _value.whenInstant : whenInstant as Instant,
-      who == freezed ? _value.who : who as Reference,
-      onBehalfOf == freezed ? _value.onBehalfOf : onBehalfOf as Reference,
-      targetFormat == freezed ? _value.targetFormat : targetFormat as Code,
-      sigFormat == freezed ? _value.sigFormat : sigFormat as Code,
-      data == freezed ? _value.data : data as Base64Binary,
+      type: type == freezed ? _value.type : type as List<Coding>,
+      whenInstant:
+          whenInstant == freezed ? _value.whenInstant : whenInstant as Instant,
+      who: who == freezed ? _value.who : who as Reference,
+      onBehalfOf:
+          onBehalfOf == freezed ? _value.onBehalfOf : onBehalfOf as Reference,
+      targetFormat:
+          targetFormat == freezed ? _value.targetFormat : targetFormat as Code,
+      sigFormat: sigFormat == freezed ? _value.sigFormat : sigFormat as Code,
+      data: data == freezed ? _value.data : data as Base64Binary,
     ));
   }
 }
@@ -13322,7 +13250,7 @@ class _$SignatureCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Signature implements Signature {
   const _$Signature(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.type,
       @JsonKey(name: 'when') this.whenInstant,
@@ -13330,16 +13258,7 @@ class _$Signature implements Signature {
       this.onBehalfOf,
       this.targetFormat,
       this.sigFormat,
-      this.data)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(type != null),
-        assert(whenInstant != null),
-        assert(who != null),
-        assert(onBehalfOf != null),
-        assert(targetFormat != null),
-        assert(sigFormat != null),
-        assert(data != null);
+      this.data});
 
   factory _$Signature.fromJson(Map<String, dynamic> json) =>
       _$_$SignatureFromJson(json);
@@ -13951,7 +13870,7 @@ class _$Signature implements Signature {
 
 abstract class Signature implements GeneralTypes {
   const factory Signature(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<Coding> type,
       @JsonKey(name: 'when') Instant whenInstant,
@@ -13959,7 +13878,7 @@ abstract class Signature implements GeneralTypes {
       Reference onBehalfOf,
       Code targetFormat,
       Code sigFormat,
-      Base64Binary data) = _$Signature;
+      Base64Binary data}) = _$Signature;
 
   factory Signature.fromJson(Map<String, dynamic> json) = _$Signature.fromJson;
 
@@ -14011,30 +13930,29 @@ class _$TimingCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object code = freezed,
   }) {
     return _then(Timing(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      event == freezed ? _value.event : event as List<DateTime>,
-      repeat == freezed ? _value.repeat : repeat as TimingRepeat,
-      code == freezed ? _value.code : code as CodeableConcept,
+      event: event == freezed ? _value.event : event as List<DateTime>,
+      repeat: repeat == freezed ? _value.repeat : repeat as TimingRepeat,
+      code: code == freezed ? _value.code : code as CodeableConcept,
     ));
   }
 }
 
 @JsonSerializable()
 class _$Timing implements Timing {
-  const _$Timing(this.id, @JsonKey(name: 'extension') this.fhirExtension,
-      this.modifierExtension, this.event, this.repeat, this.code)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(event != null),
-        assert(repeat != null),
-        assert(code != null);
+  const _$Timing(
+      {this.id,
+      @JsonKey(name: 'extension') this.fhirExtension,
+      this.modifierExtension,
+      this.event,
+      this.repeat,
+      this.code});
 
   factory _$Timing.fromJson(Map<String, dynamic> json) =>
       _$_$TimingFromJson(json);
@@ -14625,12 +14543,12 @@ class _$Timing implements Timing {
 
 abstract class Timing implements GeneralTypes {
   const factory Timing(
-      String id,
+      {String id,
       @JsonKey(name: 'extension') List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
       List<DateTime> event,
       TimingRepeat repeat,
-      CodeableConcept code) = _$Timing;
+      CodeableConcept code}) = _$Timing;
 
   factory Timing.fromJson(Map<String, dynamic> json) = _$Timing.fromJson;
 
@@ -14713,38 +14631,45 @@ class _$TimingRepeatCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
     Object offset = freezed,
   }) {
     return _then(TimingRepeat(
-      id == freezed ? _value.id : id as String,
-      fhirExtension == freezed
+      id: id == freezed ? _value.id : id as String,
+      fhirExtension: fhirExtension == freezed
           ? _value.fhirExtension
           : fhirExtension as List<FhirExtension>,
-      modifierExtension == freezed
+      modifierExtension: modifierExtension == freezed
           ? _value.modifierExtension
           : modifierExtension as List<FhirExtension>,
-      boundsDuration == freezed
+      boundsDuration: boundsDuration == freezed
           ? _value.boundsDuration
           : boundsDuration as Duration,
-      boundsRange == freezed ? _value.boundsRange : boundsRange as Range,
-      boundsPeriod == freezed ? _value.boundsPeriod : boundsPeriod as Period,
-      count == freezed ? _value.count : count as int,
-      countMax == freezed ? _value.countMax : countMax as int,
-      duration == freezed ? _value.duration : duration as double,
-      durationMax == freezed ? _value.durationMax : durationMax as double,
-      durationUnit == freezed
+      boundsRange:
+          boundsRange == freezed ? _value.boundsRange : boundsRange as Range,
+      boundsPeriod: boundsPeriod == freezed
+          ? _value.boundsPeriod
+          : boundsPeriod as Period,
+      count: count == freezed ? _value.count : count as int,
+      countMax: countMax == freezed ? _value.countMax : countMax as int,
+      duration: duration == freezed ? _value.duration : duration as double,
+      durationMax:
+          durationMax == freezed ? _value.durationMax : durationMax as double,
+      durationUnit: durationUnit == freezed
           ? _value.durationUnit
           : durationUnit as TimingRepeatUnit,
-      frequency == freezed ? _value.frequency : frequency as int,
-      frequencyMax == freezed ? _value.frequencyMax : frequencyMax as int,
-      period == freezed ? _value.period : period as double,
-      periodMax == freezed ? _value.periodMax : periodMax as double,
-      periodUnit == freezed
+      frequency: frequency == freezed ? _value.frequency : frequency as int,
+      frequencyMax:
+          frequencyMax == freezed ? _value.frequencyMax : frequencyMax as int,
+      period: period == freezed ? _value.period : period as double,
+      periodMax: periodMax == freezed ? _value.periodMax : periodMax as double,
+      periodUnit: periodUnit == freezed
           ? _value.periodUnit
           : periodUnit as TimingRepeatUnit,
-      dayOfWeek == freezed ? _value.dayOfWeek : dayOfWeek as List<Code>,
-      timeOfDay == freezed ? _value.timeOfDay : timeOfDay as List<Time>,
-      timingRepeatWhenList == freezed
+      dayOfWeek:
+          dayOfWeek == freezed ? _value.dayOfWeek : dayOfWeek as List<Code>,
+      timeOfDay:
+          timeOfDay == freezed ? _value.timeOfDay : timeOfDay as List<Time>,
+      timingRepeatWhenList: timingRepeatWhenList == freezed
           ? _value.timingRepeatWhenList
           : timingRepeatWhenList as List<TimingRepeatWhen>,
-      offset == freezed ? _value.offset : offset as int,
+      offset: offset == freezed ? _value.offset : offset as int,
     ));
   }
 }
@@ -14752,7 +14677,7 @@ class _$TimingRepeatCopyWithImpl<$Res> extends _$GeneralTypesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TimingRepeat implements TimingRepeat {
   const _$TimingRepeat(
-      this.id,
+      {this.id,
       @JsonKey(name: 'extension') this.fhirExtension,
       this.modifierExtension,
       this.boundsDuration,
@@ -14771,27 +14696,7 @@ class _$TimingRepeat implements TimingRepeat {
       this.dayOfWeek,
       this.timeOfDay,
       @JsonKey(name: 'when') this.timingRepeatWhenList,
-      this.offset)
-      : assert(id != null),
-        assert(fhirExtension != null),
-        assert(modifierExtension != null),
-        assert(boundsDuration != null),
-        assert(boundsRange != null),
-        assert(boundsPeriod != null),
-        assert(count != null),
-        assert(countMax != null),
-        assert(duration != null),
-        assert(durationMax != null),
-        assert(durationUnit != null),
-        assert(frequency != null),
-        assert(frequencyMax != null),
-        assert(period != null),
-        assert(periodMax != null),
-        assert(periodUnit != null),
-        assert(dayOfWeek != null),
-        assert(timeOfDay != null),
-        assert(timingRepeatWhenList != null),
-        assert(offset != null);
+      this.offset});
 
   factory _$TimingRepeat.fromJson(Map<String, dynamic> json) =>
       _$_$TimingRepeatFromJson(json);
@@ -15509,7 +15414,7 @@ class _$TimingRepeat implements TimingRepeat {
 
 abstract class TimingRepeat implements GeneralTypes {
   const factory TimingRepeat(
-      String id,
+      {String id,
       @JsonKey(name: 'extension')
           List<FhirExtension> fhirExtension,
       List<FhirExtension> modifierExtension,
@@ -15532,7 +15437,7 @@ abstract class TimingRepeat implements GeneralTypes {
       List<Time> timeOfDay,
       @JsonKey(name: 'when')
           List<TimingRepeatWhen> timingRepeatWhenList,
-      int offset) = _$TimingRepeat;
+      int offset}) = _$TimingRepeat;
 
   factory TimingRepeat.fromJson(Map<String, dynamic> json) =
       _$TimingRepeat.fromJson;
