@@ -57,7 +57,8 @@ DocumentReference _$DocumentReferenceFromJson(Map<String, dynamic> json) {
     subject: json['subject'] == null
         ? null
         : Reference.fromJson(json['subject'] as Map<String, dynamic>),
-    date: json['date'],
+    date:
+        json['date'] == null ? null : Instant.fromJson(json['date'] as String),
     author: (json['author'] as List)
         ?.map((e) =>
             e == null ? null : Reference.fromJson(e as Map<String, dynamic>))
@@ -120,7 +121,7 @@ Map<String, dynamic> _$DocumentReferenceToJson(DocumentReference instance) {
   writeNotNull(
       'category', instance.category?.map((e) => e?.toJson())?.toList());
   writeNotNull('subject', instance.subject?.toJson());
-  writeNotNull('date', instance.date);
+  writeNotNull('date', instance.date?.toJson());
   writeNotNull('author', instance.author?.map((e) => e?.toJson())?.toList());
   writeNotNull('authenticator', instance.authenticator?.toJson());
   writeNotNull('custodian', instance.custodian?.toJson());

@@ -46,7 +46,9 @@ AuditEvent _$AuditEventFromJson(Map<String, dynamic> json) {
     period: json['period'] == null
         ? null
         : Period.fromJson(json['period'] as Map<String, dynamic>),
-    recorded: json['recorded'],
+    recorded: json['recorded'] == null
+        ? null
+        : Instant.fromJson(json['recorded'] as String),
     outcome: json['outcome'] == null
         ? null
         : AuditEventOutcome.fromJson(json['outcome'] as String),
@@ -96,7 +98,7 @@ Map<String, dynamic> _$AuditEventToJson(AuditEvent instance) {
   writeNotNull('subtype', instance.subtype?.map((e) => e?.toJson())?.toList());
   writeNotNull('action', instance.action?.toJson());
   writeNotNull('period', instance.period?.toJson());
-  writeNotNull('recorded', instance.recorded);
+  writeNotNull('recorded', instance.recorded?.toJson());
   writeNotNull('outcome', instance.outcome?.toJson());
   writeNotNull('outcomeDesc', instance.outcomeDesc);
   writeNotNull('purposeOfEvent',
@@ -297,7 +299,9 @@ AuditEventEntity _$AuditEventEntityFromJson(Map<String, dynamic> json) {
         ?.toList(),
     name: json['name'] as String,
     description: json['description'] as String,
-    query: json['query'],
+    query: json['query'] == null
+        ? null
+        : Base64Binary.fromJson(json['query'] as String),
     detail: (json['detail'] as List)
         ?.map((e) => e == null
             ? null
@@ -328,7 +332,7 @@ Map<String, dynamic> _$AuditEventEntityToJson(AuditEventEntity instance) {
       instance.securityLabel?.map((e) => e?.toJson())?.toList());
   writeNotNull('name', instance.name);
   writeNotNull('description', instance.description);
-  writeNotNull('query', instance.query);
+  writeNotNull('query', instance.query?.toJson());
   writeNotNull('detail', instance.detail?.map((e) => e?.toJson())?.toList());
   return val;
 }
@@ -350,7 +354,9 @@ AuditEventDetail _$AuditEventDetailFromJson(Map<String, dynamic> json) {
     valueString: json['valueString'] == null
         ? null
         : Markdown.fromJson(json['valueString'] as String),
-    valueBase64Binary: json['valueBase64Binary'],
+    valueBase64Binary: json['valueBase64Binary'] == null
+        ? null
+        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
   );
 }
 
@@ -370,6 +376,6 @@ Map<String, dynamic> _$AuditEventDetailToJson(AuditEventDetail instance) {
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('type', instance.type);
   writeNotNull('valueString', instance.valueString?.toJson());
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
   return val;
 }

@@ -43,7 +43,9 @@ Provenance _$ProvenanceFromJson(Map<String, dynamic> json) {
     occurredDateTime: json['occurredDateTime'] == null
         ? null
         : FhirDateTime.fromJson(json['occurredDateTime'] as String),
-    recorded: json['recorded'],
+    recorded: json['recorded'] == null
+        ? null
+        : Instant.fromJson(json['recorded'] as String),
     policy: (json['policy'] as List)
         ?.map((e) => e == null ? null : FhirUri.fromJson(e as String))
         ?.toList(),
@@ -98,7 +100,7 @@ Map<String, dynamic> _$ProvenanceToJson(Provenance instance) {
   writeNotNull('target', instance.target?.map((e) => e?.toJson())?.toList());
   writeNotNull('occurredPeriod', instance.occurredPeriod?.toJson());
   writeNotNull('occurredDateTime', instance.occurredDateTime?.toJson());
-  writeNotNull('recorded', instance.recorded);
+  writeNotNull('recorded', instance.recorded?.toJson());
   writeNotNull('policy', instance.policy?.map((e) => e?.toJson())?.toList());
   writeNotNull('location', instance.location?.toJson());
   writeNotNull('reason', instance.reason?.map((e) => e?.toJson())?.toList());

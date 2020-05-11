@@ -259,7 +259,9 @@ TaskInput _$TaskInputFromJson(Map<String, dynamic> json) {
     type: json['type'] == null
         ? null
         : CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
-    valueBase64Binary: json['valueBase64Binary'],
+    valueBase64Binary: json['valueBase64Binary'] == null
+        ? null
+        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
     valueBoolean: json['valueBoolean'] as bool,
     valueCanonical: json['valueCanonical'] == null
         ? null
@@ -276,7 +278,9 @@ TaskInput _$TaskInputFromJson(Map<String, dynamic> json) {
     valueDecimal: (json['valueDecimal'] as num)?.toDouble(),
     valueId:
         json['valueId'] == null ? null : Id.fromJson(json['valueId'] as String),
-    valueInstant: json['valueInstant'],
+    valueInstant: json['valueInstant'] == null
+        ? null
+        : Instant.fromJson(json['valueInstant'] as String),
     valueInteger: json['valueInteger'] as int,
     valueMarkdown: json['valueMarkdown'] == null
         ? null
@@ -414,7 +418,7 @@ Map<String, dynamic> _$TaskInputToJson(TaskInput instance) {
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
   writeNotNull('valueBoolean', instance.valueBoolean);
   writeNotNull('valueCanonical', instance.valueCanonical?.toJson());
   writeNotNull('valueCode', instance.valueCode?.toJson());
@@ -422,7 +426,7 @@ Map<String, dynamic> _$TaskInputToJson(TaskInput instance) {
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valueDecimal', instance.valueDecimal);
   writeNotNull('valueId', instance.valueId?.toJson());
-  writeNotNull('valueInstant', instance.valueInstant);
+  writeNotNull('valueInstant', instance.valueInstant?.toJson());
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueMarkdown', instance.valueMarkdown?.toJson());
   writeNotNull('valueOid', instance.valueOid);
@@ -485,7 +489,9 @@ TaskOutput _$TaskOutputFromJson(Map<String, dynamic> json) {
     type: json['type'] == null
         ? null
         : CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
-    valueBase64Binary: json['valueBase64Binary'],
+    valueBase64Binary: json['valueBase64Binary'] == null
+        ? null
+        : Base64Binary.fromJson(json['valueBase64Binary'] as String),
     valueBoolean: json['valueBoolean'] as bool,
     valueCanonical: json['valueCanonical'] == null
         ? null
@@ -502,7 +508,9 @@ TaskOutput _$TaskOutputFromJson(Map<String, dynamic> json) {
     valueDecimal: (json['valueDecimal'] as num)?.toDouble(),
     valueId:
         json['valueId'] == null ? null : Id.fromJson(json['valueId'] as String),
-    valueInstant: json['valueInstant'],
+    valueInstant: json['valueInstant'] == null
+        ? null
+        : Instant.fromJson(json['valueInstant'] as String),
     valueInteger: json['valueInteger'] as int,
     valueMarkdown: json['valueMarkdown'] == null
         ? null
@@ -640,7 +648,7 @@ Map<String, dynamic> _$TaskOutputToJson(TaskOutput instance) {
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('valueBase64Binary', instance.valueBase64Binary);
+  writeNotNull('valueBase64Binary', instance.valueBase64Binary?.toJson());
   writeNotNull('valueBoolean', instance.valueBoolean);
   writeNotNull('valueCanonical', instance.valueCanonical?.toJson());
   writeNotNull('valueCode', instance.valueCode?.toJson());
@@ -648,7 +656,7 @@ Map<String, dynamic> _$TaskOutputToJson(TaskOutput instance) {
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
   writeNotNull('valueDecimal', instance.valueDecimal);
   writeNotNull('valueId', instance.valueId?.toJson());
-  writeNotNull('valueInstant', instance.valueInstant);
+  writeNotNull('valueInstant', instance.valueInstant?.toJson());
   writeNotNull('valueInteger', instance.valueInteger);
   writeNotNull('valueMarkdown', instance.valueMarkdown?.toJson());
   writeNotNull('valueOid', instance.valueOid);

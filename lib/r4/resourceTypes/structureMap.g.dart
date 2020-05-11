@@ -357,7 +357,9 @@ StructureMapSource _$StructureMapSourceFromJson(Map<String, dynamic> json) {
     min: json['min'] as int,
     max: json['max'] as String,
     type: json['type'] as String,
-    defaultValueBase64Binary: json['defaultValueBase64Binary'],
+    defaultValueBase64Binary: json['defaultValueBase64Binary'] == null
+        ? null
+        : Base64Binary.fromJson(json['defaultValueBase64Binary'] as String),
     defaultValueBoolean: json['defaultValueBoolean'] as bool,
     defaultValueCanonical: json['defaultValueCanonical'] == null
         ? null
@@ -375,7 +377,9 @@ StructureMapSource _$StructureMapSourceFromJson(Map<String, dynamic> json) {
     defaultValueId: json['defaultValueId'] == null
         ? null
         : Id.fromJson(json['defaultValueId'] as String),
-    defaultValueInstant: json['defaultValueInstant'],
+    defaultValueInstant: json['defaultValueInstant'] == null
+        ? null
+        : Instant.fromJson(json['defaultValueInstant'] as String),
     defaultValueInteger: json['defaultValueInteger'] as int,
     defaultValueMarkdown: json['defaultValueMarkdown'] == null
         ? null
@@ -537,7 +541,8 @@ Map<String, dynamic> _$StructureMapSourceToJson(StructureMapSource instance) {
   writeNotNull('min', instance.min);
   writeNotNull('max', instance.max);
   writeNotNull('type', instance.type);
-  writeNotNull('defaultValueBase64Binary', instance.defaultValueBase64Binary);
+  writeNotNull(
+      'defaultValueBase64Binary', instance.defaultValueBase64Binary?.toJson());
   writeNotNull('defaultValueBoolean', instance.defaultValueBoolean);
   writeNotNull(
       'defaultValueCanonical', instance.defaultValueCanonical?.toJson());
@@ -546,7 +551,7 @@ Map<String, dynamic> _$StructureMapSourceToJson(StructureMapSource instance) {
   writeNotNull('defaultValueDateTime', instance.defaultValueDateTime?.toJson());
   writeNotNull('defaultValueDecimal', instance.defaultValueDecimal);
   writeNotNull('defaultValueId', instance.defaultValueId?.toJson());
-  writeNotNull('defaultValueInstant', instance.defaultValueInstant);
+  writeNotNull('defaultValueInstant', instance.defaultValueInstant?.toJson());
   writeNotNull('defaultValueInteger', instance.defaultValueInteger);
   writeNotNull('defaultValueMarkdown', instance.defaultValueMarkdown?.toJson());
   writeNotNull('defaultValueOid', instance.defaultValueOid);

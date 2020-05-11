@@ -25,7 +25,9 @@ Binary _$BinaryFromJson(Map<String, dynamic> json) {
     securityContext: json['securityContext'] == null
         ? null
         : Reference.fromJson(json['securityContext'] as Map<String, dynamic>),
-    data: json['data'],
+    data: json['data'] == null
+        ? null
+        : Base64Binary.fromJson(json['data'] as String),
   );
 }
 
@@ -45,6 +47,6 @@ Map<String, dynamic> _$BinaryToJson(Binary instance) {
   writeNotNull('language', instance.language?.toJson());
   writeNotNull('contentType', instance.contentType?.toJson());
   writeNotNull('securityContext', instance.securityContext?.toJson());
-  writeNotNull('data', instance.data);
+  writeNotNull('data', instance.data?.toJson());
   return val;
 }

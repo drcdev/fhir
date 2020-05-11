@@ -192,7 +192,9 @@ DeviceUdiCarrier _$DeviceUdiCarrierFromJson(Map<String, dynamic> json) {
     jurisdiction: json['jurisdiction'] == null
         ? null
         : FhirUri.fromJson(json['jurisdiction'] as String),
-    carrierAIDC: json['carrierAIDC'],
+    carrierAIDC: json['carrierAIDC'] == null
+        ? null
+        : Base64Binary.fromJson(json['carrierAIDC'] as String),
     carrierHRF: json['carrierHRF'] as String,
     entryType: json['entryType'] == null
         ? null
@@ -217,7 +219,7 @@ Map<String, dynamic> _$DeviceUdiCarrierToJson(DeviceUdiCarrier instance) {
   writeNotNull('deviceIdentifier', instance.deviceIdentifier);
   writeNotNull('issuer', instance.issuer?.toJson());
   writeNotNull('jurisdiction', instance.jurisdiction?.toJson());
-  writeNotNull('carrierAIDC', instance.carrierAIDC);
+  writeNotNull('carrierAIDC', instance.carrierAIDC?.toJson());
   writeNotNull('carrierHRF', instance.carrierHRF);
   writeNotNull('entryType', instance.entryType?.toJson());
   return val;

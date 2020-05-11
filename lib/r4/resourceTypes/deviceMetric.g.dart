@@ -125,7 +125,8 @@ DeviceMetricCalibration _$DeviceMetricCalibrationFromJson(
     state: json['state'] == null
         ? null
         : DeviceMetricCalibrationState.fromJson(json['state'] as String),
-    time: json['time'],
+    time:
+        json['time'] == null ? null : Instant.fromJson(json['time'] as String),
   );
 }
 
@@ -146,6 +147,6 @@ Map<String, dynamic> _$DeviceMetricCalibrationToJson(
       instance.modifierExtension?.map((e) => e?.toJson())?.toList());
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('state', instance.state?.toJson());
-  writeNotNull('time', instance.time);
+  writeNotNull('time', instance.time?.toJson());
   return val;
 }

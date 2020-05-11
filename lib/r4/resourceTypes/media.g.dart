@@ -68,7 +68,9 @@ Media _$MediaFromJson(Map<String, dynamic> json) {
     createdPeriod: json['createdPeriod'] == null
         ? null
         : Period.fromJson(json['createdPeriod'] as Map<String, dynamic>),
-    issued: json['issued'],
+    issued: json['issued'] == null
+        ? null
+        : Instant.fromJson(json['issued'] as String),
     operator: json['operator'] == null
         ? null
         : Reference.fromJson(json['operator'] as Map<String, dynamic>),
@@ -130,7 +132,7 @@ Map<String, dynamic> _$MediaToJson(Media instance) {
   writeNotNull('encounter', instance.encounter?.toJson());
   writeNotNull('createdDateTime', instance.createdDateTime?.toJson());
   writeNotNull('createdPeriod', instance.createdPeriod?.toJson());
-  writeNotNull('issued', instance.issued);
+  writeNotNull('issued', instance.issued?.toJson());
   writeNotNull('operator', instance.operator?.toJson());
   writeNotNull(
       'reasonCode', instance.reasonCode?.map((e) => e?.toJson())?.toList());
