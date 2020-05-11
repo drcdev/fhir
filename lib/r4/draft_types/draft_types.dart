@@ -2,8 +2,7 @@ import 'package:fhir/primitiveTypes/fhirDateTime.dart';
 import 'package:fhir/primitiveTypes/primitiveTypes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../general_types/general_types.dart';
-import '../specialTypes/extension.dart';
+import '../../fhir_r4.dart';
 
 // If included, Flutter devtool will be able to read these objects
 // import 'package:flutter/foundation.dart';

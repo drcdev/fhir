@@ -1,9 +1,9 @@
 export 'r4/draft_types/draft_types.dart';
 export 'r4/general_types/general_types.dart';
 export 'r4/metadata_types/metadata_types.dart';
+export 'r4/special_types/special_types.dart';
 
 //todo: remove
-export 'r4/specialTypes.dart';
 export 'package:fhir/primitiveTypes/canonical.dart';
 export 'package:fhir/primitiveTypes/code.dart';
 export 'package:fhir/primitiveTypes/date.dart';
