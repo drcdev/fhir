@@ -13,6 +13,9 @@ dependencies:
   dartz: ^0.9.1
   string_validator: ^0.1.4
   freezed_annotation: ^0.11.0
+  sembast: ^2.4.5
+  sembast_sqflite: ^0.2.0+2
+  path: ^1.7.0
 
 dev_dependencies:
   json_serializable: ^3.3.0
