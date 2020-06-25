@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:sembast/sembast.dart';
+import 'package:sembast/sembast_io.dart';
 
 class FhirDb {
   static final FhirDb _db = FhirDb._();
@@ -22,6 +23,9 @@ class FhirDb {
   }
 
   Future _openDatabase() async {
-    // final appDocumentDir = await getApplicationDocumentsDirectory();
+    final String dbPath = 'fhir.db';
+    final database = await databaseFactoryIo.openDatabase(dbPath);
+
+    _dbOpenCompleter.complete(database);
   }
 }

@@ -16,6 +16,8 @@ dependencies:
   sembast: ^2.4.5
   sembast_sqflite: ^0.2.0+2
   path: ^1.7.0
+  equatable: ^1.2.0
+  bloc: ^4.0.0
 
 dev_dependencies:
   json_serializable: ^3.3.0

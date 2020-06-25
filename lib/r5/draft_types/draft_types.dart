@@ -7,7 +7,7 @@ part 'draft_types.freezed.dart';
 part 'draft_types.g.dart';
 
 @freezed
-abstract class Population with Resource implements _$Population {
+abstract class Population  implements _$Population {
   Population._();
   factory Population({
     String id,
@@ -25,7 +25,7 @@ abstract class Population with Resource implements _$Population {
 }
 
 @freezed
-abstract class ProductShelfLife with Resource implements _$ProductShelfLife {
+abstract class ProductShelfLife  implements _$ProductShelfLife {
   ProductShelfLife._();
   factory ProductShelfLife({
     String id,
@@ -43,7 +43,7 @@ abstract class ProductShelfLife with Resource implements _$ProductShelfLife {
 
 @freezed
 abstract class ProdCharacteristic
-    with Resource
+    
     implements _$ProdCharacteristic {
   ProdCharacteristic._();
   factory ProdCharacteristic({
@@ -71,7 +71,7 @@ abstract class ProdCharacteristic
 }
 
 @freezed
-abstract class MarketingStatus with Resource implements _$MarketingStatus {
+abstract class MarketingStatus  implements _$MarketingStatus {
   MarketingStatus._();
   factory MarketingStatus({
     String id,
@@ -90,7 +90,7 @@ abstract class MarketingStatus with Resource implements _$MarketingStatus {
 }
 
 @freezed
-abstract class SubstanceAmount with Resource implements _$SubstanceAmount {
+abstract class SubstanceAmount  implements _$SubstanceAmount {
   SubstanceAmount._();
   factory SubstanceAmount({
     String id,
